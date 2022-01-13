@@ -1,6 +1,6 @@
-export interface Hero {
+export interface Articulo {
     id: number;
     nombre: string;
-    tipo: CharacterData;
+    tipo: string;
 
   }
