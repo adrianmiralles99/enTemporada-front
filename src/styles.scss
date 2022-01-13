@@ -17,12 +17,18 @@
     src: url("font/NeueMontreal-Bold.otf");
 }
 
+$orange: #e14f1e;
+$green: #175537;
+$yellow: #ffd600;
+$beige: #fbf6e9;
+$greyD: #2e3f34;
+$grey: #17231c;
+
 body {
-  background-color: #FBF6E9;
+    background-color: $beige;
 }
 
 h1 {
-  color: aquamarine;
+    color: aquamarine;
     background-color: #fbf6e9;
 }
-
