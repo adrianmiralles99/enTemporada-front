@@ -1,6 +1,33 @@
 @import "../../styles.scss";
 
-h1 {
-    font-family: recoletaB;
-    color: $green;
+nav {
+    font-family: neueB;
+    font-size: 110%;
+}
+
+.dropdown-user {
+    * {
+        vertical-align: middle;
+        color: black;
+        text-decoration: none;
+    }
+
+    .iconoUsuario {
+        background-image: url("../../IMG/icono.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 70%;
+        height: 100%;
+        float: left;
+        vertical-align: middle;
+    }
+    span {
+    }
+    .boton {
+        padding: 5px 10px 5px 10px;
+        border: none;
+        border-radius: 15px;
+        background-color: $yellow;
+    }
 }

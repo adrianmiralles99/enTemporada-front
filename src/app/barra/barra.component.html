@@ -1,5 +1,4 @@
 <nav class="navbar navbar-expand-sm navbar-light">
-    <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
         aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -7,23 +6,37 @@
     <div class="collapse navbar-collapse" id="collapsibleNavId">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">Calendario</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu" aria-labelledby="dropdownId">
-                    <a class="dropdown-item" href="#">Action 1</a>
-                    <a class="dropdown-item" href="#">Action 2</a>
-                </div>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Recetas</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <ul class="navbar-nav my-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">¿Qué es esto?</a>
+            </li>
+
+
+            <div class="btn-group dropdown-user">
+                <ng-container *ngIf="sesion; else sesionIniciada">
+                    <button type="button" class="boton dropdown-toggle pr-5" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        <div class="iconoUsuario mr-1"></div>
+                        <span>User</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <button class="dropdown-item" type="button">Perfil</button>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item" type="button">Log Out</button>
+                    </div>
+                </ng-container>
+
+                <ng-template #sesionIniciada>
+                    <button class="boton" ><a href="#">Log In</a></button>
+                </ng-template>
+            </div>
+
+        </ul>
     </div>
 </nav>
