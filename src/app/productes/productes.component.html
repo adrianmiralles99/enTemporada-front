@@ -1,1 +1,6 @@
-<p>productes works!</p>
+<h2>Productos</h2>
+<ul>
+<li *ngFor="let articulo of articulos">
+    <span>{{articulo.id}}</span> {{articulo.nombre}}{{articulo.tipo}}
+  </li>
+</ul>
