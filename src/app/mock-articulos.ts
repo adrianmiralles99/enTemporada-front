@@ -1,6 +1,6 @@
 import { Articulo } from './articulo';
 
-export const Articulos: Articulo[] = [
+export const ARTICULOS: Articulo[] = [
   { id: 1, nombre: 'Pera', tipo:'F' },
   { id: 2, nombre: 'Manzana', tipo:'F' },
   { id: 3, nombre: 'Piña', tipo:'F' },
