@@ -1,5 +1,8 @@
-.enlaces{
+.enlaces {
     position: relative;
     margin: auto;
     border: 1px solid black;
+    > div {
+        margin: auto;
+    }
 }
