@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ARTICULOS } from '../mock-articulos';
+
 
 @Component({
   selector: 'app-productes',
@@ -11,5 +13,7 @@ export class ProductesComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  heroes = ARTICULOS;
+
 
 }
