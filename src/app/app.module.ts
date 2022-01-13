@@ -14,7 +14,6 @@ import { MenuFooterComponent } from './menu-footer/menu-footer.component';
     ProductesComponent,
     BarraComponent,
     MenuFooterComponent,
-    BarraComponent
   ],
   imports: [
     BrowserModule,
