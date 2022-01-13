@@ -1,1 +1,8 @@
 <p>productes works!</p>
+<h2>My Heroes</h2>
+<ul class="articulos">
+    <li *ngFor="articulo  of articulos">
+
+    <span class="badge">{{articulo.id}}</span> {{articulo.nombre}} {{articulo.tipo}} 
+  </li>
+</ul>
