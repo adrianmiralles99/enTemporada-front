@@ -1,28 +1,34 @@
 @font-face {
-    font-family: "recoletaR";
-    src: url("font/Recoleta\ Regular.otf");
-}
-@font-face {
-    font-family: "recoletaB";
-    src: url("font/Recoleta\ SemiBold.otf");
+  font-family: "recoletaR";
+  src: url("font/Recoleta\ Regular.otf");
 }
 
 @font-face {
-    font-family: "neueR";
-    src: url("font/NeueMontreal-Regular.otf");
+  font-family: "recoletaB";
+  src: url("font/Recoleta\ SemiBold.otf");
 }
 
 @font-face {
-    font-family: "neueB";
-    src: url("font/NeueMontreal-Bold.otf");
+  font-family: "neueR";
+  src: url("font/NeueMontreal-Regular.otf");
 }
+
+@font-face {
+  font-family: "neueB";
+  src: url("font/NeueMontreal-Bold.otf");
+}
+
+$orange: #e14f1e;
+$green: #175537;
+$yellow: #ffd600;
+$beige: #fbf6e9;
+$greyD: #2e3f34;
+$grey: #17231c;
 
 body {
-  background-color: #FBF6E9;
+  background-color: $beige;
 }
 
 h1 {
-  color: aquamarine;
-    background-color: #fbf6e9;
+  background-color: #fbf6e9;
 }
-

@@ -13,7 +13,12 @@ import { MenuFooterComponent } from './menu-footer/menu-footer.component';
     AppComponent,
     ProductesComponent,
     BarraComponent,
+<<<<<<< HEAD
     MenuFooterComponent
+=======
+    MenuFooterComponent,
+    BarraComponent
+>>>>>>> ebaea826a34e528c02487d93dd4e1877fb021c6e
   ],
   imports: [
     BrowserModule,
