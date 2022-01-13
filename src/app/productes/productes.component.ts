@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ARTICULOS } from '../mock-articulos';
+
 
 @Component({
   selector: 'app-productes',
