@@ -16,5 +16,4 @@ export class ProductesComponent implements OnInit {
   }
   articulos = ARTICULOS;
 
-
 }
