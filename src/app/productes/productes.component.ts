@@ -13,5 +13,7 @@ export class ProductesComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  heroes = ARTICULOS;
+
 
 }
