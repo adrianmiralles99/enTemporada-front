@@ -1,15 +1,19 @@
 @import "../../styles.scss";
 
 * {
-  font-family: neueB;
 }
 
 li {
   list-style: none;
 }
 
-h2 {
+h1 {
   text-align: center;
+  margin: 40px 0px 20px 0px;
+  font-family: recoletaB;
+  strong {
+    font-family: neueB;
+  }
 }
 .contenedor {
   border: 1px solid black;
@@ -18,6 +22,7 @@ h2 {
 }
 
 .articulo {
+  font-family: neueB;
   margin: auto;
   margin-bottom: 20px;
   border-radius: 20px;
