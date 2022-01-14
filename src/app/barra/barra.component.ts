@@ -9,7 +9,7 @@ export class BarraComponent implements OnInit {
 
   constructor() { }
 
-  sesion = false;
+  sesion = true;
   ngOnInit(): void {
   }
 
