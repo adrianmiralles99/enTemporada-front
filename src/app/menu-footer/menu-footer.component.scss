@@ -7,17 +7,19 @@
   cursor: pointer;
 
   img {
+    width: 100%;
     margin: auto;
   }
 }
 
 .card-title {
   font-family: recoletaB;
-  font-size: 180%;
+  font-size: 250% !important;
 }
 
-.card-body {
+.card-text {
   font-family: neueR;
+  font-size: 125% !important;
 }
 
 .top-megabuffer {
@@ -26,10 +28,8 @@
 
 .card-img-top {
   width: 700px;
-  border-radius: 20px;
 }
 
-$cards-per-line: (
-  xs: 1,
+$cards-per-line: (xs: 1,
   sm: 2,
 );
