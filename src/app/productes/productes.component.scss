@@ -7,8 +7,16 @@ li {
 h2 {
   text-align: center;
 }
+.contenedor {
+  border: 1px solid black;
+  margin: auto;
+  width: 90vw;
+}
 
 .articulo {
+  margin: auto;
+  margin-bottom: 20px;
+  // margin: 10px;
   img {
     width: 200px;
     margin: auto;
