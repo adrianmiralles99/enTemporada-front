@@ -20,9 +20,9 @@
 
             <div class="btn-group dropdown-user">
                 <ng-container *ngIf="sesion; else sesionIniciada">
-                    <button type="button" class="boton dropdown-toggle pr-5" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
-                        <div class="iconoUsuario mr-1"></div>
+                    <button type="button" class="boton dropdown-toggle pr-3 pl-3" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <img src="../../assets/IMG/icono.png" alt="">
                         <span>User</span>
                     </button>
                     <div class="dropdown-menu dropdown-menu-right">
@@ -33,7 +33,7 @@
                 </ng-container>
 
                 <ng-template #sesionIniciada>
-                    <button class="boton"><a href="#">Log In</a></button>
+                    <button class="boton pr-3 pl-3"><a href="#">Log In</a></button>
                 </ng-template>
             </div>
 

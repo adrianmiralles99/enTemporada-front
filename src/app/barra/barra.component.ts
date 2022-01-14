@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./barra.component.scss']
 })
 export class BarraComponent implements OnInit {
-
+ 
   constructor() { }
 
-  sesion = false;
+  sesion = true;
   ngOnInit(): void {
   }
 
