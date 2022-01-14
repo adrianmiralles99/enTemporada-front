@@ -1,13 +1,29 @@
 @import "../../styles.scss";
 
-.enlace1 {
-  background-color: $orange;
-  width: 200px;
-  height: 200px;
-  margin-left: 70px;
-  margin-right: 50px;
+.card {
+  background-color: $beige;
+  border: none;
+  margin: auto;
+
+  img {
+    margin: auto;
+  }
 }
 
-.enlace2 {
-  background-color: $green;
+.card-title {
+  font-family: recoletaB;
+  font-size: 180%;
 }
+
+.card-body {
+  font-family: neueR;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 450px;
+  border-radius: 20px;
+}
+
+$cards-per-line: (xs: 1,
+  sm: 2, );
