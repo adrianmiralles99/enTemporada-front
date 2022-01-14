@@ -1,13 +1,24 @@
 @import "../../styles.scss";
 
+* {
+  font-family: neueB;
+}
+
 li {
   list-style: none;
 }
+
 h2 {
   text-align: center;
 }
+.contenedor {
+  border: 1px solid black;
+  margin: auto;
+  width: 90vw;
+}
 
 .articulo {
+<<<<<<< HEAD
 
   img{
     width:170px;
@@ -17,5 +28,17 @@ h2 {
     margin: 10px;
     border-radius: 20px;
     border: none;
+=======
+  margin: auto;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  border: none;
+  img {
+    width: 170px;
+    margin: auto;
+  }
+  .card {
+    margin: 20px;
+>>>>>>> 7cd1abbde39de0aace3c3d3d023367b1278986c5
   }
 }
