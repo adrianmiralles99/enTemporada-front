@@ -2,16 +2,34 @@ a {
   color: black;
 }
 
-img {
+.insta {
   width: 20px;
 }
 
 .links {
   align-items: flex-end;
   text-align: right;
+  font-family: neueB;
 }
 
 footer {
   margin-left: 50px;
   margin-right: 50px;
+  font-family: neueR;
+}
+
+.logo {
+  width: 100px;
+}
+
+.top-megabuffer {
+  margin-top: 100px;
+}
+
+.top-buffer {
+  margin-top: 30px;
+}
+
+.top-debuffer {
+  margin-top: -15px;
 }
