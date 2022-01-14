@@ -1,33 +1,25 @@
-<div class="frutas container mt-5">
-  <h2><strong>Frutas</strong> en Mayo</h2>
-  <br><br>
-  <div class="card-deck">
-    <div class="row row-cols-4">
-      <div class="articulo mb-5" *ngFor="let articulo of frutas">
-        <div class="card ml-2" style="width: 18rem;">
-          <img class="card-img-top" src="../../assets/IMG/fruta.png" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">{{articulo.nombre}}</h5>
-          </div>
+<h1><strong>Frutas</strong> en Septiembre</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let articulo of frutas">
+      <div class="card articulo">
+        <img class="card-img-top" src="../../assets/IMG/fruta.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{articulo.nombre}}</h5>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-
-<!-- SECCION DE VERDURAS-->
-<div class="frutas container mt-5">
-  <h2><strong>Verduras</strong> en Mayo</h2>
-  <br><br>
-  <div class="card-deck">
-    <div class="row row-cols-4">
-      <div *ngFor="let articulo of verduras">
-        <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="../../assets/IMG/verdura.png" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">{{articulo.nombre}}</h5>
-          </div>
+<h1><strong>Verduras</strong> en Septiembre</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let articulo of verduras">
+      <div class="card articulo">
+        <img class="card-img-top" src="../../assets/IMG/verdura.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{articulo.nombre}}</h5>
         </div>
       </div>
     </div>

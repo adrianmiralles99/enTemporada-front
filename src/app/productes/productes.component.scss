@@ -1,18 +1,37 @@
 @import "../../styles.scss";
 
+* {
+}
+
 li {
   list-style: none;
 }
-h2 {
+
+h1 {
   text-align: center;
+  margin: 40px 0px 20px 0px;
+  font-family: recoletaB;
+  strong {
+    font-family: neueB;
+  }
+}
+.contenedor {
+  border: 1px solid black;
+  margin: auto;
+  width: 90vw;
 }
 
 .articulo {
-  img{
-    width:200px;
-    margin:auto;
+  font-family: neueB;
+  margin: auto;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  border: none;
+  img {
+    width: 170px;
+    margin: auto;
   }
-  .card{
-    margin:20px;
+  .card {
+    margin: 20px;
   }
 }
