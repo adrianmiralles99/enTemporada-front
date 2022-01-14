@@ -3,7 +3,6 @@ import { Articulo } from './articulo';
 export const FRUTAS: Articulo[] = [
   { id: 1, nombre: 'Pera', tipo: 'F' },
   { id: 2, nombre: 'Manzana', tipo: 'F' },
-  { id: 6, nombre: 'Lechuga', tipo: 'V' },
   { id: 3, nombre: 'Piña', tipo: 'F' },
   { id: 4, nombre: 'Naranja', tipo: 'F' },
   { id: 5, nombre: 'Melocoton', tipo: 'F' },
