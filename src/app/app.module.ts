@@ -9,6 +9,8 @@ import { BarraComponent } from './barra/barra.component';
 import { MenuFooterComponent } from './menu-footer/menu-footer.component';
 import { TituloInicioComponent } from './titulo-inicio/titulo-inicio.component';
 import { FooterComponent } from './footer/footer.component';
+import { AboutusModule } from './aboutus/aboutus.module';
+
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { FooterComponent } from './footer/footer.component';
     MenuFooterComponent,
     TituloInicioComponent,
     FooterComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AboutusModule
   ],
   providers: [],
   bootstrap: [AppComponent]
