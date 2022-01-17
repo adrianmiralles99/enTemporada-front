@@ -7,9 +7,13 @@
     color: white !important;
   }
 
-  button {
+  .boton {
     a {
       color: black !important;
     }
   }
+}
+
+::ng-deep .navbar-toggler {
+  color: white !important;
 }
