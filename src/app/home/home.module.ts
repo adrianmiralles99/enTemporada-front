@@ -5,6 +5,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MenuFooterComponent } from './menu-footer/menu-footer.component';
 import { ProductesComponent } from './productes/productes.component';
 import { TituloInicioComponent } from './titulo-inicio/titulo-inicio.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -14,17 +15,13 @@ import { TituloInicioComponent } from './titulo-inicio/titulo-inicio.component';
     FooterComponent,
     MenuFooterComponent,
     ProductesComponent,
-    TituloInicioComponent,],
+    TituloInicioComponent,
+    HomeComponent,],
   imports: [
     CommonModule,
-    
   ],
   exports:[
-    BarraComponent,
-    FooterComponent,
-    MenuFooterComponent,
-    ProductesComponent,
-    TituloInicioComponent,
+    HomeComponent
   ]
 
 })
