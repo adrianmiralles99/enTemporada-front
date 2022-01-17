@@ -1,5 +1,29 @@
 @import "../../styles.scss";
 
-h1 {
-    font-family: recoletaB;
+nav {
+    font-family: neueB;
+    font-size: 110%;
+}
+
+.nav-item {
+    margin-right: 40px;
+    font-size: 120%;
+}
+
+.dropdown-user {
+    * {
+        color: black;
+        text-decoration: none;
+    }
+
+    img {
+        height: 30px;
+    }
+
+    .boton {
+        text-align: center !important;
+        border: none;
+        border-radius: 15px;
+        background-color: $yellow;
+    }
 }

@@ -1,0 +1,33 @@
+@import "../../styles.scss";
+
+li {
+  list-style: none;
+}
+
+h1 {
+  text-align: center;
+  margin: 40px 0px 20px 0px;
+  font-family: recoletaB;
+  font-size: 320%;
+  strong {
+    font-family: neueB;
+  }
+}
+
+.articulo {
+  height: 300px;
+  padding-top: 40px;
+  font-family: neueB;
+  margin: auto;
+  margin: 10px -5px 20px -5px;
+  border-radius: 20px;
+  border: none;
+  img {
+    
+    width: 170px;
+    margin: auto;
+  }
+  .card {
+    margin: 20px;
+  }
+}

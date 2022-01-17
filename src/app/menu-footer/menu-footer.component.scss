@@ -1,0 +1,35 @@
+@import "../../styles.scss";
+
+.card {
+  background-color: $beige;
+  border: none;
+  margin: auto;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    margin: auto;
+  }
+}
+
+.card-title {
+  font-family: recoletaB;
+  font-size: 250% !important;
+}
+
+.card-text {
+  font-family: neueR;
+  font-size: 125% !important;
+}
+
+.top-megabuffer {
+  margin-top: 200px;
+}
+
+.card-img-top {
+  width: 700px;
+}
+
+$cards-per-line: (xs: 1,
+  sm: 2,
+);
