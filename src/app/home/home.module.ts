@@ -15,6 +15,7 @@ import { TituloInicioComponent } from './titulo-inicio/titulo-inicio.component';
     MenuFooterComponent,
     ProductesComponent,
     TituloInicioComponent,],
+    
   imports: [
     CommonModule,
     
