@@ -9,6 +9,7 @@ import { BarraComponent } from './home/barra/barra.component';
 import { MenuFooterComponent } from './home/menu-footer/menu-footer.component';
 import { TituloInicioComponent } from './home/titulo-inicio/titulo-inicio.component';
 import { FooterComponent } from './home/footer/footer.component';
+import { AboutusModule } from './aboutus/aboutus.module';
 
 @NgModule({
   declarations: [
