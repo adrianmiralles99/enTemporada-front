@@ -1,7 +1,15 @@
-
 @import "../../../styles.scss";
 
-::ng-deep .nav{
-  color: white;
-  background-color:$green ;
+::ng-deep nav {
+  background-color: $green;
+
+  a {
+    color: white !important;
+  }
+
+  button {
+    a {
+      color: black !important;
+    }
+  }
 }
