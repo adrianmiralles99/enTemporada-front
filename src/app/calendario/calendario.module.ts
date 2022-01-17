@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { PresentacionCalendarioComponent } from './presentacion-calendario/presentacion-calendario.component';
 import { CalendarioComponent } from './calendario/calendario.component';
 import { UtilsModule } from '../utils/utils.module';
+import { TablaCalendarioComponent } from './tabla-calendario/tabla-calendario.component';
 
 
 
 @NgModule({
   declarations: [
     PresentacionCalendarioComponent,
-    CalendarioComponent
+    CalendarioComponent,
+    TablaCalendarioComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { UtilsModule } from '../utils/utils.module';
 
   ],
   exports: [
-    PresentacionCalendarioComponent
+    PresentacionCalendarioComponent,
+    TablaCalendarioComponent,
   ]
 })
 export class CalendarioModule { }

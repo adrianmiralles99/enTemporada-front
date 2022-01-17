@@ -9,8 +9,7 @@ import { CalendarioModule } from './calendario/calendario.module';
 
 @NgModule({
   declarations: [
-    AppComponent
-
+    AppComponent,
   ],
   imports: [
     BrowserModule,
