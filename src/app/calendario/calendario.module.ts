@@ -6,7 +6,6 @@ import { PresentacionCalendarioComponent } from './presentacion-calendario/prese
 
 @NgModule({
   declarations: [
-
     PresentacionCalendarioComponent
   ],
   imports: [
