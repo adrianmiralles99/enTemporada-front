@@ -1,4 +1,4 @@
-import { Articulo } from './articulo';
+import { Articulo } from '../app/articulo';
 
 export const FRUTAS: Articulo[] = [
   { id: 1, nombre: 'Pera', tipo: 'F' },
@@ -21,7 +21,7 @@ export const VERDURAS: Articulo[] = [
   { id: 3, nombre: 'Nabo', tipo: 'V' },
   { id: 4, nombre: 'Alcachofa', tipo: 'V' },
   { id: 5, nombre: 'Col', tipo: 'V' },
-  { id: 6, nombre: 'Lecuga', tipo: 'V' },
+  { id: 6, nombre: 'Lechuga', tipo: 'V' },
   { id: 7, nombre: 'Aguacate', tipo: 'V' },
   { id: 8, nombre: 'Lechuga', tipo: 'V' },
   { id: 9, nombre: 'Pepino', tipo: 'V' },
