@@ -4,28 +4,21 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductesComponent } from './home/productes/productes.component';
-import { BarraComponent } from './home/barra/barra.component';
-import { MenuFooterComponent } from './home/menu-footer/menu-footer.component';
-import { TituloInicioComponent } from './home/titulo-inicio/titulo-inicio.component';
-import { FooterComponent } from './home/footer/footer.component';
+
 import { AboutusModule } from './aboutus/aboutus.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ProductesComponent,
-    BarraComponent,
-    MenuFooterComponent,
-    TituloInicioComponent,
-    FooterComponent,
+    AppComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    AboutusModule
+    AboutusModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
