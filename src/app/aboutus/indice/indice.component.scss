@@ -1,8 +1,7 @@
 
-html{
-    background-color: yellow;
-}
+@import "../../../styles.scss";
 
-.nav-item{
+::ng-deep .nav{
   color: white;
+  background-color:$green ;
 }

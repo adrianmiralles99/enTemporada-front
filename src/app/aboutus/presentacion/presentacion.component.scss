@@ -1,5 +1,7 @@
+@import "../../../styles.scss";
+
 .bloquepresentacion{
-    background-color: #175537   ;
+    background-color: $green   ;
     p{
         color: white;
         font-family: recoletaB;
