@@ -17,7 +17,7 @@ import { CalendarioModule } from './calendario/calendario.module';
     FormsModule,
     AboutusModule,
     HomeModule,
-    CalendarioModule
+    CalendarioModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
