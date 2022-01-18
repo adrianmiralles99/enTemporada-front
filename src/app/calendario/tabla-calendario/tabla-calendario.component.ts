@@ -13,14 +13,18 @@ export class TablaCalendarioComponent implements OnInit {
   meses = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
   frutas = FRUTAS;
   verduras = VERDURAS;
-  mes = 5;
-  hover = [false];
+  d = new Date();
+  mes = this.d.getMonth()+2;
+  
+  hoverF = [false];
+  hoverV = [false];
 
   ngOnInit(): void {
     for (let i = 0; i < 12; i++) {
-      this.hover[i] = false;
+      this.hoverF[i] = false;
+      this.hoverV[i] = false;
+      
     }
-
   }
 
   cambiarColor(indice: number, color: string) {
