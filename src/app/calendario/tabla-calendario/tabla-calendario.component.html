@@ -26,16 +26,18 @@
     </tbody>
   </table>
 
+
+
   <table>
     <thead>
       <tr>
-        <th class="mes">Verduras</th>
+        <th class="tipo">Verduras</th>
         <th *ngFor="let mes of meses">{{mes}}</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let verdura of verduras">
-        <td scope="row" class="nombre"><img src="../../../assets/IMG/fruta.png" alt=""> {{verdura.nombre}}</td>
+      <tr *ngFor="let fruta of frutas">
+        <td scope="row" class="nombre"><img src="../../../assets/IMG/fruta.png" alt=""> {{fruta.nombre}}</td>
         <td scope="row">.</td>
         <td scope="row">.</td>
         <td scope="row">.</td>
@@ -52,4 +54,5 @@
 
     </tbody>
   </table>
+
 </div>
