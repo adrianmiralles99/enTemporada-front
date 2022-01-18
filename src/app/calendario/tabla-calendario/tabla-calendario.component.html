@@ -7,52 +7,25 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let fruta of frutas">
-        <td scope="row" class="nombre"><img src="../../../assets/IMG/fruta.png" alt=""> {{fruta.nombre}}</td>
-        <td scope="row">.</td>
-        <td scope="row">.</td>
-        <td scope="row">.</td>
-        <td scope="row">.</td>
-        <td scope="row">.</td>
-        <td scope="row">.</td>
-        <td scope="row">.</td>
-        <td scope="row">.</td>
-        <td scope="row">.</td>
-        <td scope="row">.</td>
-        <td scope="row">.</td>
-        <td scope="row">.</td>
+
+      <tr *ngFor="let fruta of frutas; let indice=index" id="{{fruta.id}}">
+       
+        <td (mouseover)="hover[indice]=true" (mouseleave)="hover[indice]=false"
+          [ngStyle]="{backgroundColor: hover[indice]==true  ? fruta.color : 'white' }"
+          *ngFor="let mes of meses; let cont=index">
+
+          <ng-container *ngIf="cont==0; else elseTemplate">
+            <img src="../../../assets/IMG/fruta.png" alt="">
+            {{fruta.nombre}}
+          </ng-container>
+
+          <ng-template #elseTemplate>
+            .
+          </ng-template>
+
+        </td>
       </tr>
 
     </tbody>
   </table>
-
-
-
-  <table>
-    <thead>
-      <tr>
-        <th class="tipo">Verduras</th>
-        <th *ngFor="let mes of meses">{{mes}}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let fruta of frutas">
-        <td scope="row" class="nombre"><img src="../../../assets/IMG/fruta.png" alt=""> {{fruta.nombre}}</td>
-        <td scope="row">.</td>
-        <td scope="row">.</td>
-        <td scope="row">.</td>
-        <td scope="row">.</td>
-        <td scope="row">.</td>
-        <td scope="row">.</td>
-        <td scope="row">.</td>
-        <td scope="row">.</td>
-        <td scope="row">.</td>
-        <td scope="row">.</td>
-        <td scope="row">.</td>
-        <td scope="row">.</td>
-      </tr>
-
-    </tbody>
-  </table>
-
 </div>
