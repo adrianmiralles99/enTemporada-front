@@ -3,6 +3,8 @@ import { IndiceComponent } from './aboutus/indice/indice.component';
 import { CalendarioComponent } from './calendario/calendario/calendario.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { IndexregComponent } from './registro/indexreg/indexreg.component';
+
 
 
 const routes: Routes = [
@@ -17,6 +19,10 @@ const routes: Routes = [
   {
     path: 'calendario',
     component: CalendarioComponent,
+  },
+  {
+    path: 'registro',
+    component: IndexregComponent,
   },
 ];
 @NgModule({

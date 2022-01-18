@@ -8,53 +8,52 @@ table {
   border-spacing: 3px;
   margin-bottom: 100px;
 
+  img {
+    width: 30%;
+    user-select: none;
+    pointer-events: none;
+  }
+
   th {
     border: none;
   }
 
-  .mes {
+  .tipo {
     width: 20%;
     font-family: recoletaB;
     font-size: 250%;
   }
 
-  :not(.mes) {
+  :not(.tipo) {
     vertical-align: middle !important;
     font-family: neueB;
   }
 
   tbody {
-    >tr {
+    > tr {
       transition: 0.1s;
+      .nombre {
+        text-align: left;
+      }
 
       td {
+        width: 20px;
         border: none;
         background-color: white;
 
         &:first-child {
           border-radius: 7px 0px 0px 7px;
         }
-
-        >tr:hover td {
-          background-color: black;
-          color: white;
-        }
       }
 
-      .nombre {
-        text-align: left;
+      tr:hover td {
+        // background-color: black;
+        color: white;
       }
-
-      // > tr:hover td {
-      //     background-color: black;
-      //     color: white;
-      // }
     }
 
     .nombre {
       text-align: left;
     }
-
-
   }
 }
