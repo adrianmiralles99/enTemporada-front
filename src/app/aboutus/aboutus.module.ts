@@ -4,6 +4,8 @@ import { PresentacionComponent } from './presentacion/presentacion.component';
 import { UtilsModule } from '../utils/utils.module';
 import { IndiceComponent } from './indice/indice.component';
 import { MotivosComponent } from './motivos/motivos.component';
+import { MenuFooterAboutComponent } from './menu-footer-about/menu-footer-about.component';
+import { SobreComponent } from './sobre/sobre.component';
 
 
 
@@ -11,7 +13,9 @@ import { MotivosComponent } from './motivos/motivos.component';
   declarations: [
     PresentacionComponent,
     IndiceComponent,
-    MotivosComponent
+    MotivosComponent,
+    MenuFooterAboutComponent,
+    SobreComponent
   ],
   imports: [
     CommonModule,
