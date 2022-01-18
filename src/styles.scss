@@ -29,7 +29,11 @@ body {
   background-color: $beige;
 }
 
-.container {
+.containe {
   margin: auto;
   max-width: 100em;
+}
+
+.container-fluid {
+  margin: auto;
 }

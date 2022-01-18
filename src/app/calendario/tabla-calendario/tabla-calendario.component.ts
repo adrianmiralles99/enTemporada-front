@@ -13,11 +13,14 @@ export class TablaCalendarioComponent implements OnInit {
   meses = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
   frutas = FRUTAS;
   verduras = VERDURAS;
+  mes = 5;
 
   ngOnInit(): void {
   }
 
   mouseEnter() {
-    console.log("mouse enter ");
+    console.log(this);
+    
+    // this.style.backgroundColor = "red";
   }
 }
