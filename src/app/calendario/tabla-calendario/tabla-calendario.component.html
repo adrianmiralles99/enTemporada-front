@@ -7,8 +7,9 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let fruta of frutas">
-                <td scope="row" class="nombre"><img src="../../../assets/IMG/fruta.png" alt=""> {{fruta.nombre}}</td>
+            <tr (mouseenter)="mouseEnter" *ngFor="let fruta of frutas">
+                <td scope="row"  class="nombre"><img
+                        src="../../../assets/IMG/fruta.png" alt=""> {{fruta.nombre}}</td>
                 <td scope="row">.</td>
                 <td scope="row">.</td>
                 <td scope="row">.</td>

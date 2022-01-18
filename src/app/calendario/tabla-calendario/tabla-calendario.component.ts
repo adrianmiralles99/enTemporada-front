@@ -17,4 +17,7 @@ export class TablaCalendarioComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  mouseEnter() {
+    console.log("mouse enter ");
+  }
 }
