@@ -1,12 +1,8 @@
 @import "../../../styles.scss";
 
-h2{
-    text-align: center;
-    margin: 2%;
-    font-family: "recoletaB";
 
-}
 .container{
+    margin-top: 2%;
     width: 60%;
     height: 325px;
     padding: 0%;
@@ -61,4 +57,19 @@ h2{
         
     }
     
+}
+.boton{
+    text-align: center;
+    margin-top: 2%;
+    
+    button{
+        background-color: $orange   ;
+        color: white;
+        font-family: "neueB";
+        border: 1px solid black;
+        width: 20%;
+        margin: auto;
+        font-size: 150%;
+        border-radius: 10px;
+    }
 }

@@ -4,6 +4,7 @@ import { UtilsModule } from '../utils/utils.module';
 import { IndexregComponent } from './indexreg/indexreg.component';
 import { DatosloginComponent } from './datoslogin/datoslogin.component';
 import { BarranegraComponent } from './barranegra/barranegra.component';
+import { DatospersonalesComponent } from './datospersonales/datospersonales.component';
 
 
 
@@ -11,7 +12,8 @@ import { BarranegraComponent } from './barranegra/barranegra.component';
   declarations: [
     IndexregComponent, 
     BarranegraComponent,
-    DatosloginComponent
+    DatosloginComponent,
+    DatospersonalesComponent
   ],
   imports: [
     CommonModule,
