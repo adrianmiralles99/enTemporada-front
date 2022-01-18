@@ -1,47 +1,56 @@
 @import "../../../styles.scss";
 
 table {
-    width: 100%;
-    text-align: center;
+  width: 95%;
+  margin: auto;
+  text-align: center;
+  user-select: none;
+  // border-collapse: separate;
+  // border-spacing: 2px;
+  margin-bottom: 100px;
+
+  img {
+    width: 25%;
+    margin-right: 20px;
     user-select: none;
-    border-collapse: separate;
-    border-spacing: 3px;
-    margin-bottom: 100px;
-    th {
+    pointer-events: none;
+  }
+
+  th {
+    border: none;
+  }
+
+  .tipo {
+    width: 15%;
+    font-family: recoletaB;
+    font-size: 250%;
+  }
+
+  :not(.tipo) {
+    vertical-align: middle !important;
+    font-family: neueB;
+  }
+
+  tbody {
+    > tr {
+        border-bottom: 12px solid red;
+        td {
+        width: 1000em;
+        transition: 0.1s;
         border: none;
-    }
-    .mes {
-        width: 20%;
-        font-family: recoletaB;
-        font-size: 250%;
-    }
-    :not(.mes) {
-        vertical-align: middle !important;
-        font-family: neueB;
-    }
-    tbody {
-        > tr {
-            transition: 0.1s;
-            td {
-                border: none;
-                background-color: white;
-                &:first-child {
-                    border-radius: 7px 0px 0px 7px;
-                }
-                &:last-child {
-                    border-radius: 0px 7px 7px 0px;
-                }
-                img {
-                    width: 20%;
-                }
-            }
+        background-color: white;
+
+        &:first-child {
+          border-radius: 7px 0px 0px 7px;
+          text-align: left;
         }
-        > tr:hover td {
-            background-color: black;
-            color: white;
+        &:last-child {
+          border-radius: 0px 7px 7px 0px;
         }
+      }
     }
-    .nombre {
-        text-align: left;
+    tr:hover td {
+      color: white;
     }
+  }
 }
