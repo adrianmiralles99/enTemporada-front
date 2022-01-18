@@ -5,8 +5,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { IndexregComponent } from './registro/indexreg/indexreg.component';
 
-
-
 const routes: Routes = [
   {
     path: '',

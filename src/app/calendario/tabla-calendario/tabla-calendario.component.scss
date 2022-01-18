@@ -1,18 +1,21 @@
 @import "../../../styles.scss";
 
 table {
-  width: 100%;
+  width: 95%;
+  margin: auto;
   text-align: center;
   user-select: none;
-  border-collapse: separate;
-  border-spacing: 3px;
+  // border-collapse: separate;
+  // border-spacing: 2px;
   margin-bottom: 100px;
 
   img {
-    width: 30%;
+    width: 25%;
+    margin-right: 20px;
     user-select: none;
     pointer-events: none;
   }
+
   th {
     border: none;
   }
@@ -30,31 +33,23 @@ table {
 
   tbody {
     > tr {
-      transition: 0.1s;
-      .nombre {
-        text-align: left;
-      }
-
-      td {
+        border-bottom: 12px solid red;
+        td {
         width: 1000em;
+        transition: 0.1s;
         border: none;
         background-color: white;
 
         &:first-child {
           border-radius: 7px 0px 0px 7px;
+          text-align: left;
         }
         &:last-child {
           border-radius: 0px 7px 7px 0px;
         }
       }
     }
-
-    .nombre {
-      text-align: left;
-    }
-
     tr:hover td {
-      background-color: black !important;
       color: white;
     }
   }

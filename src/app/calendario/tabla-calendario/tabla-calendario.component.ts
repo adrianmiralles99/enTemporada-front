@@ -14,13 +14,16 @@ export class TablaCalendarioComponent implements OnInit {
   frutas = FRUTAS;
   verduras = VERDURAS;
   mes = 5;
+  hover = [false];
 
   ngOnInit(): void {
+    for (let i = 0; i < 12; i++) {
+      this.hover[i] = false;
+    }
+
   }
 
-  mouseEnter() {
-    console.log(this);
-    
-    // this.style.backgroundColor = "red";
+  cambiarColor(indice: number, color: string) {
+    // document.getElementById(aux)?.style.backgroundColor = color;
   }
 }
