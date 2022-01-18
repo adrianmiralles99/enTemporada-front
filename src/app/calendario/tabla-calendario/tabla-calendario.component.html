@@ -1,57 +1,71 @@
 <div class="container">
-    <table class="table">
-        <thead>
-            <tr>
-                <th class="mes">Frutas</th>
-                <th *ngFor="let mes of meses">{{mes}}</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr (mouseenter)="mouseEnter" *ngFor="let fruta of frutas">
-                <td scope="row"  class="nombre"><img
-                        src="../../../assets/IMG/fruta.png" alt=""> {{fruta.nombre}}</td>
-                <td scope="row">.</td>
-                <td scope="row">.</td>
-                <td scope="row">.</td>
-                <td scope="row">.</td>
-                <td scope="row">.</td>
-                <td scope="row">.</td>
-                <td scope="row">.</td>
-                <td scope="row">.</td>
-                <td scope="row">.</td>
-                <td scope="row">.</td>
-                <td scope="row">.</td>
-                <td scope="row">.</td>
-            </tr>
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="mes">Frutas</th>
+        <th *ngFor="let mes of meses">{{mes}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fruta of frutas">
+        <td scope="row" class="nombre"><img src="../../../assets/IMG/fruta.png" alt=""> {{fruta.nombre}}</td>
+        <td scope="row">.</td>
+        <td scope="row">.</td>
+        <td scope="row">.</td>
+        <td scope="row">.</td>
+        <td scope="row">.</td>
+        <td scope="row">.</td>
+        <td scope="row">.</td>
+        <td scope="row">.</td>
+        <td scope="row">.</td>
+        <td scope="row">.</td>
+        <td scope="row">.</td>
+        <td scope="row">.</td>
+      </tr>
 
-        </tbody>
-    </table>
+      <td scope="row" class="{{fruta.nombre}}"><img src="../../../assets/IMG/fruta.png" alt=""> {{fruta.nombre}}</td>
+      <td scope="row" class="{{fruta.nombre}}">.</td>
+      <td scope="row" class="{{fruta.nombre}}">.</td>
+      <td scope="row" class="{{fruta.nombre}}">.</td>
+      <td scope="row" class="{{fruta.nombre}}">.</td>
+      <td scope="row" class="{{fruta.nombre}}">.</td>
+      <td scope="row" class="{{fruta.nombre}}">.</td>
+      <td scope="row" class="{{fruta.nombre}}">.</td>
+      <td scope="row" class="{{fruta.nombre}}">.</td>
+      <td scope="row" class="{{fruta.nombre}}">.</td>
+      <td scope="row" class="{{fruta.nombre}}">.</td>
+      <td scope="row" class="{{fruta.nombre}}">.</td>
+      <td scope="row" class="{{fruta.nombre}}">.</td>
+      </tr>
+
+    </tbody>
+  </table>
 
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th class="mes">Verduras</th>
-                <th *ngFor="let mes of meses">{{mes}}</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let verdura of verduras">
-                <td scope="row" class="nombre"><img src="../../../assets/IMG/fruta.png" alt=""> {{verdura.nombre}}</td>
-                <td scope="row">.</td>
-                <td scope="row">.</td>
-                <td scope="row">.</td>
-                <td scope="row">.</td>
-                <td scope="row">.</td>
-                <td scope="row">.</td>
-                <td scope="row">.</td>
-                <td scope="row">.</td>
-                <td scope="row">.</td>
-                <td scope="row">.</td>
-                <td scope="row">.</td>
-                <td scope="row">.</td>
-            </tr>
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="mes">Verduras</th>
+        <th *ngFor="let mes of meses">{{mes}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let verdura of verduras">
+        <td scope="row" class="nombre"><img src="../../../assets/IMG/fruta.png" alt=""> {{verdura.nombre}}</td>
+        <td scope="row">.</td>
+        <td scope="row">.</td>
+        <td scope="row">.</td>
+        <td scope="row">.</td>
+        <td scope="row">.</td>
+        <td scope="row">.</td>
+        <td scope="row">.</td>
+        <td scope="row">.</td>
+        <td scope="row">.</td>
+        <td scope="row">.</td>
+        <td scope="row">.</td>
+        <td scope="row">.</td>
+      </tr>
 
-        </tbody>
-    </table>
+    </tbody>
+  </table>
 </div>
