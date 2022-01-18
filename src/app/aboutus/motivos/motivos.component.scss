@@ -1,7 +1,7 @@
 
-.bloquemotivos{
+.bloqueporque{
 text-align: center;
-    .container{
+    .bloqueporque2{
         width: 60%;
         p{
             font-size: 175%;
@@ -15,5 +15,30 @@ text-align: center;
 
         }
     }
+    
+    
+}
+.bloquemotivos{
+    width: 90%;
+    #mejorsabor{
+        width: 100%;
+    }
+    .fresco{
+        border: red 2px dashed;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 10%;
+        h2{
+            font-family: recoletaB;
+            text-align: center;
+            font-size: 250%;
+        }
+        p{
+            font-size: 160%;
+            text-align: left;
+            margin: 5%;
+        }
+    }
+
     
 }
