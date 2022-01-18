@@ -35,25 +35,25 @@ table {
           border-radius: 7px 0px 0px 7px;
         }
 
-        &:last-child {
-          border-radius: 0px 7px 7px 0px;
-        }
-
-        img {
-          width: 20%;
+        >tr:hover td {
+          background-color: black;
+          color: white;
         }
       }
+
+      .nombre {
+        text-align: left;
+      }
+
+      // > tr:hover td {
+      //     background-color: black;
+      //     color: white;
+      // }
     }
 
-    // > tr:hover td {
-    //     background-color: black;
-    //     color: white;
-    // }
+    .nombre {
+      text-align: left;
+    }
+
+
   }
-
-  .nombre {
-    text-align: left;
-  }
-
-
-}
