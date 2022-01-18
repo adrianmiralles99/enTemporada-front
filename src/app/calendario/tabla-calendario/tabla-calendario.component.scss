@@ -8,6 +8,10 @@ table {
   border-spacing: 3px;
   margin-bottom: 100px;
 
+  img {
+    width: 30%;
+  }
+
   th {
     border: none;
   }
@@ -24,7 +28,7 @@ table {
   }
 
   tbody {
-    >tr {
+    > tr {
       transition: 0.1s;
 
       td {
@@ -34,27 +38,20 @@ table {
         &:first-child {
           border-radius: 7px 0px 0px 7px;
         }
-
-        >tr:hover td {
-          background-color: black;
-          color: white;
-        }
       }
 
       .nombre {
         text-align: left;
       }
 
-      // > tr:hover td {
-      //     background-color: black;
-      //     color: white;
-      // }
+      tr:hover td {
+        // background-color: black;
+        color: white;
+      }
     }
 
     .nombre {
       text-align: left;
     }
-
-
   }
 }
