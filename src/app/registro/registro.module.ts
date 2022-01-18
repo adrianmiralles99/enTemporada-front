@@ -3,11 +3,16 @@ import { CommonModule } from '@angular/common';
 import { UtilsModule } from '../utils/utils.module';
 import { IndexregComponent } from './indexreg/indexreg.component';
 import { DatosloginComponent } from './datoslogin/datoslogin.component';
+import { BarranegraComponent } from './barranegra/barranegra.component';
 
 
 
 @NgModule({
-  declarations: [IndexregComponent, DatosloginComponent],
+  declarations: [
+    IndexregComponent, 
+    BarranegraComponent,
+    DatosloginComponent
+  ],
   imports: [
     CommonModule,
     UtilsModule

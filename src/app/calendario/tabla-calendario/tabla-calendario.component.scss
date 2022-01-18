@@ -13,13 +13,12 @@ table {
     user-select: none;
     pointer-events: none;
   }
-
   th {
     border: none;
   }
 
   .tipo {
-    width: 20%;
+    width: 15%;
     font-family: recoletaB;
     font-size: 250%;
   }
@@ -37,23 +36,26 @@ table {
       }
 
       td {
-        width: 20px;
+        width: 1000em;
         border: none;
         background-color: white;
 
         &:first-child {
           border-radius: 7px 0px 0px 7px;
         }
-      }
-
-      tr:hover td {
-        // background-color: black;
-        color: white;
+        &:last-child {
+          border-radius: 0px 7px 7px 0px;
+        }
       }
     }
 
     .nombre {
       text-align: left;
+    }
+
+    tr:hover td {
+      background-color: black !important;
+      color: white;
     }
   }
 }
