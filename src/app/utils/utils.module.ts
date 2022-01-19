@@ -4,7 +4,7 @@ import { BarraComponent } from './barra/barra.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { MenuFooterComponent } from './menu-footer/menu-footer.component';
-import { BarranegraComponent } from '../registro/barranegra/barranegra.component';
+import { BarranegraComponent } from './barranegra/barranegra.component';
 
 
 
