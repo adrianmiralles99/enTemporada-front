@@ -40,22 +40,17 @@ table {
 
   .cabFila {
     background-color: #17231c !important;
-    // border-bottom: 10px solid #39433b !important;
     color: white;
   }
 
-  .cabFila:-moz-first-node {
-    border: 2px solid red !important;
-  }
-
   tbody {
-    >tr {
+    > tr {
       td {
         width: 1000em;
         transition: 0.1s;
         background-color: white;
-        border: 2px $beige solid;
-
+        border: none;
+        border-bottom: 2px $beige solid;
         &:first-child {
           border-radius: 10px 0px 0px 10px;
           text-align: left;
@@ -63,6 +58,9 @@ table {
 
         &:last-child {
           border-radius: 0px 10px 10px 0px;
+        }
+        &:not(:last-child) {
+          border-right: 2px solid $beige;
         }
       }
     }
