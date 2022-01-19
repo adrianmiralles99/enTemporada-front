@@ -7,6 +7,7 @@ import { AboutusModule } from './aboutus/aboutus.module';
 import { HomeModule } from './home/home.module';
 import { CalendarioModule } from './calendario/calendario.module';
 import { RegistroModule } from './registro/registro.module';
+import { InfoproductoModule } from './infoproducto/infoproducto.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RegistroModule } from './registro/registro.module';
     AboutusModule,
     HomeModule,
     CalendarioModule,
-    RegistroModule
+    RegistroModule,
+    InfoproductoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,19 @@
+@import "../../../styles.scss";
+
+::ng-deep nav {
+  background-color: $grey;
+
+  a {
+    color: white !important;
+  }
+
+  .boton {
+    a {
+      color: black !important;
+    }
+  }
+}
+
+::ng-deep .navbar-toggler {
+  color: white !important;
+}
