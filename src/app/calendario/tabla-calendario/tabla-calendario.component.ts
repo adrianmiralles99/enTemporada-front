@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PRODUCTES } from '../../mock-articulos';
-// import { FRUTAS } from '../../mock-articulos';
-// import { VERDURAS } from '../../mock-articulos';
 @Component({
   selector: 'app-tabla-calendario',
   templateUrl: './tabla-calendario.component.html',
