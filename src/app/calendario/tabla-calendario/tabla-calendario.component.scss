@@ -62,7 +62,7 @@ table {
   }
 
   tbody {
-    > tr {
+    >tr {
       td {
         width: 1000em;
         transition: 0.1s;
@@ -73,9 +73,11 @@ table {
           border-radius: 10px 0px 0px 10px;
           text-align: left;
         }
+
         &:last-child {
           border-radius: 0px 10px 10px 0px;
         }
+
         &:not(:first-child) {
           border-left: 1px solid rgba(201, 201, 201, 0.469);
         }
