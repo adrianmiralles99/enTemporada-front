@@ -1,17 +1,10 @@
 @import "../../../styles.scss";
 
-::ng-deep nav {
+nav {
+  background-color: $beige;
   font-family: neueB;
   font-size: 110%;
-  background-color: $beige;
-  a {
-    color: black;
-  }
-}
 
-.icono {
-  height: 100%;
-  border: 1px solid black;
   a {
     height: 100%;
   }
