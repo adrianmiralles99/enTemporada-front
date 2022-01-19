@@ -1,0 +1,44 @@
+p{
+    font-family: neueB;
+}
+h2{
+    font-family: neueB;  
+}
+.margen{
+    margin-left: 1.3em;
+}
+.descripcion{
+    width: 60%;
+}
+.rad{
+    border-radius: 10px;
+    border:1px solid black;
+    .derecha{
+        width: 1.5em;
+        float: right;
+    }
+    .derechamg{
+        width: 1.9em;
+        float: right;
+    }
+    img{
+        border-radius: 10px;
+        width: 300px;
+        margin: auto;
+        margin-top: 5%;
+    }
+    h5{
+        font-family: neueB;  
+        img{
+            width: 2em;
+            margin-right: 0.5em;
+          
+            
+        }
+    }
+}
+
+.creador{
+    margin-left: 3.2em;
+    margin-top: -2em;
+}

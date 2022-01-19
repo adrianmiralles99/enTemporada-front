@@ -4,13 +4,17 @@ import { DatosproductoComponent } from './datosproducto/datosproducto.component'
 import { BarranegraComponent } from '../utils/barranegra/barranegra.component';
 import { IndexprodComponent } from './indexprod/indexprod.component';
 import { UtilsModule } from '../utils/utils.module';
+import { DescripcionComponent } from './descripcion/descripcion.component';
+import { RelacionadasComponent } from './relacionadas/relacionadas.component';
 
 
 
 @NgModule({
   declarations: [
     DatosproductoComponent,
-    IndexprodComponent
+    IndexprodComponent,
+    DescripcionComponent,
+    RelacionadasComponent,
   ],
   imports: [
     CommonModule,
