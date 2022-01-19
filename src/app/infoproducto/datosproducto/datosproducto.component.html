@@ -1,1 +1,40 @@
-<p>datosproducto works!</p>
+<div class="container datos">
+    <div class="row infonutri">
+        <div class="col-4">
+            <div class="card producto">
+                <img class="card-img-top" src="../../assets/IMG/fruta.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title"><strong>Naranja</strong></h5>
+                </div>
+              </div>
+        </div>
+        <div class="col-8">
+            <ul >
+                <li class="titulo">
+                    Información nutricional
+                </li>
+               <hr>
+                <li>
+                    Energía.............
+                </li>
+                <li>
+                    Proteinas.............
+                </li>
+                <li>
+                    Grasa.............
+                </li>
+                <li>
+                    Hidratos de carbono.............
+                </li>
+
+            </ul>
+
+           
+        </div>
+      </div>
+      <div class="row meses">
+        <th class="tipo">Frutas</th>
+        <th *ngFor="let mes of meses; let indice=index">{{mes}}</th>
+        </div> 
+</div>
+
