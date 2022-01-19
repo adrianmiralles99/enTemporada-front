@@ -34,6 +34,7 @@
           <img src="../../../assets/IMG/verdura.png" alt="">
           {{articulo.nombre}}
         </td>
+        
         <td (mouseover)="cambiaColor(articulo.id)" (mouseout)="quitaColor(articulo.id)"
           *ngFor="let mes of meses; let indice=index" [ngClass]="{'cabFila': indice==mesActual}">.</td>
       </tr>
