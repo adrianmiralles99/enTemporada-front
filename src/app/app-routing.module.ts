@@ -4,6 +4,7 @@ import { CalendarioComponent } from './calendario/calendario/calendario.componen
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { IndexregComponent } from './registro/indexreg/indexreg.component';
+import { IndexprodComponent } from './infoproducto/indexprod/indexprod.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'registro',
     component: IndexregComponent,
+  },
+  {
+    path: 'infoproducto',
+    component: IndexprodComponent,
   },
 ];
 @NgModule({
