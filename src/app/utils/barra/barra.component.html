@@ -16,8 +16,6 @@
       <li class="nav-item active">
         <a class="nav-link" href="/aboutus">¿Qué es esto?</a>
       </li>
-
-
       <div class="btn-group dropdown-user">
         <ng-container *ngIf="sesion; else sesionIniciada">
           <button type="button" class="boton dropdown-toggle pr-3 pl-3" data-toggle="dropdown" aria-haspopup="true"
@@ -31,12 +29,10 @@
             <button class="dropdown-item" type="button">Log Out</button>
           </div>
         </ng-container>
-
         <ng-template #sesionIniciada>
           <button class="boton pr-3 pl-3"><a href=" #">Log In</a></button>
         </ng-template>
       </div>
-
     </ul>
   </div>
 </nav>
