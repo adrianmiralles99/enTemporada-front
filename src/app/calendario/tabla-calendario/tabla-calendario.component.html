@@ -7,7 +7,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let fruta of frutas;" id={{fruta.id}}>
+      <tr *ngFor="let fruta of frutas; let indice=index" id={{fruta.id}}>
+        <ng-container *ngIf="true; else elseTemplate">
+
+        </ng-container>
+        <ng-template #elseTemplate>
+
+        </ng-template>
+
         <td (mouseover)="cambiaColor(fruta.id)" (mouseout)="quitaColor(fruta.id)">
           <img src="../../../assets/IMG/fruta.png" alt="">
           {{fruta.nombre}}
