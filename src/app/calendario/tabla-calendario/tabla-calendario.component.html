@@ -10,13 +10,43 @@
 
       <tr *ngFor="let fruta of frutas; let indice=index" id="{{fruta.id}}">
        
-        <td (mouseover)="hover[indice]=true" (mouseleave)="hover[indice]=false"
-          [ngStyle]="{backgroundColor: hover[indice]==true  ? fruta.color : 'white' }"
+        <td (mouseover)="hoverF[indice]=true" (mouseleave)="hoverF[indice]=false"
+          [ngStyle]="{backgroundColor: hoverF[indice]==true  ? fruta.color : 'white' }"
           *ngFor="let mes of meses; let cont=index">
 
           <ng-container *ngIf="cont==0; else elseTemplate">
             <img src="../../../assets/IMG/fruta.png" alt="">
             {{fruta.nombre}}
+          </ng-container>
+
+          <ng-template #elseTemplate>
+            .
+          </ng-template>
+
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+      <tr>
+        <th class="tipo">Verduras</th>
+        <th *ngFor="let mes of meses">{{mes}}</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let verdura of verduras; let indice=index" id="{{verdura.id}}">
+       
+        <td (mouseover)="hoverV[indice]=true" (mouseleave)="hoverV[indice]=false"
+          [ngStyle]="{backgroundColor: hoverV[indice]==true  ? verdura.color : 'white' }"
+          *ngFor="let mes of meses; let cont=index">
+
+          <ng-container *ngIf="cont==0; else elseTemplate">
+            <img src="../../../assets/IMG/fruta.png" alt="">
+            {{verdura.nombre}}
           </ng-container>
 
           <ng-template #elseTemplate>
