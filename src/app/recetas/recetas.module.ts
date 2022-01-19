@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { RecetasComponent } from './recetas/recetas.component';
 import { PresentacionRecetasComponent } from './presentacion-recetas/presentacion-recetas.component';
 
@@ -11,7 +12,8 @@ import { PresentacionRecetasComponent } from './presentacion-recetas/presentacio
     PresentacionRecetasComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ]
 })
 export class RecetasModule { }
