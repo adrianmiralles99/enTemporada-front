@@ -38,13 +38,24 @@
             border: 1px solid black;
             -webkit-box-shadow: inset 0 0 5px #000;
             box-shadow:inset 0 0 5px #000;
-            background-image: url('../../../assets/IMG/icononombreuser.png');
             background-repeat: no-repeat;
             background-position: 1px center;
             background-size: 35px;
             -webkit-border-radius: 5px;
             -moz-border-radius: 5px;
 
+        }
+        #nombre{
+            background-image: url('../../../assets/IMG/icononombre.png');      
+        }
+        #apellidos{
+            background-image: url('../../../assets/IMG/icononombre.png');      
+        }
+        #localidad{
+            background-image: url('../../../assets/IMG/localidadicono.png');      
+        }
+        #direccion{
+            background-image: url('../../../assets/IMG/iconodireccion.png');      
         }
         .izq{
             margin-left: 5%;
@@ -67,7 +78,8 @@
         color: white;
         font-family: "neueB";
         border: 1px solid black;
-        width: 20%;
+        width: 25%;
+        padding: 5px;
         margin: auto;
         font-size: 150%;
         border-radius: 10px;
