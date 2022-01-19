@@ -9,16 +9,27 @@
         <a class="nav-link" [routerLink]="'/calendario'" routerLinkActive="router-link-active">Calendario</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" [routerLink]="''" routerLinkActive="router-link-active">Inicio</a>
+        <a class="nav-link" [routerLink]="'/recetas'" routerLinkActive="router-link-active">Recetas</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" [routerLink]="'/recetas'" routerLinkActive="router-link-active">Recetas</a>
+      </li>
+    </ul>
+
+
+    <ul class="navbar-nav icono">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="''" routerLinkActive="router-link-active"><img
+            src="../../../assets/IMG/titulo.png"></a>
       </li>
     </ul>
     <ul class="navbar-nav my-lg-0">
       <li class="nav-item active">
         <a class="nav-link" [routerLink]="'/aboutus'" routerLinkActive="router-link-active">¿Qué es esto?</a>
       </li>
+
+
+
       <div class="btn-group dropdown-user">
         <ng-container *ngIf="sesion; else sesionIniciada">
           <button type="button" class="boton dropdown-toggle pr-3 pl-3" data-toggle="dropdown" aria-haspopup="true"
