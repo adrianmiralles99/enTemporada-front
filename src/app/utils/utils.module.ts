@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BarraComponent } from './barra/barra.component';
 import { FooterComponent } from './footer/footer.component';
+import { RouterModule } from '@angular/router';
 import { MenuFooterComponent } from './menu-footer/menu-footer.component';
 import { BarranegraComponent } from './barranegra/barranegra.component';
 
@@ -15,7 +16,8 @@ import { BarranegraComponent } from './barranegra/barranegra.component';
     BarranegraComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports:[
     BarraComponent,
