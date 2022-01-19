@@ -2,8 +2,8 @@
   <h1><strong>Frutas</strong> en Septiembre</h1>
   <div style="margin: 50px;">
     <div class="row">
-      <div class="col-sm-3" *ngFor="let articulo of frutas">
-        <div class="card articulo">
+      <div class="col-sm-3" *ngFor="let articulo of frutas" id="{{articulo.id}}">
+        <div class="card articulo" (mouseover)="cambiaColor(articulo.id)" (mouseout)="quitaColor(articulo.id)">
           <img class="card-img-top" src="../../assets/IMG/fruta.png" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">{{articulo.nombre}}</h5>
@@ -16,8 +16,8 @@
   <h1><strong>Verduras</strong> en Septiembre</h1>
   <div style="margin: 50px;">
     <div class="row">
-      <div class="col-sm-3" *ngFor="let articulo of verduras">
-        <div class="card articulo">
+      <div class="col-sm-3" *ngFor="let articulo of verduras" id="{{articulo.id}}">
+        <div class="card articulo" (mouseover)="cambiaColor(articulo.id)" (mouseout)="quitaColor(articulo.id)">
           <img class="card-img-top" src="../../assets/IMG/verdura.png" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">{{articulo.nombre}}</h5>

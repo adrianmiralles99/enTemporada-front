@@ -5,8 +5,9 @@ table {
   margin: auto;
   text-align: center;
   user-select: none;
-  // border-collapse: separate;
-  // border-spacing: 2px;
+  border-collapse: separate;
+  border-spacing: 0px 4px;
+
   margin-bottom: 100px;
 
   img {
@@ -33,12 +34,11 @@ table {
 
   tbody {
     > tr {
-        border-bottom: 12px solid red;
-        td {
+      td {
         width: 1000em;
         transition: 0.1s;
-        border: none;
         background-color: white;
+        border: none;
 
         &:first-child {
           border-radius: 7px 0px 0px 7px;
@@ -46,6 +46,9 @@ table {
         }
         &:last-child {
           border-radius: 0px 7px 7px 0px;
+        }
+        &:not(:first-child) {
+          border-left: 1px solid rgba(201, 201, 201, 0.469);
         }
       }
     }

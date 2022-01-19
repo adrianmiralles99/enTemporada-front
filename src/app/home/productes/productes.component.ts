@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FRUTAS } from '../../mock-articulos';
-import { VERDURAS } from '../../mock-articulos';
+import { never } from 'rxjs';
+// import { FRUTAS } from '../../mock-articulos';
+// import { VERDURAS } from '../../mock-articulos';
+import { PRODUCTES } from '../../mock-articulos';
 
 @Component({
   selector: 'app-productes',
@@ -8,11 +10,28 @@ import { VERDURAS } from '../../mock-articulos';
   styleUrls: ['./productes.component.scss']
 })
 export class ProductesComponent implements OnInit {
+  frutas = PRODUCTES.filter(element => element.tipo == "F");
+  verduras = PRODUCTES.filter(element => element.tipo == "V");
+  productes = PRODUCTES;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-  frutas = FRUTAS;
-  verduras= VERDURAS;
+
+  cambiaColor(id: number) {
+    var element = $("#" + id);
+
+    if (element) {
+      element.children().css("background-color", this.productes.find(element => element.id == id)?.color ?? "")
+    }
+  }
+
+  quitaColor(id: number) {
+    var element = $("#" + id);
+    if (element) {
+      element.children().css("background-color", "")
+    }
+  }
+
 }

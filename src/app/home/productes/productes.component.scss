@@ -22,6 +22,10 @@ h1 {
   margin: 10px -5px 20px -5px;
   border-radius: 20px;
   border: none;
+  transition: 0.1s;
+  &:hover {
+    color: white;
+  }
   img {
     width: 8em;
     margin: auto;
