@@ -12,8 +12,9 @@ export class TablaCalendarioComponent implements OnInit {
   frutas = PRODUCTES.filter(element => element.tipo == "F");
   verduras = PRODUCTES.filter(element => element.tipo == "V");
   productes = PRODUCTES;
+  
   help = new Date();
-  mesActual = this.help.getMonth()+2;
+  mesActual = this.help.getMonth();
 
   ngOnInit(): void {
   }
