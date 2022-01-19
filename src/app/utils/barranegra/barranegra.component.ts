@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class BarranegraComponent implements OnInit {
 
   constructor() { }
-
+  sesion = false;
   ngOnInit(): void {
   }
 

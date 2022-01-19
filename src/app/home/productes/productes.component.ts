@@ -18,6 +18,9 @@ export class ProductesComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+  mes = this.meses[new Date().getMonth()];
 
   cambiaColor(id: number) {
     var element = $("#" + id);

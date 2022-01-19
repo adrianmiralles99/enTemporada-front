@@ -12,8 +12,8 @@
       color: black !important;
     }
   }
-}
 
-::ng-deep .navbar-toggler>span {
-  color: white;
+  .navbar-toggler > span {
+    color: white;
+  }
 }
