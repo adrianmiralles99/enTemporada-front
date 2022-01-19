@@ -5,8 +5,8 @@ table {
   margin: auto;
   text-align: center;
   user-select: none;
-  // border-collapse: separate;
-  // border-spacing: 0px 4px;
+  border-collapse: separate;
+  border-spacing: 0px 1px;
   margin-bottom: 100px;
 
   img {
@@ -37,10 +37,15 @@ table {
     border-radius: 10px 10px 0px 0px;
     color: white;
   }
+
   .cabFila {
     background-color: #17231c !important;
-    border-bottom: 2px solid #39433b2f !important;
+    // border-bottom: 10px solid #39433b !important;
     color: white;
+  }
+
+  .cabFila:-moz-first-node {
+    border: 2px solid red !important;
   }
 
   tbody {
@@ -58,9 +63,6 @@ table {
 
         &:last-child {
           border-radius: 0px 10px 10px 0px;
-        }
-        &:not(:first-child, .cabFila) {
-          border-left: 1px solid rgba(201, 201, 201, 0.571);
         }
       }
     }
