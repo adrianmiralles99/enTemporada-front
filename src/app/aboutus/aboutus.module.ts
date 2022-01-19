@@ -6,6 +6,7 @@ import { IndiceComponent } from './indice/indice.component';
 import { MotivosComponent } from './motivos/motivos.component';
 import { MenuFooterAboutComponent } from './menu-footer-about/menu-footer-about.component';
 import { SobreComponent } from './sobre/sobre.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -19,7 +20,8 @@ import { SobreComponent } from './sobre/sobre.component';
   ],
   imports: [
     CommonModule,
-    UtilsModule
+    UtilsModule,
+    RouterModule
   ]
   , exports: [
     IndiceComponent

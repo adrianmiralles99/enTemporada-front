@@ -1,7 +1,7 @@
 @import "../../../styles.scss";
 
-::ng-deep nav {
-  background-color: $green;
+:host ::ng-deep nav {
+  background-color: $green !important;
 
   a {
     color: white !important;
@@ -14,6 +14,6 @@
   }
 }
 
-::ng-deep .navbar-toggler > span {
+::ng-deep .navbar-toggler>span {
   color: white;
 }

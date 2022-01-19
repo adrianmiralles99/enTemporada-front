@@ -1,19 +1,19 @@
 @import "../../../styles.scss";
 
-::ng-deep nav {
-  background-color: $orange;
+:host ::ng-deep nav {
+  background-color: $orange !important;
 
   a {
     color: white !important;
   }
 
-  .boton {
+  button {
     a {
       color: black !important;
     }
   }
 }
 
-::ng-deep .navbar-toggler {
-  color: white !important;
+::ng-deep .navbar-toggler>span {
+  color: white;
 }
