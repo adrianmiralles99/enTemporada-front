@@ -4,7 +4,6 @@ h2{
     text-align: center;
     margin: 2%;
     font-family: "recoletaB";
-
 }
 .container{
     width: 60%;
@@ -42,13 +41,24 @@ h2{
             border: 1px solid black;
             -webkit-box-shadow: inset 0 0 5px #000;
             box-shadow:inset 0 0 5px #000;
-            background-image: url('../../../assets/IMG/icononombreuser.png');
             background-repeat: no-repeat;
             background-position: 1px center;
             background-size: 35px;
             -webkit-border-radius: 5px;
             -moz-border-radius: 5px;
-
+           
+        }
+        #nuser{
+            background-image: url('../../../assets/IMG/icononombreuser.png');      
+        }
+        #contra{
+            background-image: url('../../../assets/IMG/contraseñaicono.png');      
+        }
+        #repcontra{
+            background-image: url('../../../assets/IMG/repecontraicono.png');      
+        }
+        #correo{
+            background-image: url('../../../assets/IMG/correoicono.png');      
         }
         .izq{
             margin-left: 5%;

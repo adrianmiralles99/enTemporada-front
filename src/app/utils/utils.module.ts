@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BarraComponent } from './barra/barra.component';
 import { FooterComponent } from './footer/footer.component';
 import { MenuFooterComponent } from './menu-footer/menu-footer.component';
+import { BarranegraComponent } from './barranegra/barranegra.component';
 
 
 
@@ -10,7 +11,8 @@ import { MenuFooterComponent } from './menu-footer/menu-footer.component';
   declarations: [
     BarraComponent,
     FooterComponent,
-    MenuFooterComponent
+    MenuFooterComponent,
+    BarranegraComponent
   ],
   imports: [
     CommonModule
@@ -18,7 +20,9 @@ import { MenuFooterComponent } from './menu-footer/menu-footer.component';
   exports:[
     BarraComponent,
     FooterComponent,
-    MenuFooterComponent
+    MenuFooterComponent,
+    BarranegraComponent
+
   ]
 })
 export class UtilsModule { }

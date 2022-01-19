@@ -6,8 +6,7 @@ table {
   text-align: center;
   user-select: none;
   border-collapse: separate;
-  border-spacing: 0px 4px;
-
+  border-spacing: 0px 1px;
   margin-bottom: 100px;
 
   img {
@@ -18,7 +17,8 @@ table {
   }
 
   th {
-    border: none; 
+    border: none;
+    letter-spacing: 1px;
   }
 
   .tipo {
@@ -32,19 +32,20 @@ table {
     font-family: neueB;
   }
 
-  th:nth-of-type(6){
-    background-color: #17231C !important;   
-    border-left: $beige 2px solid;
-    border-bottom:#17231C 4px solid !important;;
+  .cabMes {
+    background-color: #39433b !important;
     border-radius: 10px 10px 0px 0px;
     color: white;
   }
 
-  td:nth-of-type(6){
-    background-color: black !important;
-    border-bottom: #17231C 4px solid !important;
-    border-right: $beige 2px solid !important;
+  .cabFila {
+    background-color: #17231c !important;
+    // border-bottom: 10px solid #39433b !important;
     color: white;
+  }
+
+  .cabFila:-moz-first-node {
+    border: 2px solid red !important;
   }
 
   tbody {
@@ -59,15 +60,13 @@ table {
           border-radius: 10px 0px 0px 10px;
           text-align: left;
         }
+
         &:last-child {
           border-radius: 0px 10px 10px 0px;
         }
-        &:not(:first-child) {
-          border-left: 1px solid rgba(201, 201, 201, 0.469);
-        }
       }
     }
-    
+
     tr:hover td {
       color: white;
     }

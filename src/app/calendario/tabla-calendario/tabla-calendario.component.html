@@ -1,40 +1,45 @@
 <div class="container">
+
+
   <table class="table">
     <thead>
       <tr>
         <th class="tipo">Frutas</th>
-        <th *ngFor="let mes of meses">{{mes}}</th>
+        <th *ngFor="let mes of meses; let indice=index" [ngClass]="{'cabMes': indice==mesActual}">{{mes}}</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let fruta of frutas;" id={{fruta.id}}>
-        <td (mouseover)="cambiaColor(fruta.id)" (mouseout)="quitaColor(fruta.id)">
+      <tr *ngFor="let articulo of frutas;" id={{articulo.id}}>
+        <td (mouseover)="cambiaColor(articulo.id)" (mouseout)="quitaColor(articulo.id)">
           <img src="../../../assets/IMG/fruta.png" alt="">
-          {{fruta.nombre}}
+          {{articulo.nombre}}
         </td>
-        <td (mouseover)="cambiaColor(fruta.id)" (mouseout)="quitaColor(fruta.id)" *ngFor="let mes of meses;">.</td>
+        <td (mouseover)="cambiaColor(articulo.id)" (mouseout)="quitaColor(articulo.id)"
+          *ngFor="let mes of meses; let indice=index" [ngClass]="{'cabFila': indice==mesActual}">.</td>
       </tr>
 
     </tbody>
   </table>
-
 
   <table class="table">
     <thead>
       <tr>
         <th class="tipo">Verduras</th>
-        <th *ngFor="let mes of meses">{{mes}}</th>
+        <th *ngFor="let mes of meses; let indice=index" [ngClass]="{'cabMes': indice==mesActual}">{{mes}}</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let verdura of verduras;" id={{verdura.id}}>
-        <td (mouseover)="cambiaColor(verdura.id)" (mouseout)="quitaColor(verdura.id)">
+      <tr *ngFor="let articulo of verduras;" id={{articulo.id}}>
+        <td (mouseover)="cambiaColor(articulo.id)" (mouseout)="quitaColor(articulo.id)">
           <img src="../../../assets/IMG/verdura.png" alt="">
-          {{verdura.nombre}}
+          {{articulo.nombre}}
         </td>
-        <td (mouseover)="cambiaColor(verdura.id)" (mouseout)="quitaColor(verdura.id)" *ngFor="let mes of meses;">.</td>
+        
+        <td (mouseover)="cambiaColor(articulo.id)" (mouseout)="quitaColor(articulo.id)"
+          *ngFor="let mes of meses; let indice=index" [ngClass]="{'cabFila': indice==mesActual}">.</td>
       </tr>
 
     </tbody>
   </table>
+
 </div>

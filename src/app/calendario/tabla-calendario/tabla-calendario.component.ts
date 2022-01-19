@@ -12,6 +12,8 @@ export class TablaCalendarioComponent implements OnInit {
   frutas = PRODUCTES.filter(element => element.tipo == "F");
   verduras = PRODUCTES.filter(element => element.tipo == "V");
   productes = PRODUCTES;
+  help = new Date();
+  mesActual = this.help.getMonth()+2;
 
   ngOnInit(): void {
   }
@@ -19,14 +21,14 @@ export class TablaCalendarioComponent implements OnInit {
   cambiaColor(id: number) {
     var element = $("#" + id);
     if (element) {
-      element.children().css("background-color", this.productes.find(element => element.id == id)?.color ?? "")
+      element.children().css("background-color", this.productes.find(element => element.id == id)?.color ?? "");
     }
   }
 
   quitaColor(id: number) {
     var element = $("#" + id);
     if (element) {
-      element.children().css("background-color", "")
+      element.children().css("background-color", "");
     }
   }
 
