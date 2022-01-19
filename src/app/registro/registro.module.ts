@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { UtilsModule } from '../utils/utils.module';
 import { IndexregComponent } from './indexreg/indexreg.component';
 import { DatosloginComponent } from './datoslogin/datoslogin.component';
-import { BarranegraComponent } from '../utils/barranegra/barranegra.component';
 import { DatospersonalesComponent } from './datospersonales/datospersonales.component';
 
 
