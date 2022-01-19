@@ -6,20 +6,21 @@
   <div class="collapse navbar-collapse " id="collapsibleNavId">
     <ul class="navbar-nav  ">
       <li class="nav-item active">
-        <a class="nav-link" href="/calendario">Calendario</a>
+        <a class="nav-link" [routerLink]="'/calendario'" routerLinkActive="router-link-active">Calendario</a>
       </li>
-     <li class="nav-item active ">
-        <a class="nav-link" href="#">Recetas</a>
+      <li class="nav-item active ">
+        <a class="nav-link" [routerLink]="'/recetas'" routerLinkActive="router-link-active">Recetas</a>
       </li>
-      </ul>
-      <ul class="icono">
+    </ul>
+    <ul class="icono">
       <li class="nav-item active">
-        <a class="nav-link" href="#"><img src="../../../assets/IMG/tituloW.png" ></a>
+        <a class="nav-link" [routerLink]="''" routerLinkActive="router-link-active"><img
+            src="../../../assets/IMG/tituloW.png"></a>
       </li>
-    </ul> 
+    </ul>
     <ul class="navbar-nav my-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" href="/aboutus">¿Qué es esto?</a>
+        <a class="nav-link" [routerLink]="'/aboutus'" routerLinkActive="router-link-active">¿Qué es esto?</a>
       </li>
       <div class="btn-group dropdown-user">
         <ng-container>
@@ -42,4 +43,3 @@
     </ul>
   </div>
 </nav>
-
