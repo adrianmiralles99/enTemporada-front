@@ -1,13 +1,8 @@
 @import "../../../styles.scss";
 
-.titulo {
-    text-align: center;
-    margin: 2%;
-    font-family: "recoletaB";
-}
 .elemento {
     margin: auto;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
     padding-bottom: 30px;
     width: 75%;
     background-color: white;
@@ -40,7 +35,7 @@
             width: 90%;
             background: #ffffff;
             box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1), inset 0px 0px 10px rgba(0, 0, 0, 0.299);
-            border: 2px solid black;
+            border: 2px solid rgba(0, 0, 0, 0.701);
             border-radius: 5px;
         }
 
@@ -49,7 +44,7 @@
             background-size: 80%;
             background-position: center;
             border: none;
-            border-right: 2px solid black;
+            border-right: 2px solid rgba(0, 0, 0, 0.701);
             background-color: $yellow;
             border-radius: 4px;
             user-select: none;

@@ -5,7 +5,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { IndexregComponent } from './registro/indexreg/indexreg.component';
 import { IndexprodComponent } from './infoproducto/indexprod/indexprod.component';
-
 import { RecetasComponent } from './recetas/recetas/recetas.component';
 
 const routes: Routes = [

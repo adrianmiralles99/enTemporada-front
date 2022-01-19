@@ -1,32 +1,30 @@
-
 @import "../../../styles.scss";
 
-.datos{
+.datos {
     width: 70%;
-    
-    .infonutri{
+
+    .infonutri {
         width: 85%;
         margin: auto;
 
-        .col-4{
+        .col-4 {
             border: black 1px solid;
             border-top-left-radius: 5px;
             border-bottom-left-radius: 5px;
-    
+
             padding: 0%;
             background-color: orange;
             .producto {
                 img {
-                 width: 12em;
-                  margin: auto;
+                    width: 12em;
+                    margin: auto;
                 }
-                
-              }
+            }
         }
-        .col-8{
+        .col-8 {
             background-color: $yellow;
             box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.582);
-            ul{
+            ul {
                 padding: 0%;
                 text-align: center;
                 margin: auto;
@@ -34,19 +32,17 @@
                 margin-top: 5%;
                 font-size: 125%;
                 font-family: "neueB";
-                li{
+                li {
                     list-style: none;
-                    
-                }    
-                
-                .titulo{
+                }
+
+                .titulo {
                     font-size: 130%;
-                }  
+                }
             }
         }
-       
     }
-    .tabla{
+    .tabla {
         width: 100%;
         margin: auto;
         margin-top: 5%;
@@ -58,16 +54,13 @@
         border: black 1px solid;
         height: 50px;
         border-radius: 5px;
-        tr  {
+        tr {
             height: 50px;
         }
-        .meses{
-            th{
+        .meses {
+            th {
                 background-color: $beige;
-
             }
         }
-        
     }
-    
 }
