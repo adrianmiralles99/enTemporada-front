@@ -2,7 +2,9 @@
 
 .bloquepresentacion {
     background-color: $green;
+    text-align: center;
     p {
+        margin-top: 5%;
         color: white;
         font-family: recoletaR;
         font-size: 220%;
@@ -31,5 +33,5 @@
 }
 
 .contenedor {
-    padding-bottom: 11em;
+    padding-bottom: 16em;
 }
