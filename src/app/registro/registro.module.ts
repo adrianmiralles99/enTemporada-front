@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { UtilsModule } from '../utils/utils.module';
 import { IndexregComponent } from './indexreg/indexreg.component';
 import { DatosloginComponent } from './datoslogin/datoslogin.component';
-import { BarranegraComponent } from './barranegra/barranegra.component';
+import { BarranegraComponent } from '../utils/barranegra/barranegra.component';
 import { DatospersonalesComponent } from './datospersonales/datospersonales.component';
 
 
@@ -11,7 +11,6 @@ import { DatospersonalesComponent } from './datospersonales/datospersonales.comp
 @NgModule({
   declarations: [
     IndexregComponent, 
-    BarranegraComponent,
     DatosloginComponent,
     DatospersonalesComponent
   ],
