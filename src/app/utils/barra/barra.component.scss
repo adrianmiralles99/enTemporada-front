@@ -3,18 +3,20 @@
 ::ng-deep nav {
   font-family: neueB;
   font-size: 110%;
-
+  background-color: $beige;
   a {
     color: black;
   }
 }
 
-nav {
-  font-family: neueB;
-  font-size: 110%;
-
+.icono {
+  height: 100%;
+  border: 1px solid black;
   a {
-    color: black;
+    height: 100%;
+  }
+  img {
+    height: 100px;
   }
 }
 
