@@ -1,15 +1,23 @@
 @import "../../../styles.scss";
 
-nav {
-  background-color: $beige;
+::ng-deep nav {
   font-family: neueB;
   font-size: 110%;
+  background-color: $beige;
 
   a {
-    height: 100%;
+    color: black;
   }
+}
+
+
+.icono {
+  a {
+    border: 1px solid black;
+  }
+
   img {
-    height: 100px;
+    height: 10%;
   }
 }
 
@@ -36,7 +44,9 @@ nav {
   .boton {
     text-align: center !important;
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     background-color: $yellow;
   }
 }

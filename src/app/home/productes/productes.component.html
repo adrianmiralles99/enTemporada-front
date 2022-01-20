@@ -1,5 +1,5 @@
 <div class="container">
-  <h1><strong>Frutas</strong> en Septiembre</h1>
+  <h1><strong>Frutas</strong> en {{mes}}</h1>
   <div style="margin: 50px;">
     <div class="row">
       <div class="col-sm-3" *ngFor="let articulo of frutas" id="{{articulo.id}}">
@@ -13,7 +13,7 @@
     </div>
   </div>
 
-  <h1><strong>Verduras</strong> en Septiembre</h1>
+  <h1><strong>Verduras</strong> en {{mes}}</h1>
   <div style="margin: 50px;">
     <div class="row">
       <div class="col-sm-3" *ngFor="let articulo of verduras" id="{{articulo.id}}">

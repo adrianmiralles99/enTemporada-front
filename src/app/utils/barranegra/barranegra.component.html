@@ -1,29 +1,30 @@
-<nav class="navbar navbar-expand-sm navbar-light">
+<nav class="navbar navbar-expand-md navbar-dark">
   <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
     aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
     <span>Menu</span>
   </button>
-  <div class="collapse navbar-collapse " id="collapsibleNavId">
-    <ul class="navbar-nav  ">
+  <div class="collapse navbar-collapse" id="collapsibleNavId">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link d-block d-md-none d-xl-none" [routerLink]="''"
+          routerLinkActive="router-link-active">Inicio</a>
+      </li>
       <li class="nav-item active">
         <a class="nav-link" [routerLink]="'/calendario'" routerLinkActive="router-link-active">Calendario</a>
       </li>
-      <li class="nav-item active ">
-        <a class="nav-link" [routerLink]="'/recetas'" routerLinkActive="router-link-active">Recetas</a>
-      </li>
-    </ul>
-    <ul class="icono">
       <li class="nav-item active">
-        <a class="nav-link" [routerLink]="''" routerLinkActive="router-link-active"><img
-            src="../../../assets/IMG/tituloW.png"></a>
+        <a class="nav-link" [routerLink]="'/recetas'" routerLinkActive="router-link-active">Recetas</a>
       </li>
     </ul>
     <ul class="navbar-nav my-lg-0">
       <li class="nav-item active">
         <a class="nav-link" [routerLink]="'/aboutus'" routerLinkActive="router-link-active">¿Qué es esto?</a>
       </li>
+
+
+
       <div class="btn-group dropdown-user">
-        <ng-container>
+        <ng-container *ngIf="sesion; else sesionIniciada">
           <button type="button" class="boton dropdown-toggle pr-3 pl-3" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
             <img src="../../assets/IMG/icono.png" alt="">
@@ -35,11 +36,13 @@
             <button class="dropdown-item" type="button">Log Out</button>
           </div>
         </ng-container>
-
         <ng-template #sesionIniciada>
-          <button class="boton pr-3 pl-3"><a href="#">Log In</a></button>
+          <button class="boton pr-3 pl-3"><a href=" #">Log In</a></button>
         </ng-template>
       </div>
     </ul>
   </div>
 </nav>
+
+<a class="icono d-none d-md-block d-xl-block" [routerLink]="''" routerLinkActive="router-link-active">
+</a>

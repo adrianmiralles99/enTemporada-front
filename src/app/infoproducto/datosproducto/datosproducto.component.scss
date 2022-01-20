@@ -1,0 +1,66 @@
+@import "../../../styles.scss";
+
+.datos {
+    width: 70%;
+
+    .infonutri {
+        width: 85%;
+        margin: auto;
+
+        .col-4 {
+            border: black 1px solid;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+
+            padding: 0%;
+            background-color: orange;
+            .producto {
+                img {
+                    width: 12em;
+                    margin: auto;
+                }
+            }
+        }
+        .col-8 {
+            background-color: $yellow;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.582);
+            ul {
+                padding: 0%;
+                text-align: center;
+                margin: auto;
+                width: 75%;
+                margin-top: 5%;
+                font-size: 125%;
+                font-family: "neueB";
+                li {
+                    list-style: none;
+                }
+
+                .titulo {
+                    font-size: 130%;
+                }
+            }
+        }
+    }
+    .tabla {
+        width: 100%;
+        margin: auto;
+        margin-top: 5%;
+        text-align: center;
+        user-select: none;
+        border-collapse: separate;
+        border-spacing: 0px 1px;
+        margin-bottom: 100px;
+        border: black 1px solid;
+        height: 50px;
+        border-radius: 5px;
+        tr {
+            height: 50px;
+        }
+        .meses {
+            th {
+                background-color: $beige;
+            }
+        }
+    }
+}

@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class DatosproductoComponent implements OnInit {
 
   constructor() { }
+  meses = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
 
   ngOnInit(): void {
   }
