@@ -2,18 +2,15 @@
 
 .bloquepresentacion {
     background-color: $green;
-    text-align: center;
+    text-align: left;
     p {
         margin-top: 5%;
         color: white;
         font-family: recoletaR;
-        font-size: 220%;
+        font-size: 250%;
 
         strong {
             font-family: neueB;
-        }
-        #tab {
-            margin-left: 120px;
         }
     }
 }
@@ -33,5 +30,5 @@
 }
 
 .contenedor {
-    padding-bottom: 16em;
+    padding-bottom: 10em;
 }

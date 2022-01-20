@@ -2,12 +2,12 @@ import { HomeComponent } from './home/home/home.component';
 import { IndiceComponent } from './aboutus/indice/indice.component';
 import { CalendarioComponent } from './calendario/calendario/calendario.component';
 import { Routes, RouterModule } from '@angular/router';
-import { Component, NgModule } from '@angular/core';
+import {  NgModule } from '@angular/core';
 import { IndexregComponent } from './registro/indexreg/indexreg.component';
 import { IndexprodComponent } from './infoproducto/indexprod/indexprod.component';
 import { IndexrecetasComponent } from './recetas/indexrecetas/indexrecetas.component';
-import { IndexrecetaindComponent } from './recetaindividual/indexrecetaind/indexrecetaind.component';
 import { IndexcreacionComponent } from './creacion-receta/indexcreacion/indexcreacion.component';
+import { IndiceperfilComponent } from './perfil/indiceperfil/indiceperfil.component';
 
 const routes: Routes = [
   {
@@ -35,12 +35,12 @@ const routes: Routes = [
     component: IndexrecetasComponent,
   },
   {
-    path: 'recetaindividual',
-    component: IndexrecetaindComponent,
-  },
-  {
     path: 'creacionRecetas',
     component: IndexcreacionComponent,
+  },
+  {
+    path: 'perfil',
+    component: IndiceperfilComponent,
   }
 ];
 @NgModule({

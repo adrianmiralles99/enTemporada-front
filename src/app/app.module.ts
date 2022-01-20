@@ -9,15 +9,9 @@ import { CalendarioModule } from './calendario/calendario.module';
 import { RegistroModule } from './registro/registro.module';
 import { InfoproductoModule } from './infoproducto/infoproducto.module';
 import { RecetasModule } from './recetas/recetas.module';
-<<<<<<< HEAD
 import { RecetaindividualModule } from './recetaindividual/recetaindividual.module';
-=======
-<<<<<<< HEAD
 import { PerfilModule } from './perfil/perfil.module';
-=======
 import { CreacionRecetaModule } from './creacion-receta/creacion-receta.module';
->>>>>>> e40220ac6d02b557748f699b8da2088f89b0407b
->>>>>>> d0245548e9e6c8ac6c64f10249591e7cd17ebd81
 
 @NgModule({
   declarations: [
@@ -33,15 +27,9 @@ import { CreacionRecetaModule } from './creacion-receta/creacion-receta.module';
     RegistroModule,
     InfoproductoModule,
     RecetasModule,
-<<<<<<< HEAD
-    RecetaindividualModule
-=======
-<<<<<<< HEAD
-    PerfilModule
-=======
+    RecetaindividualModule,
     CreacionRecetaModule,
->>>>>>> e40220ac6d02b557748f699b8da2088f89b0407b
->>>>>>> d0245548e9e6c8ac6c64f10249591e7cd17ebd81
+    PerfilModule
   ],
   providers: [],
   bootstrap: [AppComponent]
