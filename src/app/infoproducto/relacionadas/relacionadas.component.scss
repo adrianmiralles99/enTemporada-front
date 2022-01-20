@@ -1,45 +1,43 @@
-p{
+p {
     font-family: neueB;
 }
-h2{
-    font-family: neueB;  
+h2 {
+    font-family: neueB;
 }
-.margen{
+.margen {
     margin-left: 1.3em;
 }
-.descripcion{
+.descripcion {
     width: 90%;
     padding-bottom: 20px;
 }
-.rad{
-    border-radius: 10px;
-    border:1px solid black;
-    .derecha{
+.rad {
+    border-radius: 5px;
+    border: 1px solid black;
+    .derecha {
         width: 1.5em;
         float: right;
     }
-    .derechamg{
+    .derechamg {
         width: 1.9em;
         float: right;
     }
-    img{
-        border-radius: 10px;
-        width: 300px;
+    img {
+        border-radius: 5px;
+        width: 93%;
         margin: auto;
-        margin-top: 5%;
+        margin-top: 3%;
     }
-    h5{
-        font-family: neueB;  
-        img{
+    h5 {
+        font-family: neueB;
+        img {
             width: 2em;
             margin-right: 0.5em;
-          
-            
         }
     }
 }
 
-.creador{
+.creador {
     margin-left: 3.2em;
-    margin-top: -2em;
+    margin-top: -1.5em;
 }

@@ -4,12 +4,14 @@
         margin-left: 20px;
     }
     .campo {
-        * {
-            font-family: neueR;
-        }
         background-color: white;
         border: 1px solid rgba(0, 0, 0, 0.6);
         border-radius: 5px;
+        padding-right: 3px;
+        * {
+            font-family: neueR;
+        }
+
         input {
             background: none;
             border: none;
@@ -51,11 +53,14 @@
 
 .resultados {
     vertical-align: middle;
+    font-family: neueR;
 }
 
 .relevancia {
-    padding: 2px 5px 2px 5px;
+    padding: 4px 5px 4px 5px;
     font-family: neueR;
     border-radius: 5px;
-    height: 200%;
+    * {
+        vertical-align: middle !important;
+    }
 }
