@@ -6,6 +6,7 @@ import { UtilsModule } from '../utils/utils.module';
 import { FotorecetaComponent } from './fotoreceta/fotoreceta.component';
 import { IndexrecetaindComponent } from './indexrecetaind/indexrecetaind.component';
 import { DetallesrecetasComponent } from './detallesrecetas/detallesrecetas.component';
+import { PasosComponent } from './pasos/pasos.component';
 
 
 
@@ -13,7 +14,8 @@ import { DetallesrecetasComponent } from './detallesrecetas/detallesrecetas.comp
   declarations: [
     FotorecetaComponent,
     IndexrecetaindComponent,
-    DetallesrecetasComponent
+    DetallesrecetasComponent,
+    PasosComponent
   ],
   imports: [
     CommonModule,
