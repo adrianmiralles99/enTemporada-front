@@ -94,3 +94,14 @@ select {
     margin-right: 5px;
     filter: drop-shadow(0 4px 5px rgba(96, 96, 96, 0.578));
 }
+
+.ingredientes {
+    padding: 20px;
+    .colu {
+        border: 1px solid black;
+    }
+    h2 {
+        color: black;
+        font-family: recoletaB;
+    }
+}
