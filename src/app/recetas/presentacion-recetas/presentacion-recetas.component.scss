@@ -58,9 +58,14 @@
 
 .relevancia {
     padding: 4px 5px 4px 5px;
-    font-family: neueR;
+    font-family: neueB;
     border-radius: 5px;
+    border: 1.5px solid black;
+    background-color: transparent;
     * {
         vertical-align: middle !important;
+    }
+    option {
+        font-family: neueR;
     }
 }
