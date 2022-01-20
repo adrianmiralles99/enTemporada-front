@@ -1,0 +1,64 @@
+@import "../../../styles.scss";
+.info{
+    margin-top: 4em;
+    background-color: $green;
+    font-family: neueB;
+    border-radius: 10px 10px 0 0;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.555);
+    color: white;
+    height: 22em;
+    .usuario{
+        width: 10em;
+        margin: 4em 4em 3em 3em;
+        float: left;
+        background-color: white;
+        border-radius: 100%;
+        border: 3px solid black;
+    }
+    .nivel{
+        margin-left: 4em;
+        margin-top: -6em;
+        width: 20em;
+        height: 7em;
+        width: 7em;
+        background-color: black;
+        border-radius: 100%;
+        border: 3px solid $orange;
+        text-align: center;
+        img{
+            width: 5em;
+            transform: translateY(40%)
+        }
+    }
+    .user{  
+        padding-top: 1.8em;
+        padding-bottom: 1.5em;
+        font-size: 1.7em;
+    }
+    .col-2{
+        
+    }
+    .infouser{
+        font-family: neueR;
+    }
+    .chef{
+        font-family: neueB;
+        margin-left: 9em;
+        margin-top: 6em;
+        p{
+            font-size:1.2em;
+        }
+    }
+    .perfil{
+     margin-top: 4em;
+        
+        font-family: neueB;
+        color: white;
+        height: 3.5em;
+        background-color: $green;
+        border: 2px solid white;
+        border-radius: 5px;
+        width: 13em;
+    }
+
+}
