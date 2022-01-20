@@ -10,6 +10,7 @@ import { RegistroModule } from './registro/registro.module';
 import { InfoproductoModule } from './infoproducto/infoproducto.module';
 import { RecetasModule } from './recetas/recetas.module';
 import { CreacionRecetaModule } from './creacion-receta/creacion-receta.module';
+import { PerfilModule } from './perfil/perfil.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { CreacionRecetaModule } from './creacion-receta/creacion-receta.module';
     InfoproductoModule,
     RecetasModule,
     CreacionRecetaModule,
+    PerfilModule
   ],
   providers: [],
   bootstrap: [AppComponent]
