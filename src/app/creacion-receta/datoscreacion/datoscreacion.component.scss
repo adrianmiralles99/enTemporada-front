@@ -1,0 +1,57 @@
+@import "../../../styles.scss";
+
+// PARTE IZQUIERDA CON LA FOTO DE CARGAR IMAGEN
+.fondo {
+    width: 80%;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(118, 118, 118, 0.537);
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 1em;
+}
+.upload {
+    width: 100%;
+    input {
+        display: none;
+    }
+}
+
+.img {
+    background-image: url("../../../assets/IMG/iconos/uploadImage.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40%;
+    border: 1px solid rgb(91, 91, 91);
+    height: 350px;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: inset 0 0 25px rgba(99, 99, 99, 0.837);
+}
+
+.nombre {
+    * {
+        vertical-align: middle;
+    }
+    img {
+        height: 40px;
+    }
+    input {
+        border-radius: 5px;
+        border: 1px solid rgb(88, 88, 88);
+        padding: 3px 5px 3px 5px;
+        width: 70%;
+        box-shadow: inset 0 0px 5px rgba(0, 0, 0, 0.428);
+    }
+}
+
+// PARTE DERECHA CON FONDO AMARILLO
+.datosfondo {
+    margin: auto;
+    background-color: $yellow;
+    width: 90%;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: inset 0 0px 5px rgba(0, 0, 0, 0.428);
+}
