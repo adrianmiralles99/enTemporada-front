@@ -4,13 +4,6 @@ nav {
   background-color: black;
   font-family: neueB;
   font-size: 110%;
-
-  a {
-    height: 100%;
-  }
-  img {
-    height: 100px;
-  }
 }
 
 .navbar-toggler {
@@ -54,15 +47,3 @@ nav {
   width: 7%;
   height: 60px;
 }
-
-// @media screen and(max-width:768px) {
-//   .icono {
-//     display: none;
-//   }
-// }
-
-// @media screen and(min-width:769px) {
-//   .inicio {
-//     display: none;
-//   }
-// }

@@ -3,14 +3,13 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { PresentacionRecetasComponent } from './presentacion-recetas/presentacion-recetas.component';
 import { UtilsModule } from '../utils/utils.module';
-import { RecetasComponent } from './recetas/recetas.component';
-
+import { IndexrecetasComponent } from './indexrecetas/indexrecetas.component';
 
 
 @NgModule({
   declarations: [
     PresentacionRecetasComponent,
-    RecetasComponent
+    IndexrecetasComponent,
   ],
   imports: [
     CommonModule,
@@ -18,7 +17,8 @@ import { RecetasComponent } from './recetas/recetas.component';
     UtilsModule
   ],
   exports: [
-    PresentacionRecetasComponent
+    PresentacionRecetasComponent,
+    IndexrecetasComponent
   ]
 })
 export class RecetasModule { }

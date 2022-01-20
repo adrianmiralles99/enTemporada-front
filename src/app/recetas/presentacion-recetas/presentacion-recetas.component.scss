@@ -1,5 +1,61 @@
-.campo {
-    width: 300px;
-    // input {
-    // }
+.busqueda {
+    > div {
+        float: left;
+        margin-left: 20px;
+    }
+    .campo {
+        * {
+            font-family: neueR;
+        }
+        background-color: white;
+        border: 1px solid rgba(0, 0, 0, 0.6);
+        border-radius: 5px;
+        input {
+            background: none;
+            border: none;
+            height: 100%;
+            vertical-align: middle !important;
+            outline: none;
+            margin-left: 5px;
+        }
+        .lupa {
+            background-size: 80%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url("../../../assets/IMG/iconos/lupa.png");
+            height: 30px;
+            width: 30px;
+            float: right;
+        }
+    }
+}
+
+.elemento {
+    padding-top: 50px;
+    width: 80%;
+    margin: auto;
+    .titulo {
+        margin-left: 30px;
+        font-family: recoletaB;
+    }
+}
+.barra {
+    margin: auto;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 10px 0 10px 0;
+    > div {
+        margin-left: 20px;
+    }
+}
+
+.resultados {
+    vertical-align: middle;
+}
+
+.relevancia {
+    padding: 2px 5px 2px 5px;
+    font-family: neueR;
+    border-radius: 5px;
+    height: 200%;
 }
