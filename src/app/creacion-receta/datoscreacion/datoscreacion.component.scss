@@ -2,7 +2,7 @@
 
 // PARTE IZQUIERDA CON LA FOTO DE CARGAR IMAGEN
 .fondo {
-    width: 80%;
+    width: 90%;
     background-color: white;
     padding: 20px;
     box-shadow: 0 0 10px rgba(118, 118, 118, 0.537);
@@ -15,19 +15,19 @@
     input {
         display: none;
     }
-}
 
-.img {
-    background-image: url("../../../assets/IMG/iconos/uploadImage.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 40%;
-    border: 1px solid rgb(91, 91, 91);
-    height: 350px;
-    width: 100%;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: inset 0 0 25px rgba(99, 99, 99, 0.837);
+    > .img {
+        background-image: url("../../../assets/IMG/iconos/uploadImage.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 40%;
+        border: 1px solid rgb(91, 91, 91);
+        height: 350px;
+        width: 100%;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: inset 0 0 25px rgba(99, 99, 99, 0.837);
+    }
 }
 
 .nombre {
@@ -48,10 +48,49 @@
 
 // PARTE DERECHA CON FONDO AMARILLO
 .datosfondo {
+    font-family: neueR;
     margin: auto;
     background-color: $yellow;
     width: 90%;
     height: 100%;
     border-radius: 5px;
     box-shadow: inset 0 0px 5px rgba(0, 0, 0, 0.428);
+
+    .filadatos {
+        margin: auto;
+        border-bottom: 1px solid rgba(64, 64, 64, 0.551);
+    }
+
+    .columna {
+        &:not(:last-of-type) {
+            border-right: 1px solid rgba(64, 64, 64, 0.551);
+        }
+        padding: 5px;
+        p {
+            text-align: center;
+            font-family: neueB;
+        }
+        .campo {
+            text-align: center;
+            margin-top: -10px;
+            margin-bottom: 10px;
+            > input,
+            select {
+                width: 60%;
+                height: 100%;
+                border: 1px solid black;
+                border-radius: 5px;
+                box-shadow: inset 0 0px 3px rgba(0, 0, 0, 0.428);
+            }
+        }
+    }
+}
+select {
+    text-align: center;
+}
+
+.icono {
+    height: 30px;
+    margin-right: 5px;
+    filter: drop-shadow(0 4px 5px rgba(96, 96, 96, 0.578));
 }
