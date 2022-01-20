@@ -3,9 +3,10 @@
 nav {
   background-color: black;
   font-family: neueB;
-  font-size: 110%;
 }
-
+.nav-link {
+  color: white !important;
+}
 .navbar-toggler {
   border: none;
   color: black;
@@ -29,7 +30,9 @@ nav {
   .boton {
     text-align: center !important;
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     background-color: $yellow;
   }
 }
