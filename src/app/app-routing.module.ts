@@ -6,11 +6,8 @@ import { Component, NgModule } from '@angular/core';
 import { IndexregComponent } from './registro/indexreg/indexreg.component';
 import { IndexprodComponent } from './infoproducto/indexprod/indexprod.component';
 import { IndexrecetasComponent } from './recetas/indexrecetas/indexrecetas.component';
-<<<<<<< HEAD
-import { IndiceperfilComponent } from './perfil/indiceperfil/indiceperfil.component';
-=======
 import { IndexcreacionComponent } from './creacion-receta/indexcreacion/indexcreacion.component';
->>>>>>> e40220ac6d02b557748f699b8da2088f89b0407b
+import { IndiceperfilComponent } from './perfil/indiceperfil/indiceperfil.component';
 
 const routes: Routes = [
   {
@@ -38,15 +35,13 @@ const routes: Routes = [
     component: IndexrecetasComponent,
   },
   {
-<<<<<<< HEAD
-    path: "perfil",
-    component: IndiceperfilComponent,
-  }
-=======
     path: 'creacionRecetas',
     component: IndexcreacionComponent,
   },
->>>>>>> e40220ac6d02b557748f699b8da2088f89b0407b
+  {
+    path: 'perfil',
+    component: IndiceperfilComponent,
+  }
 ];
 @NgModule({
   imports: [RouterModule, RouterModule.forRoot(routes)],
