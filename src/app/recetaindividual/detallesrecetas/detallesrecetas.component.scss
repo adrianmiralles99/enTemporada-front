@@ -1,0 +1,46 @@
+@import "../../../styles.scss";
+.container{
+    width: 90%;
+}
+.detalles{
+    background-color: $yellow;
+    border-radius: 5px;
+    border: black 1px solid;
+    padding:0;
+    margin: 0;
+    font-size: 115%;
+
+    .arriba{
+        border-collapse: collapse;
+        border: black 1px solid;
+        width: 100%;  
+        text-align: center;
+        .prime{
+            border-top-left-radius: 5px;
+
+        }
+        td{
+            border: black 1px solid;
+            padding: 2.5%;
+        }
+       
+    }
+    .ingredientes{
+        padding-left: 5%;
+        h5{
+            font-family: "recoletaB";
+            margin-top: 1em;
+            margin-left: 0.5em;
+            font-size: 175%;
+        }
+        .row{
+            margin-top: 2em;
+            .col{
+                ul{
+                    font-family: "neueR";
+                    font-size: 150%;
+                }
+            }
+        }
+    }
+}

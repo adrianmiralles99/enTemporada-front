@@ -8,6 +8,9 @@ import { RelacionadasComponent } from './relacionadas/relacionadas.component';
 
 
 
+
+
+
 @NgModule({
   declarations: [
     DatosproductoComponent,

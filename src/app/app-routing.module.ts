@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { IndexregComponent } from './registro/indexreg/indexreg.component';
 import { IndexprodComponent } from './infoproducto/indexprod/indexprod.component';
 import { IndexrecetasComponent } from './recetas/indexrecetas/indexrecetas.component';
+import { IndexrecetaindComponent } from './recetaindividual/indexrecetaind/indexrecetaind.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
     path: 'recetas',
     component: IndexrecetasComponent,
   },
+  {
+    path: 'recetaindividual',
+    component: IndexrecetaindComponent
+  }
 ];
 @NgModule({
   imports: [RouterModule, RouterModule.forRoot(routes)],
