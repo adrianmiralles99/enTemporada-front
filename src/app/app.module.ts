@@ -9,8 +9,9 @@ import { CalendarioModule } from './calendario/calendario.module';
 import { RegistroModule } from './registro/registro.module';
 import { InfoproductoModule } from './infoproducto/infoproducto.module';
 import { RecetasModule } from './recetas/recetas.module';
-import { CreacionRecetaModule } from './creacion-receta/creacion-receta.module';
+import { RecetaindividualModule } from './recetaindividual/recetaindividual.module';
 import { PerfilModule } from './perfil/perfil.module';
+import { CreacionRecetaModule } from './creacion-receta/creacion-receta.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { PerfilModule } from './perfil/perfil.module';
     RegistroModule,
     InfoproductoModule,
     RecetasModule,
+    RecetaindividualModule,
     CreacionRecetaModule,
     PerfilModule
   ],
