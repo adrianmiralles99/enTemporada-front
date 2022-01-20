@@ -8,7 +8,7 @@ import { IndexprodComponent } from './infoproducto/indexprod/indexprod.component
 import { IndexrecetasComponent } from './recetas/indexrecetas/indexrecetas.component';
 import { IndexcreacionComponent } from './creacion-receta/indexcreacion/indexcreacion.component';
 import { IndiceperfilComponent } from './perfil/indiceperfil/indiceperfil.component';
-
+import {IndexrecetaindComponent} from './recetaindividual/indexrecetaind/indexrecetaind.component'
 const routes: Routes = [
   {
     path: '',
@@ -33,6 +33,10 @@ const routes: Routes = [
   {
     path: 'recetas',
     component: IndexrecetasComponent,
+  },
+  {
+    path: 'recetaindividual',
+    component: IndexrecetaindComponent,
   },
   {
     path: 'creacionRecetas',

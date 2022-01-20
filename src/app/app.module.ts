@@ -13,6 +13,7 @@ import { RecetaindividualModule } from './recetaindividual/recetaindividual.modu
 import { PerfilModule } from './perfil/perfil.module';
 import { CreacionRecetaModule } from './creacion-receta/creacion-receta.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
