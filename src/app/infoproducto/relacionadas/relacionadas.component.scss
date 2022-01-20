@@ -16,7 +16,8 @@ h2 {
 }
 
 .rad {
-  border-radius: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
 
   .derecha {
     width: 1.5em;
@@ -29,10 +30,10 @@ h2 {
   }
 
   img {
-    border-radius: 10px;
-    width: 300px;
+    border-radius: 5px;
+    width: 93%;
     margin: auto;
-    margin-top: 5%;
+    margin-top: 3%;
   }
 
   h5 {
@@ -41,13 +42,15 @@ h2 {
     img {
       width: 2em;
       margin-right: 0.5em;
-
-
     }
   }
 }
+}
 
 .creador {
-  margin-left: 3.2em;
+  <<<<<<< HEAD margin-left: 3.2em;
   margin-top: -2em;
+  =======margin-left: 3.2em;
+  margin-top: -1.5em;
+  >>>>>>>55b0a1b53bcb145dcfd06c6fe427929f0136f860
 }
