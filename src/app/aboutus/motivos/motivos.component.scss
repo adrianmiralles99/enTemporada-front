@@ -2,6 +2,7 @@
 .bloqueporque{
 text-align: center;
     .bloqueporque2{
+        margin-top: 5em;
         width: 60%;
         p{
             font-size: 175%;
@@ -9,6 +10,7 @@ text-align: center;
             text-align: center;
         }
         h1{
+
             font-weight: bolder;
             font-family: recoletaB;
             font-size:4em
@@ -18,6 +20,23 @@ text-align: center;
     
     
 }
+.sticker{
+    width: 9em; 
+    position: absolute;
+}
+.lemon{
+    margin-top: -4em;
+    margin-left: -35em;
+    transform: rotate(20deg);
+}
+.blue{
+    margin-top: 16em;
+    margin-left: 25em;
+    transform: rotate(20deg);
+}
+
+
+
 .bloquemotivos{
     width: 90%;
     .row{
