@@ -1,6 +1,7 @@
 @import "../../../styles.scss";
 
 .sobre {
+    height: 56em;
     background-color: $yellow;
     text-align: center;
     padding: 3em 0 3em 0;
@@ -18,9 +19,29 @@
     }
 }
 .izq {
+    margin-left: 35em;
     text-align: left;
     width: 40%;
 }
 .margen {
     margin-left: 2.6em;
+}
+.sticker{
+    width: 9em; 
+    position: absolute;
+}
+.sandia{
+    margin-top: -2em;
+    margin-left: 50em;
+    transform: rotate(15deg);
+}
+.local{
+    margin-top: 35em;
+    margin-left: 45em;
+    transform: rotate(-15deg);
+}
+.naranja{
+    margin-top: 20em;
+    margin-left: -15em;
+    transform: rotate(-15deg);
 }
