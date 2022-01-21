@@ -44,6 +44,7 @@ $cards-per-line: (xs: 1,
   top: 25px;
   left: 25px;
   z-index: 2 !important;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.219));
 }
 
 .sticker-mid {
@@ -53,4 +54,15 @@ $cards-per-line: (xs: 1,
   top: 310px;
   left: 660px;
   z-index: 2 !important;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.219));
+}
+
+.sticker-right {
+  width: 190px !important;
+  transform: rotate(20deg);
+  position: absolute;
+  top: 35px;
+  left: 690px;
+  z-index: 2 !important;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.219));
 }
