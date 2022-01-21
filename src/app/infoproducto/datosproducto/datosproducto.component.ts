@@ -10,7 +10,8 @@ export class DatosproductoComponent implements OnInit {
 
   constructor(private rutaActiva: ActivatedRoute) { }
   meses = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
-  nombre = this.rutaActiva.snapshot.paramMap.get('idproducto');
+  nombre = this.rutaActiva.snapshot.paramMap.get('nombre');
+  color = this.rutaActiva.snapshot.paramMap.get('color');
   ngOnInit(): void {
   }
 
