@@ -27,8 +27,10 @@ $grey: #17231c;
 
 body {
   background-color: $beige;
+  overflow-x: hidden;
 
 }
+
 .container {
   margin: auto;
   max-width: 100em;
