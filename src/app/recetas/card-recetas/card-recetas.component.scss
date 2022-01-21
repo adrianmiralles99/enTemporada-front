@@ -1,3 +1,5 @@
+@import "../../../styles.scss";
+
 .container {
   margin-top: 50px;
   max-width: 90%;
@@ -35,6 +37,9 @@
   border-radius: 10px;
   font-family: neueB;
   transition: 0.3s;
+  &:hover {
+    transform: scale(107%);
+  }
 }
 
 .usuario {
@@ -56,20 +61,74 @@
   background-repeat: no-repeat;
   border: none;
   background-position: center;
-  width: 30%;
+  width: 40%;
   height: 120%;
   margin-left: 5px;
 }
 
 .botones {
   padding: 0;
-  margin-left:40px;
-
 }
 .save {
   background-image: url("../../../assets/IMG/iconos/guardado bonito.png");
-  background-size:40px;
+  background-size: 40px;
 }
 .mg {
   background-image: url("../../../assets/IMG/iconos/fav.png");
+}
+.subir,
+.crear {
+  position: fixed;
+  border-radius: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 5px 5px rgba(76, 76, 76, 0.632));
+}
+
+.subir {
+  bottom: 5%;
+  right: 3.5%;
+  width: 80px;
+  height: 80px;
+  border: none;
+  background-color: transparent;
+  background-image: url("../../../assets/IMG/iconos/arrowUp.png");
+  filter: drop-shadow(0 5px 5px rgba(76, 76, 76, 0.632));
+  &:hover {
+    animation: animFlecha 1.5s infinite;
+  }
+}
+
+.crear {
+  bottom: 20%;
+  width: 130px;
+  height: 130px;
+  right: 1.8%;
+  background-color: $orange;
+  border: 1px solid white;
+  background-size: 80%;
+  transition: 0.3s;
+  color: white;
+  p {
+    font-size: 80%;
+    font-family: neueB;
+    letter-spacing: 0.5px;
+  }
+  img {
+    margin-top: 10px;
+    width: 50%;
+  }
+}
+
+@keyframes animFlecha {
+  0% {
+    bottom: 5%;
+  }
+  50% {
+    bottom: 7%;
+  }
+  100% {
+    bottom: 5%;
+  }
 }

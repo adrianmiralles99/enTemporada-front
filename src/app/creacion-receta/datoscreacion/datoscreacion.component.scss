@@ -1,6 +1,6 @@
 @import "../../../styles.scss";
 
-// PARTE IZQUIERDA CON LA FOTO DE CARGAR IMAGEN
+// PARTE IZcentrERDA CON LA FOTO DE CARGAR IMAGEN
 .fondo {
     width: 90%;
     background-color: white;
@@ -123,7 +123,8 @@ select {
         font-size: 140%;
         width: 80%;
     }
-    li {
+    li,
+    button {
         margin-top: 5px;
         text-shadow: 0 3px 10px rgba(0, 0, 0, 0.299);
         width: 100%;
@@ -134,7 +135,13 @@ select {
         user-select: none;
         cursor: pointer;
     }
-    .colu {
-        border: 1px solid red;
-    }
+}
+
+.quitar {
+    background-image: url("../../../assets/IMG/iconos/quitar.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+    background-color: transparent;
+    border: none;
 }

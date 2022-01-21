@@ -7,4 +7,5 @@ export const RECETAS: Receta[] = [
     { id: 4, titulo: 'Sopa de remolacha y yogur', autor: 'el_vikingo', img: "sopaRemolacha" },
     { id: 5, titulo: 'Ensalada de calabaza asada', autor: 'Juan Monta Puercos', img: "ensalada" },
     { id: 6, titulo: 'Banana Split', autor: 'Jeni Electrica', img: "banana" },
+    { id: 7, titulo: 'Risotto de verduras', autor: 'Ibai', img: "risotto" },
 ];
