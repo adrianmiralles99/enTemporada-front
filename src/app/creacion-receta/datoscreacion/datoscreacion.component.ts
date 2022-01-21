@@ -9,7 +9,11 @@ export class DatoscreacionComponent implements OnInit {
 
   constructor() { }
 
+  ingredientes = ["4 Manzanas", "300g de harina", "3 Peras", "4 vasos de agua", "4 maracatones", "Macarrones con queso"]
+
   ngOnInit(): void {
+
   }
+
 
 }

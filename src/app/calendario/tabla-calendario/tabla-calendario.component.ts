@@ -13,7 +13,7 @@ export class TablaCalendarioComponent implements OnInit {
   verduras = PRODUCTES.filter(element => element.tipo == "V");
   productes = PRODUCTES;
   help = new Date();
-  mesActual = this.help.getMonth()+2;
+  mesActual = this.help.getMonth();
 
   ngOnInit(): void {
   }

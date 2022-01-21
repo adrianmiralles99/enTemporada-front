@@ -4,7 +4,8 @@ import { ActivatedRoute, Params } from '@angular/router';
 @Component({
   selector: 'app-datosproducto',
   templateUrl: './datosproducto.component.html',
-  styleUrls: ['./datosproducto.component.scss']
+  styleUrls: ['./datosproducto.component.scss'],
+  
 })
 export class DatosproductoComponent implements OnInit {
 

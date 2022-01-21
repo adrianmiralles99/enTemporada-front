@@ -4,10 +4,10 @@
       <div class="tarjeta">
         <button class="imagen" [ngStyle]="{'background-image':'url(../../../assets/IMG/'+receta.img+'.jpg)'}"></button>
         <div class="row usuario">
-          <div class="col-8">
+          <div class="col-9">
             <p class="autor">{{receta.titulo}}</p>
           </div>
-          <div class="col-3 botones">
+          <div class="col-2 botones">
             <button class="mg"></button>
             <button class="save"></button>
           </div>
@@ -19,5 +19,10 @@
       </div>
     </div>
   </div>
+  <button class="subir"></button>
+  <button [routerLink]="'/creacionRecetas'" class="crear">
+    <img class="img-fluid" src="../../../assets/IMG/iconos/agregar.png" alt="">
+    <p>Nueva Receta</p>
+  </button>
 
 </div>
