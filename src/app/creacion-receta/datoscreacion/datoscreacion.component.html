@@ -81,23 +81,13 @@
                             <div class="col-6">
                                 <!-- LISTA DE INGREDIENTES -->
                                 <ul class="lista">
-                                    <div class="row">
-                                        <div class="colu col-10">
-                                            <li>4 Manzanas </li>
+                                    <div class="row" *ngFor="let ingrediente of ingredientes">
+                                        <div class="col-10">
+                                            <li>{{ingrediente}} </li>
                                         </div>
-                                        <div class="colu col-2">
-                                            <img src="../../../assets/IMG/iconos/quitar.png">
-                                        </div>
+                                        <button class="quitar col-2">
+                                        </button>
                                     </div>
-
-
-                                </ul>
-                            </div>
-                            <div class="col-6">
-                                <ul class="lista">
-                                    <li>4 Maracatones <img src="../../../assets/IMG/iconos/quitar.png"></li>
-                                    <li>200g de sal <img src="../../../assets/IMG/iconos/quitar.png"></li>
-                                    <li>Macarrones con queso <img src="../../../assets/IMG/iconos/quitar.png"></li>
                                 </ul>
                             </div>
                         </div>
