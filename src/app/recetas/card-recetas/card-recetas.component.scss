@@ -30,16 +30,11 @@
   margin-left: 10px;
   margin-right: 10px;
   background-color: white;
-  box-shadow: 0 7px 10px rgba(78, 78, 78, 0.397);
-  // padding: 20px;
-  // version 2
+  box-shadow: 0 7px 10px rgba(78, 78, 78, 0.612);
   padding-bottom: 20px;
   border-radius: 10px;
   font-family: neueB;
-  transition: .3s;
-  &:hover {
-    transform: scale(110%);
-  }
+  transition: 0.3s;
 }
 
 .usuario {
