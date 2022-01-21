@@ -37,6 +37,7 @@ text-align: center;
 
 
 
+
 .bloquemotivos{
     width: 90%;
     .row{
@@ -44,6 +45,25 @@ text-align: center;
     }
     img{
         width: 90%;
+        border-radius: 20px;
+    }
+    .hoja{
+        width: 8em; 
+        margin-left: 31em;
+        margin-top: -4em;
+        transform: rotate(15deg);
+    }
+    .eco{
+        width: 8em; 
+        margin-left: -4em;
+        margin-top: 41em;
+        transform: rotate(15deg);
+    }
+    .oval{
+        width: 8em; 
+        margin-left: -2em;
+        margin-top: 41em;
+        transform: rotate(-5deg);
     }
     .frescoimg{
         text-align: center;

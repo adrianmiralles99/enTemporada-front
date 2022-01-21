@@ -1,14 +1,14 @@
 <div class="container datos">
     <div class="row infonutri">
         <div class="col-4">
-            <div class="card producto">
+            <div class="card producto" >
                 <img class="card-img-top" src="../../assets/IMG/fruta.png" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title"><strong>Naranja</strong></h5>
+                    <h5 class="card-title"><strong>{{nombre}}</strong></h5>
                 </div>
             </div>
         </div>
-        <div class="col-8">
+        <div class="col-8" [ngStyle]="{'background-color': {{color}} }">
             <ul>
                 <li class="titulo">
                     Información nutricional
