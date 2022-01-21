@@ -1,0 +1,56 @@
+@import "../../../styles.scss";
+.container{
+    width: 90%;
+}
+.detalles{
+    background-color: $yellow;
+    border-radius: 5px;
+    padding:0;
+    margin: 0;
+    font-size: 115%;
+    border-radius: 5px;
+    box-shadow: inset 0 0px 5px rgba(0, 0, 0, 0.428);
+    .arriba{
+        border-collapse: collapse;
+        border-bottom: 1px solid rgba(64, 64, 64, 0.551);
+        width: 100%;  
+        text-align: center;
+       
+        td{
+            &:not(:last-of-type) {
+                border-right: 1px solid rgba(64, 64, 64, 0.551);
+            }
+            .icono {
+                height: 40px;
+                margin-right: 10px;
+                filter: drop-shadow(0 4px 5px rgba(96, 96, 96, 0.578));
+            }
+            
+            padding-left: 2%;
+            padding-right: 2%;
+            padding-top: 4%;
+            padding-bottom: 4%;
+
+        }
+       
+    }
+    .ingredientes{
+        padding-left: 5%;
+        padding-bottom: 5%;
+        h5{
+            font-family: "recoletaB";
+            margin-top: 1em;
+            margin-left: 0.5em;
+            font-size: 175%;
+        }
+        .row{
+            margin-top: 2em;
+            .col{
+                ul{
+                    font-family: "neueR";
+                    font-size: 150%;
+                }
+            }
+        }
+    }
+}

@@ -1,22 +1,23 @@
 <div class="container">
   <div class="row">
-    <!--<div class="card col-md-3" *ngFor="let receta of recetas" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">{{receta.titulo}}</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-      </div>
-    </div>-->
-    <div class="card rad col-md-5" *ngFor="let receta of recetas">
-      <div class="imagen">
-      </div>
-      <div class="card-body">
-        <img class="derechamg" src="../../../assets/IMG/mg.png">
-        <img class="derecha" src="../../../assets/IMG/guardado.png">
-        <h5 class="card-title"><img src="../../../assets/IMG/iconos/icono.png" alt="">{{receta.titulo}}</h5>
-        <p class="card-text creador">By @{{receta.autor}}</p>
+    <div class="col-4 margen" *ngFor="let receta of recetas">
+      <div class="tarjeta">
+        <button class="imagen" [ngStyle]="{'background-image':'url(../../../assets/IMG/'+receta.img+'.jpg)'}"></button>
+        <div class="row usuario">
+          <div class="col-8">
+            <p class="autor">{{receta.titulo}}</p>
+          </div>
+          <div class="col-3 botones">
+            <button class="mg"></button>
+            <button class="save"></button>
+          </div>
+        </div>
+        <div>
+          <img class="icono" src="../../../assets/IMG/iconos/icono.png">
+          <sub class="autor">by @{{receta.autor}}</sub>
+        </div>
       </div>
     </div>
   </div>
+
 </div>

@@ -1,70 +1,78 @@
-p {
-  font-family: neueB;
+.container {
+  margin-top: 50px;
+  max-width: 90%;
 }
-
-h2 {
-  font-family: neueB;
-}
-
-.margen {
-  margin-left: 1.3em;
-}
-
-.card-img-top {
-  width: fit-content;
-}
-
 .imagen {
-  background-image: url("../../../assets/IMG/banana.jpg");
+  border: none;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 15px;
+  border-start-start-radius: 10px;
+  border-start-end-radius: 10px;
+  background-color: transparent;
+  background-color: transparent;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  width: 100%;
-  height: 200px;
-  margin-top: 1em;
+  user-select: none;
+}
+
+.icono {
+  width: 30px;
+  user-select: none;
+  pointer-events: none;
+  margin-right: 5px;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.tarjeta {
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: white;
+  box-shadow: 0 7px 10px rgba(78, 78, 78, 0.612);
+  // padding: 20px;
+  // version 2
+  padding-bottom: 20px;
   border-radius: 10px;
-}
-
-.rad {
-  border-radius: 10px;
-  margin-left: 40px;
-  margin-top: 40px;
-
-
-  .derecha {
-    width: 1.5em;
-    float: right;
-  }
-
-  .derechamg {
-    width: 1.9em;
-    float: right;
-  }
-
-  img {
-    border-radius: 10px;
-    width: 100%;
-    object-fit: cover;
-    margin: auto;
-    margin-top: 1em;
-  }
-
-  h5 {
-    font-family: neueB;
-
-    img {
-      width: 2em;
-      margin-right: 0.5em;
-    }
+  font-family: neueB;
+  transition: .3s;
+  &:hover {
+    transform: scale(110%);
   }
 }
 
-.container {
-  margin-top: 20px;
-  max-width: 70% !important;
+.usuario {
+  margin-left: 0px;
 }
 
-.creador {
-  margin-left: 3.2em;
-  margin-top: -2em;
+.margen {
+  margin-bottom: 40px;
+}
+
+.autor {
+  margin-bottom: -5px;
+}
+
+.save,
+.mg {
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  background-position: center;
+  width: 30%;
+  height: 120%;
+  margin-left: 5px;
+}
+
+.botones {
+  padding: 0;
+  margin-left: 15px;
+}
+.save {
+  background-image: url("../../../assets/IMG/iconos/guardado.png");
+}
+.mg {
+  background-image: url("../../../assets/IMG/iconos/mg.png");
 }
