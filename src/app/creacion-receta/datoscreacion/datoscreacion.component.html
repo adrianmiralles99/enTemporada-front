@@ -13,6 +13,7 @@
                 </div>
             </div>
 
+            <!-- DATOS E INGREDIENTES DE LA RECETA -->
             <div class="col-8">
                 <div class="datosfondo">
                     <div class="row filadatos">
@@ -77,16 +78,26 @@
                                 <h2>Ingredientes:</h2>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row columnas">
                             <div class="col-6">
-                                <!-- LISTA DE INGREDIENTES -->
+                                <!-- LISTA DE LA PRIMERA MITAD DE LOS INGREDIENTES -->
                                 <ul class="lista">
-                                    <div class="row" *ngFor="let ingrediente of ingredientes">
+                                    <div class="row elemento" *ngFor="let ingrediente of ingredientes1;">
                                         <div class="col-10">
-                                            <li>{{ingrediente}} </li>
+                                            <span>{{ingrediente}} </span>
                                         </div>
-                                        <button class="quitar col-2">
-                                        </button>
+                                        <button class="quitar col-2"></button>
+                                    </div>
+                                </ul>
+                            </div>
+                            <div class="col-6">
+                                <!-- LISTA DE LA SEGUNDA MITAD DE LOS INGREDIENTES -->
+                                <ul class="lista">
+                                    <div class="row elemento" *ngFor="let ingrediente of ingredientes2;">
+                                        <div class="col-10 ">
+                                            <span>{{ingrediente}} </span>
+                                        </div>
+                                        <button class="quitar col-2"></button>
                                     </div>
                                 </ul>
                             </div>
