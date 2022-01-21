@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-datosproducto',
@@ -7,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DatosproductoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private rutaActiva: ActivatedRoute) { }
   meses = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
-
+  nombre = this.rutaActiva.snapshot.paramMap.get('idproducto');
   ngOnInit(): void {
   }
 
