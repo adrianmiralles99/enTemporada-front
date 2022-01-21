@@ -31,15 +31,10 @@
   margin-right: 10px;
   background-color: white;
   box-shadow: 0 7px 10px rgba(78, 78, 78, 0.612);
-  // padding: 20px;
-  // version 2
   padding-bottom: 20px;
   border-radius: 10px;
   font-family: neueB;
-  transition: .3s;
-  &:hover {
-    transform: scale(110%);
-  }
+  transition: 0.3s;
 }
 
 .usuario {
@@ -68,11 +63,13 @@
 
 .botones {
   padding: 0;
-  margin-left: 15px;
+  margin-left:40px;
+
 }
 .save {
-  background-image: url("../../../assets/IMG/iconos/guardado.png");
+  background-image: url("../../../assets/IMG/iconos/guardado bonito.png");
+  background-size:40px;
 }
 .mg {
-  background-image: url("../../../assets/IMG/iconos/mg.png");
+  background-image: url("../../../assets/IMG/iconos/fav.png");
 }
