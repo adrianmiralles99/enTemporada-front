@@ -9,6 +9,8 @@ import { IndexrecetasComponent } from './recetas/indexrecetas/indexrecetas.compo
 import { IndexcreacionComponent } from './creacion-receta/indexcreacion/indexcreacion.component';
 import { IndiceperfilComponent } from './perfil/indiceperfil/indiceperfil.component';
 import {IndexrecetaindComponent} from './recetaindividual/indexrecetaind/indexrecetaind.component'
+
+
 const routes: Routes = [
   {
     path: '',
@@ -38,6 +40,11 @@ const routes: Routes = [
     path: 'recetaindividual',
     component: IndexrecetaindComponent,
   },
+  /*probando cosas rutas dont worry be happy*/
+  { path: 'infoproducto/:nombre/:color',//el idproducto es el parametro. Usamos de los ":" por cada parámetro que se quiera definir.
+    component: IndexprodComponent
+  },
+
   {
     path: 'creacionRecetas',
     component: IndexcreacionComponent,

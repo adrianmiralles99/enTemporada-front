@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-menu-footer',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu-footer.component.scss']
 })
 export class MenuFooterComponent implements OnInit {
+  ruta = this.router.url;
 
-  constructor() { }
-
+  constructor(private router: Router) { }
   ngOnInit(): void {
-  }
+    
+  } 
 
 }

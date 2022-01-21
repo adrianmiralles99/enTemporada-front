@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-datosproducto',
   templateUrl: './datosproducto.component.html',
-  styleUrls: ['./datosproducto.component.scss']
+  styleUrls: ['./datosproducto.component.scss'],
+  
 })
 export class DatosproductoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private rutaActiva: ActivatedRoute) { }
   meses = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
-
+  nombre = this.rutaActiva.snapshot.paramMap.get('nombre');
+  color = this.rutaActiva.snapshot.paramMap.get('color');
   ngOnInit(): void {
   }
 
