@@ -3,12 +3,15 @@
   <div style="margin: 50px;">
     <div class="row">
       <div class="col-sm-3" *ngFor="let articulo of frutas" id="{{articulo.id}}">
+        <a [routerLink]="['/infoproducto', articulo.nombre]">
+
         <div class="card articulo" (mouseover)="cambiaColor(articulo.id)" (mouseout)="quitaColor(articulo.id)">
           <img class="card-img-top" src="../../assets/IMG/fruta.png" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">{{articulo.nombre}}</h5>
           </div>
         </div>
+      </a>
       </div>
     </div>
   </div>
