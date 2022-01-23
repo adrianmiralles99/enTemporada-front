@@ -20,12 +20,16 @@
 
       <div class="card-body">
         <h4 *ngIf="ruta === '/aboutus' || ruta === '/calendario'" class="card-title">Ahora en temporada</h4>
+        <p *ngIf="ruta === '/aboutus' || ruta === '/calendario'" class="card-text">Ver cuando todas las frutas y
+          verduras están en temporada este mes</p>
+
         <h4 *ngIf="ruta === '/'" class="card-title">Calendario</h4>
-        <p class="card-text">Ver cuando todas las frutas y verduras están en temporada</p>
+        <p *ngIf="ruta === '/'" class="card-text">Ver cuando todas las frutas y
+          verduras están en temporada</p>
       </div>
       <img *ngIf="ruta === '/' || ruta === '/aboutus'" class="sticker-mid"
         src="../../../assets/IMG/En Temporada (IES FSL)/Stickers/Flavor Leaf.png" alt="">
-      <img *ngIf="ruta === '/calendario'" class="sticker-mid"
+      <img *ngIf="ruta === '/calendario'" class="sticker-mid2"
         src="../../../assets/IMG/En Temporada (IES FSL)/Stickers/Watermelon.png" alt="">
 
     </div>
@@ -43,8 +47,14 @@
       </a>
 
       <div class="card-body carta">
-        <h2 class="card-title">Sobre el proyecto</h2>
-        <p class="card-text">¿Qué es En Temporada y por qué hacemos esto?</p>
+        <h4 *ngIf="ruta === '/aboutus'" class="card-title">Calendario</h4>
+        <p *ngIf="ruta === '/aboutus'" class="card-text">Ver cuando todas las frutas y
+          verduras están en temporada</p>
+
+        <h4 *ngIf="ruta === '/calendario' || ruta === '/'" class="card-title">Sobre el proyecto</h4>
+        <p *ngIf="ruta === '/calendario' || ruta === '/'" class="card-text">¿Qué es En Temporada y por qué hacemos esto?
+        </p>
+
       </div>
       <img *ngIf="ruta === '/' || ruta === '/aboutus'" class="sticker-right"
         src="../../../assets/IMG/En Temporada (IES FSL)/Stickers/Real White.png" alt="">

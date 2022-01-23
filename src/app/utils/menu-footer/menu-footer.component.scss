@@ -37,11 +37,11 @@ $cards-per-line: (xs: 1,
 );
 
 .sticker-left {
-  width: 200px !important;
+  width: 150px !important;
   transform: rotate(-20deg);
   position: absolute;
   margin-left: 35% !important;
-  margin-top: -20% !important;
+  margin-top: -15% !important;
   top: 25px;
   left: 25px;
   z-index: 2 !important;
@@ -49,21 +49,31 @@ $cards-per-line: (xs: 1,
 }
 
 .sticker-mid {
-  width: 190px !important;
+  width: 150px !important;
   transform: rotate(20deg);
   position: absolute;
-  top: 310px;
-  left: 660px;
+  top: 330px;
+  left: 680px;
   z-index: 2 !important;
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.219));
 }
 
 .sticker-right {
-  width: 190px !important;
-  transform: rotate(20deg);
+  width: 150px !important;
+  transform: rotate(10deg);
   position: absolute;
   top: 35px;
-  left: 690px;
+  left: 710px;
+  z-index: 2 !important;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.219));
+}
+
+.sticker-mid2 {
+  width: 150px !important;
+  transform: rotate(20deg);
+  position: absolute;
+  top: 320px;
+  left: 650px;
   z-index: 2 !important;
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.219));
 }
