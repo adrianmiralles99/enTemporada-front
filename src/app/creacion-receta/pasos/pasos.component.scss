@@ -1,0 +1,113 @@
+@import "../../../styles.scss";
+
+.container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.fondo {
+    width: 80%;
+    background-color: $grey;
+    border-radius: 10px;
+    margin: auto;
+    padding: 20px;
+    > label {
+        width: 100%;
+        margin-bottom: 10px;
+        > span {
+            font-family: neueB;
+            color: white;
+        }
+        > input {
+            font-family: neueR;
+            border: none;
+            border-radius: 5px;
+            padding: 5px;
+            width: 30%;
+        }
+        > textarea {
+            font-family: neueR;
+            border: none;
+            width: 100%;
+            height: 100px;
+            border-radius: 5px;
+            padding: 5px;
+        }
+    }
+}
+
+.alinear {
+    text-align: center;
+    margin-top: 20px;
+}
+.agregar {
+    border: none;
+    background-color: $yellow;
+    height: 110px;
+    width: 120px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.463);
+    > img {
+        width: 60%;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        filter: drop-shadow(0 5px 2px rgba(50, 50, 50, 0.463));
+    }
+    > p {
+        font-family: neueB;
+    }
+}
+
+.pasos {
+    margin: auto;
+    width: 90%;
+    margin-bottom: 20px;
+
+    > div {
+        background-color: white;
+        box-shadow: 0 5px 4px rgba(45, 45, 45, 0.259);
+        margin: 10px;
+        padding: 5px 10px 5px 0px;
+        border: 1px solid black;
+        text-align: center;
+        border-radius: 10px;
+        animation: 0.5s aparecer normal;
+    }
+    .row {
+        height: 100%;
+        > div {
+            margin: auto;
+            width: 40px;
+            overflow-wrap: break-word;
+        }
+        span {
+            font-family: neueB;
+        }
+    }
+}
+
+.quitar {
+    height: 100%;
+    width: 100%;
+    background-image: url("../../../assets/IMG/iconos/quitar.png");
+    background-color: transparent;
+    background-position: center;
+    background-size: 90%;
+    background-repeat: no-repeat;
+    border: none;
+    margin-right: 5px;
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        transform: scale(110%);
+    }
+    100% {
+        transform: scale(100%);
+        opacity: 1;
+    }
+}
