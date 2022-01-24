@@ -15,6 +15,7 @@ export class PruebamodalComponent implements OnInit {
   }
   actionFunction() {
     alert("You have logged out.");
+
     this.closeModal();
   }
 
