@@ -10,6 +10,9 @@ export class TituloInicioComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  }
 
+  }
+  bajar(){
+    document.getElementById("productos")?.scrollIntoView({behavior: "smooth"})
+  }
 }
