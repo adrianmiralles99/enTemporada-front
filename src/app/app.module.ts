@@ -12,12 +12,7 @@ import { RecetasModule } from './recetas/recetas.module';
 import { RecetaindividualModule } from './recetaindividual/recetaindividual.module';
 import { PerfilModule } from './perfil/perfil.module';
 import { CreacionRecetaModule } from './creacion-receta/creacion-receta.module';
-<<<<<<< HEAD
-
-
-=======
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
->>>>>>> cc1c7cb482b5f823a30944a8b6c0573cb6b4d097
 
 
 @NgModule({
@@ -37,16 +32,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RecetaindividualModule,
     CreacionRecetaModule,
     PerfilModule,
-<<<<<<< HEAD
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
-
-=======
     BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
->>>>>>> cc1c7cb482b5f823a30944a8b6c0573cb6b4d097
 })
 export class AppModule { }
