@@ -30,6 +30,10 @@ h1 {
 
   &:hover {
     color: white;
+    table{
+      display: block;
+      color: white;
+    }
   }
 
   img {
@@ -40,10 +44,20 @@ h1 {
   .card {
     margin: 20px;
   }
+  table{
+    display: none;
+    text-align: center;
+    td{
+      padding: 0.38em;
+
+    }
+ }
+
 }
 
 @media screen and(max-width:700px) {
   h1 {
     font-size: 25px;
   }
+  
 }
