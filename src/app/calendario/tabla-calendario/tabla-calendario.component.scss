@@ -60,7 +60,8 @@ table {
           border-radius: 0px 10px 10px 0px;
         }
         &:not(:last-child) {
-          border-right: 2px solid $beige;
+          border-right: 1px solid $beige;
+          border-left: 1px solid $beige;
         }
       }
     }

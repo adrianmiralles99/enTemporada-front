@@ -14,10 +14,16 @@ import { PerfilModule } from './perfil/perfil.module';
 import { CreacionRecetaModule } from './creacion-receta/creacion-receta.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { PruebamodalComponent } from './pruebamodal/pruebamodal.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    PruebamodalComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,9 +38,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RecetaindividualModule,
     CreacionRecetaModule,
     PerfilModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [PruebamodalComponent]
+
 })
 export class AppModule { }

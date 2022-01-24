@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row pasos">
+        <div class="col-2" *ngFor="let paso of pasos;let i=index" id="{{i}}">
+            <div class="row">
+                <div class="col-8">
+                    <span> {{paso[0]}}</span>
+                </div>
+                <button (click)="quitarPaso($event)" class="col-2 quitar ">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="fondo">
+        <label class="titulo">
+            <span>Titulo del Paso</span>
+            <br>
+            <input id="titulo" type="text" placeholder="Escriba aquí...">
+        </label>
+        <br>
+        <br>
+        <label class="titulo">
+            <span>Descripción del Paso</span>
+            <br>
+            <textarea id="descripcion" placeholder="Escriba aquí..."></textarea>
+        </label>
+    </div>
+
+
+    <div class="alinear">
+        <button (click)="agregarPaso()" class="agregar">
+            <img src="../../../assets/IMG/iconos/añadir.png" alt="">
+            <p>Añadir Paso</p>
+        </button>
+    </div>
+</div>

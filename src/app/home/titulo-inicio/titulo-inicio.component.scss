@@ -21,6 +21,12 @@
 .container{
   padding-bottom: 250px;
 }
+#logout-button {
+  color: white;
+  background-color: #4b4b4b;
+  border: 1px solid black;
+  margin-left: 43.5%;
+}
 
 @media screen and(max-width:700px) {
   .titulo {
