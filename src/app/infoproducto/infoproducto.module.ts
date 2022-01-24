@@ -7,10 +7,6 @@ import { DescripcionComponent } from './descripcion/descripcion.component';
 import { RelacionadasComponent } from './relacionadas/relacionadas.component';
 
 
-
-
-
-
 @NgModule({
   declarations: [
     DatosproductoComponent,
@@ -22,5 +18,6 @@ import { RelacionadasComponent } from './relacionadas/relacionadas.component';
     CommonModule,
     UtilsModule
   ]
+  
 })
 export class InfoproductoModule { }
