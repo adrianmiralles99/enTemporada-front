@@ -4,11 +4,11 @@
             <div class="card producto">
                 <img class="card-img-top" src="../../../assets/IMG/En Temporada (IES FSL)/Verduras/berenjena.jpg" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title"><strong>{{nombre}}</strong></h5>
+                    <h5 class="card-title"><strong>{{this.articulos[0].nombre}}</strong></h5>
                 </div>
             </div>
         </div>
-        <div class="col-8" [ngStyle]="{'background-color': color }">
+        <div class="col-8" [ngStyle]="{'background-color': this.articulos[0].color }">
             <ul>
                 <li class="titulo">
                     Información nutricional
