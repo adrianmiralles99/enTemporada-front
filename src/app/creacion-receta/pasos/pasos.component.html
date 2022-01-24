@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="pasos" *ngFor="let paso of pasos; let i=index">
+        <h2 class="numPaso">Paso {{i+1}}</h2>
+        <label class="titulo">
+            <span>Descripción del paso</span>
+            <br>
+            <textarea class="descripcion" value="{{paso}}" placeholder="Escriba aquí..."></textarea>
+        </label>
+    </div>
+    <div class="fondo">
+        <h2 class="numPaso">Paso {{getNumeroPaso()}}</h2>
+        <label class="titulo">
+            <span>Descripción del paso</span>
+            <br>
+            <textarea id="descripcion" placeholder="Escriba aquí..."></textarea>
+        </label>
+    </div>
+ 
+
+    <div class="alinear">
+        <button (click)="agregarPaso()" class="agregar">
+            <img src="../../../assets/IMG/iconos/añadir.png" alt="">
+            <p>Añadir Paso</p>
+        </button>
+    </div>
+
+    <!-- <div class="crearReceta"> -->
+        <button class="crearReceta">Crear Receta</button>
+    <!-- </div> -->
+
+
+
+</div>

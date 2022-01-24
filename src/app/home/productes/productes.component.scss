@@ -1,4 +1,5 @@
 @import "../../../styles.scss";
+@media screen and (min-width:700px) {
 a{
   text-decoration: none;
   color: black;
@@ -30,6 +31,10 @@ h1 {
 
   &:hover {
     color: white;
+    table{
+      display: block;
+      color: white;
+    }
   }
 
   img {
@@ -40,10 +45,63 @@ h1 {
   .card {
     margin: 20px;
   }
-}
+  table{
+    display: none;
+    text-align: center;
+    td{
+      padding: 0.38em;
 
-@media screen and(max-width:700px) {
+    }
+ }
+
+}
+}
+@media screen and(max-width:812px) {
   h1 {
-    font-size: 25px;
+    font-size: 35px;
+  }
+  
+  .articulo {
+    height: 100px;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-family: neueB;
+    margin: auto;
+    margin: 10px -5px 20px -5px;
+    border-radius: 20px;
+    border: none;
+    transition: 0.1s;
+    h5{
+      margin-top: -4.8em;
+      margin-left: 3em;
+    }
+  
+    &:hover {
+      color: white;
+      table{
+        display: block;
+        color: white;
+      }
+    }
+  
+    img {
+      width: 5em;
+      float: left;
+    }
+  
+    .card {
+      margin: 20px;
+    }
+    table{
+      margin-left: 3.6em;
+      margin-top: -1em;
+      display: none;
+      text-align: center;
+      td{
+        padding: 0.21em;
+        padding-bottom: 0em;
+      }
+   }
+  
   }
 }

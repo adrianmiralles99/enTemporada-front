@@ -22,8 +22,9 @@
   padding-bottom: 250px;
 }
 
-@media screen and(max-width:700px) {
+@media screen and(max-width: 812px) {
   .titulo {
-    font-size: 30px;
+    font-size: 45px;
+    margin-bottom: -4em;
   }
 }

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-  //prueba
 
 @Component({
   selector: 'app-root',
@@ -8,8 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Proyecto';
-  //prueba
-
-
-
 }

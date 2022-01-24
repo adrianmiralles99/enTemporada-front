@@ -4,11 +4,11 @@
             <div class="card producto">
                 <img class="card-img-top" src="../../../assets/IMG/En Temporada (IES FSL)/Verduras/berenjena.jpg" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title"><strong>{{nombre}}</strong></h5>
+                    <h5 class="card-title"><strong>{{this.articulos[0].nombre}}</strong></h5>
                 </div>
             </div>
         </div>
-        <div class="col-8" [ngStyle]="{'background-color': color }">
+        <div class="col-8" [ngStyle]="{'background-color': this.articulos[0].color }">
             <ul>
                 <li class="titulo">
                     Información nutricional
@@ -35,11 +35,11 @@
     <div class="row meses">
         <table class="tabla">
             <thead>
-                <tr class="meses">
-                    <th *ngFor="let mes of meses; let indice=index">{{mes}}</th>
+                <tr class="meses" >
+                    <th *ngFor="let mes of meses; let indice=index" [ngClass]="{'cabMes': indice==mesActual}">{{mes}}</th>
                 </tr>
                 <tr class="puntos">
-                    <td *ngFor="let mes of meses">.</td>
+                    <td *ngFor="let mes of meses; let indice=index" [ngClass]="{'cabFila': indice==mesActual}">.</td>
                 </tr>
             </thead>
         </table>
