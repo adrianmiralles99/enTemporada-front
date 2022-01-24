@@ -41,7 +41,7 @@ const routes: Routes = [
     component: IndexrecetaindComponent,
   },
   /*probando cosas rutas dont worry be happy*/
-  { path: 'infoproducto/:nombre/:color',//el idproducto es el parametro. Usamos de los ":" por cada parámetro que se quiera definir.
+  { path: 'infoproducto/:id',//el idproducto es el parametro. Usamos de los ":" por cada parámetro que se quiera definir.
     component: IndexprodComponent
   },
 
