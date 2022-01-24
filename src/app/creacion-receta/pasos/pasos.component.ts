@@ -10,26 +10,46 @@ export class PasosComponent implements OnInit {
   constructor() { }
 
   // pasos: Array<Array<String>> = [];
-  pasos = [["Paso 1", ""], ["Supercalifragilisticexpialidocious", ""], ["Pancacke con muchas cosas", ""]];
-
+  pasos = ["Hola buenas", "adios"];
+  editar = "";
   ngOnInit(): void { }
 
   agregarPaso() {
-    var titulo = $("#titulo").val()?.toString().trim() ?? "";
     var descripcion = $("#descripcion").val()?.toString().trim() ?? "";
-    $("#titulo").val("");
     $("#descripcion").val("");
 
-    if ((titulo.length > 0 || titulo.length < 50) && descripcion.length > 0) {
-      this.pasos.push([titulo, descripcion]);
+    if (descripcion.length > 0) {
+      this.pasos.push(descripcion);
     }
+
+    setTimeout(() => {
+      document.getElementById("descripcion")?.scrollIntoView({ behavior: "smooth" });
+    }, 1);
+
+
   }
 
   quitarPaso(e: Event) {
     if (e.target) {
-      console.log($(e.target).parent().parent().prop("id"));
       this.pasos.splice($(e.target).parent().parent().prop("id"), 1);
+    }
+  }
 
+  getNumeroPaso() {
+    return this.pasos.length + 1;
+  }
+
+  editarPaso(e: Event) {
+    if (e.target) {
+      this.editar = $(e.target).parent().parent().prop("id");
+    }
+    $(".edit").attr("disabled", "true");
+  }
+
+  confirmarEdicion() {
+
+    if (this.editar.length > 0) {
+      this.editar = "";
     }
   }
 
