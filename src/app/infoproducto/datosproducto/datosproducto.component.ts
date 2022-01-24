@@ -15,7 +15,8 @@ export class DatosproductoComponent implements OnInit {
   meses = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
   id = this.rutaActiva.snapshot.paramMap.get('id');
   articulos = PRODUCTES.filter(element => element.id == (this.id ?? -1));
-  
+  help = new Date();
+  mesActual = this.help.getMonth();
   ngOnInit(): void {
     console.log(this.articulos);
 
