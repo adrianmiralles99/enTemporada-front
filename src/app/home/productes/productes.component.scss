@@ -1,66 +1,66 @@
 @import "../../../styles.scss";
-@media screen and (min-width:700px) {
-a{
-  text-decoration: none;
-  color: black;
-}
-li {
-  list-style: none;
-}
 
-h1 {
-  text-align: center;
-  margin: 40px 0px 20px 0px;
-  font-family: recoletaB;
-  font-size: 55px;
-
-  strong {
-    font-family: neueB;
+@media screen and (min-width: 700px) {
+  a {
+    text-decoration: none;
+    color: black;
   }
-}
-
-.articulo {
-  height: 300px;
-  padding-top: 40px;
-  font-family: neueB;
-  margin: auto;
-  margin: 10px -5px 20px -5px;
-  border-radius: 20px;
-  border: none;
-  transition: 0.1s;
-
-  &:hover {
-    color: white;
-    table{
-      display: block;
-      color: white;
-    }
+  li {
+    list-style: none;
   }
 
-  img {
-    width: 8em;
-    margin: auto;
-  }
-
-  .card {
-    margin: 20px;
-  }
-  table{
-    display: none;
+  h1 {
     text-align: center;
-    td{
-      padding: 0.38em;
+    margin: 40px 0px 20px 0px;
+    font-family: recoletaB;
+    font-size: 55px;
 
+    strong {
+      font-family: neueB;
     }
- }
+  }
 
-}
+  .articulo {
+    height: 300px;
+    padding-top: 40px;
+    font-family: neueB;
+    margin: auto;
+    margin: 10px -5px 20px -5px;
+    border-radius: 20px;
+    border: none;
+    transition: 0.1s;
+    cursor: pointer;
+
+    &:hover {
+      color: white;
+      table {
+        display: block;
+        color: white;
+      }
+    }
+
+    img {
+      width: 8em;
+      margin: auto;
+    }
+
+    .card {
+      margin: 20px;
+    }
+    table {
+      display: none;
+      text-align: center;
+      td {
+        padding: 0.38em;
+      }
+    }
+  }
 }
 @media screen and(max-width:812px) {
   h1 {
     font-size: 35px;
   }
-  
+
   .articulo {
     height: 100px;
     padding-top: 10px;
@@ -71,37 +71,36 @@ h1 {
     border-radius: 20px;
     border: none;
     transition: 0.1s;
-    h5{
+    h5 {
       margin-top: -4.8em;
       margin-left: 3em;
     }
-  
+
     &:hover {
       color: white;
-      table{
+      table {
         display: block;
         color: white;
       }
     }
-  
+
     img {
       width: 5em;
       float: left;
     }
-  
+
     .card {
       margin: 20px;
     }
-    table{
+    table {
       margin-left: 3.6em;
       margin-top: -1em;
       display: none;
       text-align: center;
-      td{
+      td {
         padding: 0.21em;
         padding-bottom: 0em;
       }
-   }
-  
+    }
   }
 }

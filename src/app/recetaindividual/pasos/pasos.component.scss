@@ -3,22 +3,35 @@
 .contenedor {
     margin: auto;
     margin-top: 4%;
-    width: 90%;
+    width: 100%;
     padding-bottom: 2%;
     background-color: white;
+    height: 100%;
     .paso {
-        margin-top: 2%;
-        margin-bottom: 2%;
+        margin: auto;
         font-family: "neueR";
         font-size: 120%;
+        height: 100%;
+        > .columna {
+            margin-left: 5%;
+            border-bottom: 1px solid rgba(69, 69, 69, 0.605);
+        }
         h5 {
             font-size: 150%;
             font-family: neueB;
+            margin-top: 2%;
             margin-bottom: 1%;
         }
     }
-}
 
-.borde {
-    border-bottom: 1px solid rgba(69, 69, 69, 0.605);
+
+}
+@media screen and(max-width: 700px) {
+    .paso{
+        .columna{
+            font-size: 85%;
+        }
+
+    }
+
 }

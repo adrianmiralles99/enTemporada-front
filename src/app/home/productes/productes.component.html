@@ -1,5 +1,5 @@
 <div class="container" id="productos">
-  <h1><strong>Frutas</strong> en {{mes}}</h1>
+  <h1><strong>Frutas</strong> en {{mesActual}}</h1>
   <div style="margin: 50px;">
     <div class="row">
       <div class="col-sm-3" *ngFor="let articulo of frutas" id="{{articulo.id}}">
@@ -10,32 +10,10 @@
             <h5 class="card-title">{{articulo.nombre}}</h5>
             <table>
               <thead>
-                <td>E</td>
-                <td>F</td>
-                <td>M</td>
-                <td>A</td>
-                <td>M</td>
-                <td>JN</td>
-                <td>JL</td>
-                <td>A</td>
-                <td>S</td>
-                <td>O</td>
-                <td>N</td>
-                <td>D</td>
+                <td *ngFor="let mes of mes">{{mes}}</td>
               </thead>
               <tbody>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
+                <td *ngFor="let mes of meses">.</td>
               </tbody>
             </table>
 
@@ -45,53 +23,28 @@
     </div>
   </div>
 
-  <h1><strong>Verduras</strong> en {{mes}}</h1>
+  <h1><strong>Verduras</strong> en {{mesActual}}</h1>
   <div style="margin: 50px;">
     <div class="row">
       <div class="col-sm-3" *ngFor="let articulo of verduras" id="{{articulo.id}}">
-        <<<<<<< HEAD <div class="card articulo" [routerLink]="['/infoproducto', articulo.nombre, articulo.color]"
-          (mouseover)="cambiaColor(articulo.id)" (mouseout)="quitaColor(articulo.id)">
-          =======
-          <div class="card articulo" [routerLink]="['/infoproducto', articulo.id]"
-            (mouseover)="cambiaColor(articulo.id)" (mouseout)="quitaColor(articulo.id)">
-            >>>>>>> 3843d1a42c1451608bdff619a1c66832de544709
-            <img class="card-img-top" src="../../../assets/IMG/verdura.png" alt="Card image cap">
+        <div class="card articulo" [routerLink]="['/infoproducto', articulo.id]" (mouseover)="cambiaColor(articulo.id)"
+          (mouseout)="quitaColor(articulo.id)">
+          <img class="card-img-top" src="../../assets/IMG/fruta.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{articulo.nombre}}</h5>
+            <table>
+              <thead>
+                <td *ngFor="let mes of mes">{{mes}}</td>
+              </thead>
+              <tbody>
+                <td *ngFor="let mes of meses">.</td>
+              </tbody>
+            </table>
 
-            <div class="card-body">
-              <h5 class="card-title">{{articulo.nombre}}</h5>
-              <table>
-                <thead>
-                  <td>E</td>
-                  <td>F</td>
-                  <td>M</td>
-                  <td>A</td>
-                  <td>M</td>
-                  <td>JN</td>
-                  <td>JL</td>
-                  <td>A</td>
-                  <td>S</td>
-                  <td>O</td>
-                  <td>N</td>
-                  <td>D</td>
-                </thead>
-                <tbody>
-                  <td>.</td>
-                  <td>.</td>
-                  <td>.</td>
-                  <td>.</td>
-                  <td>.</td>
-                  <td>.</td>
-                  <td>.</td>
-                  <td>.</td>
-                  <td>.</td>
-                  <td>.</td>
-                  <td>.</td>
-                  <td>.</td>
-                </tbody>
-              </table>
-            </div>
           </div>
+        </div>
       </div>
     </div>
   </div>
+
 </div>

@@ -20,7 +20,8 @@ export class ProductesComponent implements OnInit {
   }
   meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
-  mes = this.meses[new Date().getMonth()];
+  mes = ["E", "F", "Mr", "Ab", "My", "Jn", "Jl", "Ag", "Sp", "O", "N", "D"];
+  mesActual = this.meses[new Date().getMonth()];
 
   cambiaColor(id: number) {
     var element = $("#" + id);
