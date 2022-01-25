@@ -28,6 +28,7 @@
   width: 150px;
   margin: auto;
   margin-top: -20px;
+  margin-bottom: -10px;
   cursor: pointer;
 }
 
@@ -45,7 +46,7 @@
 
 // STICKERS
 .sticker {
-  width: 140px !important;
+  width: 150px !important;
   height: auto;
   position: absolute;
   z-index: 2 !important;
@@ -66,7 +67,7 @@
 }
 
 .melocoton {
-  transform: rotate(-20deg);
+  transform: rotate(-10deg);
   top: 17%;
   left: 3%;
 }
@@ -79,12 +80,36 @@
 
 .bananaBlue {
   transform: rotate(-15deg);
-  top: 75%;
+  top: 80%;
   left: 23%;
 }
 
 .sunRed {
   transform: rotate(20deg);
   top: 37%;
-  left: 85%;
+  left: 88%;
+}
+
+.ovalBlue {
+  transform: rotate(10deg);
+  top: 13%;
+  left: 107%;
+}
+
+.limon {
+  transform: rotate(15deg);
+  top: 72%;
+  left: 72%;
+}
+
+.diamanteRojo {
+  transform: rotate(-15deg);
+  top: 100%;
+  left: -16%;
+}
+
+.naranja {
+  transform: rotate(15deg);
+  top: 105%;
+  left: 90%;
 }
