@@ -43,33 +43,35 @@
 }
 
 // STICKERS
-
-.banana {
+.sticker {
   width: 140px !important;
-  transform: rotate(20deg);
+  height: auto;
   position: absolute;
-  top: 90px;
-  left: 450px;
   z-index: 2 !important;
   filter: drop-shadow(5px 2px 1px rgba(0, 0, 0, 0.219));
+  transform: translate(-50%, -50%)
+}
+
+.banana {
+  top: 1%;
+  left: 30%;
+  transform: rotate(20deg);
 }
 
 .sandia {
-  width: 140px !important;
   transform: rotate(20deg);
-  position: absolute;
-  top: 120px;
-  left: 1200px;
-  z-index: 2 !important;
-  filter: drop-shadow(5px 2px 1px rgba(0, 0, 0, 0.219));
+  top: 12%;
+  left: 65%;
 }
 
 .melocoton {
-  width: 140px !important;
   transform: rotate(-20deg);
-  position: absolute;
-  top: 200px;
-  left: 200px;
-  z-index: 2 !important;
-  filter: drop-shadow(5px 2px 1px rgba(0, 0, 0, 0.219));
+  top: 17%;
+  left: 6%;
+}
+
+.respetar {
+  transform: rotate(20deg);
+  top: 1200px;
+  left: 100px;
 }
