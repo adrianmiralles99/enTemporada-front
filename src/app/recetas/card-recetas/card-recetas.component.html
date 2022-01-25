@@ -19,7 +19,7 @@
       </div>
     </div>
   </div>
-  <button class="subir"></button>
+  <button class="subir" (click)="subir()"></button>
 
   <button [routerLink]="'/creacionRecetas'" (mouseover)="hover=true" (mouseout)="hover=false"
     [ngClass]="{'extender': hover==true}" class="crear row">

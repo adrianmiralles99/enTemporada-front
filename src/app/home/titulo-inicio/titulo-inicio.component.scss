@@ -27,6 +27,8 @@
 .imagen {
   width: 150px;
   margin: auto;
+  margin-top: -20px;
+  margin-bottom: -10px;
   cursor: pointer;
 }
 
@@ -44,7 +46,7 @@
 
 // STICKERS
 .sticker {
-  width: 140px !important;
+  width: 150px !important;
   height: auto;
   position: absolute;
   z-index: 2 !important;
@@ -60,18 +62,54 @@
 
 .sandia {
   transform: rotate(20deg);
-  top: 12%;
-  left: 65%;
+  top: 9%;
+  left: 72%;
 }
 
 .melocoton {
-  transform: rotate(-20deg);
+  transform: rotate(-10deg);
   top: 17%;
-  left: 6%;
+  left: 3%;
 }
 
 .respetar {
   transform: rotate(20deg);
-  top: 1200px;
-  left: 100px;
+  top: 57%;
+  left: -5%;
+}
+
+.bananaBlue {
+  transform: rotate(-15deg);
+  top: 80%;
+  left: 23%;
+}
+
+.sunRed {
+  transform: rotate(20deg);
+  top: 37%;
+  left: 88%;
+}
+
+.ovalBlue {
+  transform: rotate(10deg);
+  top: 13%;
+  left: 107%;
+}
+
+.limon {
+  transform: rotate(15deg);
+  top: 72%;
+  left: 72%;
+}
+
+.diamanteRojo {
+  transform: rotate(-15deg);
+  top: 100%;
+  left: -16%;
+}
+
+.naranja {
+  transform: rotate(15deg);
+  top: 105%;
+  left: 90%;
 }
