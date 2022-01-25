@@ -33,7 +33,7 @@
 
 .elemento {
     padding-top: 50px;
-    width: 90%;
+    width: 100%;
     margin: auto;
     .titulo {
         margin-left: 30px;
@@ -45,7 +45,6 @@
     border-bottom: 1px solid black;
     padding: 10px 0 10px 0;
     > div {
-        margin-left: 20px;
     }
 }
 
@@ -66,4 +65,21 @@
     option {
         font-family: neueR;
     }
+}
+@media screen and(max-width: 700px) {
+    .busqueda{
+        .search{
+            .campo{
+                width: 50%;
+            }
+            display: inline;
+            > div {
+                float: right;
+            }
+        }
+       
+    }
+    
+
+
 }
