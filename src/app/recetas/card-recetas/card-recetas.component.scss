@@ -2,7 +2,7 @@
 
 .container {
   margin-top: 50px;
-  max-width: 90%;
+  max-width: 90em;
 }
 
 .imagen {
@@ -33,7 +33,7 @@
   margin-right: 10px;
   margin-bottom: 30px;
   background-color: white;
-  box-shadow: 0 7px 10px rgba(78, 78, 78, 0.428);
+  box-shadow: 0 4px 5px rgba(108, 108, 108, 0.34);
   padding-bottom: 20px;
   border-radius: 10px;
   font-family: neueB;
@@ -84,6 +84,7 @@
   background-position: center;
   background-repeat: no-repeat;
   filter: drop-shadow(0 5px 5px rgba(76, 76, 76, 0.455));
+  z-index: 100;
 }
 
 .subir {
@@ -96,7 +97,6 @@
   background-color: white;
   background-image: url("../../../assets/IMG/iconos/arrowUp.png");
   filter: drop-shadow(0 5px 5px rgba(76, 76, 76, 0.632));
-
   &:hover {
     animation: animFlecha 1.5s infinite;
   }
