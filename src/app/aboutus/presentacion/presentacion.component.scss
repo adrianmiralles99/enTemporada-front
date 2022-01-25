@@ -59,3 +59,29 @@
     margin-top: 15em;
     transform: rotate(10deg);
 }
+@media screen and  (max-width: 800px){
+    .bloquepresentacion {
+        p {
+            margin-top: 5%;
+            font-size: 150%;
+        }
+        .icono{
+            width:40% ;
+            margin-right: auto;
+            border: red 1px solid;
+
+        }
+        .contenedor{
+            border: red 1px solid;
+            margin-right: 25em;
+
+        }
+    }
+    .sticker{
+        display: none;
+        width: 4em; 
+        position: absolute;
+    }
+    
+}
+    
