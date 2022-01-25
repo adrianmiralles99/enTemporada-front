@@ -1,7 +1,7 @@
 <div class="container">
     <div class="fondo">
         <div class="row">
-            <div class="col-5">
+            <div class="col-5 col-sm-12">
                 <div class="upload">
                     <div id="img"></div>
                 </div>
@@ -27,7 +27,7 @@
             </div>
 
             <!-- DATOS E INGREDIENTES DE LA RECETA -->
-            <div class="col-7">
+            <div class="col-7  col-sm-12">
                 <div class="datosfondo">
                     <div class="row filadatos">
                         <div class="columna col-3">
@@ -64,7 +64,7 @@
                             </div>
                         </div>
                         <div class="row columnas">
-                            <div class="col-6">
+                            <div class="col-6 izq">
                                 <!-- LISTA DE LA PRIMERA MITAD DE LOS INGREDIENTES -->
                                 <ul class="lista">
                                     <div class="elemento" *ngFor="let ingrediente of ingredientes[0];let i=index">
@@ -74,7 +74,7 @@
                                     </div>
                                 </ul>
                             </div>
-                            <div class="col-6">
+                            <div class="col-6 der">
                                 <!-- LISTA DE LA SEGUNDA MITAD DE LOS INGREDIENTES -->
                                 <ul class="lista">
                                     <div class="elemento" *ngFor="let ingrediente of ingredientes[1];let i=index">
