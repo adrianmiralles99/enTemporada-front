@@ -103,11 +103,16 @@
 }
 
 .crearReceta {
+    font-family: neueB;
+    position: fixed;
     border: none;
+    bottom: 2%;
+    right: 2%;
     background-color: $yellow;
-    height: 110px;
+    height: 60px;
     width: 120px;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.463);
+    transition: 0.3s;
 }

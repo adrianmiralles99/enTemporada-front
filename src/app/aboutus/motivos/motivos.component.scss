@@ -138,19 +138,44 @@ text-align: center;
 
 }
 @media screen and(max-width: 700px) {
+    .sticker{
+        display: none;
+    }
   .bloqueporque{
 
     padding-bottom: 5%;
     .bloqueporque2{
       width: 80%;
-
       font-size: 75%;
       margin-top: 0%;
     }
   }
-}
-@media screen and  (max-width: 700px){
+  .bloquemotivos{
+        
+        width: 80%;
+        .col{
+            margin: 0%;
+            padding-right: 0%;
+            padding-left: 0%;
+        }
+        .fresco, .impacto, .comunidad{
+            font-size: 50%;
+            
+           
+        }
+        .frescoimg{
+            padding-top:5%;
+        }
+        .impactoimg{
+            padding-top:7.5%;
 
+        }
+        .comunidadimg{
+            padding-top:15.5%;
+        }
+        
+  }
 }
+
     
 
