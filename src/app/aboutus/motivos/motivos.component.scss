@@ -1,5 +1,6 @@
 
 .bloqueporque{
+  padding:5%;
 text-align: center;
     .bloqueporque2{
         margin-top: 5em;
@@ -17,11 +18,11 @@ text-align: center;
 
         }
     }
-    
-    
+
+
 }
 .sticker{
-    width: 9em; 
+    width: 9em;
     position: absolute;
 }
 .lemon{
@@ -48,19 +49,19 @@ text-align: center;
         border-radius: 20px;
     }
     .hoja{
-        width: 8em; 
+        width: 8em;
         margin-left: 31em;
         margin-top: -4em;
         transform: rotate(15deg);
     }
     .eco{
-        width: 8em; 
+        width: 8em;
         margin-left: -4em;
         margin-top: 41em;
         transform: rotate(15deg);
     }
     .oval{
-        width: 8em; 
+        width: 8em;
         margin-left: -2em;
         margin-top: 41em;
         transform: rotate(-5deg);
@@ -89,7 +90,7 @@ text-align: center;
         }
     }
     .impactoimg{
-        
+
         text-align: center;
         margin-right: 5%;
     }
@@ -133,5 +134,23 @@ text-align: center;
             font-size: 2.2em;
         }
     }
-    
+
+
 }
+@media screen and(max-width: 700px) {
+  .bloqueporque{
+
+    padding-bottom: 5%;
+    .bloqueporque2{
+      width: 80%;
+
+      font-size: 75%;
+      margin-top: 0%;
+    }
+  }
+}
+@media screen and  (max-width: 700px){
+
+}
+    
+

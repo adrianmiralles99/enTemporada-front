@@ -12,7 +12,6 @@ import { RecetasModule } from './recetas/recetas.module';
 import { RecetaindividualModule } from './recetaindividual/recetaindividual.module';
 import { PerfilModule } from './perfil/perfil.module';
 import { CreacionRecetaModule } from './creacion-receta/creacion-receta.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -32,7 +31,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RecetaindividualModule,
     CreacionRecetaModule,
     PerfilModule,
-    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
