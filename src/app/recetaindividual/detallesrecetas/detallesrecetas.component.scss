@@ -151,35 +151,32 @@
     }
 }
 @media screen and(max-width: 700px) {
-    .col-5{
-        .upload{
+    .col-5 {
+        .upload {
             height: 80%;
             margin: auto;
         }
-        .nombre{
-            h3{
+        .nombre {
+            h3 {
                 font-size: 150%;
             }
-            .row{
+            .row {
                 font-size: 90%;
             }
         }
         padding-bottom: 5%;
     }
-    .col-7{
-        .filadatos{
-            font-size:85%;
+    .col-7 {
+        .filadatos {
+            font-size: 85%;
         }
-        .ingredientes{
-            h3{
+        .ingredientes {
+            h3 {
                 font-size: 135%;
             }
-            .columnas{
+            .columnas {
                 font-size: 85%;
             }
-          
         }
     }
-
-
 }

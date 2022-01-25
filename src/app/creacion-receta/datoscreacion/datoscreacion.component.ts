@@ -11,11 +11,15 @@ export class DatoscreacionComponent implements OnInit {
 
   constructor() { }
 
-  misingredientes = ["4 Manzanas grandes", "2 huevos M", "250 ml. de leche entera", "250 g. de azúcar ", "120 g. de harina de trigo de todo uso", "1 plancha de masa quebrada",
-    "50 g. de mermelada de melocotón o albaricoque", "1 cda. de agua", "Molde desmoldable 18cm"];
+  // misingredientes = ["4 Manzanas grandes", "2 huevos M", "250 ml. de leche entera", "250 g. de azúcar ", "120 g. de harina de trigo de todo uso", "1 plancha de masa quebrada",
+  //   "50 g. de mermelada de melocotón o albaricoque", "1 cda. de agua", "Molde desmoldable 18cm"];
+  misingredientes: string[] = [];
+  cantidad: string = "";
+  ingred: string = "";
 
   ingredientes: Array<Array<String>> = [];
 
+  // FRUTAS Y VERDURAS PARA USAR EN DESPLEGABLE
   frutas = PRODUCTES.filter(element => element.tipo == "F");
   verduras = PRODUCTES.filter(element => element.tipo == "V");
   productes = PRODUCTES;
@@ -50,9 +54,6 @@ export class DatoscreacionComponent implements OnInit {
       }
     }
     reader.readAsDataURL(file);
-
-
-
   }
 
   divideIngredientes() {
@@ -66,14 +67,15 @@ export class DatoscreacionComponent implements OnInit {
   }
 
   crearIngrediente() {
-    let cant = $("#cantidad").val()?.toString().trim() ?? "";
-    let ingred = $("#ingred").val()?.toString().trim() ?? "";
-    if (cant.length >= 1 && ingred.length >= 1) {
-      this.misingredientes.push(cant + " " + ingred);
-      $("#cantidad").val("");
-      $("#ingred").val("");
+    let c = this.cantidad;
+    let i = this.ingred;
+
+    if (this.cantidad.length >= 1 && this.ingred.length >= 1) {
+      this.misingredientes.push(c + " " + i);
       this.divideIngredientes();
     }
+    this.ingred = "";
+    this.cantidad = "";
   }
 
   quitarIngrediente(e: Event) {

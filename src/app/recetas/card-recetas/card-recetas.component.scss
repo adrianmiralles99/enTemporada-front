@@ -38,10 +38,6 @@
   border-radius: 10px;
   font-family: neueB;
   transition: 0.3s;
-
-  &:hover {
-    transform: scale(107%);
-  }
 }
 
 .usuario {
@@ -91,11 +87,11 @@
 }
 
 .subir {
-  right: 3%;
+  right: 3.5%;
   border-radius: 100%;
   bottom: 4%;
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
   border: none;
   background-color: white;
   background-image: url("../../../assets/IMG/iconos/arrowUp.png");
@@ -108,10 +104,10 @@
 
 .crear {
   right: 3.5%;
-  bottom: 17%;
+  bottom: 12%;
   border: none;
-  width: 70px;
-  height: 70px;
+  width: 40px;
+  height: 40px;
   background-color: white;
   margin: auto;
   padding: 0;
@@ -119,13 +115,13 @@
   transition: 0.5s;
 
   .img {
-    background-image: url("../../../assets/IMG/iconos/agregar.png");
+    background-image: url("../../../assets/IMG/iconos/plus.png");
     background-size: 90%;
     background-repeat: no-repeat;
     background-position: center;
     height: 100%;
     background-color: $orange;
-    border-radius: 10px;
+    border-radius: 7px;
     transition: 0.5s;
   }
   .texto {
@@ -137,18 +133,19 @@
 }
 
 .extender {
-  width: 250px;
+  width: 200px;
   background-color: white;
   p {
     display: table-cell;
     vertical-align: middle;
     font-family: neueB;
-    font-size: 140%;
+    font-size: 120%;
     letter-spacing: 0.5px;
     animation: aparecer 2s forwards;
   }
   .img {
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 7px 0px 0px 7px;
+    background-size: 60%;
   }
 
   .texto {
