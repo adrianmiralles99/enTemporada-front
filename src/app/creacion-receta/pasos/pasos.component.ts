@@ -9,8 +9,8 @@ export class PasosComponent implements OnInit {
 
   constructor() { }
 
-  // pasos: Array<Array<String>> = [];
-  pasos = ["Hola buenas", "adios"];
+  pasos: Array<String> = [];
+  // pasos = ["Hola buenas", "adios"];
   editar = "";
   ngOnInit(): void { }
 
@@ -37,20 +37,6 @@ export class PasosComponent implements OnInit {
 
   getNumeroPaso() {
     return this.pasos.length + 1;
-  }
-
-  editarPaso(e: Event) {
-    if (e.target) {
-      this.editar = $(e.target).parent().parent().prop("id");
-    }
-    $(".edit").attr("disabled", "true");
-  }
-
-  confirmarEdicion() {
-
-    if (this.editar.length > 0) {
-      this.editar = "";
-    }
   }
 
 }

@@ -10,7 +10,13 @@ export class CardRecetasComponent implements OnInit {
 
   constructor() { }
   recetas = RECETAS;
+  hover = false;
+  
   ngOnInit(): void {
+  }
+
+  subir() {
+    window.scrollTo({ top: 0, behavior: "smooth" })
   }
 
 }

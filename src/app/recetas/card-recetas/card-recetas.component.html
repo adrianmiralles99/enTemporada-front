@@ -20,9 +20,13 @@
     </div>
   </div>
   <button class="subir"></button>
-  <button [routerLink]="'/creacionRecetas'" class="crear">
-    <img class="img-fluid" src="../../../assets/IMG/iconos/agregar.png" alt="">
-    <p>Nueva Receta</p>
+
+  <button [routerLink]="'/creacionRecetas'" (mouseover)="hover=true" (mouseout)="hover=false"
+    [ngClass]="{'extender': hover==true}" class="crear row">
+    <div [ngClass]="{'col-3': hover==true,'col-12': hover==false}" class=" img"></div>
+    <div class="texto col-9">
+      <p>Nueva Receta</p>
+    </div>
   </button>
 
 </div>

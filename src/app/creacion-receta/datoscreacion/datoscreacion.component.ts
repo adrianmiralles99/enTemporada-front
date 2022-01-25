@@ -72,10 +72,14 @@ export class DatoscreacionComponent implements OnInit {
   }
 
   crearIngrediente() {
-    this.misingredientes.push($("#cantidad").val() + " " + $("#ingred").val());
-    $("#cantidad").val("");
-    $("#ingred").val("");
-    this.divideIngredientes();
+    let cant = $("#cantidad").val()?.toString().trim() ?? "";
+    let ingred = $("#ingred").val()?.toString().trim() ?? "";
+    if (cant.length >= 1 && ingred.length >= 1) {
+      this.misingredientes.push(cant + " " + ingred);
+      $("#cantidad").val("");
+      $("#ingred").val("");
+      this.divideIngredientes();
+    }
   }
 
   quitarIngrediente(e: Event) {

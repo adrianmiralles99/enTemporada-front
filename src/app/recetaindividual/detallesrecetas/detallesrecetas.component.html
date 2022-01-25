@@ -1,68 +1,96 @@
-<div class="container detalles">
-    <table class ="arriba">
-        <tr>
-            <td>
-                <img class="icono" src="../../../assets/IMG/iconos/grupo.png" alt="">
-
-                <span>8 comensales</span>
-            </td>
-            <td>
-                <img class="icono" src="../../../assets/IMG/iconos/tiempo.png" alt="">
-
-                <span>1h</span>
-            </td>
-            <td>
-                <img class="icono" src="../../../assets/IMG/iconos/tipo.png" alt="">
-
-                <span>Postre</span>
-            </td>
-            <td>
-                <img class="icono" src="../../../assets/IMG/iconos/dificultad.png" alt="">
-
-                <span>Dificultad Media</span>
-            </td>
-        </tr>
-      
-    </table>
-        
-    <div class="ingredientes">
-        <h5>
-            INGREDIENTES:
-        </h5>
+<div class="container">
+    <div class="fondo">
         <div class="row">
-        
-            <div class="col">
-                <ul>
-                    <li>
-                        lalalalalall 
-                    </li>
-                    <li>
-                        lalalalalall 
-                    </li>
-                    <li>
-                        lalalalalall 
-                    </li>
-                    <li>
-                        lalalalalall 
-                    </li>
-                </ul>
+            <div class="col-5">
+                <div class="upload">
+                    <div id="img"></div>
+                </div>
+
+                <div class="nombre">
+                    <h3>Ensalada de kale, quinoa y frutos rojos</h3>
+                    <div class="row">
+                        <div class="col-1 icono">
+                            <img src="../../../assets/IMG/iconos/icono.png" alt="">
+                        </div>
+                        <div class="col-8">
+                            <sub>By @Adrimigo</sub>
+                        </div>
+                        <button class="col-1 mg">
+                            <img src="../../../assets/IMG/iconos/mg.png" alt="">
+                        </button>
+                        <button class="col-1 save">
+                            <img src="../../../assets/IMG/iconos/guardado bonito.png" alt="">
+                        </button>
+                    </div>
+
+                </div>
             </div>
-            <div class="col">
-                <ul>
-                    <li>
-                        lalalalalalllalalaal
-                    </li>
-                    <li>
-                        lalalalalall 
-                    </li>
-                    <li>
-                        lalalalalall 
-                    </li>
-                    <li>
-                        lalalalalall 
-                    </li>
-                </ul>
+
+            <!-- DATOS E INGREDIENTES DE LA RECETA -->
+            <div class="col-7">
+                <div class="datosfondo">
+                    <div class="row filadatos">
+                        <div class="columna col-3">
+                            <div class="campo">
+                                <img class="icono" src="../../../assets/IMG/iconos/grupo.png" alt="">
+                                <span>4 comensales</span>
+                            </div>
+                        </div>
+                        <div class="columna col-2">
+                            <div class="campo">
+                                <img class="icono" src="../../../assets/IMG/iconos/tiempo.png" alt="">
+                                <span>4h</span>
+                            </div>
+                        </div>
+                        <div class="columna col-3">
+                            <div class="campo">
+                                <img class="icono" src="../../../assets/IMG/iconos/tipo.png" alt="">
+                                <span>Comida</span>
+                            </div>
+                        </div>
+                        <div class="columna col-4">
+                            <div class="campo">
+                                <img class="icono" src="../../../assets/IMG/iconos/dificultad.png" alt="">
+                                <span>Dificultad Fácil</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- INGREDIENTES -->
+                    <div class="ingredientes">
+                        <div class="row">
+                            <div class="col-12">
+                                <h3>Ingredientes:</h3>
+                            </div>
+                        </div>
+                        <div class="row columnas">
+                            <div class="col-6">
+                                <!-- LISTA DE LA PRIMERA MITAD DE LOS INGREDIENTES -->
+                                <ul class="lista">
+                                    <div class="elemento" *ngFor="let ingrediente of ingredientes[0];let i=index">
+                                        <li>
+                                            <span>{{ingrediente}} </span>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </div>
+                            <div class="col-6">
+                                <!-- LISTA DE LA SEGUNDA MITAD DE LOS INGREDIENTES -->
+                                <ul class="lista">
+                                    <div class="elemento" *ngFor="let ingrediente of ingredientes[1];let i=index">
+                                        <li>
+                                            <span>{{ingrediente}} </span>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
+
+
     </div>
 </div>

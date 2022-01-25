@@ -1,26 +1,24 @@
 @import "../../../styles.scss";
 
-
-.container{
-    margin-top: 2.5%;
-    width: 95%;
-    div{
-        margin-top: 2.5%;
-
-        margin-bottom: 2.5%;
-
-        h5{
-            font-size: 175%;
-            margin-bottom:2% ;
-        }
-
-        font-family: "neueR";
-        font-size: 140%;
-
-    }
-    hr{
-        width: 105%;
-        margin-left: -2.5%;
-    }
+.contenedor {
+    margin: auto;
+    margin-top: 4%;
+    width: 90%;
     padding-bottom: 2%;
+    background-color: white;
+    .paso {
+        margin-top: 2%;
+        margin-bottom: 2%;
+        font-family: "neueR";
+        font-size: 120%;
+        h5 {
+            font-size: 150%;
+            font-family: neueB;
+            margin-bottom: 1%;
+        }
+    }
+}
+
+.borde {
+    border-bottom: 1px solid rgba(69, 69, 69, 0.605);
 }

@@ -1,7 +1,7 @@
 <div class="container">
     <div class="fondo">
         <div class="row">
-            <div class="col-4">
+            <div class="col-5">
                 <label class="upload">
                     <div id="img"></div>
                     <input type="file" (change)="visualizar()" name="" id="inputIMG">
@@ -14,7 +14,7 @@
             </div>
 
             <!-- DATOS E INGREDIENTES DE LA RECETA -->
-            <div class="col-8">
+            <div class="col-7">
                 <div class="datosfondo">
                     <div class="row filadatos">
                         <div class="columna col-3">
@@ -108,7 +108,7 @@
                                             <span>{{ingrediente}}</span>
                                         </div>
                                         <button id="1-{{i}}" (click)="quitarIngrediente($event)"
-                                            class="quitar col-2 "></button>
+                                            class="quitar col-2"></button>
                                     </div>
                                 </ul>
                             </div>
