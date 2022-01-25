@@ -16,7 +16,7 @@
         border: 3px solid black;
     }
     .nivel{
-        margin-left: 4em;
+        margin-left: 5em;
         margin-top: -6em;
         width: 20em;
         height: 7em;
@@ -30,14 +30,12 @@
             transform: translateY(40%)
         }
     }
-    .user{  
+    .user{
         padding-top: 1.8em;
         padding-bottom: 1.5em;
         font-size: 1.7em;
     }
-    .col-2{
-        
-    }
+
     .infouser{
         font-family: neueR;
     }
@@ -45,25 +43,85 @@
         font-family: neueB;
         margin-left: 9em;
         margin-top: 6em;
+        padding: 0;
         p{
             font-size:1.2em;
+            padding: 5%;
+
         }
+        .perfil{
+            margin-top: 4em;
+             font-family: neueB;
+             color: white;
+             height: 3.5em;
+             background-color: $green;
+             border: 2px solid white;
+             border-radius: 5px;
+             width: 13em;
+         }
+         .perfil:hover{
+             color: $green;
+             background-color: white;
+             border: 2px solid $green;
+         }
     }
-    .perfil{
-     margin-top: 4em;
-        
-        font-family: neueB;
-        color: white;
-        height: 3.5em;
-        background-color: $green;
-        border: 2px solid white;
-        border-radius: 5px;
-        width: 13em;
+}
+@media screen and(max-width:700px) {
+  .info{
+    .foto{
+      padding: 0%;
     }
-    .perfil:hover{
-        color: $green;
-        background-color: white;
-        border: 2px solid $green;
+    .usuario{
+      width: 4em;
+      margin: 2em 4em 3em 2.5em;
+      float: left;
+
     }
+    .datos{
+      padding: 0;
+      margin-right: 0%;
+      .infouser{
+        font-size: 90%;
+      }
+      .user{
+        font-size: 120%;
+        margin-top: 4em;
+        margin-bottom: 0%;
+      }
+      h4{
+        font-size: 90%;
+      }
+    }
+    .derecha{
+
+      padding-left: 0%;
+      .chef{
+        margin-left: 0em;
+        margin-top: 6em;
+        p{
+          font-size: 90%;
+
+        }
+        .nivel{
+
+          width: 60px;
+          height: 60px;
+          margin-top: -4.7em;
+
+          img{
+            width: 40px;
+          }
+        }
+      }
+      .perfil{
+        margin-top: 2em;
+        margin-left: 1em;
+         height: 3.5em;
+         width: 8em;
+     }
+    }
+
+  }
+
 
 }

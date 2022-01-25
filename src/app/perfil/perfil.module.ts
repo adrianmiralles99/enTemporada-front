@@ -4,6 +4,8 @@ import { IndiceperfilComponent } from './indiceperfil/indiceperfil.component';
 import { DatosComponent } from './datos/datos.component';
 import { InferiorComponent } from './inferior/inferior.component';
 import { UtilsModule } from '../utils/utils.module';
+import { RecetasComponent } from './recetas/recetas.component';
+import { BotonnuevarecetaComponent } from './botonnuevareceta/botonnuevareceta.component';
 
 
 
@@ -11,7 +13,9 @@ import { UtilsModule } from '../utils/utils.module';
   declarations: [
     IndiceperfilComponent,
     DatosComponent,
-    InferiorComponent
+    InferiorComponent,
+    RecetasComponent,
+    BotonnuevarecetaComponent
   ],
   imports: [
     CommonModule
