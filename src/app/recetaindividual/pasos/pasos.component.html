@@ -1,9 +1,10 @@
 <div class="contenedor">
-    <div class="paso" *ngFor="let paso of pasos;let i=index" [ngClass]="{'borde':(i+1)<pasos.length}">
-        <h5>
-            Paso {{i+1}}:
-        </h5>
-        <p>{{paso}}</p>
+    <div class="row paso">
+        <div class="col-5 columna" *ngFor="let paso of pasos;let i=index;">
+            <div>
+                <h5>Paso {{i+1}}:</h5>
+                <p>{{paso}}</p>
+            </div>
+        </div>
     </div>
-
 </div>
