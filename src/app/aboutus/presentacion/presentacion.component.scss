@@ -3,6 +3,9 @@
 .bloquepresentacion {
     background-color: $green;
     text-align: left;
+    .contenedor{
+      width: 50%;
+    }
     p {
         margin-top: 5%;
         color: white;
@@ -33,7 +36,7 @@
     padding-bottom: 10em;
 }
 .sticker{
-    width: 9em; 
+    width: 9em;
     position: absolute;
 }
 .deli{
@@ -59,29 +62,18 @@
     margin-top: 15em;
     transform: rotate(10deg);
 }
-@media screen and  (max-width: 800px){
-    .bloquepresentacion {
-        p {
-            margin-top: 5%;
-            font-size: 150%;
-        }
-        .icono{
-            width:40% ;
-            margin-right: auto;
-            border: red 1px solid;
-
-        }
-        .contenedor{
-            border: red 1px solid;
-            margin-right: 25em;
-
-        }
+@media screen and(max-width: 700px) {
+    .bloquepresentacion{
+      .contenedor{
+        width: 80%;
+        padding-bottom: 5%;
+      }
+      p {
+        font-size: 150%;
     }
-    .sticker{
+      .sticker{
         display: none;
-        width: 4em; 
-        position: absolute;
+
+      }
     }
-    
 }
-    
