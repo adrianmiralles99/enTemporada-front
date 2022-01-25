@@ -6,7 +6,7 @@ import { PRODUCTES } from '../../mock-articulos';
   selector: 'app-datosproducto',
   templateUrl: './datosproducto.component.html',
   styleUrls: ['./datosproducto.component.scss'],
-  
+
 })
 
 export class DatosproductoComponent implements OnInit {
@@ -17,9 +17,6 @@ export class DatosproductoComponent implements OnInit {
   articulos = PRODUCTES.filter(element => element.id == (this.id ?? -1));
   help = new Date();
   mesActual = this.help.getMonth();
-  ngOnInit(): void {
-    console.log(this.articulos);
-
-  }
+  ngOnInit(): void { }
 
 }

@@ -9,8 +9,7 @@ export class PasosComponent implements OnInit {
 
   constructor() { }
 
-  // pasos: Array<String> = [];
-  pasos: Array<String> = ["hola"];
+  pasos: Array<String> = [];
   descripcion: string = "";
 
   ngOnInit(): void { }

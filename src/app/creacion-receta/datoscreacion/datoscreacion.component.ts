@@ -11,9 +11,7 @@ export class DatoscreacionComponent implements OnInit {
 
   constructor() { }
 
-  misingredientes = ["4 Manzanas grandes", "2 huevos M", "250 ml. de leche entera", "250 g. de azúcar ", "120 g. de harina de trigo de todo uso", "1 plancha de masa quebrada",
-    "50 g. de mermelada de melocotón o albaricoque", "1 cda. de agua"];
-  // misingredientes: string[] = [];
+  misingredientes: string[] = [];
   cantidad: string = "";
   ingred: string = "";
 
