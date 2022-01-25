@@ -1,39 +1,22 @@
-<div class="container descripcion">
-  <h2>Recetas relacionadas: </h2>
-  <div class="card-deck">
-    <div class="card rad">
-      <img class="card-img-top" src="../../../assets/IMG/banana.jpg" alt="Card image cap">
-      <div class="card-body">
-        <img class="derecha" src="../../../assets/IMG/iconos/guardado bonito.png">
-
-        <img class="derechamg" src="../../../assets/IMG/iconos/fav.png">
-        <h5 class="card-title"><img src="../../../assets/IMG/iconos/icono.png" alt="">Banana Split</h5>
-        <p class="card-text creador">By @adrimigo</p>
-
+<div class="container">
+  <div class="row">
+    <div class="col-4 margen" *ngFor="let receta of recetas">
+      <div class="tarjeta">
+        <button class="imagen" [ngStyle]="{'background-image':'url(../../../assets/IMG/'+receta.img+'.jpg)'}"></button>
+        <div class="row usuario">
+          <div class="col-9">
+            <p class="autor">{{receta.titulo}}</p>
+          </div>
+          <div class="col-2 botones">
+            <button class="mg"></button>
+            <button class="save"></button>
+          </div>
+        </div>
+        <div>
+          <img class="icono" src="../../../assets/IMG/iconos/icono.png">
+          <sub class="autor">by @{{receta.autor}}</sub>
+        </div>
       </div>
     </div>
-    <div class="card rad">
-      <img class="card-img-top" src="../../../assets/IMG/banana.jpg" alt="Card image cap">
-      <div class="card-body">
-        <img class="derecha" src="../../../assets/IMG/iconos/guardado bonito.png">
-
-        <img class="derechamg" src="../../../assets/IMG/iconos/fav.png">
-        <h5 class="card-title"><img src="../../../assets/IMG/iconos/icono.png" alt="">Banana Split</h5>
-        <p class="card-text creador">By @adrimigo</p>
-      </div>
-    </div>
-
-    <div class="card rad">
-      <img class="card-img-top" src="../../../assets/IMG/banana.jpg" alt="Card image cap">
-      <div class="card-body">
-        <img class="derecha" src="../../../assets/IMG/iconos/guardado bonito.png">
-
-        <img class="derechamg" src="../../../assets/IMG/iconos/fav.png">
-        <h5 class="card-title"><img src="../../../assets/IMG/iconos/icono.png" alt="">Banana Split</h5>
-        <p class="card-text creador">By @adrimigo</p>
-      </div>
-    </div>
-
-
   </div>
 </div>

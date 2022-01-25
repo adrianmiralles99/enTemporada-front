@@ -10,6 +10,7 @@ export class CardRecetasComponent implements OnInit {
 
   constructor() { }
   recetas = RECETAS;
+  
   hover = false;
   
   ngOnInit(): void {

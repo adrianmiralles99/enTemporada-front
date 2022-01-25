@@ -1,29 +1,30 @@
 @import "../../../styles.scss";
 
 .datos {
-    width: 70%;
+    width: 80%;
 
     .infonutri {
         width: 85%;
         margin: auto;
 
-        .col-4 {
-            border: black 1px solid;
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
+        .producto {
+            border: 1px solid rgba(72, 72, 72, 0.625);
+            border-radius: 5px 0 0 5px !important;
+            padding: 0;
+            background-color: white;
+            text-align: center;
+            img {
+                width: 70%;
+            }
 
-            padding: 0%;
-            background-color: orange;
-            .producto {
-                img {
-                    width: 12em;
-                    margin: auto;
-                }
+            .card-title {
+                text-align: left;
             }
         }
         .col-8 {
             color: white;
             box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.582);
+            border-radius: 0 5px 5px 0;
             ul {
                 padding: 0%;
                 text-align: center;
@@ -43,33 +44,37 @@
         }
     }
     .tabla {
-        width: 100%;
+        width: 95%;
         margin: auto;
-        margin-top: 5%;
         text-align: center;
         user-select: none;
         border-collapse: separate;
         border-spacing: 0px 1px;
+        margin-top: 50px;
         margin-bottom: 100px;
-        border: black 1px solid;
-        height: 50px;
-        border-radius: 5px;
+        border-radius: 10px;
+        border: 1px solid rgba(101, 101, 101, 0.599);
+
         tr {
             height: 50px;
         }
         .meses {
             th {
                 background-color: $beige;
+                border-bottom: 1px solid rgba(101, 101, 101, 0.599);
             }
         }
     }
 }
+
 .cabMes {
     background-color: #39433b !important;
+    border-radius: 10px 10px 0px 0px;
     color: white;
-  }
+}
 
-  .cabFila {
+.cabFila {
     background-color: #17231c !important;
     color: white;
-  }
+    border-radius: 0px 0px 10px 10px;
+}

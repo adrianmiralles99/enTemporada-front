@@ -141,7 +141,7 @@
     font-family: neueB;
     font-size: 120%;
     letter-spacing: 0.5px;
-    animation: aparecer 2s forwards;
+    animation: aparecer 1.5s forwards;
   }
   .img {
     border-radius: 7px 0px 0px 7px;
@@ -170,7 +170,7 @@
 }
 
 @keyframes aparecer {
-  20% {
+  25% {
     opacity: 0;
   }
 

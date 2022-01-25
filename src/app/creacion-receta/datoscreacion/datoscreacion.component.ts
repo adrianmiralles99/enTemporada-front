@@ -11,9 +11,9 @@ export class DatoscreacionComponent implements OnInit {
 
   constructor() { }
 
-  // misingredientes = ["4 Manzanas grandes", "2 huevos M", "250 ml. de leche entera", "250 g. de azúcar ", "120 g. de harina de trigo de todo uso", "1 plancha de masa quebrada",
-  //   "50 g. de mermelada de melocotón o albaricoque", "1 cda. de agua", "Molde desmoldable 18cm"];
-  misingredientes: string[] = [];
+  misingredientes = ["4 Manzanas grandes", "2 huevos M", "250 ml. de leche entera", "250 g. de azúcar ", "120 g. de harina de trigo de todo uso", "1 plancha de masa quebrada",
+    "50 g. de mermelada de melocotón o albaricoque", "1 cda. de agua"];
+  // misingredientes: string[] = [];
   cantidad: string = "";
   ingred: string = "";
 
@@ -78,17 +78,15 @@ export class DatoscreacionComponent implements OnInit {
     this.cantidad = "";
   }
 
-  quitarIngrediente(e: Event) {
-    if (e.target) {
-      let posicion = $(e.target).prop("id").split("-");
-      if (posicion[0] == 0) {
-        this.misingredientes.splice(posicion[1], 1);
-      }
-      else {
-        this.misingredientes.splice(parseInt(posicion[1]) + this.ingredientes[0].length, 1);
-      }
-      this.divideIngredientes();
-    }
-  }
+  quitarIngrediente(fila: number, posicion: number) {
 
+    if (fila == 0) {
+      this.misingredientes.splice(posicion, 1);
+    }
+    else {
+      this.misingredientes.splice(posicion + this.ingredientes[0].length, 1);
+    }
+    this.divideIngredientes();
+  }
 }
+
