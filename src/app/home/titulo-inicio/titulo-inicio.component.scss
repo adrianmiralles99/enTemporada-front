@@ -26,6 +26,7 @@
 
 .imagen {
   width: 150px;
+  height: auto;
   margin: auto;
   margin-top: -20px;
   margin-bottom: -10px;
@@ -42,11 +43,50 @@
     font-size: 45px;
     margin-bottom: -4em;
   }
+
+  img {
+    height: 90px !important;
+  }
+
+  .titulo {
+    margin-top: 15px !important;
+  }
+
+  .imagen {
+    display: none;
+  }
+
+  .sticker {
+    display: none;
+  }
+
+  .banana {
+    transform: rotate(10deg) !important;
+    display: block;
+    width: 100px !important;
+    height: auto;
+    left: 5% !important;
+    top: 10% !important;
+  }
+
+  .sunRed {
+    transform: rotate(15deg) !important;
+    display: block;
+    width: 90px !important;
+    top: 50% !important;
+  }
+
+  .bananaBlue {
+    display: block;
+    width: 90px !important;
+    top: 95% !important;
+    left: -5% !important;
+  }
 }
 
 // STICKERS
 .sticker {
-  width: 150px !important;
+  width: 150px;
   height: auto;
   position: absolute;
   z-index: 2 !important;
