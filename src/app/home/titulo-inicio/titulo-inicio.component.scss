@@ -35,9 +35,10 @@
   text-align: center;
 }
 
-@media screen and(max-width:700px) {
+@media screen and(max-width: 812px) {
   .titulo {
-    font-size: 30px;
+    font-size: 45px;
+    margin-bottom: -4em;
   }
 }
 

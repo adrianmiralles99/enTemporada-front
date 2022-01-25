@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col-4">
                 <label class="upload">
-                    <div class="img"></div>
-                    <input type="file" name="" id="">
+                    <div id="img"></div>
+                    <input type="file" (change)="visualizar()" name="" id="inputIMG">
                 </label>
 
                 <div class="nombre">
@@ -21,7 +21,7 @@
                             <p class="mt-2">Nº de Comensales</p>
                             <div class="campo">
                                 <img class="icono" src="../../../assets/IMG/iconos/grupo.png" alt="">
-                                <input type="text" name="" id="">
+                                <input type="number" name="" id="">
                             </div>
                         </div>
                         <div class="columna col-2">
@@ -37,6 +37,11 @@
                                 <img class="icono" src="../../../assets/IMG/iconos/tipo.png" alt="">
                                 <select name="" id="">
                                     <option selected>...</option>
+                                    <option name="" value="">Desayuno</option>
+                                    <option name="" value="">Almuerzo</option>
+                                    <option name="" value="">Comida</option>
+                                    <option name="" value="">Cena</option>
+                                    <option name="" value="">Postre</option>
                                 </select>
                             </div>
                         </div>
@@ -46,6 +51,9 @@
                                 <img class="icono" src="../../../assets/IMG/iconos/dificultad.png" alt="">
                                 <select name="" id="">
                                     <option selected>...</option>
+                                    <option name="" value="">Fácil</option>
+                                    <option name="" value="">Intermedio</option>
+                                    <option name="" value="">Difícil</option>
                                 </select>
                             </div>
                         </div>
@@ -55,51 +63,72 @@
                     <div class="ingredientes">
                         <div class="row">
                             <div class="col-6">
-                                <h2>Ingrediente Principal:</h2>
+                                <h3>Ingrediente Principal:</h3>
                             </div>
-                            <div class="col-6">
-                                <label>
+                            <div class="col-6 inputTipo">
+                                <label (click)="selectTipo('F')">
                                     <input type="radio" name="tipo">
                                     <span>Fruta</span>
                                 </label>
-                                <label>
+                                <label (click)="selectTipo('V')">
                                     <input type="radio" name="tipo">
                                     <span>Verdura</span>
                                 </label>
 
                                 <select>
-                                    <option selected>...</option>
+                                    <option *ngFor="let tipo of tipoActual" value="{{tipo.nombre}}">{{tipo.nombre}}
+                                    </option>
                                 </select>
                             </div>
                         </div>
                         <br>
                         <div class="row">
                             <div class="col-12">
-                                <h2>Ingredientes:</h2>
+                                <h3>Ingredientes:</h3>
                             </div>
                         </div>
                         <div class="row columnas">
                             <div class="col-6">
                                 <!-- LISTA DE LA PRIMERA MITAD DE LOS INGREDIENTES -->
                                 <ul class="lista">
-                                    <div class="row elemento" *ngFor="let ingrediente of ingredientes1;">
+                                    <div class="row elemento" *ngFor="let ingrediente of ingredientes[0];let i=index">
                                         <div class="col-10">
                                             <span>{{ingrediente}} </span>
                                         </div>
-                                        <button class="quitar col-2"></button>
+                                        <button id="0-{{i}}" (click)="quitarIngrediente($event)"
+                                            class="quitar col-2"></button>
                                     </div>
                                 </ul>
                             </div>
                             <div class="col-6">
                                 <!-- LISTA DE LA SEGUNDA MITAD DE LOS INGREDIENTES -->
                                 <ul class="lista">
-                                    <div class="row elemento" *ngFor="let ingrediente of ingredientes2;">
+                                    <div class="row elemento" *ngFor="let ingrediente of ingredientes[1];let i=index">
                                         <div class="col-10 ">
-                                            <span>{{ingrediente}} </span>
+                                            <span>{{ingrediente}}</span>
                                         </div>
-                                        <button class="quitar col-2"></button>
+                                        <button id="1-{{i}}" (click)="quitarIngrediente($event)"
+                                            class="quitar col-2 "></button>
                                     </div>
                                 </ul>
+                            </div>
+                        </div>
+
+                        <div class="row crear">
+                            <div class="col-7">
+                                <label>
+                                    <span> Ingrediente:</span>
+                                    <input id="ingred" type="text" name="">
+                                </label>
+                            </div>
+                            <div class="col-4">
+                                <label>
+                                    <span> Cantidad:</span>
+                                    <input id="cantidad" min=1 type="text" name="">
+                                </label>
+                            </div>
+                            <div class="col-1">
+                                <button id=enviar (click)="crearIngrediente()"></button>
                             </div>
                         </div>
 
