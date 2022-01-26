@@ -37,7 +37,7 @@ const routes: Routes = [
     component: IndexrecetasComponent,
   },
   {
-    path: 'recetaindividual/:id',
+    path: 'recetaindividual/:objeto',
     component: IndexrecetaindComponent,
   },
   /*probando cosas rutas dont worry be happy :)*/
