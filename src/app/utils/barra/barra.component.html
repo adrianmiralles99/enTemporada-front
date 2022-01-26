@@ -32,11 +32,11 @@
           <div class="dropdown-menu dropdown-menu-right">
             <button class="dropdown-item" type="button" [routerLink]="'/perfil'">Perfil</button>
             <div class="dropdown-divider"></div>
-            <button class="dropdown-item" type="button">Log Out</button>
+            <button class="dropdown-item" type="button" (click)="sesion=false">Log Out</button>
           </div>
         </ng-container>
         <ng-template #sesionIniciada>
-          <button class="boton pr-3 pl-3"><a href=" #">Log In</a></button>
+          <button class="boton pr-3 pl-3" [routerLink]="'/login'">Log In</button>
         </ng-template>
       </div>
     </ul>
