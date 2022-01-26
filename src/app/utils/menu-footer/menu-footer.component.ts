@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { MenuFooterInt } from 'src/app/menufooter';
 
 
 @Component({
@@ -8,11 +8,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./menu-footer.component.scss']
 })
 export class MenuFooterComponent implements OnInit {
-  @Input() ruta?: String;
-  
-  constructor(private router: Router) { }
-  ngOnInit(): void {
+  constructor() { }
+  @Input() micard!: MenuFooterInt;
+  destinoL: string = "";
 
+
+  ngOnInit(): void {
+    this.destinoL = this.micard.destinoL;
   }
 
 }

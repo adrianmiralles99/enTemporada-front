@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuFooterInt } from 'src/app/menufooter';
+import { MenuFooter } from 'src/app/mock-menufooter';
 
 @Component({
   selector: 'app-indice',
@@ -8,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class IndiceComponent implements OnInit {
 
   constructor() { }
+  micard: MenuFooterInt = (MenuFooter.filter(element => element.ruta == "/aboutus"))[0];
 
   ngOnInit(): void {
   }

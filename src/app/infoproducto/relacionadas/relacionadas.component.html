@@ -1,6 +1,7 @@
 <div class="container">
+  <h2>Datos sobre el producto: </h2>
   <div class="row">
-    <div class="col-4 margen" *ngFor="let receta of recetas">
+    <div class="col-md-4 col-sm-12 margen" *ngFor="let receta of recetas">
       <div class="tarjeta">
         <button class="imagen" [ngStyle]="{'background-image':'url(../../../assets/IMG/'+receta.img+')'}"></button>
         <div class="row usuario">
