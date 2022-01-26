@@ -4,7 +4,6 @@ import { BarraComponent } from './barra/barra.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { MenuFooterComponent } from './menu-footer/menu-footer.component';
-import { BarranegraComponent } from './barranegra/barranegra.component';
 
 
 
@@ -13,18 +12,15 @@ import { BarranegraComponent } from './barranegra/barranegra.component';
     BarraComponent,
     FooterComponent,
     MenuFooterComponent,
-    BarranegraComponent
   ],
   imports: [
     CommonModule,
     RouterModule
   ],
-  exports:[
+  exports: [
     BarraComponent,
     FooterComponent,
     MenuFooterComponent,
-    BarranegraComponent
-
   ]
 })
 export class UtilsModule { }

@@ -1,75 +1,40 @@
 <div class="container top-megabuffer">
-  <h1>{{this.ruta}}</h1>
   <div class="row">
 
-
     <div class="card col-sm-6">
-      <a *ngIf="ruta === '/aboutus'" [routerLink]="'/'">
-        <img class="card-img-top img-rounded" src="../../../assets/IMG/imagenes footer/temporada.png">
+      <a [routerLink]="[micard.destinoL]">
+        <img class="card-img-top img-rounded" src="{{micard.imgcardL}}">
       </a>
-      <a *ngIf="ruta === '/calendario'" [routerLink]="'/'">
-        <img class="card-img-top img-rounded" src="../../../assets/IMG/imagenes footer/temporada.png">
-      </a>
-      <a *ngIf="ruta === '/'" [routerLink]="'/calendario'">
-        <img class="card-img-top img-rounded" src="../../../assets/IMG/imagenes footer/calendario.png">
-      </a>
-      <img *ngIf="ruta === '/' || ruta === '/aboutus'" class="sticker sticker-left"
-        src="../../../assets/IMG/En Temporada (IES FSL)/Stickers/Sunny Yellow Oval.png" alt="">
 
-      <img *ngIf="ruta === '/calendario'" class="sticker sticker-left"
-        src="../../../assets/IMG/En Temporada (IES FSL)/Stickers/Blue Banana.png" alt="">
+      <img class="sticker sticker-left" src="{{micard.stickerL}}" alt="">
 
       <div class="card-body">
-        <h4 *ngIf="ruta === '/aboutus' || ruta === '/calendario'" class="card-title">Ahora en temporada</h4>
-        <p *ngIf="ruta === '/aboutus' || ruta === '/calendario'" class="card-text">Ver cuando todas las frutas y
-          verduras están en temporada este mes</p>
-
-        <h4 *ngIf="ruta === '/'" class="card-title">Calendario</h4>
-        <p *ngIf="ruta === '/'" class="card-text">Ver cuando todas las frutas y
-          verduras están en temporada</p>
+        <h4 class="card-title">{{micard.headL}}</h4>
+        <p class="card-text">{{micard.textL}}</p>
       </div>
-      <img *ngIf="ruta === '/' || ruta === '/aboutus'" class="sticker sticker-mid"
-        src="../../../assets/IMG/En Temporada (IES FSL)/Stickers/Flavor Leaf.png" alt="">
-      <img *ngIf="ruta === '/calendario'" class="sticker sticker-mid2"
-        src="../../../assets/IMG/En Temporada (IES FSL)/Stickers/Watermelon.png" alt="">
+
+      <img class="sticker sticker-mid" src="{{micard.stickerM}}" alt="">
 
       <img src="../../../assets/IMG/En Temporada (IES FSL)/Stickers/Black Orange.png" alt=""
         class="naranjaNegra sticker">
-
-
     </div>
-
 
     <div class="card col-sm-6">
+      <a [routerLink]="[micard.destinoR]">
+        <img class="card-img-top img-rounded" src="{{micard.imgcardR}}">
+      </a>
+
+      <img class="sticker sticker-right" src="{{micard.stickerR}}" alt="">
+
+      <div class="card-body">
+        <h4 class="card-title">{{micard.headR}}</h4>
+        <p class="card-text">{{micard.textR}}</p>
+      </div>
+
       <img src="../../../assets/IMG/En Temporada (IES FSL)/Stickers/Tropical Pink Oval.png" alt=""
         class="cerca sticker">
-
-      <a *ngIf="ruta === '/aboutus'" [routerLink]="'/calendario'">
-        <img class="card-img-top img-rounded" src="../../../assets/IMG/imagenes footer/calendario.png">
-      </a>
-      <a *ngIf="ruta === '/calendario'" [routerLink]="'/aboutus'">
-        <img class="card-img-top img-rounded" src="../../../assets/IMG/imagenes footer/aboutus.png">
-      </a>
-      <a *ngIf="ruta === '/'" [routerLink]="'/aboutus'">
-        <img class="card-img-top img-rounded" src="../../../assets/IMG/imagenes footer/aboutus.png">
-      </a>
-
-      <div class="card-body carta">
-        <h4 *ngIf="ruta === '/aboutus'" class="card-title">Calendario</h4>
-        <p *ngIf="ruta === '/aboutus'" class="card-text">Ver cuando todas las frutas y
-          verduras están en temporada</p>
-
-        <h4 *ngIf="ruta === '/calendario' || ruta === '/'" class="card-title">Sobre el proyecto</h4>
-        <p *ngIf="ruta === '/calendario' || ruta === '/'" class="card-text">¿Qué es En Temporada y por qué hacemos esto?
-        </p>
-
-      </div>
-      <img *ngIf="ruta === '/' || ruta === '/aboutus'" class="sticker sticker-right"
-        src="../../../assets/IMG/En Temporada (IES FSL)/Stickers/Real White.png" alt="">
-
-      <img *ngIf="ruta === '/calendario'" class="sticker sticker-right"
-        src="../../../assets/IMG/En Temporada (IES FSL)/Stickers/Dark Blue Oval.png" alt="">
-
     </div>
+
+
   </div>
 </div>
