@@ -12,6 +12,7 @@ import { RecetasModule } from './recetas/recetas.module';
 import { RecetaindividualModule } from './recetaindividual/recetaindividual.module';
 import { PerfilModule } from './perfil/perfil.module';
 import { CreacionRecetaModule } from './creacion-receta/creacion-receta.module';
+import { LoginModule } from './login/login.module';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { CreacionRecetaModule } from './creacion-receta/creacion-receta.module';
     RecetaindividualModule,
     CreacionRecetaModule,
     PerfilModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]
