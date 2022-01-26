@@ -10,13 +10,13 @@ export class PasosComponent implements OnInit {
   constructor() { }
 
   pasos: Array<String> = [];
-  // pasos = ["Hola buenas", "adios"];
-  editar = "";
+  descripcion: string = "";
+
   ngOnInit(): void { }
 
   agregarPaso() {
-    var descripcion = $("#descripcion").val()?.toString().trim() ?? "";
-    $("#descripcion").val("");
+    var descripcion = this.descripcion;
+    this.descripcion = "";
 
     if (descripcion.length > 0) {
       this.pasos.push(descripcion);
@@ -25,14 +25,10 @@ export class PasosComponent implements OnInit {
     setTimeout(() => {
       document.getElementById("descripcion")?.scrollIntoView({ behavior: "smooth" });
     }, 1);
-
-
   }
 
-  quitarPaso(e: Event) {
-    if (e.target) {
-      this.pasos.splice($(e.target).parent().parent().prop("id"), 1);
-    }
+  quitarPaso(pos: number) {
+    this.pasos.splice(pos, 1);
   }
 
   getNumeroPaso() {

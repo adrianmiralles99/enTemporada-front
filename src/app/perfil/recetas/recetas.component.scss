@@ -1,7 +1,7 @@
 @import "../../../styles.scss";
 
 .container {
-  margin-top: 50px;
+  margin-top: 1%;
   max-width: 90em;
 }
 
@@ -29,23 +29,36 @@
 }
 
 .tarjeta {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 30px;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.15);
   box-shadow: 0 4px 5px rgba(108, 108, 108, 0.34);
-  padding-bottom: 20px;
+  padding-bottom: 5px;
   border-radius: 5px;
   font-family: neueB;
   transition: 0.3s;
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 80%;
+}
+.titulo{
+  padding-top: 5%;
+  text-align: left;
 }
 
 .usuario {
   margin-left: 0px;
+  p{
+    text-align: left;
+  }
 }
-
+.user{
+  text-align: left;
+}
 .margen {
-  margin-bottom: 40px;
+  margin-bottom: 5%;
+
 }
 
 .autor {
@@ -77,5 +90,12 @@
   background-image: url("../../../assets/IMG/iconos/fav.png");
 }
 
-@media screen and(max-width: 700px) {
+@media screen and(max-width:700px) {
+
+  .izq{
+    margin-top: 5%;
+    margin-bottom: 0%;
+
+  }
+
 }

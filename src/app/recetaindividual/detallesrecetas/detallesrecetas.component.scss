@@ -9,7 +9,6 @@
     width: 100%;
     margin-bottom: 20px;
     > #img {
-        background-image: url("../../../assets/IMG/ensalada.jpg");
         background-size: cover;
         height: 330px;
         width: 100%;
@@ -151,35 +150,32 @@
     }
 }
 @media screen and(max-width: 700px) {
-    .col-5{
-        .upload{
-            height: 80%;
-            margin: auto;
+    .col-md-5 {
+        .upload {
+            #img {
+                width: 100%;
+                height: 270px;
+            }
         }
-        .nombre{
-            h3{
+        .nombre {
+            h3 {
                 font-size: 150%;
             }
-            .row{
+            .row {
                 font-size: 90%;
             }
         }
         padding-bottom: 5%;
     }
-    .col-7{
-        .filadatos{
-            font-size:85%;
+    .filadatos {
+        font-size: 85%;
+    }
+    .ingredientes {
+        h3 {
+            font-size: 135%;
         }
-        .ingredientes{
-            h3{
-                font-size: 135%;
-            }
-            .columnas{
-                font-size: 85%;
-            }
-          
+        .columnas {
+            font-size: 85%;
         }
     }
-
-
 }

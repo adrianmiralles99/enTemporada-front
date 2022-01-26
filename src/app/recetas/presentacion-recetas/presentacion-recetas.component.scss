@@ -1,13 +1,9 @@
 .busqueda {
-    > div {
-        float: left;
-        margin-left: 20px;
-    }
     .campo {
         background-color: white;
-        border: 1px solid rgba(0, 0, 0, 0.6);
+        border: 1px solid rgba(59, 59, 59, 0.6);
         border-radius: 5px;
-        padding-right: 3px;
+        padding: 5px 5px 0px 5px;
         * {
             font-family: neueR;
         }
@@ -17,7 +13,9 @@
             border: none;
             vertical-align: middle !important;
             outline: none;
-            margin-left: 5px;
+            margin: auto;
+            width: 80%;
+            color: rgba(0, 0, 0, 0.762);
         }
         .lupa {
             background-size: 80%;
@@ -33,37 +31,56 @@
 
 .elemento {
     padding-top: 50px;
-    width: 90%;
+    width: 100%;
     margin: auto;
     .titulo {
-        margin-left: 30px;
+        margin-left: 100px;
         font-family: recoletaB;
     }
 }
 .barra {
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    margin: auto;
+    margin-left: 30px;
+    margin-right: 30px;
+    border-top: 1px solid rgba(0, 0, 0, 0.476);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.476);
     padding: 10px 0 10px 0;
-    > div {
-        margin-left: 20px;
-    }
 }
 
 .resultados {
-    vertical-align: middle;
+    margin: auto;
     font-family: neueR;
+    font-size: 120%;
+    span {
+        margin-left: 30px;
+    }
 }
 
 .relevancia {
+    margin-top: 2px;
     padding: 4px 5px 4px 5px;
     font-family: neueB;
     border-radius: 5px;
-    border: 1.5px solid black;
-    background-color: transparent;
+    border: 1.5px solid rgba(59, 59, 59, 0.6);
+    background-color: white;
+    color: rgba(0, 0, 0, 0.694);
     * {
         vertical-align: middle !important;
     }
     option {
         font-family: neueR;
+    }
+}
+@media screen and(max-width: 700px) {
+    .busqueda {
+        .search {
+            .campo {
+                width: 50%;
+            }
+            display: inline;
+            > div {
+                float: right;
+            }
+        }
     }
 }

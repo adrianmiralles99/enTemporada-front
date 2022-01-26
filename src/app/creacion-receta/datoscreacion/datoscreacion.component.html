@@ -95,8 +95,7 @@
                                         <div class="col-10">
                                             <span>{{ingrediente}} </span>
                                         </div>
-                                        <button id="0-{{i}}" (click)="quitarIngrediente($event)"
-                                            class="quitar col-2"></button>
+                                        <button (click)="quitarIngrediente(0,i)" class="quitar col-2"></button>
                                     </div>
                                 </ul>
                             </div>
@@ -107,8 +106,7 @@
                                         <div class="col-10 ">
                                             <span>{{ingrediente}}</span>
                                         </div>
-                                        <button id="1-{{i}}" (click)="quitarIngrediente($event)"
-                                            class="quitar col-2"></button>
+                                        <button (click)="quitarIngrediente(1,i)" class="quitar col-2"></button>
                                     </div>
                                 </ul>
                             </div>
@@ -118,13 +116,13 @@
                             <div class="col-7">
                                 <label>
                                     <span> Ingrediente:</span>
-                                    <input id="ingred" type="text" name="">
+                                    <input id="ingred" type="text" [(ngModel)]="ingred" name="">
                                 </label>
                             </div>
                             <div class="col-4">
                                 <label>
                                     <span> Cantidad:</span>
-                                    <input id="cantidad" min=1 type="text" name="">
+                                    <input id="cantidad" min=1 type="text" [(ngModel)]="cantidad" name="">
                                 </label>
                             </div>
                             <div class="col-1">

@@ -45,6 +45,7 @@
     text-align: center;
     margin-top: 20px;
 }
+
 .agregar {
     border: none;
     background-color: $yellow;
@@ -76,6 +77,13 @@
     border: 1px solid black;
     .numPaso {
         font-family: neueB;
+    }
+
+    .quitar {
+        height: 40px;
+        margin-right: 10px;
+        cursor: pointer;
+        float: left;
     }
 
     > label {
