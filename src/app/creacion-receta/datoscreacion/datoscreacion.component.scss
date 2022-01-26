@@ -236,3 +236,15 @@
         border: none;
     }
 }
+@media screen and(max-width: 700px) {
+    .col-sm-12{
+        margin-top: 5%;
+    }
+    .ingredientes{
+        h3{
+            font-size: 125%;
+
+        }
+    }
+
+}
