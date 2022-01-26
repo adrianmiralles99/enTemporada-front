@@ -23,6 +23,7 @@
     </div>
   </div>
 
+
   <h1><strong>Verduras</strong> en {{mesActual}}</h1>
   <div style="margin: 50px;">
     <div class="row">
@@ -32,7 +33,7 @@
           <img class="card-img-top" src="../../assets/IMG/fruta.png" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">{{articulo.nombre}}</h5>
-            <table class="table">
+            <table>
               <thead>
                 <td *ngFor="let mes of mes">{{mes}}</td>
               </thead>
@@ -46,5 +47,7 @@
       </div>
     </div>
   </div>
+
+
 
 </div>
