@@ -78,6 +78,11 @@ $cards-per-line: (xs: 1,
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.219));
 }
 
+.cerca,
+.naranjaNegra {
+  display: none;
+}
+
 @media screen and(max-width: 812px) {
   .sticker {
     display: none;
