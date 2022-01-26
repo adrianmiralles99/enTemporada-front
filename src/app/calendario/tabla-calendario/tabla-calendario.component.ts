@@ -14,19 +14,25 @@ export class TablaCalendarioComponent implements OnInit {
   productes = PRODUCTES;
   help = new Date();
   mesActual = this.help.getMonth();
+  mesact = this.meses[this.mesActual]; 
+
+  
+
+
 
   ngOnInit(): void {
   }
 
-  cambiaColor(id: number) {
-    var element = $("#" + id);
+  cambiaColor(id: number, letra: string) {
+    var element = $("#"+ letra + id);
     if (element) {
       element.children().css("background-color", this.productes.find(element => element.id == id)?.color ?? "");
     }
   }
 
-  quitaColor(id: number) {
-    var element = $("#" + id);
+
+  quitaColor(id: number , letra: string) {
+    var element = $("#"+ letra + id);
     if (element) {
       element.children().css("background-color", "");
     }
