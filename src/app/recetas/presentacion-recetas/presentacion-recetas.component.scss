@@ -77,10 +77,21 @@
             .campo {
                 width: 50%;
             }
-            display: inline;
+           
             > div {
                 float: right;
             }
         }
     }
+    .barra {
+        padding: 10px 0 10px 0;
+        .resultados {
+            margin-left: 0;
+            font-size: 120%;
+            span {
+                margin-left: 0;
+            }
+        }
+    }
+    
 }
