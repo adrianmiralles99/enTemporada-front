@@ -10,25 +10,31 @@
             </div>
         </div>
         <div class="col-8" [ngStyle]="{'background-color': this.articulos[0].color }">
-            <ul>
-                <li class="titulo">
-                    Información nutricional
-                </li>
-                <hr>
-                <li>
-                    Energía.............
-                </li>
-                <li>
-                    Proteinas.............
-                </li>
-                <li>
-                    Grasa.............
-                </li>
-                <li>
-                    Hidratos de carbono.............
-                </li>
+            <h5 class="titulo">Información nutricional</h5>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <ul>         
+                        <li>Energía:</li>
+                        <li>Proteinas:</li>
+                        <li>Grasa:</li>
+                        <li>Hidratos de carbono:</li> 
+                        <li>Calcio:</li> 
 
-            </ul>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>         
+                        <li>Fibra:</li>
+                        <li>Sodio:</li>
+                        <li>Potasio:</li>
+                        <li>Hierro:</li> 
+                        <li>Ácido folico:</li> 
+
+                    </ul>
+                </div>
+            </div>
+         
 
 
         </div>

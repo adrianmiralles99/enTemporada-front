@@ -35,13 +35,19 @@
                 font-family: "neueB";
                 li {
                     list-style: none;
+                    text-align: left;
                 }
 
-                .titulo {
-                    font-size: 130%;
-                }
+                
+            }
+            .titulo {
+                font-size: 155%;
+                padding: 5px;
+                padding-top: 15px;
+
             }
         }
+        
     }
     .tabla {
         width: 95%;
