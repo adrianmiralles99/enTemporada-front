@@ -72,10 +72,20 @@
     }
 }
 @media screen and(max-width: 700px) {
+    .elemento {
+        .titulo {
+            margin-left: 40px;
+        }
+    }
     .busqueda {
         .search {
+            
             .campo {
                 width: 50%;
+                margin-left: 15px;
+            }
+            .filtro{
+
             }
            
             > div {
