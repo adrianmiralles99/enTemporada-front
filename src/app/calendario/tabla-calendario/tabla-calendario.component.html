@@ -10,7 +10,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let articulo of frutas;" id=m{{articulo.id}}>
-        <td (mouseover)="cambiaColor(articulo.id ,'m')" (mouseout)="quitaColor(articulo.id,'m')">
+        <td  class="mgr"(mouseover)="cambiaColor(articulo.id ,'m')" (mouseout)="quitaColor(articulo.id,'m')">
           <img src="../../../assets/IMG/fruta.png" alt="">
           {{articulo.nombre}}
         </td>
@@ -30,7 +30,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let articulo of verduras;" id=m{{articulo.id}}>
-        <td (mouseover)="cambiaColor(articulo.id,'m')" (mouseout)="quitaColor(articulo.id,'m')">
+        <td  class="mgr" (mouseover)="cambiaColor(articulo.id,'m')" (mouseout)="quitaColor(articulo.id,'m')">
           <img src="../../../assets/IMG/verdura.png" alt="">
           {{articulo.nombre}}
         </td>
@@ -58,7 +58,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let articulo of frutas;" id=s{{articulo.id}}>
-        <td (mouseover)="cambiaColor(articulo.id,'s')" (mouseout)="quitaColor(articulo.id,'s')">
+        <td  class="mgr" (mouseover)="cambiaColor(articulo.id,'s')" (mouseout)="quitaColor(articulo.id,'s')">
           <img src="../../../assets/IMG/fruta.png" alt="">
           {{articulo.nombre}}
         </td>
@@ -77,7 +77,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let articulo of verduras;" id=s{{articulo.id}}>
-        <td (mouseover)="cambiaColor(articulo.id,'s')" (mouseout)="quitaColor(articulo.id,'s')">
+        <td class="mgr" (mouseover)="cambiaColor(articulo.id,'s')" (mouseout)="quitaColor(articulo.id,'s')">
           <img src="../../../assets/IMG/verdura.png" alt="">
           {{articulo.nombre}}
         </td>
