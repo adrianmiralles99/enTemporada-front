@@ -1,5 +1,7 @@
 @import "../../../styles.scss";
-
+.small{
+  display: none;
+}
 table {
   width: 95%;
   margin: auto;
@@ -68,5 +70,13 @@ table {
     tr:hover td {
       color: white;
     }
+  }
+}
+@media screen and(max-width:812px) {
+  .big{
+    display: none;
+  }
+  .small{
+    display: block;
   }
 }

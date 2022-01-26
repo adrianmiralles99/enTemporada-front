@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container big">
 
 
   <table class="table">
@@ -9,12 +9,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let articulo of frutas;" id={{articulo.id}}>
-        <td (mouseover)="cambiaColor(articulo.id)" (mouseout)="quitaColor(articulo.id)">
+      <tr *ngFor="let articulo of frutas;" id=m{{articulo.id}}>
+        <td (mouseover)="cambiaColor(articulo.id ,'m')" (mouseout)="quitaColor(articulo.id,'m')">
           <img src="../../../assets/IMG/fruta.png" alt="">
           {{articulo.nombre}}
         </td>
-        <td (mouseover)="cambiaColor(articulo.id)" (mouseout)="quitaColor(articulo.id)"
+        <td (mouseover)="cambiaColor(articulo.id,'m')" (mouseout)="quitaColor(articulo.id,'m')"
           *ngFor="let mes of meses; let indice=index" [ngClass]="{'cabFila': indice==mesActual}">.</td>
       </tr>
 
@@ -29,14 +29,57 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let articulo of verduras;" id={{articulo.id}}>
-        <td (mouseover)="cambiaColor(articulo.id)" (mouseout)="quitaColor(articulo.id)">
+      <tr *ngFor="let articulo of verduras;" id=m{{articulo.id}}>
+        <td (mouseover)="cambiaColor(articulo.id,'m')" (mouseout)="quitaColor(articulo.id,'m')">
           <img src="../../../assets/IMG/verdura.png" alt="">
           {{articulo.nombre}}
         </td>
         
-        <td (mouseover)="cambiaColor(articulo.id)" (mouseout)="quitaColor(articulo.id)"
+        <td (mouseover)="cambiaColor(articulo.id,'m')" (mouseout)="quitaColor(articulo.id,'m')"
           *ngFor="let mes of meses; let indice=index" [ngClass]="{'cabFila': indice==mesActual}">.</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</div>
+<div class="container small">
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="tipo">Frutas</th>
+        <th>{{mesact}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let articulo of frutas;" id=s{{articulo.id}}>
+        <td (mouseover)="cambiaColor(articulo.id,'s')" (mouseout)="quitaColor(articulo.id,'s')">
+          <img src="../../../assets/IMG/fruta.png" alt="">
+          {{articulo.nombre}}
+        </td>
+        <td (mouseover)="cambiaColor(articulo.id,'s')" (mouseout)="quitaColor(articulo.id,'s')">.</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="tipo">Verduras</th>
+        <th >{{mesact}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let articulo of verduras;" id=s{{articulo.id}}>
+        <td (mouseover)="cambiaColor(articulo.id,'s')" (mouseout)="quitaColor(articulo.id,'s')">
+          <img src="../../../assets/IMG/verdura.png" alt="">
+          {{articulo.nombre}}
+        </td>
+        
+        <td (mouseover)="cambiaColor(articulo.id,'s')" (mouseout)="quitaColor(articulo.id,'s')">.</td>
       </tr>
 
     </tbody>
