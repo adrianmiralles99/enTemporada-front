@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 
@@ -8,11 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./menu-footer.component.scss']
 })
 export class MenuFooterComponent implements OnInit {
-  ruta = this.router.url;
-
+  @Input() ruta?: String;
+  
   constructor(private router: Router) { }
   ngOnInit(): void {
-    
-  } 
+
+  }
 
 }
