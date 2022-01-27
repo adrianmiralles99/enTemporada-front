@@ -11,13 +11,13 @@
     padding-bottom: 30px;
     width: 75%;
     background-color: white;
-    border: solid 1px $grey;
     border-radius: 5px;
-    box-shadow: 0 5px 10px rgba(128, 128, 128, 0.408);
+    box-shadow: 0 5px 10px rgba(148, 148, 148, 0.85);
     h4 {
         background-color: $grey;
         color: white;
         padding: 10px;
+        border-radius: 5px 5px 0 0;
         font-family: "recoletaB";
         text-align: center;
         width: 100%;
@@ -39,8 +39,8 @@
             height: 40px;
             width: 90%;
             background: #ffffff;
-            box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1), inset 0px 0px 10px rgba(0, 0, 0, 0.299);
-            border: 2px solid rgba(0, 0, 0, 0.701);
+            box-shadow: 0px 4px 4px rgba(32, 32, 32, 0.197), inset 0px 0px 10px rgba(47, 47, 47, 0.299);
+            border: 1px solid rgba(30, 30, 30, 0.701);
             border-radius: 5px;
         }
 
@@ -49,15 +49,15 @@
             background-size: 80%;
             background-position: center;
             border: none;
-            border-right: 2px solid rgba(0, 0, 0, 0.701);
+            border-right: 1px solid rgba(30, 30, 30, 0.701);
             background-color: $yellow;
-            border-radius: 4px;
+            border-radius: 5px 0px 0px 5px;
             user-select: none;
             height: 101%;
             width: 9%;
             margin-left: -0.5px;
             float: left;
-            box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.299);
+            box-shadow: inset 0px 0px 10px rgba(45, 45, 45, 0.299);
         }
 
         input {

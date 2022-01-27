@@ -9,6 +9,7 @@ import { IndexrecetasComponent } from './recetas/indexrecetas/indexrecetas.compo
 import { IndexcreacionComponent } from './creacion-receta/indexcreacion/indexcreacion.component';
 import { IndiceperfilComponent } from './perfil/indiceperfil/indiceperfil.component';
 import { IndexrecetaindComponent } from './recetaindividual/indexrecetaind/indexrecetaind.component'
+import { IndexloginComponent } from './login/indexlogin/indexlogin.component';
 
 
 const routes: Routes = [
@@ -37,13 +38,13 @@ const routes: Routes = [
     component: IndexrecetasComponent,
   },
   {
-    path: 'recetaindividual/:id',
+    path: 'recetaindividual/:objeto',
     component: IndexrecetaindComponent,
   },
   /*probando cosas rutas dont worry be happy :)*/
   {
     path: 'infoproducto/:id',//el idproducto es el parametro. Usamos de los ":" por cada parámetro que se quiera definir.
-    component: IndexprodComponent
+    component: IndexprodComponent,
   },
 
   {
@@ -53,6 +54,10 @@ const routes: Routes = [
   {
     path: 'perfil',
     component: IndiceperfilComponent,
+  },
+  {
+    path: 'login',
+    component: IndexloginComponent,
   }
 ];
 @NgModule({
