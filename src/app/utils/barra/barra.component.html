@@ -36,7 +36,7 @@
           </div>
         </ng-container>
         <ng-template #sesionIniciada>
-          <button class="boton pr-3 pl-3" [routerLink]="'/login'">Log In</button>
+          <button class="boton pr-3 pl-3" (click)="openDialog()">Log In</button>
         </ng-template>
       </div>
     </ul>

@@ -1,0 +1,17 @@
+<div class="ventana">
+    <h1 class="titulo" mat-dialog-title>Iniciar Sesion</h1>
+    <mat-dialog-content class="contenedor">
+        <label class="campos">
+            <h3>Nombre de Usuario</h3>
+            <input type="text" placeholder="Escriba aqui...">
+        </label>
+        <br>
+        <label class="campos">
+            <h3>Contraseña</h3>
+            <input type="text" placeholder="Escriba aqui...">
+        </label>
+    </mat-dialog-content>
+    <mat-dialog-actions class="boton" align="end">
+        <button class="acceder" [mat-dialog-close]="true" cdkFocusInitial>Acceder</button>
+    </mat-dialog-actions>
+</div>

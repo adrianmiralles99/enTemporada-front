@@ -1,0 +1,49 @@
+@import "../../../styles.scss";
+.ventana{
+    margin: 0 20px 0 20px;
+}
+
+.titulo {
+    font-family: recoletaB;
+    font-size: 250%;
+}
+.boton {
+    align-items: center;
+}
+.acceder {
+    font-family: neueB;
+    color: white;
+    background-color: $orange;
+    margin: auto;
+    width: 50%;
+    padding: 5px 0px 5px 0px;
+    border: none;
+    border-radius: 5px;
+    font-size: 160%;
+}
+
+.contenedor {
+    margin: 20px 0 20px 0;
+    border: 1px solid black;
+}
+
+.campos {
+    h3 {
+        font-family: recoletaB;
+        margin: 10px 10px 10px 15px;
+    }
+
+    input {
+        font-family: neueR;
+        width: 90%;
+        padding: 5px;
+        font-size: 110%;
+        border: 1px solid rgba(54, 54, 54, 0.605);
+        border-radius: 5px;
+        box-shadow: 0 5px 7px rgba(101, 101, 101, 0.326);
+        outline: none;
+    }
+    label {
+        width: 100%;
+    }
+}

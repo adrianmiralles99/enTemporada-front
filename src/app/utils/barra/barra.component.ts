@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { PopUpComponent } from '../pop-up/pop-up.component';
 
 
 @Component({
@@ -9,9 +11,19 @@ import { Component, OnInit, Input } from '@angular/core';
 export class BarraComponent implements OnInit {
   @Input() oscura: boolean = false;
 
-  constructor() { }
+  constructor(public dialogRef: MatDialog) { }
 
-  sesion = true;
+  openDialog() {
+    
+    this.dialogRef.open(PopUpComponent, {
+      data: {
+        name: "Carlos"
+      }
+    });
+  }
+
+
+  sesion = false;
   ngOnInit(): void {
   }
 
