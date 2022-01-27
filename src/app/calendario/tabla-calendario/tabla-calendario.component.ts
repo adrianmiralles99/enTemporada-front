@@ -15,6 +15,8 @@ export class TablaCalendarioComponent implements OnInit {
   help = new Date();
   mesActual = this.help.getMonth();
   mesact = this.meses[this.mesActual]; 
+  messig = this.meses[this.mesActual + 1]; 
+
 
   
 

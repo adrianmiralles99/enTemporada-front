@@ -21,6 +21,7 @@ export class DetallesrecetasComponent implements OnInit {
   }
 
   divideIngredientes() {
+    console.log(this.receta.ingredientes[0]);
     if (this.receta.ingredientes.length % 2 == 0) {
       this.ingredientes[0] = this.receta.ingredientes.slice(0, (this.receta.ingredientes.length / 2));
     }
