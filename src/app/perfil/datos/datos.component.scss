@@ -1,127 +1,122 @@
 @import "../../../styles.scss";
-.info{
-    margin-top: 4em;
-    background-color: $green;
+.info {
+  margin-top: 4em;
+  background-color: $green;
+  font-family: neueB;
+  border-radius: 10px 10px 0 0;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.555);
+  color: white;
+  height: 22em;
+  .foto {
+    border: 1px solid black;
+    text-align: center;
+  }
+  .usuario {
+    width: 50%;
+    // margin: 0em 4em 0 0;
+    background-color: white;
+    border-radius: 100%;
+    border: 3px solid black;
+  }
+  .nivel {
+    margin-left: 5em;
+    margin-top: -9em;
+    width: 20em;
+    height: 7em;
+    width: 7em;
+    background-color: black;
+    border-radius: 100%;
+    border: 3px solid $orange;
+    text-align: center;
+    img {
+      width: 5em;
+      transform: translateY(40%);
+    }
+  }
+  .user {
+    padding-top: 1.8em;
+    padding-bottom: 1.5em;
+    font-size: 1.7em;
+  }
+
+  .infouser {
+    font-family: neueR;
+  }
+  .chef {
     font-family: neueB;
-    border-radius: 10px 10px 0 0;
-    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.555);
-    color: white;
-    height: 22em;
-    .usuario{
-        width: 10em;
-        margin: 4em 4em 3em 3em;
-        float: left;
-        background-color: white;
-        border-radius: 100%;
-        border: 3px solid black;
+    margin-left: 9em;
+    margin-top: 6em;
+    padding: 0;
+    p {
+      font-size: 1.2em;
+      padding: 5%;
     }
-    .nivel{
-        margin-left: 5em;
-        margin-top: -9em;
-        width: 20em;
-        height: 7em;
-        width: 7em;
-        background-color: black;
-        border-radius: 100%;
-        border: 3px solid $orange;
-        text-align: center;
-        img{
-            width: 5em;
-            transform: translateY(40%)
-        }
+    .perfil {
+      margin-top: 4em;
+      font-family: neueB;
+      color: white;
+      height: 3.5em;
+      background-color: $green;
+      border: 2px solid white;
+      border-radius: 5px;
+      width: 13em;
     }
-    .user{
-        padding-top: 1.8em;
-        padding-bottom: 1.5em;
-        font-size: 1.7em;
+    .perfil:hover {
+      color: $green;
+      background-color: white;
+      border: 2px solid $green;
     }
-
-    .infouser{
-        font-family: neueR;
-    }
-    .chef{
-        font-family: neueB;
-        margin-left: 9em;
-        margin-top: 6em;
-        padding: 0;
-        p{
-            font-size:1.2em;
-            padding: 5%;
-
-        }
-        .perfil{
-            margin-top: 4em;
-             font-family: neueB;
-             color: white;
-             height: 3.5em;
-             background-color: $green;
-             border: 2px solid white;
-             border-radius: 5px;
-             width: 13em;
-         }
-         .perfil:hover{
-             color: $green;
-             background-color: white;
-             border: 2px solid $green;
-         }
-    }
+  }
 }
 @media screen and(max-width:812px) {
-  .info{
-    .foto{
+  .info {
+    .foto {
       padding: 0%;
     }
-    .usuario{
+    .usuario {
       width: 4em;
       margin: 2em 4em 3em 2.5em;
       float: left;
-
     }
-    .datos{
+    .datos {
       padding: 0;
       margin-right: 0%;
-      .infouser{
+      .infouser {
         font-size: 90%;
       }
-      .user{
+      .user {
         font-size: 120%;
         margin-top: 4em;
         margin-bottom: 0%;
       }
-      h4{
+      h4 {
         font-size: 90%;
       }
     }
-    .derecha{
-
+    .derecha {
       padding-left: 0%;
-      .chef{
+      .chef {
         margin-left: 0em;
         margin-top: 6em;
-        p{
+        p {
           font-size: 90%;
-
         }
-        .nivel{
-
+        .nivel {
           width: 60px;
           height: 60px;
           margin-top: -4.7em;
 
-          img{
+          img {
             width: 40px;
           }
         }
       }
-      .perfil{
+      .perfil {
         margin-top: 2em;
         margin-left: 1em;
-         height: 3.5em;
-         width: 8em;
-     }
+        height: 3.5em;
+        width: 8em;
+      }
     }
-
   }
-
-
 }

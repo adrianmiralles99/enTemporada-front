@@ -7,6 +7,7 @@ import { MenuFooterComponent } from './menu-footer/menu-footer.component';
 import { PopUpComponent } from './pop-up/pop-up.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SubirComponent } from './subir/subir.component';
 
 
 
@@ -16,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FooterComponent,
     MenuFooterComponent,
     PopUpComponent,
+    SubirComponent,
   ],
   imports: [
     CommonModule,
@@ -27,6 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BarraComponent,
     FooterComponent,
     MenuFooterComponent,
+    SubirComponent,
   ]
 })
 export class UtilsModule { }
