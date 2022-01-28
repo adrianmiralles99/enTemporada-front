@@ -1,5 +1,8 @@
 @import "../../../styles.scss";
+<<<<<<< HEAD
 
+=======
+>>>>>>> 24738635d317969165872a031432c66564fe1d5f
 .info {
   margin-top: 4em;
   background-color: $green;
@@ -8,6 +11,7 @@
   box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.555);
   color: white;
   height: 22em;
+<<<<<<< HEAD
 
   .foto {
     text-align: center;
@@ -16,11 +20,23 @@
   .usuario {
     width: 80%;
     margin-top: 3em;
+=======
+  .foto {
+    border: 1px solid black;
+    text-align: center;
+  }
+  .usuario {
+    width: 50%;
+    // margin: 0em 4em 0 0;
+>>>>>>> 24738635d317969165872a031432c66564fe1d5f
     background-color: white;
     border-radius: 100%;
     border: 3px solid black;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 24738635d317969165872a031432c66564fe1d5f
   .nivel {
     margin-left: 5em;
     margin-top: -9em;
@@ -31,6 +47,7 @@
     border-radius: 100%;
     border: 3px solid $orange;
     text-align: center;
+<<<<<<< HEAD
 
     img {
       width: 5em;
@@ -58,8 +75,20 @@
       font-size: 1.2em;
       padding: 5%;
 
+=======
+    img {
+      width: 5em;
+      transform: translateY(40%);
+>>>>>>> 24738635d317969165872a031432c66564fe1d5f
     }
+  }
+  .user {
+    padding-top: 1.8em;
+    padding-bottom: 1.5em;
+    font-size: 1.7em;
+  }
 
+<<<<<<< HEAD
     .perfil {
       margin-top: 4em;
       font-family: neueB;
@@ -71,6 +100,30 @@
       width: 13em;
     }
 
+=======
+  .infouser {
+    font-family: neueR;
+  }
+  .chef {
+    font-family: neueB;
+    margin-left: 9em;
+    margin-top: 6em;
+    padding: 0;
+    p {
+      font-size: 1.2em;
+      padding: 5%;
+    }
+    .perfil {
+      margin-top: 4em;
+      font-family: neueB;
+      color: white;
+      height: 3.5em;
+      background-color: $green;
+      border: 2px solid white;
+      border-radius: 5px;
+      width: 13em;
+    }
+>>>>>>> 24738635d317969165872a031432c66564fe1d5f
     .perfil:hover {
       color: $green;
       background-color: white;
@@ -84,13 +137,16 @@
     .foto {
       padding: 0%;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 24738635d317969165872a031432c66564fe1d5f
     .usuario {
       width: 4em;
       margin: 2em 4em 3em 2.5em;
       float: left;
-
     }
+<<<<<<< HEAD
 
     .datos {
       padding: 0;
@@ -100,16 +156,28 @@
         font-size: 90%;
       }
 
+=======
+    .datos {
+      padding: 0;
+      margin-right: 0%;
+      .infouser {
+        font-size: 90%;
+      }
+>>>>>>> 24738635d317969165872a031432c66564fe1d5f
       .user {
         font-size: 120%;
         margin-top: 4em;
         margin-bottom: 0%;
       }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 24738635d317969165872a031432c66564fe1d5f
       h4 {
         font-size: 90%;
       }
     }
+<<<<<<< HEAD
 
     .derecha {
 
@@ -119,13 +187,23 @@
         margin-left: 0em;
         margin-top: 6em;
 
+=======
+    .derecha {
+      padding-left: 0%;
+      .chef {
+        margin-left: 0em;
+        margin-top: 6em;
+>>>>>>> 24738635d317969165872a031432c66564fe1d5f
         p {
           font-size: 90%;
-
         }
+<<<<<<< HEAD
 
         .nivel {
 
+=======
+        .nivel {
+>>>>>>> 24738635d317969165872a031432c66564fe1d5f
           width: 60px;
           height: 60px;
           margin-top: -4.7em;
@@ -135,7 +213,10 @@
           }
         }
       }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 24738635d317969165872a031432c66564fe1d5f
       .perfil {
         margin-top: 2em;
         margin-left: 1em;
@@ -143,8 +224,5 @@
         width: 8em;
       }
     }
-
   }
-
-
 }
