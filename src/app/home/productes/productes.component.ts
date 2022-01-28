@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { never } from 'rxjs';
-// import { FRUTAS } from '../../mock-articulos';
-// import { VERDURAS } from '../../mock-articulos';
 import { PRODUCTES } from '../../mock-articulos';
 
 @Component({
@@ -23,18 +20,25 @@ export class ProductesComponent implements OnInit {
   mes = ["E", "F", "Mr", "Ab", "My", "Jn", "Jl", "Ag", "Sp", "O", "N", "D"];
   mesActual = this.meses[new Date().getMonth()];
 
-  cambiaColor(id: number) {
+  cambiaColor(id: number): void {
     var element = $("#" + id);
 
     if (element) {
-      element.children().css("background-color", this.productes.find(element => element.id == id)?.color ?? "")
+      var articulo = this.productes.find(element => element.id == id);
+      element.children().css("background-color", articulo?.color ?? "");
+      element.find(".card-img-top").prop("src", "../../assets/IMG/Frutas/background/" + articulo?.nombre + ".png");
     }
   }
 
-  quitaColor(id: number) {
+  quitaColor(id: number): void {
     var element = $("#" + id);
+    var articulo = this.productes.find(element => element.id == id);
+
     if (element) {
-      element.children().css("background-color", "")
+      element.children().css("background-color", "");
+      console.log("url(../../assets/IMG/Frutas/basic/" + articulo?.nombre + ".png)");
+
+      element.find(".card-img-top").prop("src", "../../assets/IMG/Frutas/basic/" + articulo?.nombre + ".png");
     }
   }
 

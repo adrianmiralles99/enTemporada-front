@@ -11,7 +11,6 @@
   height: 200px;
   margin-bottom: 15px;
   border-radius: 5px 5px 0px 0px;
-  border-bottom: 1px solid rgba(50, 50, 50, 0.524);
   background-color: transparent;
   background-size: cover;
   background-repeat: no-repeat;
@@ -58,24 +57,28 @@
   background-color: transparent;
   background-size: contain;
   background-repeat: no-repeat;
-  border: none;
   background-position: center;
-  width: 40%;
-  height: 150%;
-  margin-left: 5px;
-}
-
-.botones {
-  padding: 0;
+  border: none;
+  width: 35px;
+  height: 35px;
+  margin-right: 7px;
+  transition: 0.5s;
 }
 
 .save {
-  background-image: url("../../../assets/IMG/iconos/guardado bonito.png");
-  background-size: 35px;
+  background-image: url("../../../assets/IMG/iconos/bookmark_save.png");
+  &:hover {
+    filter: drop-shadow(0 3px 3px rgb(35, 35, 35));
+    transform: scale(110%);
+  }
 }
 
 .mg {
-  background-image: url("../../../assets/IMG/iconos/fav.png");
+  background-image: url("../../../assets/IMG/iconos/mg.png");
+  &:hover {
+    filter: drop-shadow(0 3px 3px rgb(167, 57, 44));
+    transform: scale(110%);
+  }
 }
 
 .crear {
@@ -163,7 +166,6 @@
 
 @media screen and(max-width: 700px) {
   .save {
-    background-image: url("../../../assets/IMG/iconos/guardado bonito.png");
     background-size: 30px;
   }
 }

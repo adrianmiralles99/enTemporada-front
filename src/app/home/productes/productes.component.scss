@@ -29,7 +29,7 @@
     margin: 10px -5px 20px -5px;
     border-radius: 20px;
     border: none;
-    transition: 0.1s;
+    transition: 0.2s;
     cursor: pointer;
 
     &:hover {
@@ -39,11 +39,20 @@
       }
     }
 
+    &:hover .card-img-top {
+      transform: scale(140%);
+      filter: drop-shadow(0 4 5px rgba(0, 0, 0, 0.592));
+    }
+
     img {
       width: 8em;
       margin: auto;
     }
 
+    .card-img-top {
+      transition: 0.3s;
+      
+    }
     .card {
       margin: 20px;
     }
