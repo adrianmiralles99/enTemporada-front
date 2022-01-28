@@ -1,63 +1,75 @@
 @import "../../../styles.scss";
 
 .sobre {
-    background-color: $yellow;
-    text-align: center;
-    padding: 3em 0 3em 0;
-   
-    h1 {
-        font-size: 3.8em;
-        font-family: RecoletaB;
-    }
-    p {
-        font-size: 220%;
-        font-family: RecoletaR;
-    }
-    strong {
-        font-family: NeueB;
-    }
-}
-.izq {
-    margin-left: 35em;
-    text-align: left;
-    width: 40%;
-}
-.margen {
-    margin-left: 2.6em;
-}
-.sticker{
-    width: 9em; 
-    position: absolute;
-}
-.sandia{
-    margin-top: -2em;
-    margin-left: 50em;
-    transform: rotate(15deg);
-}
-.local{
-    margin-top: 35em;
-    margin-left: 45em;
-    transform: rotate(-15deg);
-}
-.naranja{
-    margin-top: 20em;
-    margin-left: -15em;
-    transform: rotate(-15deg);
-}
-@media screen and(max-width: 700px) {
-    .sticker{
-        display: none;
-    }
-    .sobre{
-        font-size: 75%;
-        .izq{
-            font-size: 80%;
+  background-color: $yellow;
+  text-align: center;
+  padding: 10em 0 10em 0;
 
-            width: 100%;
-            position: absolute;
-            right: 0%;
-            text-align: center;
-        }
-        height: 550px;
+  h1 {
+    font-size: 4.5em;
+    font-family: RecoletaB;
+  }
+
+  p {
+    font-size: 300%;
+    font-family: RecoletaR;
+  }
+
+  strong {
+    font-family: NeueB;
+  }
+}
+
+.izq {
+  margin-left: 35em;
+  text-align: left;
+  width: 40%;
+}
+
+.margen {
+  margin-left: 2.6em;
+}
+
+.sticker {
+  width: 9em;
+  position: absolute;
+}
+
+.sandia {
+  margin-top: -2em;
+  margin-left: 50em;
+  transform: rotate(15deg);
+}
+
+.local {
+  margin-top: 55em;
+  margin-left: 45em;
+  transform: rotate(-15deg);
+}
+
+.naranja {
+  margin-top: 30em;
+  margin-left: -15em;
+  transform: rotate(-15deg);
+}
+
+@media screen and(max-width: 700px) {
+  .sticker {
+    display: none;
+  }
+
+  .sobre {
+    font-size: 75%;
+
+    .izq {
+      font-size: 80%;
+
+      width: 100%;
+      position: absolute;
+      right: 0%;
+      text-align: center;
     }
+
+    height: 550px;
+  }
 }

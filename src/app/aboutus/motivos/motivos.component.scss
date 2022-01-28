@@ -1,181 +1,211 @@
+.bloqueporque {
+  padding: 5%;
+  text-align: center;
 
-.bloqueporque{
-  padding:5%;
-text-align: center;
-    .bloqueporque2{
-        margin-top: 5em;
-        width: 60%;
-        p{
-            font-size: 175%;
-            font-family: recoletaR;
-            text-align: center;
-        }
-        h1{
+  .bloqueporque2 {
+    margin-top: 5em;
+    width: 60%;
 
-            font-weight: bolder;
-            font-family: recoletaB;
-            font-size:4em
-
-        }
+    p {
+      font-size: 3em;
+      font-family: recoletaR;
+      text-align: center;
     }
 
+    h1 {
+
+      font-weight: bolder;
+      font-family: recoletaB;
+      font-size: 4em
+    }
+  }
+
 
 }
-.sticker{
-    width: 9em;
-    position: absolute;
-}
-.lemon{
-    margin-top: -4em;
-    margin-left: -35em;
-    transform: rotate(20deg);
-}
-.blue{
-    margin-top: 16em;
-    margin-left: 25em;
-    transform: rotate(20deg);
+
+.sticker {
+  width: 9em;
+  position: absolute;
 }
 
+.lemon {
+  margin-top: -4em;
+  margin-left: -35em;
+  transform: rotate(20deg);
+}
+
+.blue {
+  margin-top: 16em;
+  margin-left: 30em;
+  transform: rotate(20deg);
+}
 
 
 
-.bloquemotivos{
+
+.bloquemotivos {
+  width: 90%;
+
+  .row {
+    margin-bottom: 1%;
+  }
+
+  img {
     width: 90%;
-    .row{
-        margin-bottom: 1%;
-    }
-    img{
-        width: 90%;
-        border-radius: 20px;
-    }
-    .hoja{
-        width: 8em;
-        margin-left: 31em;
-        margin-top: -4em;
-        transform: rotate(15deg);
-    }
-    .eco{
-        width: 8em;
-        margin-left: -4em;
-        margin-top: 41em;
-        transform: rotate(15deg);
-    }
-    .oval{
-        width: 8em;
-        margin-left: -2em;
-        margin-top: 41em;
-        transform: rotate(-5deg);
-    }
-    .frescoimg{
-        text-align: center;
-        margin-left: 4%;
-    }
-    .fresco{
-        margin-left: 5%;
-        margin-right: 5%;
-        margin-top: 5%;
+    border-radius: 20px;
+  }
 
-        h2{
-            font-family: recoletaB;
-            text-align: center;
-            font-size: 250%;
-            font-size: 3.8em;
+  .hoja {
+    width: 8em;
+    margin-left: 31em;
+    margin-top: -4em;
+    transform: rotate(15deg);
+  }
 
-        }
-        p{
+  .eco {
+    width: 8em;
+    margin-left: -4em;
+    margin-top: 41em;
+    transform: rotate(15deg);
+  }
 
-            text-align: left;
-            margin: 5%;
-            font-size: 190%;
-        }
+  .oval {
+    width: 8em;
+    margin-left: -2em;
+    margin-top: 41em;
+    transform: rotate(-5deg);
+  }
+
+  .frescoimg {
+    text-align: center;
+    margin-left: 4%;
+  }
+
+  .fresco {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+
+    h2 {
+      font-family: recoletaB;
+      text-align: center;
+      font-size: 250%;
+      font-size: 3.8em;
+
     }
-    .impactoimg{
 
-        text-align: center;
-        margin-right: 5%;
+    p {
+
+      text-align: left;
+      margin: 5%;
+      font-size: 2.2em
     }
-    .impacto{
-        margin-left: 5%;
-        margin-right: 5%;
-        margin-top: 10%;
+  }
 
-        h2{
-            font-family: recoletaB;
-            text-align: center;
-            font-size: 250%;
-            font-size: 3.8em;
-        }
-        p{
+  .impactoimg {
 
-            text-align: left;
-            margin: 5%;
-            font-size: 2.2em;
-        }
+    text-align: center;
+    margin-right: 5%;
+  }
+
+  .impacto {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10%;
+
+    h2 {
+      font-family: recoletaB;
+      text-align: center;
+      font-size: 250%;
+      font-size: 3.8em;
     }
-    .comunidadimg{
-        text-align: center;
-        margin-left: 4%;
-    }
-    .comunidad{
-        margin-left: 5%;
-        margin-right: 5%;
-        margin-top: 4%;
 
-        h2{
-            font-family: recoletaB;
-            text-align: center;
-            font-size: 250%;
-            font-size: 3.8em;
-        }
-        p{
+    p {
 
-            text-align: left;
-            margin: 5%;
-            font-size: 2.2em;
-        }
+      text-align: left;
+      margin: 5%;
+      font-size: 2.2em;
     }
+  }
+
+  .comunidadimg {
+    text-align: center;
+    margin-left: 4%;
+  }
+
+  .comunidaddiv {
+    margin-bottom: 150px !important;
+  }
+
+  .comunidad {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 4%;
+
+    h2 {
+      font-family: recoletaB;
+      text-align: center;
+      font-size: 250%;
+      font-size: 3.8em;
+    }
+
+    p {
+
+      text-align: left;
+      margin: 5%;
+      font-size: 2.2em;
+    }
+  }
 
 
 }
+
 @media screen and(max-width: 700px) {
-    .sticker{
-        display: none;
-    }
-  .bloqueporque{
+  .sticker {
+    display: none;
+  }
+
+  .bloqueporque {
 
     padding-bottom: 5%;
-    .bloqueporque2{
+
+    .bloqueporque2 {
       width: 80%;
       font-size: 75%;
       margin-top: 0%;
     }
   }
-  .bloquemotivos{
-        
-        width: 80%;
-        .col{
-            margin: 0%;
-            padding-right: 0%;
-            padding-left: 0%;
-        }
-        .fresco, .impacto, .comunidad{
-            font-size: 50%;
-            
-           
-        }
-        .frescoimg{
-            padding-top:5%;
-        }
-        .impactoimg{
-            padding-top:7.5%;
 
-        }
-        .comunidadimg{
-            padding-top:15.5%;
-        }
-        
+  .bloquemotivos {
+
+    width: 80%;
+
+    .col {
+      margin: 0%;
+      padding-right: 0%;
+      padding-left: 0%;
+    }
+
+    .fresco,
+    .impacto,
+    .comunidad {
+      font-size: 50%;
+
+
+    }
+
+    .frescoimg {
+      padding-top: 5%;
+    }
+
+    .impactoimg {
+      padding-top: 7.5%;
+
+    }
+
+    .comunidadimg {
+      padding-top: 15.5%;
+    }
+
   }
 }
-
-    
-
