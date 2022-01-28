@@ -23,6 +23,7 @@
             background-position: center;
             background-image: url("../../../assets/IMG/iconos/lupa.png");
             height: 30px;
+            margin-top: -4px;
             width: 30px;
             float: right;
         }
@@ -79,13 +80,11 @@
     }
     .busqueda {
         .search {
-            
             .campo {
                 width: 50%;
                 margin-left: 15px;
             }
-           
-           
+
             > div {
                 float: right;
             }
@@ -101,5 +100,4 @@
             }
         }
     }
-    
 }

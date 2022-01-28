@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { PopUpComponent } from '../pop-up/pop-up.component';
 
 
@@ -14,12 +14,16 @@ export class BarraComponent implements OnInit {
   constructor(public dialogRef: MatDialog) { }
 
   openDialog() {
-    
-    this.dialogRef.open(PopUpComponent, {
-      data: {
-        name: "Carlos"
-      }
+
+    const dialog = this.dialogRef.open(PopUpComponent, {
+      position: { top: "100px" },
+      width: "40%",
+      maxWidth: "1000px",
+      panelClass: 'custom-modalbox',
+      backdropClass: 'fondo'
     });
+
+
   }
 
 

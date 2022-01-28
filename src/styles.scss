@@ -94,4 +94,14 @@ body {
 .container-fluid {
   margin: auto;
 }
- 
+
+.custom-modalbox {
+  mat-dialog-container {
+    border: 2px solid black;
+    filter: drop-shadow(0 5px 10px rgba(50, 50, 50, 0.803)) drop-shadow(0 5px 20px rgba(69, 69, 69, 0.653));
+  }
+}
+
+.fondo {
+  backdrop-filter: blur(100000000000px);
+}

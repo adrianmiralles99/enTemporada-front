@@ -1,5 +1,5 @@
 @import "../../../styles.scss";
-.small{
+.small {
   display: none;
 }
 table {
@@ -74,10 +74,10 @@ table {
 }
 
 @media screen and(max-width:812px) {
-  .big{
+  .big {
     display: none;
   }
-  .small{
+  .small {
     display: block;
   }
 }

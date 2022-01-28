@@ -8,10 +8,14 @@ nav {
 
 .oscura {
   background-color: rgb(22, 22, 22);
+  background-image: url("../../../assets/IMG/tituloW.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   a {
     color: white !important;
   }
-  .menu{
+  .menu {
     color: white;
   }
 }
@@ -34,9 +38,7 @@ nav {
 .nav-item {
   margin-right: 40px;
   font-size: 120%;
-
 }
-
 
 .dropdown-user {
   * {
@@ -55,5 +57,12 @@ nav {
     padding-top: 5px;
     padding-bottom: 5px;
     background-color: $yellow;
+    outline: none;
+  }
+}
+
+@media screen and(max-width: 700px) {
+  .oscura {
+    background-image: none;
   }
 }
