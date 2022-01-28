@@ -29,19 +29,19 @@
     margin: 10px -5px 20px -5px;
     border-radius: 20px;
     border: none;
-    transition: 0.2s;
+    transition: 0.3s;
     cursor: pointer;
 
     &:hover {
       color: white;
+      transform: scale(110%);
       table {
         display: block;
       }
     }
 
     &:hover .card-img-top {
-      transform: scale(140%);
-      filter: drop-shadow(0 4 5px rgba(0, 0, 0, 0.592));
+      transform: scale(130%);
     }
 
     img {

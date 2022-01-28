@@ -11,9 +11,8 @@
     <tbody>
       <tr *ngFor="let articulo of frutas;let i=index" [ngClass]="{'ultimaFila':i==frutas.length-1}" id=m{{articulo.id}}>
         <td class="mgr" (mouseover)="cambiaColor(articulo.id ,'m')" (mouseout)="quitaColor(articulo.id,'m')">
-          <img src="../../../assets/IMG/fruta.png" alt="">
-          <!-- {{articulo.nombre}} -->
-          {{i==frutas.length-1}}
+          <img class="miimg" src="../../assets/IMG/Frutas/basic/{{articulo.nombre}}.png" alt="">
+          {{articulo.nombre}}
         </td>
         <td (mouseover)="cambiaColor(articulo.id,'m')" (mouseout)="quitaColor(articulo.id,'m')"
           *ngFor="let mes of meses; let indice=index" [ngClass]="{'cabFila': indice==mesActual}">.

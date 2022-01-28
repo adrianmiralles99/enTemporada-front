@@ -36,7 +36,6 @@ export class ProductesComponent implements OnInit {
 
     if (element) {
       element.children().css("background-color", "");
-      console.log("url(../../assets/IMG/Frutas/basic/" + articulo?.nombre + ".png)");
 
       element.find(".card-img-top").prop("src", "../../assets/IMG/Frutas/basic/" + articulo?.nombre + ".png");
     }
