@@ -1,6 +1,11 @@
 .inf {
   background-color: white;
-  width: 75%;
   box-shadow: inset 0 0 20px rgb(0, 0, 0, 0.555);
   text-align: center;
+}
+
+@media screen and(min-width:813px) {
+  .inf {
+    width: 75%;
+  }
 }
