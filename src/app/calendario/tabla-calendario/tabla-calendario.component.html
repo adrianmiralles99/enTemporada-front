@@ -9,14 +9,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let articulo of frutas;" id=m{{articulo.id}}>
-        <td  class="mgr"(mouseover)="cambiaColor(articulo.id ,'m')" (mouseout)="quitaColor(articulo.id,'m')">
-          <img src="../../../assets/IMG/fruta.png" alt="">
-          <img src="../../../assets/IMG/En Temporada (IES FSL)/Frutas/Fresa/Fresa.png" alt="">
+      <tr *ngFor="let articulo of frutas;let i=index" [ngClass]="{'ultimaFila':i==frutas.length-1}" id=m{{articulo.id}}>
+        <td class="mgr" (mouseover)="cambiaColor(articulo.id ,'m')" (mouseout)="quitaColor(articulo.id,'m')">
+          <img class="miimg" src="../../assets/IMG/Frutas/basic/{{articulo.nombre}}.png" alt="">
           {{articulo.nombre}}
         </td>
         <td (mouseover)="cambiaColor(articulo.id,'m')" (mouseout)="quitaColor(articulo.id,'m')"
-          *ngFor="let mes of meses; let indice=index" [ngClass]="{'cabFila': indice==mesActual}">.</td>
+          *ngFor="let mes of meses; let indice=index" [ngClass]="{'cabFila': indice==mesActual}">.
+        </td>
       </tr>
 
     </tbody>
@@ -30,12 +30,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let articulo of verduras;" id=m{{articulo.id}}>
-        <td  class="mgr" (mouseover)="cambiaColor(articulo.id,'m')" (mouseout)="quitaColor(articulo.id,'m')">
+      <tr *ngFor="let articulo of verduras;let i=index" [ngClass]="{'ultimaFila':i==verduras.length-1}"
+        id=m{{articulo.id}}>
+        <td class="mgr" (mouseover)="cambiaColor(articulo.id,'m')" (mouseout)="quitaColor(articulo.id,'m')">
           <img src="../../../assets/IMG/verdura.png" alt="">
           {{articulo.nombre}}
         </td>
-        
+
         <td (mouseover)="cambiaColor(articulo.id,'m')" (mouseout)="quitaColor(articulo.id,'m')"
           *ngFor="let mes of meses; let indice=index" [ngClass]="{'cabFila': indice==mesActual}">.</td>
       </tr>
@@ -60,7 +61,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let articulo of frutas;" id=s{{articulo.id}}>
-        <td  class="mgr" (mouseover)="cambiaColor(articulo.id,'s')" (mouseout)="quitaColor(articulo.id,'s')">
+        <td class="mgr" (mouseover)="cambiaColor(articulo.id,'s')" (mouseout)="quitaColor(articulo.id,'s')">
           <img src="../../../assets/IMG/fruta.png" alt="">
           {{articulo.nombre}}
         </td>
@@ -76,7 +77,7 @@
       <tr>
         <th class="tipo">Verduras</th>
         <th class="cabMes">{{mesact}}</th>
-        <th >{{messig}}</th>
+        <th>{{messig}}</th>
       </tr>
     </thead>
     <tbody>
@@ -85,7 +86,7 @@
           <img src="../../../assets/IMG/verdura.png" alt="">
           {{articulo.nombre}}
         </td>
-        
+
         <td class="cabFila" (mouseover)="cambiaColor(articulo.id,'s')" (mouseout)="quitaColor(articulo.id,'s')">.</td>
         <td (mouseover)="cambiaColor(articulo.id,'s')" (mouseout)="quitaColor(articulo.id,'s')">.</td>
       </tr>

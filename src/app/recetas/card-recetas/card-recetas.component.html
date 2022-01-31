@@ -5,10 +5,10 @@
         <button class="imagen" [routerLink]="['/recetaindividual', receta.id]"
           [ngStyle]="{'background-image':'url(../../../assets/IMG/'+receta.img+')'}"></button>
         <div class="row usuario">
-          <div class="col-9">
+          <div class="col-8">
             <p class="autor">{{receta.titulo}}</p>
           </div>
-          <div class="col-2 botones">
+          <div class="col-4 botones">
             <button class="mg"></button>
             <button class="save"></button>
           </div>
@@ -20,7 +20,6 @@
       </div>
     </div>
   </div>
-  <button class="subir" (click)="subir()"></button>
 
   <button [routerLink]="'/creacionRecetas'" (mouseover)="hover=true" (mouseout)="hover=false"
     [ngClass]="{'extender': hover==true}" class="crear row">

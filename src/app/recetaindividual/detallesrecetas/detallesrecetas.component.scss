@@ -14,7 +14,7 @@
         width: 100%;
         background-color: white;
         border-radius: 5px;
-        box-shadow: inset 0 0 25px rgba(99, 99, 99, 0.837), 0 5px 10px rgba(93, 93, 93, 0.68);
+        box-shadow: inset 0 5px 30px rgba(99, 99, 99, 0.646), 0 5px 10px rgba(52, 52, 52, 0.565);
         background-repeat: no-repeat;
         background-position: center;
         background-color: transparent;
@@ -33,6 +33,7 @@
         word-wrap: break-word;
         font-family: recoletaB;
         padding: 10px;
+        font-size: 250%;
     }
     sub {
         font-family: neueB;
@@ -107,6 +108,7 @@
     h3 {
         color: black;
         font-family: recoletaB;
+        font-size: 200%;
     }
 
     .columnas {

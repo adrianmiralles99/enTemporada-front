@@ -1,11 +1,11 @@
-<nav class="navbar navbar-expand-md navbar-light" [ngClass]="{'oscura':oscura}">
+<nav class="navbar navbar-expand-md navbar-light {{color}}">
   <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
     aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-    <span class ="menu">Menu</span>
+    <span class="menu">Menu</span>
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavId">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active d-none d-sm-block d-md-none">
+      <li class="nav-item active">
         <a class="nav-link" [routerLink]="'/'" routerLinkActive="router-link-active">Inicio</a>
       </li>
       <li class="nav-item active">
@@ -36,7 +36,7 @@
           </div>
         </ng-container>
         <ng-template #sesionIniciada>
-          <button class="boton pr-3 pl-3" [routerLink]="'/login'">Log In</button>
+          <button class="boton pr-3 pl-3" (click)="openDialog()">Log In</button>
         </ng-template>
       </div>
     </ul>

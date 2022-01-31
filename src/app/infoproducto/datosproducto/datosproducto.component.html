@@ -11,25 +11,24 @@
         </div>
         <div class="col-8" [ngStyle]="{'background-color': this.articulos[0].color }">
             <h5 class="titulo">Información nutricional</h5>
-            <hr>
             <div class="row datitos">
-                <div class="col-6">
+                <div class="col-6 izq">
                     <ul>         
-                        <li>Energía:</li>
-                        <li>Proteinas:</li>
-                        <li>Grasa:</li>
-                        <li>Hidratos de carbono:</li> 
-                        <li>Calcio:</li> 
+                        <li>Energía: {{this.articulos[0].infonut[0]}}</li>
+                        <li>Proteinas: {{this.articulos[0].infonut[1]}}</li>
+                        <li>Grasa: {{this.articulos[0].infonut[2]}}</li>
+                        <li>Hidratos de carbono: {{this.articulos[0].infonut[3]}}</li> 
+                        <li>Calcio: {{this.articulos[0].infonut[4]}}</li> 
 
                     </ul>
                 </div>
                 <div class="col-6">
                     <ul>         
-                        <li>Fibra:</li>
-                        <li>Sodio:</li>
-                        <li>Potasio:</li>
-                        <li>Hierro:</li> 
-                        <li>Ácido folico:</li> 
+                        <li>Fibra: {{this.articulos[0].infonut[5]}}</li>
+                        <li>Sodio: {{this.articulos[0].infonut[6]}}</li>
+                        <li>Potasio: {{this.articulos[0].infonut[7]}}</li>
+                        <li>Hierro: {{this.articulos[0].infonut[8]}}</li> 
+                        <li>Ácido folico: {{this.articulos[0].infonut[9]}}</li> 
                     </ul>
                 </div>
             </div>

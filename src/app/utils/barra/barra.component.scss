@@ -4,16 +4,36 @@ nav {
   font-family: neueB;
   font-size: 110%;
   background-color: $beige;
-
-  
+  a {
+    outline: none;
+  }
+}
+.green {
+  background-color: $green;
+}
+.yellow {
+  background-color: $yellow;
 }
 
-.oscura {
-  background-color: rgb(22, 22, 22);
+.black {
+  background-color: $grey;
+}
+
+.orange {
+  background-color: $orange;
+}
+
+.beige {
+  background-color: $beige;
+}
+
+.orange,
+.black,
+.green {
   a {
-    color: white ;
+    color: white !important;
   }
-  .menu{
+  .menu {
     color: white;
   }
 }
@@ -36,9 +56,7 @@ nav {
 .nav-item {
   margin-right: 40px;
   font-size: 120%;
-
 }
-
 
 .dropdown-user {
   * {
@@ -57,5 +75,12 @@ nav {
     padding-top: 5px;
     padding-bottom: 5px;
     background-color: $yellow;
+    outline: none;
+  }
+}
+
+@media screen and(max-width: 700px) {
+  .oscura {
+    background-image: none;
   }
 }

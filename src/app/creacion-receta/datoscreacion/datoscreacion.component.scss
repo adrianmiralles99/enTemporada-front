@@ -8,6 +8,10 @@
     border: none;
 }
 
+input {
+    outline: none;
+}
+
 // PARTE IZERDA CON LA FOTO DE CARGAR IMAGEN
 
 .fondo {
@@ -109,6 +113,7 @@
 .ingredientes {
     padding: 20px;
     h3 {
+        font-size: 170%;
         color: black;
         font-family: recoletaB;
     }
@@ -127,11 +132,17 @@
             }
         }
         select {
-            font-family: neueR;
-            text-align: center;
+            padding: 3px 0px 3px 5px;
+            box-shadow: inset 0 0px 5px rgba(52, 52, 52, 0.347);
             width: 130px;
             border: 1px solid rgba(56, 56, 56, 0.721);
             border-radius: 5px;
+            optgroup {
+                font-family: recoletaB;
+                option {
+                    font-family: neueR;
+                }
+            }
         }
     }
 
@@ -162,6 +173,7 @@
             border-radius: 5px;
             border-bottom: 1px solid rgba(32, 32, 32, 0.333);
             margin: 5px 0px 5px 0;
+            padding: 5px;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.299);
             overflow-wrap: break-word;
         }
@@ -237,14 +249,12 @@
     }
 }
 @media screen and(max-width: 700px) {
-    .col-sm-12{
+    .col-sm-12 {
         margin-top: 5%;
     }
-    .ingredientes{
-        h3{
+    .ingredientes {
+        h3 {
             font-size: 125%;
-
         }
     }
-
 }

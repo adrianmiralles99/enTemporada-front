@@ -7,7 +7,6 @@
 
 .imagen {
   border: none;
-  border-bottom: 1px solid rgba(50, 50, 50, 0.721);
   width: 100%;
   height: 200px;
   margin-bottom: 15px;
@@ -58,27 +57,30 @@
   background-color: transparent;
   background-size: contain;
   background-repeat: no-repeat;
-  border: none;
   background-position: center;
-  width: 40%;
-  height: 120%;
-  margin-left: 5px;
-}
-
-.botones {
-  padding: 0;
+  border: none;
+  width: 35px;
+  height: 35px;
+  margin-right: 7px;
+  transition: 0.5s;
 }
 
 .save {
-  background-image: url("../../../assets/IMG/iconos/guardado bonito.png");
-  background-size: 40px;
+  background-image: url("../../../assets/IMG/iconos/bookmark_save.png");
+  &:hover {
+    filter: drop-shadow(0 3px 3px rgb(35, 35, 35));
+    transform: scale(110%);
+  }
 }
 
 .mg {
-  background-image: url("../../../assets/IMG/iconos/fav.png");
+  background-image: url("../../../assets/IMG/iconos/mg.png");
+  &:hover {
+    filter: drop-shadow(0 3px 3px rgb(167, 57, 44));
+    transform: scale(110%);
+  }
 }
 
-.subir,
 .crear {
   position: fixed;
   background-size: contain;
@@ -86,24 +88,6 @@
   background-repeat: no-repeat;
   filter: drop-shadow(0 5px 5px rgba(76, 76, 76, 0.455));
   z-index: 100;
-}
-
-.subir {
-  right: 3.5%;
-  border-radius: 100%;
-  bottom: 4%;
-  width: 40px;
-  height: 40px;
-  border: none;
-  background-color: white;
-  background-image: url("../../../assets/IMG/iconos/arrowUp.png");
-  filter: drop-shadow(0 5px 5px rgba(76, 76, 76, 0.632));
-  &:hover {
-    animation: animFlecha 1.5s infinite;
-  }
-}
-
-.crear {
   right: 3.5%;
   bottom: 12%;
   border: none;
@@ -182,7 +166,6 @@
 
 @media screen and(max-width: 700px) {
   .save {
-    background-image: url("../../../assets/IMG/iconos/guardado bonito.png");
     background-size: 30px;
   }
 }

@@ -5,7 +5,7 @@
       <div class="col-sm-3" *ngFor="let articulo of frutas" id="{{articulo.id}}">
         <div class="card articulo" [routerLink]="['/infoproducto', articulo.id]" (mouseover)="cambiaColor(articulo.id)"
           (mouseout)="quitaColor(articulo.id)">
-          <img class="card-img-top" src="../../assets/IMG/fruta.png" alt="Card image cap">
+          <img class="card-img-top" src="../../assets/IMG/Frutas/basic/{{articulo.nombre}}.png" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">{{articulo.nombre}}</h5>
             <table>

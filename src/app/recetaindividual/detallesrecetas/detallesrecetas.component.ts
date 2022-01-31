@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
-import { RECETAS } from '../../mock-recetas';
+import { Component, Input, OnInit } from '@angular/core';
+import { Receta } from 'src/app/receta';
 
 @Component({
   selector: 'app-detallesrecetas',
@@ -10,11 +9,10 @@ import { RECETAS } from '../../mock-recetas';
 export class DetallesrecetasComponent implements OnInit {
 
   ingredientes: Array<Array<String>> = [];
-  id = this.rutaActiva.snapshot.paramMap.get('id');
-  
-  receta = RECETAS.filter(element => element.id == (this.id ?? -1))[0];
 
-  constructor(private rutaActiva: ActivatedRoute) {
+  @Input() receta!: Receta;
+
+  constructor() {
   }
 
   ngOnInit(): void {

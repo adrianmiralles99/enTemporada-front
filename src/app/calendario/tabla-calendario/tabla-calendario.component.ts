@@ -14,11 +14,11 @@ export class TablaCalendarioComponent implements OnInit {
   productes = PRODUCTES;
   help = new Date();
   mesActual = this.help.getMonth();
-  mesact = this.meses[this.mesActual]; 
-  messig = this.meses[this.mesActual + 1]; 
+  mesact = this.meses[this.mesActual];
+  messig = this.meses[this.mesActual + 1];
 
 
-  
+
 
 
 
@@ -26,17 +26,23 @@ export class TablaCalendarioComponent implements OnInit {
   }
 
   cambiaColor(id: number, letra: string) {
-    var element = $("#"+ letra + id);
+    var element = $("#" + letra + id);
     if (element) {
-      element.children().css("background-color", this.productes.find(element => element.id == id)?.color ?? "");
+      var articulo = this.productes.find(element => element.id == id);
+
+      element.children().css("background-color", articulo?.color ?? "");
+      element.find(".miimg").prop("src", "../../assets/IMG/Frutas/background/" + articulo?.nombre + ".png");
     }
   }
 
 
-  quitaColor(id: number , letra: string) {
-    var element = $("#"+ letra + id);
+  quitaColor(id: number, letra: string) {
+    var element = $("#" + letra + id);
     if (element) {
+      var articulo = this.productes.find(element => element.id == id);
+
       element.children().css("background-color", "");
+      element.find(".miimg").prop("src", "../../assets/IMG/Frutas/basic/" + articulo?.nombre + ".png");
     }
   }
 
