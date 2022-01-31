@@ -11,6 +11,7 @@ export class DetallesrecetasComponent implements OnInit {
 
   ingredientes: Array<Array<String>> = [];
   id = this.rutaActiva.snapshot.paramMap.get('id');
+  
   receta = RECETAS.filter(element => element.id == (this.id ?? -1))[0];
 
   constructor(private rutaActiva: ActivatedRoute) {

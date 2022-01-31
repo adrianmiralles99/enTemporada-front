@@ -12,6 +12,7 @@
       <tr *ngFor="let articulo of frutas;" id=m{{articulo.id}}>
         <td  class="mgr"(mouseover)="cambiaColor(articulo.id ,'m')" (mouseout)="quitaColor(articulo.id,'m')">
           <img src="../../../assets/IMG/fruta.png" alt="">
+          <img src="../../../assets/IMG/En Temporada (IES FSL)/Frutas/Fresa/Fresa.png" alt="">
           {{articulo.nombre}}
         </td>
         <td (mouseover)="cambiaColor(articulo.id,'m')" (mouseout)="quitaColor(articulo.id,'m')"
