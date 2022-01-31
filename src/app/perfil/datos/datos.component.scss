@@ -19,6 +19,9 @@
     border-radius: 0px 5px 5px 0px;
   }
 }
+.progress-bar {
+  background-color: $orange;
+}
 
 .foto {
   text-align: center;
@@ -33,7 +36,7 @@
   }
   > .b_usuario {
     border-radius: 100%;
-    background-image: url("../../../assets/IMG/Niveles/lvl_1-removebg-preview.png");
+    background-image: url("../../../assets/IMG/Niveles/lvl_5-removebg-preview.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
