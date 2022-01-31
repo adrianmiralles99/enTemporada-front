@@ -1,19 +1,54 @@
 <div class="ventana">
-    <h1 class="titulo" mat-dialog-title>INICIAR SESION</h1>
-    <mat-dialog-content class="contenedor">
-        <label class="campos">
-            <h3>Usuario</h3>
-            <input type="text">
-        </label>
-        <br>
-        <label class="campos">
-            <h3>Contraseña</h3>
-            <input type="text">
-        </label>
-    </mat-dialog-content>
-    <mat-dialog-actions class="boton">
-        <button class="acceder" [mat-dialog-close]="">Acceder</button>
-    </mat-dialog-actions>
+    <div *ngIf="!password">
+        <h1 class="titulo" mat-dialog-title>INICIAR SESION</h1>
+        <mat-dialog-content class="contenedor">
+            <label class="campos">
+                <h3>Usuario</h3>
+                <input type="text">
+            </label>
+            <br>
+            <label class="campos">
+                <h3>Contraseña</h3>
+                <input type="text">
+            </label>
 
+            <div class="row">
+                <div class="col-5">
+                    <label class="recuerdame">
+                        <input type="checkbox" name="" id="">
+                        <span>Recuerdame</span>
+                    </label>
+                </div>
+                <div class="col-7 contraseña">
+                    <p (click)="password=true">¿Has olvidado tu contraseña?</p>
+                </div>
+            </div>
+            <mat-dialog-actions class="boton">
+                <button class="acceder" [routerLink]="'/'" [mat-dialog-close]="">Acceder</button>
+            </mat-dialog-actions>
+            <div class="row registro">
+                <div class="col-12">
+                    <p [routerLink]="'/registro'" [mat-dialog-close]>
+                        ¿Todavia no tienes cuenta? Registrate para acceder a
+                        una gran variedad de frutas en temporada</p>
+                </div>
+            </div>
+        </mat-dialog-content>
+    </div>
+
+    <div *ngIf="password">
+        <h1 class="titulo" mat-dialog-title>RECUPERACIÓN DE CONTRASEÑA</h1>
+        <mat-dialog-content class="contenedor">
+            <label class="recu_contraseña">
+                <h3>Escriba el correo al que desee enviar el enlace de recuperación </h3>
+                <input type="text">
+            </label>
+            <mat-dialog-actions class="boton">
+                <button class="acceder" (click)="password=false">Enviar</button>
+            </mat-dialog-actions>
+            <br>
+            <br>
+        </mat-dialog-content>
+    </div>
 
 </div>

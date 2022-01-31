@@ -13,5 +13,7 @@ export class PopUpComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  password = true;
+
 }
 
