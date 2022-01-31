@@ -42,23 +42,22 @@
   padding-right: 5%;
   width: 80%;
 }
-.titulo{
+.titulo {
   padding-top: 5%;
   text-align: left;
 }
 
 .usuario {
   margin-left: 0px;
-  p{
+  p {
     text-align: left;
   }
 }
-.user{
+.user {
   text-align: left;
 }
 .margen {
   margin-bottom: 5%;
-
 }
 
 .autor {
@@ -73,7 +72,7 @@
   border: none;
   background-position: center;
   width: 40%;
-  height: 120%;
+  height: 150%;
   margin-left: 5px;
 }
 
@@ -82,20 +81,16 @@
 }
 
 .save {
-  background-image: url("../../../assets/IMG/iconos/guardado bonito.png");
-  background-size: 40px;
+  background-image: url("../../../assets/IMG/iconos/bookmark_save.png");
 }
 
 .mg {
-  background-image: url("../../../assets/IMG/iconos/fav.png");
+  background-image: url("../../../assets/IMG/iconos/mg.png");
 }
 
 @media screen and(max-width:700px) {
-
-  .izq{
+  .izq {
     margin-top: 5%;
     margin-bottom: 0%;
-
   }
-
 }
