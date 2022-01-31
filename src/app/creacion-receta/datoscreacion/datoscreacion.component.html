@@ -76,8 +76,18 @@
                                 </label>
 
                                 <select>
-                                    <option *ngFor="let tipo of tipoActual" value="{{tipo.nombre}}">{{tipo.nombre}}
-                                    </option>
+                                    <optgroup label="En Temporada" *ngIf="tipoActualT.length>0">
+                                        <option *ngFor="let tipo of tipoActualT" value="{{tipo.nombre}}">
+                                            {{tipo.nombre}}
+                                        </option>
+                                    </optgroup>
+                                    <optgroup></optgroup>
+                                    <optgroup label="Fuera de Temporada" *ngIf="tipoActualN.length>1">
+
+                                        <option *ngFor="let tipo of tipoActualN" value="{{tipo.nombre}}">
+                                            {{tipo.nombre}}
+                                        </option>
+                                    </optgroup>
                                 </select>
                             </div>
                         </div>

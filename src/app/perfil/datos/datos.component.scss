@@ -6,10 +6,8 @@
 .info {
   background-color: $green;
   font-family: neueB;
-  border-radius: 10px 10px 0 0;
-  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.555);
   color: white;
-  margin-top: 50px;
+  padding-top: 30px;
   padding-bottom: 70px;
 }
 
@@ -17,29 +15,29 @@
   text-align: center;
   > .usuario {
     background-color: white;
-    border: 2px solid $grey;
+    border: 2px solid rgba(0, 0, 0, 0.66);
     border-radius: 100%;
-    background-image: url("../../../assets/IMG/iconos/icononombreuser.png");
-    background-size: contain;
+    background-image: url("../../../assets/IMG/ejemploUser.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
   }
 }
 
 .nivel {
-  height: 7em;
-  width: 7em;
+  height: 200px;
+  width: 200px;
   background-image: radial-gradient(white, white, rgb(126, 126, 126));
   border-radius: 100%;
-  border: 2px solid $grey;
+  border: 2px solid rgba(0, 0, 0, 0.66);
   text-align: center;
-  display: flex;
-
+  margin-bottom: 20px;
   img {
-    width: 5em;
     margin: auto;
-    vertical-align: middle !important;
+    height: 90%;
     filter: drop-shadow(0 5px 5px $greyD);
+    user-select: none;
+    pointer-events: none;
   }
 }
 
@@ -63,29 +61,23 @@
 }
 
 @media screen and(min-width:813px) {
-  .info {
-    width: 75%;
-  }
-
   .usuario {
-    width: 150px;
-    height: 150px;
-    box-shadow: inset 0 0px 25px rgba(0, 0, 0, 0.734);
-  }
-  .user {
-    font-size: 170%;
-    margin-top: 50px;
+    margin: auto;
+    width: 250px;
+    height: 250px; 
+    box-shadow: inset 0 0px 15px rgba(0, 0, 0, 0.734), 0 5px 10px rgba(50, 50, 50, 0.483);
   }
 
   .chef {
     h4 {
       font-family: neueB;
-      font-size: 150%;
-      padding: 5%;
+      font-size: 170%;
+      margin-top: 40px;
+      margin-left: 30px;
     }
     > div {
-      margin-top: 50px;
-      margin-bottom: 70px;
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
   }
 
@@ -96,6 +88,21 @@
       color: $green;
       background-color: white;
       border: 2px solid $green;
+    }
+  }
+
+  .datos {
+    .infouser {
+      font-family: neueR;
+      font-size: 120%;
+    }
+    .user {
+      font-size: 200%;
+      margin-top: 50px;
+    }
+
+    h4 {
+      font-size: 130%;
     }
   }
 }

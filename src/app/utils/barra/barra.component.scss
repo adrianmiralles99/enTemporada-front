@@ -4,7 +4,7 @@ nav {
   font-family: neueB;
   font-size: 110%;
   background-color: $beige;
-  a{
+  a {
     outline: none;
   }
 }
@@ -13,30 +13,23 @@ nav {
 }
 .yellow {
   background-color: $yellow;
-  background-image: url("../../../assets/IMG/titulo.png");
 }
+
+.black {
+  background-color: $grey;
+}
+
 .orange {
   background-color: $orange;
 }
 
 .beige {
   background-color: $beige;
-  background-image: url("../../../assets/IMG/titulo.png");
 }
 
 .orange,
-.yellow,
-.green,
-.beige {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  // box-shadow: 0 3px 4px rgba(30, 30, 30, 0.32);
-  // border-bottom: 1px solid white;
-}
-.orange,
+.black,
 .green {
-  background-image: url("../../../assets/IMG/tituloW.png");
   a {
     color: white !important;
   }
