@@ -5,6 +5,14 @@
   max-width: 90em;
 }
 
+.nombre {
+  font-size: 150%;
+}
+
+.autor {
+  font-size: 100%;
+}
+
 .imagen {
   border: none;
   width: 100%;
@@ -20,27 +28,31 @@
 }
 
 .icono {
-  width: 30px;
-  user-select: none;
-  pointer-events: none;
-  margin-right: 5px;
-  margin-left: 10px;
-  margin-top: 5px;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.66);
+  border-radius: 100%;
+  background-image: url("../../../assets/IMG/ejemploUser.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 10px;
 }
 
 .tarjeta {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 30px;
-  background-color: rgba(0, 0, 0, 0.15);
-  box-shadow: 0 4px 5px rgba(108, 108, 108, 0.34);
-  padding-bottom: 5px;
+  margin: auto;
+  margin-bottom: 40px;
+  background-color: rgb(233, 233, 233);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.565);
+  padding-bottom: 15px;
   border-radius: 5px;
   font-family: neueB;
   transition: 0.3s;
-  padding-left: 5%;
   padding-right: 5%;
+  padding-left: 5%;
   width: 80%;
+  // color: white;
 }
 .titulo {
   padding-top: 5%;
@@ -58,22 +70,6 @@
 }
 .margen {
   margin-bottom: 5%;
-}
-
-.autor {
-  margin-bottom: -5px;
-}
-
-.save,
-.mg {
-  background-color: transparent;
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  background-position: center;
-  width: 40%;
-  height: 150%;
-  margin-left: 5px;
 }
 
 .botones {
