@@ -1,109 +1,142 @@
 @import "/src/styles.scss";
 
 .busqueda {
-    margin: auto;
-    .campo {
-        background-color: white;
-        border-radius: 5px;
-        padding: 5px 5px 0px 5px;
-        border: none;
-        * {
-            font-family: neueR;
-        }
+  margin: auto;
 
-        input {
-            background: none;
-            border: none;
-            vertical-align: middle !important;
-            outline: none;
-            margin: auto;
-            width: 80%;
-        }
-        .lupa {
-            background-size: 80%;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-color: transparent;
-            background-image: url("../../../assets/IMG/iconos/lupa.png");
-            border: none;
-            height: 30px;
-            margin-top: -4px;
-            width: 30px;
-            float: right;
-            outline: none;
-        }
+  .campo {
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px 5px 0px 5px;
+    border: none;
+
+    * {
+      font-family: neueR;
     }
+
+    input {
+      background: none;
+      border: none;
+      vertical-align: middle !important;
+      outline: none;
+      margin: auto;
+      width: 80%;
+    }
+
+    .lupa {
+      background-size: 80%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: transparent;
+      background-image: url("../../../assets/IMG/iconos/lupa.png");
+      border: none;
+      height: 30px;
+      margin-top: -4px;
+      width: 30px;
+      float: right;
+      outline: none;
+    }
+  }
+}
+
+.header {
+  text-align: center;
+  background-color: $orange;
+  width: 100%;
+  border-bottom: 1px solid $orange;
+  box-shadow: 0 8px 10px rgba(102, 102, 102, 0.4);
+
+  h1 {
+
+    padding: 50px;
+    font-size: 600%;
+    font-family: recoletaB;
+    color: white;
+  }
 }
 
 .elemento {
-    padding-top: 50px;
-    width: 100%;
-    margin: auto;
-    .titulo {
-        font-size: 200%;
-        font-family: recoletaB;
-    }
+  margin-top: -1px !important;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 30px;
+
+  .titulo {
+    font-size: 200%;
+    font-family: recoletaB;
+  }
 }
 
 .barra {
-    margin: auto;
-    margin-left: 30px;
-    margin-right: 30px;
-    border-radius: 10px;
-    background-color: $orange;
-    color: white;
-    border: 1px solid white;
-    padding: 10px 0 0px 0;
-    box-shadow: 0 0px 5px rgba(98, 23, 0, 0.537);
+  margin: auto;
+  margin-left: 30px;
+  margin-right: 30px;
+  background-color: $orange;
+  color: white;
+  border-end-end-radius: 5px;
+  border-end-start-radius: 5px;
+  box-shadow: 0 8px 10px rgba(102, 102, 102, 0.4);
+  padding: 10px 0 10px 0;
 }
 
 .resultados {
+  margin: auto;
+  font-family: neueR;
+  font-size: 120%;
+
+  div {
     margin: auto;
-    font-family: neueR;
-    font-size: 120%;
-    div {
-        margin: auto;
-    }
-    p {
-        vertical-align: middle;
-    }
+  }
+
+  p {
+    vertical-align: middle;
+  }
 }
 
 .relevancia {
-    margin: auto;
-    padding: 4px 5px 4px 5px;
-    font-family: neueB;
-    border-radius: 5px;
-    border: none;
-    background-color: white;
-    * {
-        vertical-align: middle !important;
-    }
-    option {
-        font-family: neueR;
-    }
-}
-@media screen and(max-width: 700px) {
-    .busqueda {
-        .search {
-            .campo {
-                width: 50%;
-                margin-left: 15px;
-            }
+  margin: auto;
+  padding: 4px 5px 4px 5px;
+  font-family: neueB;
+  border-radius: 5px;
+  border: none;
+  background-color: white;
 
-            > div {
-                float: right;
-            }
-        }
+  * {
+    vertical-align: middle !important;
+  }
+
+  option {
+    font-family: neueR;
+  }
+}
+
+.container {
+  margin-bottom: 100px;
+}
+
+@media screen and(max-width: 700px) {
+  .busqueda {
+    .search {
+      .campo {
+        width: 50%;
+        margin-left: 15px;
+      }
+
+      >div {
+        float: right;
+      }
     }
-    .barra {
-        padding: 10px 0 10px 0;
-        .resultados {
-            margin-left: 0;
-            font-size: 120%;
-            span {
-                margin-left: 0;
-            }
-        }
+  }
+
+  .barra {
+    padding: 10px 0 10px 0;
+
+    .resultados {
+      margin-left: 0;
+      font-size: 120%;
+
+      span {
+        margin-left: 0;
+      }
     }
+  }
 }
