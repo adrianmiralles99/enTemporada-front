@@ -18,12 +18,9 @@ export class DatoscreacionComponent implements OnInit {
 
   ingredientes: Array<Array<String>> = [];
 
-  // FRUTAS Y VERDURAS PARA USAR EN DESPLEGABLE
-  frutas = PRODUCTES.filter(element => element.tipo == "F");
-  verduras = PRODUCTES.filter(element => element.tipo == "V");
-  productes = PRODUCTES;
 
-  tipoActual: Articulo[] = [];
+  tipoActualT: Articulo[] = [];
+  tipoActualN: Articulo[] = [];
 
   ngOnInit(): void {
     this.divideIngredientes();
@@ -31,14 +28,17 @@ export class DatoscreacionComponent implements OnInit {
 
   selectTipo(tipo: string) {
     if (tipo == "F") {
-      this.tipoActual = PRODUCTES.filter(element => element.tipo == "F");
+      this.tipoActualT = PRODUCTES.filter(element => element.tipo == "F");
+      this.tipoActualN = PRODUCTES.filter(element => element.tipo == "F");
     }
     else if (tipo == "V") {
-      this.tipoActual = PRODUCTES.filter(element => element.tipo == "V");
+      this.tipoActualT = PRODUCTES.filter(element => element.tipo == "V");
+      this.tipoActualN = PRODUCTES.filter(element => element.tipo == "V");
     }
 
   }
 
+  // COPIADO DE INTERNET :D
   visualizar() {
     var file = $('#inputIMG').prop("files")[0];
     var reader = new FileReader();
@@ -48,13 +48,13 @@ export class DatoscreacionComponent implements OnInit {
         $("#img").css({
           "background-image": "url(" + e.target.result + ")",
           "background-size": "cover",
-
         });
       }
     }
     reader.readAsDataURL(file);
   }
 
+  // DIVIDE LA LISTA DE INGREDIENTES EN DOS FILAS PARA PODER PARTIRLA POR LA MITAD
   divideIngredientes() {
     if (this.misingredientes.length % 2 == 0) {
       this.ingredientes[0] = this.misingredientes.slice(0, (this.misingredientes.length / 2));

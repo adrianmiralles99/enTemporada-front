@@ -8,6 +8,10 @@
     border: none;
 }
 
+input {
+    outline: none;
+}
+
 // PARTE IZERDA CON LA FOTO DE CARGAR IMAGEN
 
 .fondo {
@@ -128,11 +132,17 @@
             }
         }
         select {
-            font-family: neueR;
-            text-align: center;
+            padding: 3px 0px 3px 5px;
+            box-shadow: inset 0 0px 5px rgba(52, 52, 52, 0.347);
             width: 130px;
             border: 1px solid rgba(56, 56, 56, 0.721);
             border-radius: 5px;
+            optgroup {
+                font-family: recoletaB;
+                option {
+                    font-family: neueR;
+                }
+            }
         }
     }
 
@@ -163,6 +173,7 @@
             border-radius: 5px;
             border-bottom: 1px solid rgba(32, 32, 32, 0.333);
             margin: 5px 0px 5px 0;
+            padding: 5px;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.299);
             overflow-wrap: break-word;
         }
