@@ -10,6 +10,15 @@
   padding-top: 30px;
   padding-bottom: 70px;
 }
+.progress {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.626);
+  height: 30px;
+  filter: drop-shadow(0 5px 4px rgba(0, 0, 0, 0.129));
+  > div {
+    border-radius: 0px 5px 5px 0px;
+  }
+}
 
 .foto {
   text-align: center;
@@ -22,8 +31,7 @@
     background-repeat: no-repeat;
     background-position: center;
   }
-  >.b_usuario{ 
-    
+  > .b_usuario {
     border-radius: 100%;
     background-image: url("../../../assets/IMG/Niveles/lvl_5-removebg-preview.png");
     background-size: cover;
@@ -31,7 +39,6 @@
     background-position: center;
   }
 }
-
 
 .nivel {
   background-image: radial-gradient(white, white, rgb(126, 126, 126));
@@ -96,12 +103,12 @@
       margin-left: 30px;
     }
     > div {
-      margin-top: 20px;
       margin-bottom: 20px;
     }
   }
 
   .modificar {
+    margin-top: 30px;
     padding: 15px 25px 15px 25px;
 
     &:hover {
@@ -134,8 +141,8 @@
   }
   .usuario {
     margin: auto;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     box-shadow: inset 0 0px 15px rgba(0, 0, 0, 0.734), 0 5px 10px rgba(50, 50, 50, 0.483);
   }
 
