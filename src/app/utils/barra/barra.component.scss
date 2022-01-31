@@ -4,14 +4,39 @@ nav {
   font-family: neueB;
   font-size: 110%;
   background-color: $beige;
+  a{
+    outline: none;
+  }
+}
+.green {
+  background-color: $green;
+}
+.yellow {
+  background-color: $yellow;
+  background-image: url("../../../assets/IMG/titulo.png");
+}
+.orange {
+  background-color: $orange;
 }
 
-.oscura {
-  background-color: rgb(22, 22, 22);
-  background-image: url("../../../assets/IMG/tituloW.png");
+.beige {
+  background-color: $beige;
+  background-image: url("../../../assets/IMG/titulo.png");
+}
+
+.orange,
+.yellow,
+.green,
+.beige {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  // box-shadow: 0 3px 4px rgba(30, 30, 30, 0.32);
+  // border-bottom: 1px solid white;
+}
+.orange,
+.green {
+  background-image: url("../../../assets/IMG/tituloW.png");
   a {
     color: white !important;
   }

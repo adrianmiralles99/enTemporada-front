@@ -8,7 +8,7 @@ table {
   text-align: center;
   user-select: none;
   border-collapse: separate;
-  border-spacing: 0px 1px;
+  border-spacing: 2px 1px;
   margin-bottom: 100px;
 
   img {
@@ -43,6 +43,14 @@ table {
   .cabFila {
     background-color: #17231c !important;
     color: white;
+    border-bottom: 2px solid #39433b;
+  }
+
+  .ultimaFila {
+    .cabFila {
+      border-radius: 0px 0px 10px 10px;
+      border-bottom: 10px solid #39433b;
+    }
   }
 
   tbody {
@@ -60,9 +68,6 @@ table {
 
         &:last-child {
           border-radius: 0px 10px 10px 0px;
-        }
-        &:not(:last-child) {
-          border-right: 2px solid $beige;
         }
       }
     }

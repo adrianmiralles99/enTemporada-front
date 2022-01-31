@@ -1,7 +1,8 @@
-<app-barra [oscura]=true></app-barra>
+<app-barra [color]="'yellow'"></app-barra>
 <div class="fondo">
-    <app-detallesrecetas></app-detallesrecetas>
-    <app-pasos></app-pasos>
+    <app-detallesrecetas [receta]="receta"></app-detallesrecetas>
+    <app-pasos [pasos]="pasos"></app-pasos>
 </div>
 <br>
 <br>
+<app-subir></app-subir>

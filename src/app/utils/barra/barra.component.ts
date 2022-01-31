@@ -9,7 +9,7 @@ import { PopUpComponent } from '../pop-up/pop-up.component';
   styleUrls: ['./barra.component.scss']
 })
 export class BarraComponent implements OnInit {
-  @Input() oscura: boolean = false;
+  @Input() color: string = "";
 
   constructor(public dialogRef: MatDialog) { }
 
