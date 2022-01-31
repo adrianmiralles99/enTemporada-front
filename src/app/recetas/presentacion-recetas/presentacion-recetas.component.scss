@@ -47,10 +47,62 @@
 
   h1 {
 
-    padding: 50px;
+    padding: 80px;
+    padding-top: 20px;
     font-size: 600%;
     font-family: recoletaB;
     color: white;
+  }
+
+  .icono {
+    height: 140px;
+  }
+
+  .sticker {
+    width: 130px;
+    position: absolute;
+    margin: auto !important;
+    filter: drop-shadow(5px 2px 8px rgba(66, 66, 66, 0.6));
+  }
+
+  .gajo {
+    transform: rotate(10deg);
+    left: 1%;
+    top: 38%;
+
+  }
+
+  .white {
+    transform: rotate(-15deg);
+    left: 88%;
+    top: 10%;
+
+  }
+
+  .naranja {
+    width: 120px !important;
+    transform: rotate(10deg);
+    left: 92%;
+    top: 38%;
+
+  }
+
+  .limon {
+    transform: rotate(25deg);
+    left: 15%;
+    top: 10%;
+  }
+
+  .malacaton {
+    transform: rotate(10deg);
+    left: 65%;
+    top: 10%;
+  }
+
+  .rosa {
+    transform: rotate(10deg);
+    left: 35%;
+    top: 45%;
   }
 }
 
