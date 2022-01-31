@@ -43,13 +43,14 @@
   background-color: $orange;
   width: 100%;
   border-bottom: 1px solid $orange;
-  box-shadow: 0 8px 10px rgba(102, 102, 102, 0.4);
+  box-shadow: 0 8px 10px rgba(102, 102, 102, 0.6);
 
   h1 {
 
     padding: 80px;
     padding-top: 20px;
-    font-size: 600%;
+    padding-bottom: 10px;
+    font-size: 5vw;
     font-family: recoletaB;
     color: white;
   }
@@ -59,7 +60,7 @@
   }
 
   .sticker {
-    width: 130px;
+    width: 7vw;
     position: absolute;
     margin: auto !important;
     filter: drop-shadow(5px 2px 8px rgba(66, 66, 66, 0.6));
@@ -68,7 +69,7 @@
   .gajo {
     transform: rotate(10deg);
     left: 1%;
-    top: 38%;
+    top: 32%;
 
   }
 
@@ -80,10 +81,9 @@
   }
 
   .naranja {
-    width: 120px !important;
     transform: rotate(10deg);
     left: 92%;
-    top: 38%;
+    top: 32%;
 
   }
 
@@ -102,7 +102,7 @@
   .rosa {
     transform: rotate(10deg);
     left: 35%;
-    top: 45%;
+    top: 40%;
   }
 }
 
@@ -126,7 +126,7 @@
   color: white;
   border-end-end-radius: 5px;
   border-end-start-radius: 5px;
-  box-shadow: 0 8px 10px rgba(102, 102, 102, 0.4);
+  box-shadow: 0 8px 10px rgba(102, 102, 102, 0.6);
   padding: 10px 0 10px 0;
 }
 
