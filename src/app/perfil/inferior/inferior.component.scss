@@ -1,11 +1,10 @@
 @import "../../../styles.scss";
 .row {
   .col {
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
+    margin: 2em 0 2em 0;
     text-align: center;
     button {
-      width: 14em;
+      width: 90%;
       height: 5em;
       text-align: left;
       h4 {
@@ -14,32 +13,33 @@
     }
   }
 
+  .green,
+  .white {
+    font-family: neueB;
+    padding-left: 1em;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.231), inset 0 0px 5px rgba(0, 0, 0, 0.374);
+    border: 1px solid rgba(0, 0, 0, 0.455);
+    border-radius: 10px;
+  }
+
   .green {
     background-color: $green;
     color: white;
-    border: none;
-    border-radius: 10px;
-    font-family: neueB;
-    padding-left: 1em;
-    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.374), inset 0 0px 5px rgba(0, 0, 0, 0.374);
-    border: 1px solid rgba(0, 0, 0, 0.455);
   }
+
   .white {
-    font-family: neueB;
     cursor: default;
     background-color: white;
     color: black;
-    border: 1px solid rgba(0, 0, 0, 0.455);
-    border-radius: 10px;
-    padding-left: 1em;
-    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.374), inset 0 0px 5px rgba(0, 0, 0, 0.374);
   }
 }
+
 @media screen and(min-width:700px) {
   h4 {
     margin: 0px;
   }
 }
+
 @media screen and(max-width:700px) {
   .row {
     .col {
