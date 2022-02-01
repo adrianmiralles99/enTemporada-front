@@ -3,9 +3,9 @@
 .container {
   margin-top: 50px;
   max-width: 90em;
-  width: 90%;
 }
 h2 {
+  font-size: 140%;
   font-family: neueB;
 }
 .imagen {
@@ -62,8 +62,8 @@ h2 {
   background-repeat: no-repeat;
   border: none;
   background-position: center;
-  width: 40%;
-  height: 120%;
+  height: 30px;
+  width: 30px;
   margin-left: 5px;
 }
 
@@ -73,11 +73,10 @@ h2 {
 
 .save {
   background-image: url("../../../assets/IMG/iconos/bookmark.png");
-  background-size: 40px;
 }
 
 .mg {
-  background-image: url("../../../assets/IMG/iconos/fav.png");
+  background-image: url("../../../assets/IMG/iconos/mg.png");
 }
 
 @media screen and(max-width: 700px) {
