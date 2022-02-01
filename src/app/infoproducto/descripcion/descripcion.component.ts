@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { PRODUCTES } from '../../mock-articulos';
-import { ActivatedRoute, Params } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-descripcion',
@@ -10,9 +9,12 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class DescripcionComponent implements OnInit {
 
   constructor(private rutaActiva: ActivatedRoute) { }
-  id = this.rutaActiva.snapshot.paramMap.get('id');
-  articulos = PRODUCTES.filter(element => element.id == (this.id ?? -1));
+
+  @Input() descripcion!: string;
+
   ngOnInit(): void {
+    console.log();
+
   }
 
 

@@ -6,5 +6,5 @@ export interface Articulo {
   tipo: string;
   color: string,
   descripcion: string,
-  infonut: Array<number>,
+  infonut: Array<string>,
 }

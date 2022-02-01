@@ -2,39 +2,35 @@
     <div class="row infonutri">
         <div class="producto col-4">
             <div>
-                <img class="card-img-top" src="../../../assets/IMG/En Temporada (IES FSL)/Frutas/Caqui/Caqui.png"
+                <img class="card-img-top" src="../../../assets/IMG/Frutas/basic/{{this.articulo.nombre}}.png"
                     alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title"><strong>{{this.articulos[0].nombre}}</strong></h5>
+                    <h5 class="card-title"><strong>{{this.articulo.nombre}}</strong></h5>
                 </div>
             </div>
         </div>
-        <div class="col-8" [ngStyle]="{'background-color': this.articulos[0].color }">
+        <div class="col-8 fondoColor" [ngStyle]="{'background-color': this.articulo.color }">
             <h5 class="titulo">Información nutricional</h5>
             <div class="row datitos">
-                <div class="col-6 izq">
-                    <ul>         
-                        <li>Energía: {{this.articulos[0].infonut[0]}}</li>
-                        <li>Proteinas: {{this.articulos[0].infonut[1]}}</li>
-                        <li>Grasa: {{this.articulos[0].infonut[2]}}</li>
-                        <li>Hidratos de carbono: {{this.articulos[0].infonut[3]}}</li> 
-                        <li>Calcio: {{this.articulos[0].infonut[4]}}</li> 
-
-                    </ul>
+                <div class="col-6">
+                    <div class="row columna">
+                        <div class="col-12"><strong>Energía:</strong> {{this.articulo.infonut[0]}}</div>
+                        <div class="col-12"><strong>Proteinas:</strong> {{this.articulo.infonut[1]}}</div>
+                        <div class="col-12"><strong>Grasa:</strong> {{this.articulo.infonut[2]}}</div>
+                        <div class="col-12"><strong>Hidratos de carbono:</strong> {{this.articulo.infonut[3]}}</div>
+                        <div class="col-12"><strong>Calcio:</strong> {{this.articulo.infonut[4]}}</div>
+                    </div>
                 </div>
                 <div class="col-6">
-                    <ul>         
-                        <li>Fibra: {{this.articulos[0].infonut[5]}}</li>
-                        <li>Sodio: {{this.articulos[0].infonut[6]}}</li>
-                        <li>Potasio: {{this.articulos[0].infonut[7]}}</li>
-                        <li>Hierro: {{this.articulos[0].infonut[8]}}</li> 
-                        <li>Ácido folico: {{this.articulos[0].infonut[9]}}</li> 
-                    </ul>
+                    <div class="row columna">
+                        <div class="col-12"><strong>Fibra:</strong> {{this.articulo.infonut[5]}}</div>
+                        <div class="col-12"><strong>Sodio:</strong> {{this.articulo.infonut[6]}}</div>
+                        <div class="col-12"><strong>Potasio:</strong> {{this.articulo.infonut[7]}}</div>
+                        <div class="col-12"><strong>Hierro:</strong> {{this.articulo.infonut[8]}}</div>
+                        <div class="col-12"><strong>Ácido folico:</strong> {{this.articulo.infonut[9]}}</div>
+                    </div>
                 </div>
             </div>
-         
-
-
         </div>
     </div>
     <div class="row meses">
