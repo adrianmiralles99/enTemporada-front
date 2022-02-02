@@ -98,7 +98,7 @@ body {
 .custom-modalbox {
   mat-dialog-container {
     border: 2px solid black;
-    filter: drop-shadow(0 5px 10px rgba(50, 50, 50, 0.632)) ;
+    filter: drop-shadow(0 5px 10px rgba(50, 50, 50, 0.381));
+    overflow: visible;
   }
 }
-
