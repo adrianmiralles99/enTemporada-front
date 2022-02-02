@@ -1,16 +1,19 @@
+
+@import "../../../styles.scss";
+
 .subir {
     position: fixed;
-    background-image: url("../../../assets/IMG/iconos/arrowUp.png");
+    background-image: url("../../../assets/IMG/iconos/flechita.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: white;
+    background-color: $orange;
     border-radius: 100%;
     border: 1px solid white;
-    right: 3.1%;
+    right: 3.3%;
     bottom: 4%;
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     z-index: 100;
     filter: drop-shadow(0 5px 5px rgba(76, 76, 76, 0.632));
     &:hover {
