@@ -5,12 +5,16 @@ import { PresentacionRecetasComponent } from './presentacion-recetas/presentacio
 import { UtilsModule } from '../utils/utils.module';
 import { IndexrecetasComponent } from './indexrecetas/indexrecetas.component';
 import { CardRecetasComponent } from './card-recetas/card-recetas.component';
+import { IndexguardadasComponent } from './indexguardadas/indexguardadas.component';
+import { IndexmisrecetasComponent } from './indexmisrecetas/indexmisrecetas.component';
 
 @NgModule({
   declarations: [
     PresentacionRecetasComponent,
     IndexrecetasComponent,
     CardRecetasComponent,
+    IndexguardadasComponent,
+    IndexmisrecetasComponent,
   ],
   imports: [
     CommonModule,

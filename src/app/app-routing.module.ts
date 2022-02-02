@@ -10,6 +10,8 @@ import { IndexcreacionComponent } from './creacion-receta/indexcreacion/indexcre
 import { IndiceperfilComponent } from './perfil/indiceperfil/indiceperfil.component';
 import { IndexrecetaindComponent } from './recetaindividual/indexrecetaind/indexrecetaind.component'
 import { IndexloginComponent } from './login/indexlogin/indexlogin.component';
+import { IndexguardadasComponent } from './recetas/indexguardadas/indexguardadas.component';
+import { IndexmisrecetasComponent } from './recetas/indexmisrecetas/indexmisrecetas.component';
 
 
 const routes: Routes = [
@@ -36,6 +38,14 @@ const routes: Routes = [
   {
     path: 'recetas',
     component: IndexrecetasComponent,
+  },
+  {
+    path: 'recetas-guardadas',
+    component: IndexguardadasComponent,
+  },
+  {
+    path: 'recetas-misrecetas',
+    component: IndexmisrecetasComponent,
   },
   {
     path: 'recetaindividual/:id',
