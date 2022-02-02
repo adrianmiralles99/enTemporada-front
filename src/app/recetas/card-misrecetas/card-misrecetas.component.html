@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-6 margen" *ngFor="let receta of recetas">
+        <div class="tarjeta">
+          <button class="imagen" [routerLink]="['/recetaindividual', receta.id]"
+            [ngStyle]="{'background-image':'url(../../../assets/IMG/'+receta.img+')'}"></button>
+          <div class="row usuario">
+            <div class="col-8">
+              <p class="autor">{{receta.titulo}}</p>
+            </div>
+            <div class="col-4 botones">
+              <button class="editar"></button>
+              <button class="quitar"></button>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  
+    <button [routerLink]="'/creacionRecetas'" (mouseover)="hover=true" (mouseout)="hover=false"
+      [ngClass]="{'extender': hover==true}" class="crear row">
+      <div [ngClass]="{'col-3': hover==true,'col-12': hover==false}" class=" img"></div>
+      <div class="texto col-9">
+        <p>Nueva Receta</p>
+      </div>
+    </button>
+  
+  </div>
