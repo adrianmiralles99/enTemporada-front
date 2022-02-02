@@ -1,0 +1,14 @@
+@import "/src/styles.scss";
+.boton {
+    button {
+        border: none;
+        color: white;
+        width: 40%;
+        padding: 5px 10px 5px 10px;
+        background-color: $orange;
+    }
+    img {
+        height: 60px;
+        margin-bottom: 20px;
+    }
+}

@@ -12,7 +12,6 @@ import { RecetasModule } from './recetas/recetas.module';
 import { RecetaindividualModule } from './recetaindividual/recetaindividual.module';
 import { PerfilModule } from './perfil/perfil.module';
 import { CreacionRecetaModule } from './creacion-receta/creacion-receta.module';
-import { LoginModule } from './login/login.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -34,7 +33,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RecetaindividualModule,
     CreacionRecetaModule,
     PerfilModule,
-    LoginModule,
     BrowserAnimationsModule
   ],
   providers: [],
