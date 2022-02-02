@@ -61,7 +61,10 @@ input:not([type="checkbox"]) {
   margin: auto !important;
   filter: drop-shadow(5px 2px 8px rgba(66, 66, 66, 0.6));
   z-index: 2 !important;
+}
 
+img {
+  user-select: none;
 }
 
 .naranja {
@@ -103,7 +106,7 @@ input:not([type="checkbox"]) {
   font-size: 120%;
   text-decoration: underline;
 
-  >p {
+  > p {
     cursor: pointer;
   }
 }
@@ -113,7 +116,7 @@ input:not([type="checkbox"]) {
   margin-top: 40px;
   font-size: 110%;
 
-  >p {
+  > p {
     line-height: 10px;
     cursor: pointer;
   }

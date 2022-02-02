@@ -1,6 +1,6 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use "@angular/material"as mat;
+@use "@angular/material" as mat;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -19,11 +19,15 @@ $Proyecto-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$Proyecto-theme: mat.define-light-theme((color: (primary: $Proyecto-primary,
+$Proyecto-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $Proyecto-primary,
       accent: $Proyecto-accent,
       warn: $Proyecto-warn,
     ),
-  ));
+  )
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -94,9 +98,7 @@ body {
 .custom-modalbox {
   mat-dialog-container {
     border: 2px solid black;
-    filter: drop-shadow(0 5px 10px rgba(50, 50, 50, 0.632));
+    filter: drop-shadow(0 5px 10px rgba(50, 50, 50, 0.381));
     overflow: visible;
   }
-
-
 }
