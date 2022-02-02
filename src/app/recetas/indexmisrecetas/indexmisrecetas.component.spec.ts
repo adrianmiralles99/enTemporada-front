@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RecucontraComponent } from './recucontra.component';
+import { IndexmisrecetasComponent } from './indexmisrecetas.component';
 
-describe('RecucontraComponent', () => {
-  let component: RecucontraComponent;
-  let fixture: ComponentFixture<RecucontraComponent>;
+describe('IndexmisrecetasComponent', () => {
+  let component: IndexmisrecetasComponent;
+  let fixture: ComponentFixture<IndexmisrecetasComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RecucontraComponent ]
+      declarations: [ IndexmisrecetasComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RecucontraComponent);
+    fixture = TestBed.createComponent(IndexmisrecetasComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

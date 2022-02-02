@@ -9,7 +9,8 @@ import { IndexrecetasComponent } from './recetas/indexrecetas/indexrecetas.compo
 import { IndexcreacionComponent } from './creacion-receta/indexcreacion/indexcreacion.component';
 import { IndiceperfilComponent } from './perfil/indiceperfil/indiceperfil.component';
 import { IndexrecetaindComponent } from './recetaindividual/indexrecetaind/indexrecetaind.component'
-import { IndexloginComponent } from './login/indexlogin/indexlogin.component';
+import { IndexguardadasComponent } from './recetas/indexguardadas/indexguardadas.component';
+import { IndexmisrecetasComponent } from './recetas/indexmisrecetas/indexmisrecetas.component';
 
 
 const routes: Routes = [
@@ -38,6 +39,14 @@ const routes: Routes = [
     component: IndexrecetasComponent,
   },
   {
+    path: 'recetas-guardadas',
+    component: IndexguardadasComponent,
+  },
+  {
+    path: 'recetas-misrecetas',
+    component: IndexmisrecetasComponent,
+  },
+  {
     path: 'recetaindividual/:id',
     component: IndexrecetaindComponent,
   },
@@ -55,10 +64,6 @@ const routes: Routes = [
     path: 'perfil',
     component: IndiceperfilComponent,
   },
-  {
-    path: 'login',
-    component: IndexloginComponent,
-  }
 ];
 @NgModule({
   imports: [RouterModule, RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],

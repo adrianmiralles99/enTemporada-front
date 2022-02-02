@@ -114,6 +114,11 @@ input:not([type="checkbox"]) {
   text-decoration: underline;
   margin-top: 40px;
   font-size: 110%;
+
+  >p {
+    line-height: 10px;
+    cursor: pointer;
+  }
 }
 
 .recu_contraseña {
