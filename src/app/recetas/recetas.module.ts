@@ -7,6 +7,7 @@ import { IndexrecetasComponent } from './indexrecetas/indexrecetas.component';
 import { CardRecetasComponent } from './card-recetas/card-recetas.component';
 import { IndexguardadasComponent } from './indexguardadas/indexguardadas.component';
 import { IndexmisrecetasComponent } from './indexmisrecetas/indexmisrecetas.component';
+import { CardMisrecetasComponent } from './card-misrecetas/card-misrecetas.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { IndexmisrecetasComponent } from './indexmisrecetas/indexmisrecetas.comp
     CardRecetasComponent,
     IndexguardadasComponent,
     IndexmisrecetasComponent,
+    CardMisrecetasComponent,
   ],
   imports: [
     CommonModule,

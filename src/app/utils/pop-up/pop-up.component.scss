@@ -1,129 +1,89 @@
 @import "../../../styles.scss";
+
 .titulo {
-  text-align: center;
-  font-family: recoletaB;
-  font-size: 250%;
-  text-shadow: 0 5px 4px rgba(64, 64, 64, 0.333);
+    text-align: center;
+    font-family: recoletaB;
+    font-size: 250%;
+    text-shadow: 0 5px 4px rgba(64, 64, 64, 0.333);
 }
-
 .boton {
-  align-items: center;
+    align-items: center;
 }
-
 .acceder {
-  font-family: neueB;
-  color: white;
-  background-color: $orange;
-  margin: auto;
-  width: 90%;
-  padding: 5px 0px 5px 0px;
-  border: none;
-  border-radius: 5px;
-  font-size: 160%;
-  text-shadow: 0 5px 4px rgba(64, 64, 64, 0.333);
+    font-family: neueB;
+    color: white;
+    background-color: $orange;
+    margin: auto;
+    width: 90%;
+    padding: 5px 0px 5px 0px;
+    border: none;
+    border-radius: 5px;
+    font-size: 160%;
+    text-shadow: 0 5px 4px rgba(64, 64, 64, 0.333);
 }
 
 .contenedor {
-  margin: 0px 0 5px 0;
-  text-align: center;
+    margin: 0px 0 5px 0;
+    text-align: center;
 }
 
 .campos {
-  text-align: left;
-  width: 90%;
-
-  h3 {
-    font-size: 150%;
-    font-family: neueB;
-    margin: 15px 10px 10px 10px;
-  }
+    text-align: left;
+    width: 90%;
+    h3 {
+        font-size: 150%;
+        font-family: neueB;
+        margin: 15px 10px 10px 10px;
+    }
 }
 
 input:not([type="checkbox"]) {
-  font-family: neueR;
-  width: 100%;
-  padding: 5px;
-  font-size: 110%;
-  border: 1px solid rgba(54, 54, 54, 0.605);
-  border-radius: 5px;
-  box-shadow: 0 5px 7px rgba(101, 101, 101, 0.326), inset 0 0 7px rgba(101, 101, 101, 0.326);
-  outline: none;
+    font-family: neueR;
+    width: 100%;
+    padding: 5px;
+    font-size: 110%;
+    border: 1px solid rgba(54, 54, 54, 0.605);
+    border-radius: 5px;
+    box-shadow: 0 5px 7px rgba(101, 101, 101, 0.326), inset 0 0 7px rgba(101, 101, 101, 0.326);
+    outline: none;
 }
 
 .row {
-  font-family: neueB;
-  margin-top: 10px;
-}
-
-.sticker {
-  width: 7vw;
-  position: absolute;
-  margin: auto !important;
-  filter: drop-shadow(5px 2px 8px rgba(66, 66, 66, 0.6));
-  z-index: 2 !important;
-}
-
-img {
-  user-select: none;
-}
-
-.naranja {
-  transform: rotate(20deg);
-  left: 92%;
-  top: -10%;
-}
-
-.naranja2 {
-  transform: rotate(15deg);
-  left: 92%;
-  top: -20%;
-}
-
-.limon {
-  transform: rotate(15deg);
-  left: -10%;
-  top: -10%;
-}
-
-.limon2 {
-  transform: rotate(15deg);
-  left: -10%;
-  top: -17%;
+    font-family: neueB;
+    margin-top: 10px;
 }
 
 .recuerdame {
-  input {
-    transform: scale(140%);
-  }
-
-  span {
-    user-select: none;
-    margin-left: 10px;
-    font-size: 120%;
-  }
+    input {
+        transform: scale(140%);
+    }
+    span {
+        user-select: none;
+        margin-left: 10px;
+        font-size: 120%;
+    }
 }
-.contraseña {
-  font-size: 120%;
-  text-decoration: underline;
 
-  > p {
-    cursor: pointer;
-  }
+.contraseña {
+    font-size: 120%;
+    text-decoration: underline;
+    > p {
+        cursor: pointer;
+    }
 }
 
 .registro {
-  text-decoration: underline;
-  margin-top: 40px;
-  font-size: 110%;
-
-  > p {
-    line-height: 10px;
-    cursor: pointer;
-  }
+    text-decoration: underline;
+    margin-top: 40px;
+    font-size: 110%;
+    > p {
+        line-height: 10px;
+        cursor: pointer;
+    }
 }
 
 .recu_contraseña {
-  margin-top: 30px;
-  font-family: neueB;
-  font-size: 120%;
+    margin-top: 30px;
+    font-family: neueB;
+    font-size: 120%;
 }
