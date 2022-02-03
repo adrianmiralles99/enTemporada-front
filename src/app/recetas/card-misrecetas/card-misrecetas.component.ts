@@ -12,7 +12,7 @@ export class CardMisrecetasComponent implements OnInit {
   misrecetas = RECETAS.filter(element => element.autor==this.usuario);//con string si va, con variable no
   hover = false;
   ngOnInit(): void {
-
+    console.log(this.usuario === "adrimigo");
   }
 
 }
