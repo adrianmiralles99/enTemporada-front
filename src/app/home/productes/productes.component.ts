@@ -1,20 +1,44 @@
 import { Component, OnInit } from '@angular/core';
 import { PRODUCTES } from '../../mock-articulos';
+import { Productos } from 'src/app/modelos/productos.model';
+import { ProductosService } from 'src/app/servicios/productos.service';
 
 @Component({
   selector: 'app-productes',
   templateUrl: './productes.component.html',
   styleUrls: ['./productes.component.scss']
 })
-export class ProductesComponent implements OnInit {
-  frutas = PRODUCTES.filter(element => element.tipo == "F");
-  verduras = PRODUCTES.filter(element => element.tipo == "V");
-  productes = PRODUCTES;
 
-  constructor() { }
+
+export class ProductesComponent implements OnInit {
+  constructor(private productosService: ProductosService) { }
 
   ngOnInit(): void {
+
+    this.getProductes();
+
+    this.frutas = this.productes.filter(element => element.tipo == "F");
+
   }
+
+  getProductes(): void {
+    this.productosService.getAll()
+      .subscribe({
+        next: (data) => {
+          this.productes = data;
+        },
+        error: (e) => console.error(e)
+      });
+  }
+
+
+
+  productes: Productos[] = [];
+
+  frutas = this.productes.filter(element => element.tipo == "F");
+  verduras = this.productes.filter(element => element.tipo == "V");
+
+
   meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
   mes = ["E", "F", "Mr", "Ab", "My", "Jn", "Jl", "Ag", "Sp", "O", "N", "D"];
@@ -25,7 +49,7 @@ export class ProductesComponent implements OnInit {
 
     if (element) {
       var articulo = this.productes.find(element => element.id == id);
-      element.children().css("background-color", articulo?.color ?? "");
+      // element.children().css("background-color", articulo?.color ?? "");
       element.find(".card-img-top").prop("src", "../../assets/IMG/Frutas/background/" + articulo?.nombre + ".png");
     }
   }
