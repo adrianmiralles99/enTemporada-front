@@ -10,25 +10,15 @@ import { ProductosService } from 'src/app/servicios/productos.service';
   styleUrls: ['./indexprod.component.scss']
 })
 export class IndexprodComponent implements OnInit {
-  constructor(private rutaActiva: ActivatedRoute,private productosService: ProductosService) { }
+  constructor(private rutaActiva: ActivatedRoute) { }
   
+  ngOnInit(): void { 
+   
+  }
+
+
   id = this.rutaActiva.snapshot.paramMap.get('id');
 
-  articulo: Productos[] = [];
 
-  getIndividual(): void {
-    this.productosService.getById(this.id)
-    .subscribe({
-      next: (data) =>{
-        this.articulo = data;
-        console.log(data)
-      },
-      error: (e) => console.error(e)
-    })
-  }
-
-  ngOnInit(): void { 
-    this.getIndividual()
-  }
 
 }
