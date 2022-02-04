@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PRODUCTES } from 'src/app/mock-articulos';
+import { Productos } from 'src/app/modelos/productos.model';
+import { ProductosService } from 'src/app/servicios/productos.service';
 
 
 @Component({
@@ -9,11 +10,25 @@ import { PRODUCTES } from 'src/app/mock-articulos';
   styleUrls: ['./indexprod.component.scss']
 })
 export class IndexprodComponent implements OnInit {
-  constructor(private rutaActiva: ActivatedRoute) { }
+  constructor(private rutaActiva: ActivatedRoute,private productosService: ProductosService) { }
+  
   id = this.rutaActiva.snapshot.paramMap.get('id');
 
-  articulo = PRODUCTES.find(element => element.id == (this.id ?? -1))!;
+  articulo: Productos[] = [];
 
-  ngOnInit(): void { }
+  getIndividual(): void {
+    this.productosService.getById(this.id)
+    .subscribe({
+      next: (data) =>{
+        this.articulo = data;
+        console.log(data)
+      },
+      error: (e) => console.error(e)
+    })
+  }
+
+  ngOnInit(): void { 
+    this.getIndividual()
+  }
 
 }

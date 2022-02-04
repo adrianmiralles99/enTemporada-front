@@ -22,7 +22,7 @@ export class ProductosService {
     return this.http.get<Productos[]>(baseUrl + "?fields=id,nombre,color,imagen,tipo");
   }
 
-  get(id: any): Observable<any> {
+  getById(id: any): Observable<any> {
     return this.http.get(`${baseUrl}/${id}`);
   }
 
