@@ -10,13 +10,13 @@ import { Articulo } from 'src/app/articulo';
 })
 
 export class DatosproductoComponent implements OnInit {
-
   constructor(private rutaActiva: ActivatedRoute) { }
   @Input() articulo!: Articulo;
   meses = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
   id = this.rutaActiva.snapshot.paramMap.get('id');
   help = new Date();
   mesActual = this.help.getMonth();
+  
   ngOnInit(): void { }
 
 }
