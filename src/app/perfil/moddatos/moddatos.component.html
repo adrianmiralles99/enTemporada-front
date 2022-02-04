@@ -5,17 +5,21 @@
         <div class="col-lg-3 col-md-1 foto">
           <div class="usuario"></div>
           <div class="b_usuario"></div>
+          <label class="custom-file-upload">
+            <input type="file"id="fotousuario" name="avatar">
+            Subir archivo
+          </label>
         </div>
   
   
         <div class="col-lg-5 col-md-7 datos">
-          <h2 class="user">Cecilio G  <img class ="editarimg modcampo"src ="../../../assets/IMG/iconos/editar.png" (click)="ocultarmoduser()"></h2>
-          <input id ="moduser" type="text" name="texto">
+          <h2 class="user">{{nombreuser | uppercase }}</h2>
+          <input  [(ngModel)]="nombreuser" placeholder="name" id ="moduser" type="text" name="texto" maxlength="12">
 
           <h4>Informacion del usuario: </h4>
-          <p class="infouser">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididuntut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. </p>
+          <p class="infouser">{{infouser}}</p>
+          <textarea [(ngModel)]="infouser" name="texto" rows="4" cols="60" maxlength="200"></textarea>
+
         </div>
   
   
@@ -24,15 +28,15 @@
             <div class="col-lg-12">
               <h4>Nivel: CHEF</h4>
             </div>
-            <div class=" col-lg-12">
+            <div class=" col-lg-12">  
               <div class="progress">
                 <div class="progress-bar   progress-bar-striped progress-bar-animated" role="progressbar"
                   aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
               </div>
             </div>
-            <div class="col-12">
-              <button [routerLink]="'/modperfil'"class="modificar">Aceptar cambios</button>
-            </div>
+            <div class="col-12 botones">
+              <button [routerLink]="'/perfil'"class="modificar">Aceptar cambios</button>
+              <button [routerLink]="'/perfil'"class="modificar">Cancelar cambios</button>            
           </div>
         </div>
       </div>
