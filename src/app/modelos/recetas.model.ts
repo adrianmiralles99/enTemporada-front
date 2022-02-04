@@ -6,4 +6,5 @@ export class Recetas {
     fecha?:Date;
     id_prodp!: number;
     estado?:string;
+    ingredientes?: Array<String>;
 }
