@@ -11,6 +11,7 @@ import { IndiceperfilComponent } from './perfil/indiceperfil/indiceperfil.compon
 import { IndexrecetaindComponent } from './recetaindividual/indexrecetaind/indexrecetaind.component'
 import { IndexguardadasComponent } from './recetas/indexguardadas/indexguardadas.component';
 import { IndexmisrecetasComponent } from './recetas/indexmisrecetas/indexmisrecetas.component';
+import { IndicemodperfilComponent } from './perfil/indicemodperfil/indicemodperfil.component';
 
 
 const routes: Routes = [
@@ -63,6 +64,10 @@ const routes: Routes = [
   {
     path: 'perfil',
     component: IndiceperfilComponent,
+  },
+  {
+    path: 'modperfil',
+    component: IndicemodperfilComponent,
   },
 ];
 @NgModule({
