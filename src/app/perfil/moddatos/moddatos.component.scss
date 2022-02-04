@@ -2,6 +2,9 @@
 .row > div {
   margin: auto;
 }
+.botones{
+  padding-top: 12.5%;
+}
 
 .info {
   background-color: $green;
@@ -23,7 +26,7 @@
   background-color: $orange;
 }
 //sqsqs
-#moduser{
+.ocultar{
     display: none;
 }
 .editarimg{
@@ -33,6 +36,26 @@
 }
 .foto {
   text-align: center;
+  input[type="file"] {
+    display: none;
+
+  }
+  .custom-file-upload {
+
+    border: 2px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 5px;
+
+    cursor: pointer;
+    padding: 15px 25px 15px 25px;
+    &:hover {
+      color: $green;
+      background-color: white;
+
+      border: 2px solid $green;
+    }
+  }
   > .usuario {
     background-color: white;
     border: 2px solid rgba(0, 0, 0, 0.66);
@@ -45,7 +68,7 @@
 
   > .b_usuario {
     border-radius: 100%;
-    background-image: url("../../../assets/IMG/Niveles/lvl_2-removebg-preview.png");
+    background-image: url("../../../assets/IMG/Niveles/lvl_5-removebg-preview.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -70,6 +93,9 @@
 
 .infouser {
   font-family: neueR;
+  word-break: break-all;
+ 
+
 }
 
 @media screen and(min-width:750px) {
@@ -114,6 +140,27 @@
     .infouser {
       font-family: neueR;
       font-size: 120%;
+    }
+    input{
+      background: #ffffff;
+      box-shadow: 0px 4px 4px rgba(32, 32, 32, 0.197), inset 0px 0px 10px rgba(47, 47, 47, 0.299);
+      border: 1px solid rgba(30, 30, 30, 0.701);
+      border-radius: 5px;
+      padding: 5px;
+      font-family: neueB;
+      font-size: 100%;
+      margin-bottom: 2.5%;
+    }
+    textarea{
+      max-width:100%;
+      max-height:100px;
+      min-height: 100px;
+      padding: 5px;
+      box-shadow: 0px 4px 4px rgba(32, 32, 32, 0.197), inset 0px 0px 10px rgba(47, 47, 47, 0.299);
+      border: 1px solid rgba(30, 30, 30, 0.701);
+      border-radius: 5px;
+      font-family: neueB;
+      font-size: 100%;
     }
     .user {
       font-size: 200%;
