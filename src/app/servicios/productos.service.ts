@@ -15,11 +15,14 @@ export class ProductosService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Productos[]> {
-
     return this.http.get<Productos[]>(baseUrl);
   }
 
-  get(id: any): Observable<Productos> {
+  getCard(): Observable<Productos[]> {
+    return this.http.get<Productos[]>(baseUrl + "?fields=id,nombre,color,imagen,tipo");
+  }
+
+  get(id: any): Observable<any> {
     return this.http.get(`${baseUrl}/${id}`);
   }
 

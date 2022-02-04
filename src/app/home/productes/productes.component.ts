@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PRODUCTES } from '../../mock-articulos';
 import { Productos } from 'src/app/modelos/productos.model';
 import { ProductosService } from 'src/app/servicios/productos.service';
 
@@ -14,29 +13,13 @@ export class ProductesComponent implements OnInit {
   constructor(private productosService: ProductosService) { }
 
   ngOnInit(): void {
-
     this.getProductes();
-
-    this.frutas = this.productes.filter(element => element.tipo == "F");
-
   }
-
-  getProductes(): void {
-    this.productosService.getAll()
-      .subscribe({
-        next: (data) => {
-          this.productes = data;
-        },
-        error: (e) => console.error(e)
-      });
-  }
-
 
 
   productes: Productos[] = [];
-
-  frutas = this.productes.filter(element => element.tipo == "F");
-  verduras = this.productes.filter(element => element.tipo == "V");
+  frutas: Productos[] = [];
+  verduras: Productos[] = [];
 
 
   meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
@@ -44,12 +27,29 @@ export class ProductesComponent implements OnInit {
   mes = ["E", "F", "Mr", "Ab", "My", "Jn", "Jl", "Ag", "Sp", "O", "N", "D"];
   mesActual = this.meses[new Date().getMonth()];
 
+
+
+  getProductes(): void {
+    this.productosService.getCard()
+      .subscribe({
+        next: (data) => {
+          this.productes = data;
+          this.frutas = this.productes.filter(element => element.tipo == "F");
+          this.verduras = this.productes.filter(element => element.tipo == "V");
+
+        },
+        error: (e) => console.error(e)
+      });
+
+  }
+
+
   cambiaColor(id: number): void {
     var element = $("#" + id);
 
     if (element) {
       var articulo = this.productes.find(element => element.id == id);
-      // element.children().css("background-color", articulo?.color ?? "");
+      element.children().css("background-color", articulo?.color ?? "");
       element.find(".card-img-top").prop("src", "../../assets/IMG/Frutas/background/" + articulo?.nombre + ".png");
     }
   }
@@ -60,7 +60,6 @@ export class ProductesComponent implements OnInit {
 
     if (element) {
       element.children().css("background-color", "");
-
       element.find(".card-img-top").prop("src", "../../assets/IMG/Frutas/basic/" + articulo?.nombre + ".png");
     }
   }
