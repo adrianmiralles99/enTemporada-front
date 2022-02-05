@@ -1,28 +1,26 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Productos } from '../modelos/productos.model';
+import { Recetas } from '../modelos/recetas.model';
 import { serverUrl } from '../baseurl';
 
-const baseUrl = serverUrl + 'producto';
+const baseUrl = serverUrl + 'recetas';
 
 @Injectable({
   providedIn: 'root'
 })
-
-export class ProductosService {
+export class RecetasService {
 
   constructor(private http: HttpClient) { }
-
-  getAll(): Observable<Productos[]> {
-    return this.http.get<Productos[]>(baseUrl);
+  getAll(): Observable<Recetas[]> {
+    return this.http.get<Recetas[]>(baseUrl);
   }
 
-  getCard(): Observable<Productos[]> {
-    return this.http.get<Productos[]>(baseUrl + "?fields=id,nombre,color,imagen,tipo");
+  getCard(): Observable<Recetas[]> {
+    return this.http.get<Recetas[]>(baseUrl + "?fields=id,nombre,color,imagen,tipo");
   }
 
-  getById(id: any): Observable<any> {
+  get(id: any): Observable<any> {
     return this.http.get(`${baseUrl}/${id}`);
   }
 
@@ -42,7 +40,8 @@ export class ProductosService {
     return this.http.delete(baseUrl);
   }
 
-  findByTitle(title: any): Observable<Productos[]> {
-    return this.http.get<Productos[]>(`${baseUrl}?title=${title}`);
+  findByTitle(title: any): Observable<Recetas[]> {
+    return this.http.get<Recetas[]>(`${baseUrl}?title=${title}`);
   }
+  
 }
