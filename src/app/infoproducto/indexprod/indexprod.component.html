@@ -4,7 +4,7 @@
 
     <app-descripcion [descripcion]="articulo?.descripcion??''"></app-descripcion>
     <br>
-    <app-relacionadas></app-relacionadas>
+    <app-relacionadas [recetas]="articulo?.relacionadas"></app-relacionadas>
 
 </div>
 <app-subir></app-subir>

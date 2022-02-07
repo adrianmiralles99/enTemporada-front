@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Receta } from 'src/app/receta';
+import { Recetas } from 'src/app/modelos/recetas.model';
 
 @Component({
   selector: 'app-detallesrecetas',
@@ -8,24 +8,28 @@ import { Receta } from 'src/app/receta';
 })
 export class DetallesrecetasComponent implements OnInit {
 
-  ingredientes: Array<Array<String>> = [];
+  ingredientes: Array<Array<String>> = [[]];
 
-  @Input() receta!: Receta;
+  @Input() misingredientes?: string[];
+  @Input() receta?: Recetas;
 
-  constructor() {
-  }
+  constructor() { }
 
   ngOnInit(): void {
+    
     this.divideIngredientes();
   }
 
+  // NO SE PORQUE NO VA ESTA CHUCHA
   divideIngredientes() {
-    if (this.receta.ingredientes.length % 2 == 0) {
-      this.ingredientes[0] = this.receta.ingredientes.slice(0, (this.receta.ingredientes.length / 2));
+    if (this.misingredientes?.length ?? 0 % 2 == 0) {
+      this.ingredientes[0] = (this.misingredientes?.slice(0, (this.misingredientes?.length / 2)) ?? []);
     }
     else {
-      this.ingredientes[0] = this.receta.ingredientes.slice(0, (this.receta.ingredientes.length / 2) + 1);
+      this.ingredientes[0] = (this.misingredientes?.slice(0, (this.misingredientes?.length / 2 + 1)) ?? []);
     }
-    this.ingredientes[1] = this.receta.ingredientes.slice(this.ingredientes[0].length, this.receta.ingredientes.length);
+    this.ingredientes[1] = (this.misingredientes?.slice(this.ingredientes[0].length, this.misingredientes?.length) ?? []);
+    console.log(". ", this.misingredientes);
+
   }
 }

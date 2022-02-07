@@ -3,17 +3,18 @@
         <div class="row">
             <div class="col-md-5 col-sm-12">
                 <div class="upload">
-                    <div id="img" [ngStyle]="{'background-image':'url(../../../assets/IMG/'+receta.img+')'}"></div>
+                    <div id="img"
+                        [ngStyle]="{'background-image':'url(../../../assets/IMG/recetas/'+receta?.imagen+')'}"></div>
                 </div>
 
                 <div class="nombre">
-                    <h3>{{receta.titulo}}</h3>
+                    <h3>{{receta?.titulo}}</h3>
                     <div class="row">
                         <div class="col-1 icono">
                             <img src="../../../assets/IMG/iconos/icono.png" alt="">
                         </div>
                         <div class="col-8">
-                            <sub>By @{{receta.autor}}</sub>
+                            <sub>By @{{receta?.nick?.nick}}</sub>
                         </div>
                         <button class="col-1 mg">
                             <img src="../../../assets/IMG/iconos/mg.png" alt="">
@@ -33,25 +34,25 @@
                         <div class="columna col-3">
                             <div class="campo">
                                 <img class="icono" src="../../../assets/IMG/iconos/grupo.png" alt="">
-                                <span>{{receta.comensales}} comensales</span>
+                                <span>{{receta?.comensales}} comensales</span>
                             </div>
                         </div>
                         <div class="columna col-2">
                             <div class="campo">
                                 <img class="icono" src="../../../assets/IMG/iconos/tiempo.png" alt="">
-                                <span>{{receta.duracion}}</span>
+                                <span>{{receta?.tiempo}}</span>
                             </div>
                         </div>
                         <div class="columna col-3">
                             <div class="campo">
                                 <img class="icono" src="../../../assets/IMG/iconos/tipo.png" alt="">
-                                <span>{{receta.tipo}}</span>
+                                <span>{{receta?.tipo}}</span>
                             </div>
                         </div>
                         <div class="columna col-4">
                             <div class="campo">
                                 <img class="icono" src="../../../assets/IMG/iconos/dificultad.png" alt="">
-                                <span>Dificultad {{receta.dificultad}}</span>
+                                <span>Dificultad {{receta?.dificultad}}</span>
                             </div>
                         </div>
                     </div>

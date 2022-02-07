@@ -3,7 +3,8 @@
   <div class="row">
     <div class="col-md-4 col-sm-12 margen" *ngFor="let receta of recetas">
       <div class="tarjeta">
-        <button class="imagen" [ngStyle]="{'background-image':'url(../../../assets/IMG/'+receta.img+')'}"></button>
+        <button class="imagen"
+          [ngStyle]="{'background-image':'url(../../../assets/IMG/recetas/'+receta.imagen+')'}"></button>
         <div class="row usuario">
           <div class="col-9">
             <p class="autor">{{receta.titulo}}</p>
@@ -15,7 +16,7 @@
         </div>
         <div>
           <img class="icono" src="../../../assets/IMG/iconos/icono.png">
-          <sub class="autor">by @{{receta.autor}}</sub>
+          <sub class="autor">by @{{receta.nick}}</sub>
         </div>
       </div>
     </div>

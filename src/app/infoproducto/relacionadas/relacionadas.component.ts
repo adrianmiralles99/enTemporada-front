@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { RECETAS } from '../../mock-recetas';
+import { Component, Input, OnInit } from '@angular/core';
+import { Relacionadas } from 'src/app/models/relacionadas.model';
 
 @Component({
   selector: 'app-relacionadas',
@@ -7,13 +7,13 @@ import { RECETAS } from '../../mock-recetas';
   styleUrls: ['./relacionadas.component.scss']
 })
 export class RelacionadasComponent implements OnInit {
-  
-  recetas = RECETAS;
+
+  @Input() recetas?: Relacionadas[];
 
   constructor() { }
 
   ngOnInit(): void {
-    this.recetas.splice(3, this.recetas.length);
+
   }
 
 }

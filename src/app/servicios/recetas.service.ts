@@ -15,12 +15,11 @@ export class RecetasService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Recetas[]> {
-
-    return this.http.get<Recetas[]>(baseUrl);
+    return this.http.get<Recetas[]>(baseUrl+"?expand=nick");
   }
-  
+
   getById(id: any): Observable<any> {
-    return this.http.get(`${baseUrl}/${id}`);
+    return this.http.get(`${baseUrl}/${id}`+"?expand=nick");
   }
 
 

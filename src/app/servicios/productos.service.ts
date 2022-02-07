@@ -18,6 +18,10 @@ export class ProductosService {
     return this.http.get<Productos[]>(baseUrl);
   }
 
+  getRelacionadas(id: any): Observable<Productos> {
+    return this.http.get<Productos>(`${baseUrl}/${id}` + "?expand=relacionadas");
+  }
+
   getCard(): Observable<Productos[]> {
     return this.http.get<Productos[]>(baseUrl + "?fields=id,nombre,color,imagen,tipo");
   }
@@ -42,7 +46,4 @@ export class ProductosService {
     return this.http.delete(baseUrl);
   }
 
-  findByTitle(title: any): Observable<Productos[]> {
-    return this.http.get<Productos[]>(`${baseUrl}?title=${title}`);
-  }
 }
