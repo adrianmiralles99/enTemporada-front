@@ -1,30 +1,26 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Recetas } from '../modelos/recetas.model';
+import { Calendario } from '../modelos/calendario.model';
 import { serverUrl } from '../baseurl';
 
-const baseUrl = serverUrl + 'recetas';
+const baseUrl = serverUrl + 'temporadaprod';
 
 @Injectable({
   providedIn: 'root'
 })
-
-export class RecetasService {
-
+export class CalendarioService {
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Recetas[]> {
-
-    return this.http.get<Recetas[]>(baseUrl);
+  getAll(): Observable<Calendario[]> {
+    return this.http.get<Calendario[]>(baseUrl);
   }
 
-
-  getCard(): Observable<Recetas[]> {
-    return this.http.get<Recetas[]>(baseUrl + "?fields=id,nombre,color,imagen,tipo");
+  getConProductos(): Observable<Calendario[]> {
+    return this.http.get<Calendario[]>(baseUrl + "?expand=prod");
   }
 
-  get(id: any): Observable<any> {
+  getById(id: any): Observable<any> {
     return this.http.get(`${baseUrl}/${id}`);
   }
 
@@ -43,5 +39,6 @@ export class RecetasService {
   deleteAll(): Observable<any> {
     return this.http.delete(baseUrl);
   }
+
 
 }
