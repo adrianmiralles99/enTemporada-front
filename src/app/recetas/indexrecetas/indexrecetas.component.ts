@@ -22,20 +22,13 @@ export class IndexrecetasComponent implements OnInit {
   getRecetas(){
     this.recetasservice.getAll().subscribe({
       next: (data) => {
-        console.log(data);
+        console.log("olla");
         this.recetas = data;
       },
       error: (e) => console.error(e)
     });
   }
-  getRecetaById(){
-    this.recetasservice.getById(1).subscribe({
-      next: (data) => {
-        this.recetas = data;
-      },
-      error: (e) => console.error(e)
-    });
-  }
+ 
   
 
 }
