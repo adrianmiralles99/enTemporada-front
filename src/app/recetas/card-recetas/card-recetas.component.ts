@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Recetas } from 'src/app/modelos/recetas.model';
 import { RECETAS } from '../../mock-recetas';
 
 @Component({
@@ -7,13 +8,17 @@ import { RECETAS } from '../../mock-recetas';
   styleUrls: ['./card-recetas.component.scss']
 })
 export class CardRecetasComponent implements OnInit {
+  @Input()recetas!:Recetas[];
 
   constructor() { }
-  recetas = RECETAS;
+
+  recetass = RECETAS;
   
   hover = false;
   
-  ngOnInit(): void {
+  ngOnInit(): void { 
+     //console.log(this.perro);
+
   }
 
  

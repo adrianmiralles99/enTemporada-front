@@ -1,39 +1,49 @@
-<div class="container datos">
+<div class="container">
     <div class="row infonutri">
-        <div class="producto col-4">
+        <div class="producto col-lg-4 col-md-12">
             <div>
-                <img class="card-img-top" src="../../../assets/IMG/Frutas/basic/{{this.articulo.nombre}}.png"
-                    alt="Card image cap">
+                <img draggable="false" class="imgProd card-img-bottom"
+                    src="../../../assets/IMG/Frutas/basic/{{this.articulo?.nombre}}.png" alt="imgFruta">
                 <div class="card-body">
-                    <h5 class="card-title"><strong>{{this.articulo.nombre}}</strong></h5>
+                    <h5 class="card-title"><strong>{{this.articulo?.nombre}}</strong></h5>
                 </div>
             </div>
         </div>
-        <div class="col-8 fondoColor" [ngStyle]="{'background-color': this.articulo.color }">
+        <div class="col-lg-8 col-md-12 fondoColor" [ngStyle]="{'background-color': this.articulo?.color }">
             <h5 class="titulo">Información nutricional</h5>
             <div class="row datitos">
                 <div class="col-6">
                     <div class="row columna">
-                        <div class="col-12"><strong>Energía:</strong> {{this.articulo.infonut[0]}}</div>
-                        <div class="col-12"><strong>Proteinas:</strong> {{this.articulo.infonut[1]}}</div>
-                        <div class="col-12"><strong>Grasa:</strong> {{this.articulo.infonut[2]}}</div>
-                        <div class="col-12"><strong>Hidratos de carbono:</strong> {{this.articulo.infonut[3]}}</div>
-                        <div class="col-12"><strong>Calcio:</strong> {{this.articulo.infonut[4]}}</div>
+                        <div class="col-12"><strong>Energía:</strong> {{this.articulo?.info_nut?.e}}</div>
+                        <div class="col-12"><strong>Proteinas:</strong> {{this.articulo?.info_nut?.pr}}</div>
+                        <div class="col-12"><strong>Grasa:</strong> {{this.articulo?.info_nut?.g}}</div>
+                        <div class="col-12"><strong>Hidratos de carbono:</strong> {{this.articulo?.info_nut?.hc}}</div>
+                        <div class="col-12"><strong>Calcio:</strong> {{this.articulo?.info_nut?.cl}}</div>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="row columna">
-                        <div class="col-12"><strong>Fibra:</strong> {{this.articulo.infonut[5]}}</div>
-                        <div class="col-12"><strong>Sodio:</strong> {{this.articulo.infonut[6]}}</div>
-                        <div class="col-12"><strong>Potasio:</strong> {{this.articulo.infonut[7]}}</div>
-                        <div class="col-12"><strong>Hierro:</strong> {{this.articulo.infonut[8]}}</div>
-                        <div class="col-12"><strong>Ácido folico:</strong> {{this.articulo.infonut[9]}}</div>
+                        <div class="col-12"><strong>Fibra:</strong> {{this.articulo?.info_nut?.fb}}</div>
+                        <div class="col-12"><strong>Sodio:</strong> {{this.articulo?.info_nut?.s}}</div>
+                        <div class="col-12"><strong>Potasio:</strong> {{this.articulo?.info_nut?.pt}}</div>
+                        <div class="col-12"><strong>Hierro:</strong> {{this.articulo?.info_nut?.h}}</div>
+                        <div class="col-12"><strong>Ácido folico:</strong> {{this.articulo?.info_nut?.af}}</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+
     <div class="row meses">
+        <div class="leyenda">
+            <li><img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png">Inicio</li>
+            <li><img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png">En temporada</li>
+            <li><img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png">Temporada baja</li>
+            <li><img src="../../../assets/IMG/iconos/simbolos en temporada/final.png">Final</li>
+        </div>
+
         <table class="tabla">
             <thead>
                 <tr class="meses">

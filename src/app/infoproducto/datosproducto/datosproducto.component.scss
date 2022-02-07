@@ -1,81 +1,75 @@
 @import "../../../styles.scss";
 
-.datos {
-    .infonutri {
-        margin: auto;
-        width: 75%;
-        margin-bottom: 30px;
-        box-shadow: 0 6px 5px rgba(39, 39, 39, 0.286);
-        border-radius: 5px 0 0 5px;
-        .producto {
-            border: 1px solid rgba(72, 72, 72, 0.463);
-            border-radius: 5px 0 0 5px !important;
-            padding: 0;
-            background-color: white;
-            text-align: center;
-            box-shadow: inset 0 0 20px rgba(32, 32, 32, 0.354);
-            img {
-                width: 60%;
-                margin-top: 10px;
-                filter: drop-shadow(0 5px 10px rgba(103, 103, 103, 0.585));
-                pointer-events: none;
-                user-select: none;
-            }
-
-            .card-title {
-                font-family: neueB;
-                font-size: 150%;
-                text-align: left;
-            }
+.infonutri {
+    margin: auto;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 5px rgba(39, 39, 39, 0.286);
+    border-radius: 5px 0 0 5px;
+    .producto {
+        border: 1px solid rgba(72, 72, 72, 0.463);
+        padding: 0;
+        background-color: white;
+        text-align: center;
+        box-shadow: inset 0 0 20px rgba(32, 32, 32, 0.354);
+        > div {
+            margin: auto;
+            height: 100%;
         }
-        .fondoColor {
-            margin: 0;
-            color: white;
-            box-shadow: inset 0 0 20px rgba(32, 32, 32, 0.582);
-            border-radius: 0 5px 5px 0;
-            .titulo {
-                text-align: center;
-                font-size: 200%;
-                padding: 5px;
+        .imgProd {
+            margin: auto;
+            user-select: none;
+            filter: drop-shadow(0 5px 10px rgba(103, 103, 103, 0.585));
+        }
+
+        .card-title {
+            font-family: neueB;
+            text-align: left;
+        }
+    }
+    .fondoColor {
+        margin: 0;
+        color: white;
+        box-shadow: inset 0 0 20px rgba(32, 32, 32, 0.582);
+        .titulo {
+            text-align: center;
+            font-family: "recoletaB";
+            border-bottom: 1px solid rgba(255, 255, 255, 0.619);
+        }
+        .datitos {
+            height: 100%;
+            margin-bottom: 20px;
+        }
+        .columna {
+            margin: auto;
+            > div {
                 font-family: "recoletaB";
-                border-bottom: 1px solid rgba(255, 255, 255, 0.619);
-                margin-bottom: 30px;
-            }
-            .datitos {
-                height: 100%;
-                margin: auto;
-            }
-            .columna {
-                margin: auto;
-                font-family: "neueB";
-                font-size: 125%;
-                > div {
-                    margin-bottom: 10px;
+                strong {
+                    font-family: "neueB";
                 }
             }
         }
     }
-    .tabla {
-        width: 95%;
-        margin: auto;
-        text-align: center;
-        user-select: none;
-        border-collapse: separate;
-        border-spacing: 0px 1px;
-        margin-top: 50px;
-        margin-bottom: 100px;
-        border-radius: 10px;
-        border: 1px solid rgba(108, 108, 108, 0.429);
-        box-shadow: 0 4px 7px rgba(39, 39, 39, 0.347);
+}
 
-        tr {
-            height: 50px;
-        }
-        .meses {
-            th {
-                background-color: $beige;
-                border-bottom: 1px solid rgba(101, 101, 101, 0.599);
-            }
+.tabla {
+    width: 95%;
+    margin: auto;
+    text-align: center;
+    user-select: none;
+    border-collapse: separate;
+    border-spacing: 0px 1px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(39, 39, 39, 0.306);
+
+    tr {
+        height: 50px;
+    }
+    .meses {
+        th {
+            background-color: $beige;
+            border-bottom: 1px solid rgba(101, 101, 101, 0.415);
         }
     }
 }
@@ -91,9 +85,103 @@
     color: white;
     border-radius: 0px 0px 10px 10px;
 }
-@media screen and(max-width: 700px) {
-    .datitos {
-        font-size: 75%;
-        padding-bottom: 20px;
+
+.leyenda {
+    background-color: white;
+    box-shadow: 0px 1px 4px rgba(18, 18, 18, 0.226);
+    border-radius: 25px;
+    width: 550px;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    font-family: "neueB";
+    font-size: 110%;
+    border: none;
+    text-align: center;
+    margin: auto;
+    margin-top: 1%;
+
+    li {
+        list-style: none;
+        display: inline;
+        padding-right: 10px;
+        padding-left: 10px;
+        line-height: 20px;
+    }
+
+    img {
+        width: 30px;
+        margin-top: -0.1%;
+    }
+}
+
+@media screen and(min-width: 992px) {
+    .infonutri {
+        width: 75%;
+    }
+
+    .fondoColor {
+        border-radius: 0 5px 5px 0;
+
+        .titulo {
+            font-size: 200%;
+            padding: 5px;
+            margin-bottom: 30px;
+        }
+        .datitos {
+            height: 100%;
+            margin-bottom: 20px;
+        }
+        .columna {
+            font-size: 125%;
+            > div {
+                line-height: 30px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .producto {
+        border-radius: 5px 0 0 5px;
+    }
+    .card-title {
+        font-size: 145%;
+    }
+
+    .imgProd {
+        position: relative;
+        top: 20px;
+        width: 70%;
+    }
+}
+
+@media screen and(max-width: 991px) {
+    .fondoColor {
+        border-radius: 0px 0px 5px 5px;
+        .titulo {
+            padding: 6px 0 6px 0;
+            font-size: 140%;
+        }
+        .datitos {
+            font-size: 95%;
+            height: 100%;
+        }
+        .columna {
+            > div {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .producto {
+        border-radius: 5px 5px 0 0;
+    }
+
+    .imgProd {
+        width: 200px;
+    }
+
+    .card-title {
+        margin-top: -20px;
+        font-size: 140%;
     }
 }

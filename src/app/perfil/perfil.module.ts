@@ -11,7 +11,7 @@ import { BotonnuevarecetaComponent } from './botonnuevareceta/botonnuevareceta.c
 import { IndicemodperfilComponent } from './indicemodperfil/indicemodperfil.component';
 import { ModdatosComponent } from './moddatos/moddatos.component';
 
-
+import { FormsModule } from '@angular/forms'; // <-- NgModel está aquí
 
 @NgModule({
   declarations: [
@@ -26,7 +26,8 @@ import { ModdatosComponent } from './moddatos/moddatos.component';
   imports: [
     CommonModule
     ,UtilsModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   exports:[
     IndiceperfilComponent

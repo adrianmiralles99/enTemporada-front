@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
-import { Articulo } from 'src/app/articulo';
+import { Productos } from 'src/app/modelos/productos.model';
 
 @Component({
   selector: 'app-datosproducto',
@@ -10,13 +9,12 @@ import { Articulo } from 'src/app/articulo';
 })
 
 export class DatosproductoComponent implements OnInit {
+  constructor() { }
+  @Input() articulo!: Productos;
 
-  constructor(private rutaActiva: ActivatedRoute) { }
-  @Input() articulo!: Articulo;
   meses = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
-  id = this.rutaActiva.snapshot.paramMap.get('id');
-  help = new Date();
-  mesActual = this.help.getMonth();
+  mesActual = new Date().getMonth();
+
   ngOnInit(): void { }
 
 }
