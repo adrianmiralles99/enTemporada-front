@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Recetas } from 'src/app/modelos/recetas.model';
+import { ActivatedRoute } from '@angular/router';
 
 import { RecetasService } from 'src/app/servicios/recetas.service';
 @Component({
@@ -9,10 +10,9 @@ import { RecetasService } from 'src/app/servicios/recetas.service';
 })
 export class IndexrecetasComponent implements OnInit {
 
-  constructor(private recetasservice: RecetasService) { }
+  constructor(private recetasservice: RecetasService,private rutaActiva: ActivatedRoute) { }
 
-  recetas : Recetas[] = [];
-
+  recetas!: Recetas[];
   
   ngOnInit(): void {
     this.getRecetas();
