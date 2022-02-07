@@ -15,6 +15,9 @@ export class RecetasService {
   getAll(): Observable<Recetas[]> {
     return this.http.get<Recetas[]>(baseUrl);
   }
+  getById(id: any): Observable<any> {
+    return this.http.get(`${baseUrl}/${id}`);
+  }
 
   
 }

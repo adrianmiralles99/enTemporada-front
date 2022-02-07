@@ -16,12 +16,22 @@ export class IndexrecetasComponent implements OnInit {
   
   ngOnInit(): void {
     this.getRecetas();
-  
+    //this.getRecetaById();
 }
+
   getRecetas(){
     this.recetasservice.getAll().subscribe({
-      next: (res) => {
-        this.recetas = res;
+      next: (data) => {
+        console.log(data);
+        this.recetas = data;
+      },
+      error: (e) => console.error(e)
+    });
+  }
+  getRecetaById(){
+    this.recetasservice.getById(1).subscribe({
+      next: (data) => {
+        this.recetas = data;
       },
       error: (e) => console.error(e)
     });

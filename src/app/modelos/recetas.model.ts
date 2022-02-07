@@ -10,5 +10,5 @@ export class Recetas {
     tipo?: string;
     pasos?: string;
     fecha?:Date;
-    ingredientes?: Array<String>;
+    ingredientes?: string;
 }
