@@ -8,14 +8,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DescripcionComponent implements OnInit {
 
-  constructor(private rutaActiva: ActivatedRoute) { }
+  constructor() { }
 
   @Input() descripcion!: string;
 
-  ngOnInit(): void {
-    console.log();
-
-  }
+  ngOnInit(): void { }
 
 
 }

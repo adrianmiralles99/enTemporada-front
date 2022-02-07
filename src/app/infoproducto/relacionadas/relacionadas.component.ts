@@ -7,6 +7,7 @@ import { RECETAS } from '../../mock-recetas';
   styleUrls: ['./relacionadas.component.scss']
 })
 export class RelacionadasComponent implements OnInit {
+  
   recetas = RECETAS;
 
   constructor() { }
