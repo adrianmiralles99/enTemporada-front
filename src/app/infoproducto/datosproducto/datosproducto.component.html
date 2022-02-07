@@ -1,15 +1,15 @@
-<div class="container datos">
+<div class="container">
     <div class="row infonutri">
-        <div class="producto col-4">
+        <div class="producto col-lg-4 col-md-12">
             <div>
-                <img class="card-img-top" src="../../../assets/IMG/Frutas/basic/{{this.articulo.nombre}}.png"
-                    alt="Card image cap">
+                <img draggable="false" class="imgProd card-img-bottom" src="../../../assets/IMG/Frutas/basic/{{this.articulo.nombre}}.png"
+                    alt="imgFruta">
                 <div class="card-body">
                     <h5 class="card-title"><strong>{{this.articulo.nombre}}</strong></h5>
                 </div>
             </div>
         </div>
-        <div class="col-8 fondoColor" [ngStyle]="{'background-color': this.articulo.color }">
+        <div class="col-lg-8 col-md-12 fondoColor" [ngStyle]="{'background-color': this.articulo.color }">
             <h5 class="titulo">Información nutricional</h5>
             <div class="row datitos">
                 <div class="col-6">
@@ -33,13 +33,17 @@
             </div>
         </div>
     </div>
+
+
+
     <div class="row meses">
         <div class="leyenda">
             <li><img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png">Inicio</li>
             <li><img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png">En temporada</li>
             <li><img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png">Temporada baja</li>
             <li><img src="../../../assets/IMG/iconos/simbolos en temporada/final.png">Final</li>
-          </div>
+        </div>
+        
         <table class="tabla">
             <thead>
                 <tr class="meses">
