@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Recetas } from 'src/app/modelos/recetas.model';
+
 import { RecetasService } from 'src/app/servicios/recetas.service';
 @Component({
   selector: 'app-indexrecetas',
@@ -10,15 +11,21 @@ export class IndexrecetasComponent implements OnInit {
 
   constructor(private recetasservice: RecetasService) { }
 
+  recetas : Recetas[] = [];
+
+  
   ngOnInit(): void {
-    this.recetasservice.getAll()
-    .subscribe({
+    this.getRecetas();
+  
+}
+  getRecetas(){
+    this.recetasservice.getAll().subscribe({
       next: (res) => {
-        console.log(res);
+        this.recetas = res;
       },
       error: (e) => console.error(e)
     });
-}
+  }
   
 
 }

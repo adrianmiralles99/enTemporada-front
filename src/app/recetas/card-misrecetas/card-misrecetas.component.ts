@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { RECETAS } from '../../mock-recetas';
 
+
 @Component({
   selector: 'app-card-misrecetas',
   templateUrl: './card-misrecetas.component.html',
