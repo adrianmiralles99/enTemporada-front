@@ -1,4 +1,4 @@
-import { Relacionadas } from "../models/relacionadas.model";
+import { Relacionadas } from "./relacionadas.model";
 export class Productos {
     id!: number;
     nombre?: string;

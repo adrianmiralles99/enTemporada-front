@@ -37,11 +37,7 @@
   }
 }
 
-.small {
-  display: none;
-}
 table {
-  width: 95%;
   margin: auto;
   text-align: center;
   user-select: none;
@@ -62,9 +58,7 @@ table {
   }
 
   .tipo {
-    width: 15%;
     font-family: recoletaB;
-    font-size: 250%;
   }
 
   :not(.tipo) {
@@ -82,6 +76,20 @@ table {
     background-color: #17231c !important;
     color: white;
     border-bottom: 2px solid #39433b;
+    .temporada {
+      .B {
+        content: url("../../../assets/IMG/iconos/simbolos en temporada/Temporada bajaW.png");
+      }
+      .T {
+        content: url("../../../assets/IMG/iconos/simbolos en temporada/en TemporadaW.png");
+      }
+      .F {
+        content: url("../../../assets/IMG/iconos/simbolos en temporada/finalW.png");
+      }
+      .I {
+        content: url("../../../assets/IMG/iconos/simbolos en temporada/inicioW.png");
+      }
+    }
   }
 
   .ultimaFila {
@@ -94,7 +102,7 @@ table {
   tbody {
     > tr {
       td {
-        width: 1000em;
+        width: 100vw;
         transition: 0.1s;
         background-color: white;
         border: none;
@@ -116,30 +124,35 @@ table {
   }
 }
 
+@media screen and(min-width:812px) {
+  .tipo {
+    font-size: 200%;
+  }
+}
 @media screen and(max-width:812px) {
   .big {
     display: none;
   }
-  .leyenda {
-    padding: 1%;
-    width: 85%;
-    ul {
-      padding: 1px;
-      text-align: center;
-      margin: 0;
-    }
-    li {
-      list-style: none;
-      padding-right: 5px;
-      padding-left: 5px;
-    }
+  .tipo {
+    font-size: 250%;
+  }
+  // .leyenda {
+  //   padding: 1%;
+  //   width: 85%;
+  //   ul {
+  //     padding: 1px;
+  //     text-align: center;
+  //     margin: 0;
+  //   }
+  //   li {
+  //     list-style: none;
+  //     padding-right: 5px;
+  //     padding-left: 5px;
+  //   }
 
-    img {
-      width: 30px;
-      margin-top: -0.1%;
-    }
-  }
-  .small {
-    display: block;
-  }
+  //   img {
+  //     width: 30px;
+  //     margin-top: -0.1%;
+  //   }
+  // }
 }

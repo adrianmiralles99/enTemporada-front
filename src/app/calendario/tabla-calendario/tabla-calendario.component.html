@@ -1,9 +1,11 @@
-<div class="container big">
+<div class="container big d-md-block">
 
   <table class="table">
     <thead>
       <tr>
-        <th class="tipo">Frutas</th>
+        <th class="tipo">
+          <p>Frutas</p>
+        </th>
         <th *ngFor="let mes of meses; let indice=index" [ngClass]="{'cabMes': indice==mesActual}">{{mes}}</th>
       </tr>
     </thead>
@@ -17,10 +19,11 @@
         <td (mouseover)="cambiaColor(articulo.id,'m')" (mouseout)="quitaColor(articulo.id,'m')"
           *ngFor="let mes of getMes(articulo.id); let indice=index" [ngClass]="{'cabFila': indice==mesActual}">
           <div class="temporada" [ngSwitch]="mes.estado">
-            <img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png" *ngSwitchCase="'T'">
-            <img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png" *ngSwitchCase="'I'">
-            <img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png" *ngSwitchCase="'B'">
-            <img src="../../../assets/IMG/iconos/simbolos en temporada/final.png" *ngSwitchCase="'F'">
+            <img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png" class="T" *ngSwitchCase="'T'">
+            <img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png" class="I" *ngSwitchCase="'I'">
+            <img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png" class="B"
+              *ngSwitchCase="'B'">
+            <img src="../../../assets/IMG/iconos/simbolos en temporada/final.png" class="F" *ngSwitchCase="'F'">
           </div>
         </td>
       </tr>
@@ -34,7 +37,9 @@
   <table class="table">
     <thead>
       <tr>
-        <th class="tipo">Verduras</th>
+        <th class="tipo">
+          <p>Verduras</p>
+        </th>
         <th *ngFor="let mes of meses; let indice=index" [ngClass]="{'cabMes': indice==mesActual}">{{mes}}</th>
       </tr>
     </thead>
@@ -42,32 +47,38 @@
       <tr *ngFor="let articulo of verduras;let i=index" [ngClass]="{'ultimaFila':i==verduras.length-1}"
         id=m{{articulo.id}}>
         <td class="mgr" (mouseover)="cambiaColor(articulo.id,'m')" (mouseout)="quitaColor(articulo.id,'m')">
-          <img src="../../../assets/IMG/verdura.png" alt="">
+          <img src="../../assets/IMG/Verduras/basic/{{articulo.nombre}}.png" alt="">
           {{articulo.nombre}}
         </td>
 
         <td (mouseover)="cambiaColor(articulo.id,'m')" (mouseout)="quitaColor(articulo.id,'m')"
-          *ngFor="let mes of meses; let indice=index" [ngClass]="{'cabFila': indice==mesActual}">.</td>
+          *ngFor="let mes of getMes(articulo.id); let indice=index" [ngClass]="{'cabFila': indice==mesActual}">
+          <div class="temporada" [ngSwitch]="mes.estado">
+            <img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png" class="T" *ngSwitchCase="'T'">
+            <img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png" class="I" *ngSwitchCase="'I'">
+            <img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png" class="B"
+              *ngSwitchCase="'B'">
+            <img src="../../../assets/IMG/iconos/simbolos en temporada/final.png" class="F" *ngSwitchCase="'F'">
+          </div>
+        </td>
       </tr>
 
     </tbody>
   </table>
 
-  <div class="leyenda">
-    <li><img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png">Inicio</li>
-    <li><img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png">En temporada</li>
-    <li><img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png">Temporada baja</li>
-    <li><img src="../../../assets/IMG/iconos/simbolos en temporada/final.png">Final</li>
-  </div>
-
 </div>
 
 
-
+<div class="leyenda">
+  <li><img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png">Inicio</li>
+  <li><img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png">En temporada</li>
+  <li><img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png">Temporada baja</li>
+  <li><img src="../../../assets/IMG/iconos/simbolos en temporada/final.png">Final</li>
+</div>
 
 <!-- TABLAS EN MOVIL -->
-<div class="container small">
-  <div class="leyenda">
+<div class="container small d-md-none">
+  <!-- <div class="leyenda">
     <ul class="arriba">
       <li><img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png">Inicio</li>
       <li><img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png">En temporada</li>
@@ -76,7 +87,9 @@
       <li><img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png">Temporada baja</li>
       <li><img src="../../../assets/IMG/iconos/simbolos en temporada/final.png">Final</li>
     </ul>
-  </div>
+  </div> -->
+
+  <!-- TABLA DE FRUTAS -->
   <table class="table">
     <thead>
       <tr>
@@ -100,6 +113,7 @@
     </tbody>
   </table>
 
+  <!-- TABLA DE VERDURAS -->
   <table class="table">
     <thead>
       <tr>

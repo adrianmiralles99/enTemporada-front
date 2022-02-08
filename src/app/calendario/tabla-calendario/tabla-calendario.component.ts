@@ -24,7 +24,6 @@ export class TablaCalendarioComponent implements OnInit {
   ngOnInit(): void {
     this.getProductos();
     this.getCalendario();
-
   }
 
 
@@ -42,8 +41,6 @@ export class TablaCalendarioComponent implements OnInit {
     this.calendarioService.getAll().subscribe({
       next: (data) => {
         this.calendario = data;
-        console.log(data);
-
 
       }
     })
@@ -51,29 +48,47 @@ export class TablaCalendarioComponent implements OnInit {
 
 
   getMes(id: number): Calendario[] {
-    return this.calendario.filter(element => element.id == id);
+    return this.calendario.filter(element => element.id == id) ?? [];
   }
 
 
 
   cambiaColor(id: number, letra: string) {
     var element = $("#" + letra + id);
+    var tipo = "Frutas";
+
     if (element) {
       var articulo = this.productes.find(element => element.id == id);
 
+      if (articulo?.tipo == "V") {
+        tipo = "Verduras"
+      }
+
       element.children().css("background-color", articulo?.color ?? "");
-      element.find(".miimg").prop("src", "../../assets/IMG/Frutas/background/" + articulo?.nombre + ".png");
+      element.find(".miimg").prop("src", "../../assets/IMG/" + tipo + "/background/" + articulo?.nombre + ".png");
+      element.find(".T").prop("src", "../../../assets/IMG/iconos/simbolos en temporada/en TemporadaW.png");
+      element.find(".B").prop("src", "../../../assets/IMG/iconos/simbolos en temporada/Temporada bajaW.png");
+      element.find(".F").prop("src", "../../../assets/IMG/iconos/simbolos en temporada/finalW.png");
+      element.find(".I").prop("src", "../../../assets/IMG/iconos/simbolos en temporada/inicioW.png");
     }
   }
 
 
   quitaColor(id: number, letra: string) {
     var element = $("#" + letra + id);
+    var tipo = "Frutas";
+
     if (element) {
       var articulo = this.productes.find(element => element.id == id);
-
+      if (articulo?.tipo == "V") {
+        tipo = "Verduras"
+      }
       element.children().css("background-color", "");
-      element.find(".miimg").prop("src", "../../assets/IMG/Frutas/basic/" + articulo?.nombre + ".png");
+      element.find(".miimg").prop("src", "../../assets/IMG/" + tipo + "/basic/" + articulo?.nombre + ".png");
+      element.find(".T").prop("src", "../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png");
+      element.find(".B").prop("src", "../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png");
+      element.find(".F").prop("src", "../../../assets/IMG/iconos/simbolos en temporada/final.png");
+      element.find(".I").prop("src", "../../../assets/IMG/iconos/simbolos en temporada/inicio.png");
     }
   }
 

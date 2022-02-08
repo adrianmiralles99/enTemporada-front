@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-  import { Productos } from 'src/app/modelos/productos.model';
-  import { ProductosService } from 'src/app/servicios/productos.service';
+import { Productos } from 'src/app/modelos/productos.model';
+import { ProductosService } from 'src/app/servicios/productos.service';
 
 @Component({
   selector: 'app-productes',
@@ -46,21 +46,30 @@ export class ProductesComponent implements OnInit {
 
   cambiaColor(id: number): void {
     var element = $("#" + id);
-
+    var tipo = "Frutas";
     if (element) {
       var articulo = this.productes.find(element => element.id == id);
       element.children().css("background-color", articulo?.color ?? "");
-      element.find(".card-img-top").prop("src", "../../assets/IMG/Frutas/background/" + articulo?.nombre + ".png");
+      if (articulo?.tipo == "V") {
+        tipo = "Verduras"
+      }
+
+      element.find(".card-img-top").prop("src", "../../assets/IMG/" + tipo + "/background/" + articulo?.nombre + ".png");
     }
   }
 
   quitaColor(id: number): void {
     var element = $("#" + id);
     var articulo = this.productes.find(element => element.id == id);
+    var tipo = "Frutas";
 
     if (element) {
+      if (articulo?.tipo == "V") {
+        tipo = "Verduras"
+      }
+
       element.children().css("background-color", "");
-      element.find(".card-img-top").prop("src", "../../assets/IMG/Frutas/basic/" + articulo?.nombre + ".png");
+      element.find(".card-img-top").prop("src", "../../assets/IMG/" + tipo + "/basic/" + articulo?.nombre + ".png");
     }
   }
 
