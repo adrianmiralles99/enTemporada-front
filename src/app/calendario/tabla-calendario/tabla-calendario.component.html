@@ -60,6 +60,16 @@
 
 <!-- TABLAS EN MOVIL -->
 <div class="container small">
+  <div class="leyenda">
+    <ul class="arriba">
+    <li><img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png">Inicio</li>
+    <li><img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png">En temporada</li>
+  </ul>
+  <ul>
+    <li><img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png">Temporada baja</li>
+    <li><img src="../../../assets/IMG/iconos/simbolos en temporada/final.png">Final</li>
+  </ul>
+  </div>
   <table class="table">
     <thead>
       <tr>
@@ -68,6 +78,7 @@
         <th>{{messig}}</th>
       </tr>
     </thead>
+    
     <tbody>
       <tr *ngFor="let articulo of frutas;" id=s{{articulo.id}}>
         <td class="mgr"[routerLink]="['/infoproducto', articulo.id]" (mouseover)="cambiaColor(articulo.id,'s')" (mouseout)="quitaColor(articulo.id,'s')">
@@ -89,6 +100,7 @@
         <th>{{messig}}</th>
       </tr>
     </thead>
+    
     <tbody>
       <tr *ngFor="let articulo of verduras;" id=s{{articulo.id}}>
         <td class="mgr" (mouseover)="cambiaColor(articulo.id,'s')" (mouseout)="quitaColor(articulo.id,'s')">
