@@ -12,8 +12,11 @@
         font-family: "neueR";
         font-size: 120%;
         height: 100%;
+        width: 90%;
+
         > .columna {
-            margin-left: 5%;
+            margin-left: 0%;
+            margin-right: 5%;
             border-bottom: 1px solid rgba(69, 69, 69, 0.605);
         }
         h5 {
