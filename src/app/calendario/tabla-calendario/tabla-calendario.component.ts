@@ -14,11 +14,14 @@ export class TablaCalendarioComponent implements OnInit {
   meses = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
   frutas: Temporadaprod[] = [];
   verduras: Temporadaprod[] = [];
+  frutas2: Temporadaprod[] = [];
+  verduras2: Temporadaprod[] = [];
   help = new Date();
   mesActual = this.help.getMonth();
   mesact = this.meses[this.mesActual];
   messig = this.meses[this.mesActual + 1];
   productes!: Temporadaprod[];
+  productes2!: Productos[];
 
   ngOnInit(): void {
     this.getTemp();
@@ -26,16 +29,13 @@ export class TablaCalendarioComponent implements OnInit {
   }
   
   
-
-  
-
-  getTemp(): void {
-    this.temporadaprod.getAll()
+  getProd(): void {
+    this.productosService.getAll()
       .subscribe({
         next: (data) => {
-          this.productes = data;
-          this.frutas = this.productes.filter(element => element.tipo == "F");
-          this.verduras = this.productes.filter(element => element.tipo == "V"); 
+          this.productes2 = data;
+          this.frutas2 = this.productes.filter(element => element.tipo == "F");
+          this.verduras2 = this.productes.filter(element => element.tipo == "V"); 
           console.log(this.productes);
           console.log(this.frutas);
           
@@ -45,17 +45,26 @@ export class TablaCalendarioComponent implements OnInit {
       });
 
   }
-
-
-
-
-
   
 
+  getTemp(): void {
+    this.temporadaprod.getAll()
+      .subscribe({
+        next: (data) => {
+          this.productes = data;
+          this.frutas = this.productes.filter(element => element.tipo == "F");
+          this.verduras = this.productes.filter(element => element.tipo == "V"); 
+         // console.log(this.productes);
+         // console.log(this.frutas);
+          
+          
+        },
+        error: (e) => console.error(e)
+      });
 
+  }
 
   
-
   cambiaColor(id: number, letra: string) {
     var element = $("#" + letra + id);
     if (element) {
