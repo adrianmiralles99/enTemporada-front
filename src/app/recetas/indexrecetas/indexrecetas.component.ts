@@ -8,6 +8,7 @@ import { RecetasService } from 'src/app/servicios/recetas.service';
 })
 export class IndexrecetasComponent implements OnInit {
 
+  recet!: Recetas[];
   constructor(private recetasservice: RecetasService) { }
 
   ngOnInit(): void {
@@ -15,6 +16,7 @@ export class IndexrecetasComponent implements OnInit {
     .subscribe({
       next: (res) => {
         console.log(res);
+        this.recet = res;
       },
       error: (e) => console.error(e)
     });

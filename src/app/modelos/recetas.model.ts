@@ -1,10 +1,12 @@
 export class Recetas {
-    id!: number;
-    id_usuario!: number;
+    id?: number;
+    id_usuario?: number;
+    titulo?: string;
     tipo?: string;
     datos?: string;
     fecha?:Date;
-    id_prodp!: number;
+    imagen?: string;
+    id_prodp?: number;
     estado?:string;
-    ingredientes?: Array<String>;
+    ingredientes?: string;
 }
