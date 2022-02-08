@@ -12,7 +12,9 @@ export class DescripcionComponent implements OnInit {
 
   @Input() descripcion!: string;
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    console.log(this.descripcion)
+   }
 
 
 }
