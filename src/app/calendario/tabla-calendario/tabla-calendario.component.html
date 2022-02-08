@@ -9,7 +9,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let articulo of frutas;let i=index" [ngClass]="{'ultimaFila':i==frutas.length-1}" id=m{{articulo.id}}>
-        <td class="mgr" (mouseover)="cambiaColor(articulo.id ,'m')" (mouseout)="quitaColor(articulo.id,'m')">
+        <td class="mgr"[routerLink]="['/infoproducto', articulo.id]" (mouseover)="cambiaColor(articulo.id ,'m')" (mouseout)="quitaColor(articulo.id,'m')">
           <img class="miimg" src="../../assets/IMG/Frutas/basic/{{articulo.nombre}}.png" alt="">
           {{articulo.nombre}}
         </td>
@@ -70,7 +70,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let articulo of frutas;" id=s{{articulo.id}}>
-        <td class="mgr" (mouseover)="cambiaColor(articulo.id,'s')" (mouseout)="quitaColor(articulo.id,'s')">
+        <td class="mgr"[routerLink]="['/infoproducto', articulo.id]" (mouseover)="cambiaColor(articulo.id,'s')" (mouseout)="quitaColor(articulo.id,'s')">
           <img src="../../../assets/IMG/fruta.png" alt="">
           {{articulo.nombre}}
         </td>
