@@ -14,7 +14,7 @@
           {{articulo.nombre}}
         </td>
         <td (mouseover)="cambiaColor(articulo.id,'m')" (mouseout)="quitaColor(articulo.id,'m')"
-          *ngFor="let mes of meses; let indice=index" [ngClass]="{'cabFila': indice==mesActual}">.
+          *ngFor="let mes of meses; let indice=index" [ngClass]="{'cabFila': indice==mesActual}">
         </td>
       </tr>
 
