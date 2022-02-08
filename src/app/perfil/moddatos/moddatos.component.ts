@@ -16,5 +16,19 @@ export class ModdatosComponent implements OnInit {
    
     
   }
+  visualizar() {
+    var file = $('#fotousuario').prop("files")[0];
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      if (e.target) {
+        $(".usuario").css({
+          "background-image": "url(" + e.target.result + ")",
+          "background-size": "cover",
+        });
+      }
+    }
+    reader.readAsDataURL(file);
+  }
 
 }
