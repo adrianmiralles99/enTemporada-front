@@ -14,10 +14,9 @@ export class CardRecetasComponent implements OnInit {
   @Input() recetas!: Recetas[];
   
   hover = false;
-  
-  ngOnInit(): void {
-  }
 
- 
+  ngOnInit(): void { }
+
+
 
 }

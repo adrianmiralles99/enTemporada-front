@@ -1,12 +1,16 @@
 export class Recetas {
-    id?: number;
-    id_usuario?: number;
-    titulo?: string;
-    tipo?: string;
-    datos?: string;
-    fecha?:Date;
+    id!: number;
+    id_usuario!: number;
+    id_prodp!: number;
+    estado?: string;
     imagen?: string;
-    id_prodp?: number;
-    estado?:string;
+    titulo?: string;
+    tiempo?: string;
+    comensales?: number;
+    dificultad?: string;
+    tipo?: string;
+    pasos?: string;
+    fecha?: Date;
     ingredientes?: string;
+    nick?: { nick: string };
 }

@@ -8,19 +8,23 @@ import { RecetasService } from 'src/app/servicios/recetas.service';
 })
 export class IndexrecetasComponent implements OnInit {
 
-  recet!: Recetas[];
+
   constructor(private recetasservice: RecetasService) { }
 
+  recetas!: Recetas[];
+
   ngOnInit(): void {
-    this.recetasservice.getAll()
-    .subscribe({
-      next: (res) => {
-        console.log(res);
-        this.recet = res;
+    this.getRecetas();
+  }
+
+  getRecetas() {
+    this.recetasservice.getAll().subscribe({
+      next: (data) => {
+        console.log("olla");
+        this.recetas = data;
       },
       error: (e) => console.error(e)
     });
-}
-  
+  }
 
 }

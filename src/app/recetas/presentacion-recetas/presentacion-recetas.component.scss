@@ -46,7 +46,6 @@
   box-shadow: 0 8px 10px rgba(102, 102, 102, 0.6);
 
   h1 {
-
     padding: 80px;
     padding-top: 20px;
     padding-bottom: 10px;
@@ -70,21 +69,18 @@
     transform: rotate(10deg);
     left: 1%;
     top: 80%;
-
   }
 
   .white {
     transform: rotate(-15deg);
     left: 85%;
     top: 22%;
-
   }
 
   .naranja {
     transform: rotate(10deg);
     left: 92%;
     top: 82%;
-
   }
 
   .limon {
@@ -120,9 +116,8 @@
 
 .barra {
   margin: auto;
-  margin-left: 30px;
-  margin-right: 30px;
   background-color: $orange;
+  width: 90%;
   color: white;
   border-end-end-radius: 5px;
   border-end-start-radius: 5px;

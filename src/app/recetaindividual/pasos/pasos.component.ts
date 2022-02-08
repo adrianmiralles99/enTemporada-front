@@ -8,24 +8,24 @@ import { RECETAS } from 'src/app/mock-recetas';
 export class PasosComponent implements OnInit {
 
 
-  @Input() pasos: string[] = []
+  @Input() pasos?: string = ""
   mispasos: Array<Array<String>> = [[]];
   mitad: number = 0;
   constructor() { }
 
 
   ngOnInit(): void {
-    this.divideIngredientes();
+    // this.divideIngredientes();
   }
 
-  divideIngredientes() {
-    if (this.pasos.length % 2 == 0) {
-      this.mitad = this.pasos.length / 2
-    }
-    else {
-      this.mitad = (this.pasos.length / 2) + 1;
-    }
-    console.log(this.pasos);
-    
-  }
+  // divideIngredientes() {
+  //   if (this.pasos.length % 2 == 0) {
+  //     this.mitad = this.pasos.length / 2
+  //   }
+  //   else {
+  //     this.mitad = (this.pasos.length / 2) + 1;
+  //   }
+  //   console.log(this.pasos);
+
+  // }
 }
