@@ -9,12 +9,13 @@ import { Productos } from 'src/app/modelos/productos.model';
 })
 
 export class DatosproductoComponent implements OnInit {
-  constructor() { }
+ 
   @Input() articulo!: Productos;
-
+  constructor() { }
   meses = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
   mesActual = new Date().getMonth();
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+  }
 
 }

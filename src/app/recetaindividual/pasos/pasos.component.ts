@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { RECETAS } from 'src/app/mock-recetas';
 @Component({
   selector: 'app-pasos',
@@ -7,8 +7,7 @@ import { RECETAS } from 'src/app/mock-recetas';
 })
 export class PasosComponent implements OnInit {
 
-
-  @Input() pasos?: string = ""
+  @Input() pasos: string[] = [];
   mispasos: Array<Array<String>> = [[]];
   mitad: number = 0;
   constructor() { }
@@ -17,15 +16,6 @@ export class PasosComponent implements OnInit {
   ngOnInit(): void {
     // this.divideIngredientes();
   }
+  
 
-  // divideIngredientes() {
-  //   if (this.pasos.length % 2 == 0) {
-  //     this.mitad = this.pasos.length / 2
-  //   }
-  //   else {
-  //     this.mitad = (this.pasos.length / 2) + 1;
-  //   }
-  //   console.log(this.pasos);
-
-  // }
 }
