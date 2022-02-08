@@ -10,8 +10,11 @@ import { MenuFooter } from 'src/app/mock-menufooter';
 export class CalendarioComponent implements OnInit {
 
   constructor() { }
+  
   micard: MenuFooterInt = (MenuFooter.filter(element => element.ruta == "/calendario"))[0];
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+   }
 
+ 
 }
