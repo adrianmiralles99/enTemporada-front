@@ -12,34 +12,27 @@ export class TablaCalendarioComponent implements OnInit {
 
   constructor(private productosService: ProductosService, private temporadaprod: TemporadaprodService) { }
   meses = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
-  frutas: Temporadaprod[] = [];
-  verduras: Temporadaprod[] = [];
   help = new Date();
   mesActual = this.help.getMonth();
   mesact = this.meses[this.mesActual];
   messig = this.meses[this.mesActual + 1];
   productes!: Temporadaprod[];
+  verduras!: Temporadaprod[];
+  frutas!: Temporadaprod[];
 
   ngOnInit(): void {
     this.getTemp();
 
   }
   
-  
-
-  
-
   getTemp(): void {
     this.temporadaprod.getAll()
       .subscribe({
         next: (data) => {
           this.productes = data;
           this.frutas = this.productes.filter(element => element.tipo == "F");
-          this.verduras = this.productes.filter(element => element.tipo == "V"); 
-          console.log(this.productes);
-          console.log(this.frutas);
-          
-          
+          this.verduras = this.productes.filter(element => element.tipo == "V");
+          console.log(this.frutas)
         },
         error: (e) => console.error(e)
       });
@@ -51,7 +44,6 @@ export class TablaCalendarioComponent implements OnInit {
 
 
   
-
 
 
   
