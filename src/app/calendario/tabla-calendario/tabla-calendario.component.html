@@ -103,11 +103,26 @@
       <tr *ngFor="let articulo of frutas;" id=s{{articulo.id}}>
         <td class="mgr" [routerLink]="['/infoproducto', articulo.id]" (mouseover)="cambiaColor(articulo.id,'s')"
           (mouseout)="quitaColor(articulo.id,'s')">
-          <img src="../../../assets/IMG/fruta.png" alt="">
+          <img src="../../assets/IMG/Frutas/basic/{{articulo.nombre}}.png" alt="">
           {{articulo.nombre}}
         </td>
-        <td class="cabFila" (mouseover)="cambiaColor(articulo.id,'s')" (mouseout)="quitaColor(articulo.id,'s')">.</td>
-        <td (mouseover)="cambiaColor(articulo.id,'s')" (mouseout)="quitaColor(articulo.id,'s')">.</td>
+        <td class="cabFila">
+          <div class="temporada" [ngSwitch]="getMes(articulo.id)[mesActual].estado">
+            <img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png" class="T" *ngSwitchCase="'T'">
+            <img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png" class="I" *ngSwitchCase="'I'">
+            <img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png" class="B"
+              *ngSwitchCase="'B'">
+            <img src="../../../assets/IMG/iconos/simbolos en temporada/final.png" class="F" *ngSwitchCase="'F'">
+          </div>
+        </td>
+        <td><div class="temporada" [ngSwitch]="getMes(articulo.id)[mesActual + 1].estado">
+          <img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png" class="T" *ngSwitchCase="'T'">
+          <img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png" class="I" *ngSwitchCase="'I'">
+          <img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png" class="B"
+            *ngSwitchCase="'B'">
+          <img src="../../../assets/IMG/iconos/simbolos en temporada/final.png" class="F" *ngSwitchCase="'F'">
+        </div>
+        </td>
       </tr>
 
     </tbody>
@@ -126,12 +141,26 @@
     <tbody>
       <tr *ngFor="let articulo of verduras;" id=s{{articulo.id}}>
         <td class="mgr" (mouseover)="cambiaColor(articulo.id,'s')" (mouseout)="quitaColor(articulo.id,'s')">
-          <img src="../../../assets/IMG/verdura.png" alt="">
+          <img src="../../assets/IMG/Verduras/basic/{{articulo.nombre}}.png"  alt="">
           {{articulo.nombre}}
         </td>
-
-        <td class="cabFila" (mouseover)="cambiaColor(articulo.id,'s')" (mouseout)="quitaColor(articulo.id,'s')">.</td>
-        <td (mouseover)="cambiaColor(articulo.id,'s')" (mouseout)="quitaColor(articulo.id,'s')">.</td>
+       <td class="cabFila">
+          <div class="temporada" [ngSwitch]="getMes(articulo.id)[mesActual].estado">
+            <img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png" class="T" *ngSwitchCase="'T'">
+            <img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png" class="I" *ngSwitchCase="'I'">
+            <img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png" class="B"
+              *ngSwitchCase="'B'">
+            <img src="../../../assets/IMG/iconos/simbolos en temporada/final.png" class="F" *ngSwitchCase="'F'">
+          </div>
+        </td>
+        <td><div class="temporada" [ngSwitch]="getMes(articulo.id)[mesActual + 1].estado">
+          <img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png" class="T" *ngSwitchCase="'T'">
+          <img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png" class="I" *ngSwitchCase="'I'">
+          <img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png" class="B"
+            *ngSwitchCase="'B'">
+          <img src="../../../assets/IMG/iconos/simbolos en temporada/final.png" class="F" *ngSwitchCase="'F'">
+        </div>
+        </td>
       </tr>
 
     </tbody>

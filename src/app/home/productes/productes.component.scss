@@ -66,9 +66,25 @@
     }
   }
 }
+.temporada{
+  img{
+    height: 15px;
+    width: 15px;
+  }
+  td {
+     width: 10px;
+  }
+}
 @media screen and(max-width:812px) {
   h1 {
     font-size: 35px;
+  }
+
+  .temporada{
+    >  img{
+      height: 5px;
+      width: 15px;
+    }
   }
 
   .articulo {
@@ -107,6 +123,7 @@
       margin-top: -1em;
       display: none;
       text-align: center;
+      font-size: 5px;
       td {
         padding: 0.21em;
         padding-bottom: 0em;
