@@ -102,7 +102,7 @@
           content: url("../../../assets/IMG/iconos/simbolos en temporada/inicioW.png");
         }
       }
-    
+
 }
 
 .leyenda {
@@ -135,17 +135,38 @@
 
 
 @media screen and(max-width: 812px) {
-    
- 
-        
-    .small{
+
+
+
+    .movil{
         display: table;
         margin-bottom: 50px;
-      
-        
     }
-    .big{
+    .leyendamovil{
+      display: block;
+    }
+    .leyenda{
+      padding:auto;
+      ul{
+        background-color: rgb(125, 125, 202);
+        text-align: center;
+        padding-left: 5px;
+        padding-right: 5px;
+       li {
+         background-color: rgb(52, 201, 119);
+
+         /*
+        padding-right: 10px;
+        padding-left: 10px;
+        */
+      }
+    }
+  }
+    .orde{
         display: none;
+    }
+    .leyendaorde{
+      display: none;
     }
     .fondoColor {
         border-radius: 0px 0px 5px 5px;
@@ -176,17 +197,20 @@
         margin-top: -20px;
         font-size: 140%;
     }
-    
+
 }
 
 @media screen and(min-width: 812px) {
-    .small{
+    .movil{
         display: none;
     }
+    .leyendamovil{
+      display: none;
+  }
     .infonutri {
         width: 75%;
     }
-    
+
     .fondoColor {
         border-radius: 0 5px 5px 0;
 
@@ -220,5 +244,5 @@
         top: 20px;
         width: 70%;
     }
-    
+
 }

@@ -37,20 +37,32 @@
 
 
     <div class="row meses">
-        <div class="leyenda">
+        <div class="leyenda leyendaorde">
             <li><img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png">Inicio</li>
             <li><img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png">En temporada</li>
             <li><img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png">Temporada baja</li>
             <li><img src="../../../assets/IMG/iconos/simbolos en temporada/final.png">Final</li>
         </div>
+        <div class="leyenda leyendamovil">
+          <ul>
+            <li><img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png">Inicio</li>
+            <li><img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png">En temporada</li>
+          </ul>
+          <ul>
+            <li><img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png">Temporada baja</li>
+            <li><img src="../../../assets/IMG/iconos/simbolos en temporada/final.png">Final</li>
+          </ul>
+        </div>
 
-        <table class="tabla big">
+
+        <!-- VISTA ORDENADOR -->
+        <table class="tabla orde">
             <thead>
                 <tr class="meses">
                     <th *ngFor="let mes of meses; let indice=index" [ngClass]="{'cabMes': indice==mesActual}">{{mes}}
                     </th>
                 </tr>
-               
+
                 <tr class="puntos">
                     <td *ngFor="let mes of  getMes(articulo.id); let indice=index" [ngClass]="{'cabFila': indice==mesActual}">
                     <div class="temporada" [ngSwitch]="mes.estado">
@@ -64,27 +76,37 @@
                 </tr>
             </thead>
         </table>
-        <table class="tabla small">
-            
-            <thead>
-                <tr class="meses">
-                    <th *ngFor="let mes of meses; let indice=index" [ngClass]="{'cabMes': indice==mesActual}">{{mes}}
-                    </th>
-                </tr>
-               
-                <tr class="puntos">
-                    <td *ngFor="let mes of  getMes(articulo.id); let indice=index" [ngClass]="{'cabFila': indice==mesActual}">
-                    <div class="temporada" [ngSwitch]="mes.estado">
+        <!-- VISTA MOVIL -->
+        <table class="tabla movil">
+          <thead>
+
+              <tr class="meses">
+                <th class="cabMes">{{mesact}}</th>
+                <th>{{messig}}</th>
+              </tr>
+
+              <tr class="puntos">
+                    <td class="cabFila">
+                      <div class="temporada" [ngSwitch]="getMes(articulo.id)[mesActual].estado">
                         <img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png" class="T" *ngSwitchCase="'T'">
                         <img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png" class="I" *ngSwitchCase="'I'">
                         <img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png" class="B"
                           *ngSwitchCase="'B'">
                         <img src="../../../assets/IMG/iconos/simbolos en temporada/final.png" class="F" *ngSwitchCase="'F'">
                       </div>
-                      </td>
-                </tr>
-            </thead>
-        </table>
-       
+                    </td>
+                    <td><div class="temporada" [ngSwitch]="getMes(articulo.id)[mesActual + 1].estado">
+                      <img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png" class="T" *ngSwitchCase="'T'">
+                      <img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png" class="I" *ngSwitchCase="'I'">
+                      <img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png" class="B"
+                        *ngSwitchCase="'B'">
+                      <img src="../../../assets/IMG/iconos/simbolos en temporada/final.png" class="F" *ngSwitchCase="'F'">
+                    </div>
+                    </td>
+              </tr>
+          </thead>
+      </table>
+
+
     </div>
 </div>
