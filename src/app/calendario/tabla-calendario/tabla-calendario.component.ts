@@ -20,7 +20,7 @@ export class TablaCalendarioComponent implements OnInit {
   mesActual = this.help.getMonth();
   mesact = this.meses[this.mesActual];
   messig = this.meses[this.mesActual + 1];
-  
+
 
 
   ngOnInit(): void {
@@ -46,14 +46,13 @@ export class TablaCalendarioComponent implements OnInit {
     this.calendarioService.getAll().subscribe({
       next: (data) => {
         this.calendario = data;
+
       }
     })
   }
 
-
   getMes(id: number): Calendario[] {
-    console.log(this.calendario.filter(element => element.id == id) ?? []);
-    return this.calendario.filter(element => element.id == id) ?? [];
+    return this.calendario.filter(element => element.id_prod == id);
   }
 
 

@@ -46,6 +46,7 @@ export class ProductesComponent implements OnInit {
       });
 
   }
+
   getCalendario() {
     this.calendarioService.getAll().subscribe({
       next: (data) => {
@@ -57,7 +58,6 @@ export class ProductesComponent implements OnInit {
 
 
   getMes(id: number): Calendario[] {
-  
     return this.calendario.filter(element => element.id == id) ?? [];
   }
 

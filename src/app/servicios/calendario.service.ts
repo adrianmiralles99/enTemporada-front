@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Calendario } from '../modelos/calendario.model';
 import { serverUrl } from '../baseurl';
 
-const baseUrl = serverUrl + 'temporadaprod';
+const baseUrl = serverUrl + 'calendario';
 
 @Injectable({
   providedIn: 'root'
