@@ -1,6 +1,6 @@
 export class Calendario {
     id!: number;
-    nombre?: string;
-    tipo?: string;
+    id_prod?: number;
+    mes?: string;
     estado?: string;
 }
