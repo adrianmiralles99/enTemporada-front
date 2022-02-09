@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Productos } from 'src/app/modelos/productos.model';
+import { Calendario } from 'src/app/modelos/calendario.model';
 import { ProductosService } from 'src/app/servicios/productos.service';
-
+import { CalendarioService } from 'src/app/servicios/calendario.service';
 @Component({
   selector: 'app-productes',
   templateUrl: './productes.component.html',
@@ -10,16 +11,19 @@ import { ProductosService } from 'src/app/servicios/productos.service';
 
 
 export class ProductesComponent implements OnInit {
-  constructor(private productosService: ProductosService) { }
+
+  constructor(private productosService: ProductosService, private calendarioService: CalendarioService) { }
 
   ngOnInit(): void {
     this.getProductes();
+    this.getCalendario();
   }
 
 
   productes: Productos[] = [];
   frutas: Productos[] = [];
   verduras: Productos[] = [];
+  calendario!: Calendario[];
 
 
   meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
@@ -41,6 +45,20 @@ export class ProductesComponent implements OnInit {
         error: (e) => console.error(e)
       });
 
+  }
+  getCalendario() {
+    this.calendarioService.getAll().subscribe({
+      next: (data) => {
+        this.calendario = data;
+
+      }
+    })
+  }
+
+
+  getMes(id: number): Calendario[] {
+  
+    return this.calendario.filter(element => element.id == id) ?? [];
   }
 
 

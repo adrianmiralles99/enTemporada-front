@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Productos } from 'src/app/modelos/productos.model';
+import { Calendario } from 'src/app/modelos/calendario.model';
+
+import { CalendarioService } from 'src/app/servicios/calendario.service';
 
 @Component({
   selector: 'app-datosproducto',
@@ -11,11 +14,31 @@ import { Productos } from 'src/app/modelos/productos.model';
 export class DatosproductoComponent implements OnInit {
  
   @Input() articulo!: Productos;
-  constructor() { }
-  meses = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
-  mesActual = new Date().getMonth();
+  calendario!: Calendario[];
 
-  ngOnInit(): void { 
+  constructor(private calendarioService: CalendarioService) { }
+  meses = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
+
+  mesActual = new Date().getMonth();
+  mesact = this.meses[this.mesActual];
+  messig = this.meses[this.mesActual + 1];
+  ngOnInit(): void {
+    this.getCalendario();
+    if (this.mesact == "Dic"){
+      this.messig = this.meses[0];
+    }
+  }
+  getCalendario() {
+    this.calendarioService.getAll().subscribe({
+      next: (data) => {
+        this.calendario = data;
+        
+      }
+    })
+  }
+  getMes(id: number): Calendario[] {
+    console.log(this.calendario.filter(element => element.id == id) ?? []);
+    return this.calendario.filter(element => element.id == id) ?? [];
   }
 
 }

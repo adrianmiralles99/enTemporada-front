@@ -44,16 +44,47 @@
             <li><img src="../../../assets/IMG/iconos/simbolos en temporada/final.png">Final</li>
         </div>
 
-        <table class="tabla">
+        <table class="tabla big">
             <thead>
                 <tr class="meses">
                     <th *ngFor="let mes of meses; let indice=index" [ngClass]="{'cabMes': indice==mesActual}">{{mes}}
                     </th>
                 </tr>
+               
                 <tr class="puntos">
-                    <td *ngFor="let mes of meses; let indice=index" [ngClass]="{'cabFila': indice==mesActual}">.</td>
+                    <td *ngFor="let mes of  getMes(articulo.id); let indice=index" [ngClass]="{'cabFila': indice==mesActual}">
+                    <div class="temporada" [ngSwitch]="mes.estado">
+                        <img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png" class="T" *ngSwitchCase="'T'">
+                        <img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png" class="I" *ngSwitchCase="'I'">
+                        <img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png" class="B"
+                          *ngSwitchCase="'B'">
+                        <img src="../../../assets/IMG/iconos/simbolos en temporada/final.png" class="F" *ngSwitchCase="'F'">
+                      </div>
+                      </td>
                 </tr>
             </thead>
         </table>
+        <table class="tabla small">
+            
+            <thead>
+                <tr class="meses">
+                    <th *ngFor="let mes of meses; let indice=index" [ngClass]="{'cabMes': indice==mesActual}">{{mes}}
+                    </th>
+                </tr>
+               
+                <tr class="puntos">
+                    <td *ngFor="let mes of  getMes(articulo.id); let indice=index" [ngClass]="{'cabFila': indice==mesActual}">
+                    <div class="temporada" [ngSwitch]="mes.estado">
+                        <img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png" class="T" *ngSwitchCase="'T'">
+                        <img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png" class="I" *ngSwitchCase="'I'">
+                        <img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png" class="B"
+                          *ngSwitchCase="'B'">
+                        <img src="../../../assets/IMG/iconos/simbolos en temporada/final.png" class="F" *ngSwitchCase="'F'">
+                      </div>
+                      </td>
+                </tr>
+            </thead>
+        </table>
+       
     </div>
 </div>
