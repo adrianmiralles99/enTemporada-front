@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Relacionadas } from 'src/app/models/relacionadas.model';
+import { Relacionadas } from 'src/app/modelos/relacionadas.model';
 
 @Component({
   selector: 'app-relacionadas',

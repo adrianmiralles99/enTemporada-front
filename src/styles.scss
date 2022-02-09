@@ -98,7 +98,19 @@ body {
 .custom-modalbox {
   mat-dialog-container {
     border: 2px solid black;
-    filter: drop-shadow(0 5px 10px rgba(50, 50, 50, 0.632)) ;
+    filter: drop-shadow(0 5px 10px rgba(50, 50, 50, 0.632));
   }
 }
 
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.571);
+  background-color: #3d423e;
+}
