@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PRODUCTES } from '../../mock-articulos';
 import { Articulo } from '../../articulo';
-import { Temporadap } from 'src/app/mock-temporadap';
 
 @Component({
   selector: 'app-datoscreacion',

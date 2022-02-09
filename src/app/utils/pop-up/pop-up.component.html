@@ -1,15 +1,15 @@
 <div class="ventana">
-    <div *ngIf="!password">
+    <div *ngIf="!recupassword">
         <h1 class="titulo" mat-dialog-title>INICIAR SESION</h1>
         <mat-dialog-content class="contenedor">
             <label class="campos">
                 <h3>Usuario</h3>
-                <input type="text">
+                <input [(ngModel)]="nick" type="text">
             </label>
             <br>
             <label class="campos">
                 <h3>Contraseña</h3>
-                <input type="text">
+                <input [(ngModel)]="password" type="text">
             </label>
 
             <div class="row">
@@ -20,11 +20,11 @@
                     </label>
                 </div>
                 <div class="col-7 contraseña">
-                    <p (click)="password=true">¿Has olvidado tu contraseña?</p>
+                    <p (click)="recupassword=true">¿Has olvidado tu contraseña?</p>
                 </div>
             </div>
             <mat-dialog-actions class="boton">
-                <button class="acceder" [routerLink]="'/'" [mat-dialog-close]="">Acceder</button>
+                <button class="acceder" (click)="onSubmit()" [mat-dialog-close]="">Acceder</button>
             </mat-dialog-actions>
             <div class="row registro">
                 <div class="col-12">
@@ -36,7 +36,7 @@
         </mat-dialog-content>
     </div>
 
-    <div *ngIf="password">
+    <div *ngIf="recupassword">
         <h1 class="titulo" mat-dialog-title>RECUPERACIÓN DE CONTRASEÑA</h1>
         <mat-dialog-content class="contenedor">
             <label class="recu_contraseña">
@@ -44,7 +44,7 @@
                 <input type="text">
             </label>
             <mat-dialog-actions class="boton">
-                <button class="acceder" (click)="password=false">Enviar</button>
+                <button class="acceder" (click)="recupassword=false">Enviar</button>
             </mat-dialog-actions>
             <br>
             <br>

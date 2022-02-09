@@ -3,22 +3,22 @@ import { CommonModule } from '@angular/common';
 import { UtilsModule } from '../utils/utils.module';
 import { IndexregComponent } from './indexreg/indexreg.component';
 import { DatosloginComponent } from './datoslogin/datoslogin.component';
-import { DatospersonalesComponent } from './datospersonales/datospersonales.component';
-
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     IndexregComponent,
     DatosloginComponent,
-    DatospersonalesComponent
   ],
   imports: [
     CommonModule,
-    UtilsModule
+    UtilsModule,
+    FormsModule
   ]
   , exports: [
-    IndexregComponent
+    IndexregComponent,
+    FormsModule
   ]
 })
 export class RegistroModule { }

@@ -8,6 +8,7 @@ import { PopUpComponent } from './pop-up/pop-up.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SubirComponent } from './subir/subir.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -23,13 +24,15 @@ import { SubirComponent } from './subir/subir.component';
     CommonModule,
     RouterModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   exports: [
     BarraComponent,
     FooterComponent,
     MenuFooterComponent,
     SubirComponent,
+    FormsModule
   ]
 })
 export class UtilsModule { }

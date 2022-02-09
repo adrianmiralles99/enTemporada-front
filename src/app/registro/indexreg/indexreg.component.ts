@@ -12,4 +12,7 @@ export class IndexregComponent implements OnInit {
   ngOnInit(): void {
   }
 
-}
+
+ 
+
+  }

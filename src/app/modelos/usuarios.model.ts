@@ -11,4 +11,7 @@ export class Usuarios {
     direccion?: string;
     tipo?: string;
     estado?: string;
+    token?: string;
+    exp?: number;
+    id_ultima_receta?: number;
 }

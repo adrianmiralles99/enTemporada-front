@@ -11,7 +11,7 @@
                     <h5 class="nombre">Nombre de Usuario</h5>
                     <div class="campo">
                         <div class="icono nombreUser"></div>
-                        <input type="text" name="" id="" placeholder="Ingrese el Nombre de Usuario*">
+                        <input type="text" [(ngModel)]="nick" name="" id="" placeholder="Ingrese el Nombre de Usuario*" >
                     </div>
                 </label>
             </div>
@@ -20,7 +20,7 @@
                     <h5 class="nombre">Correo electronico</h5>
                     <div class="campo">
                         <div class="icono correo"></div>
-                        <input type="text" name="" id="" placeholder="Ingrese el Correo*">
+                        <input type="text" [(ngModel)]="correo" name="" id="" placeholder="Ingrese el Correo*" >
                     </div>
                 </label>
             </div>
@@ -31,7 +31,7 @@
                     <h5 class="nombre">Contraseña</h5>
                     <div class="campo">
                         <div class="icono contra"></div>
-                        <input type="text" name="" id="" placeholder="Ingrese la Contraseña*">
+                        <input [(ngModel)]="password" type="text" name="" id="" placeholder="Ingrese la Contraseña*">
                     </div>
                 </label>
             </div>
@@ -40,10 +40,65 @@
                     <h5 class="nombre">Repetir contraseña</h5>
                     <div class="campo">
                         <div class="icono repContra"></div>
-                        <input type="text" name="" id="" placeholder="Ingrese nuevamente la Contraseña*">
+                        <input [(ngModel)]="password2" type="text" name="" id="" placeholder="Ingrese nuevamente la Contraseña*">
                     </div>
                 </label>
             </div>
         </div>
     </div>
 </div>
+
+<!-- LOGIN -->
+<div class="container">
+    <div class="elemento">
+        <h4>Datos Personales</h4>
+
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <label class="w-100">
+                    <h5 class="nombre">Nombre</h5>
+                    <div class="campo">
+                        <div class="icono campnombre"></div>
+                        <input [(ngModel)]="nombre" type="text" name="" id="" placeholder="Ingrese su Nombre *">
+                    </div>
+                </label>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <label class="w-100">
+                    <h5 class="nombre">Apellidos</h5>
+                    <div class="campo">
+                        <div class="icono apellidos"></div>
+                        <input [(ngModel)]="apellidos" type="text" name="" id="" placeholder="Ingrese su Apellido*">
+                    </div>
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <label class="w-100">
+                    <h5 class="nombre">Localidad</h5>
+                    <div class="campo">
+                        <div class="icono contra"></div>
+                        <input [(ngModel)]="localidad" type="text" name="" id="" placeholder="Ingrese su Localidad*">
+                    </div>
+                </label>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <label class="w-100">
+                    <h5 class="nombre">Direccion</h5>
+                    <div class="campo">
+                        <div class="icono repContra"></div>
+                        <input [(ngModel)]="direccion" type="text" name="" id="" placeholder="Ingrese su Direccion">
+                    </div>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="boton">
+    <button (click)="onSubmit()">
+        Crear cuenta
+    </button>
+</div>
+<br>
