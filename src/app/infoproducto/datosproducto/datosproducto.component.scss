@@ -1,5 +1,9 @@
 @import "../../../styles.scss";
-
+.temporada{
+    img{
+        width: 30px;
+    }
+}
 .infonutri {
     margin: auto;
     margin-bottom: 30px;
@@ -84,6 +88,21 @@
     background-color: #17231c !important;
     color: white;
     border-radius: 0px 0px 10px 10px;
+    .temporada {
+        .B {
+          content: url("../../../assets/IMG/iconos/simbolos en temporada/Temporada bajaW.png");
+        }
+        .T {
+          content: url("../../../assets/IMG/iconos/simbolos en temporada/en TemporadaW.png");
+        }
+        .F {
+          content: url("../../../assets/IMG/iconos/simbolos en temporada/finalW.png");
+        }
+        .I {
+          content: url("../../../assets/IMG/iconos/simbolos en temporada/inicioW.png");
+        }
+      }
+    
 }
 
 .leyenda {
@@ -114,11 +133,60 @@
     }
 }
 
-@media screen and(min-width: 992px) {
+
+@media screen and(max-width: 812px) {
+    
+ 
+        
+    .small{
+        display: table;
+        margin-bottom: 50px;
+      
+        
+    }
+    .big{
+        display: none;
+    }
+    .fondoColor {
+        border-radius: 0px 0px 5px 5px;
+        .titulo {
+            padding: 6px 0 6px 0;
+            font-size: 140%;
+        }
+        .datitos {
+            font-size: 95%;
+            height: 100%;
+        }
+        .columna {
+            > div {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .producto {
+        border-radius: 5px 5px 0 0;
+    }
+
+    .imgProd {
+        width: 200px;
+    }
+
+    .card-title {
+        margin-top: -20px;
+        font-size: 140%;
+    }
+    
+}
+
+@media screen and(min-width: 812px) {
+    .small{
+        display: none;
+    }
     .infonutri {
         width: 75%;
     }
-
+    
     .fondoColor {
         border-radius: 0 5px 5px 0;
 
@@ -152,36 +220,5 @@
         top: 20px;
         width: 70%;
     }
-}
-
-@media screen and(max-width: 991px) {
-    .fondoColor {
-        border-radius: 0px 0px 5px 5px;
-        .titulo {
-            padding: 6px 0 6px 0;
-            font-size: 140%;
-        }
-        .datitos {
-            font-size: 95%;
-            height: 100%;
-        }
-        .columna {
-            > div {
-                margin-bottom: 10px;
-            }
-        }
-    }
-
-    .producto {
-        border-radius: 5px 5px 0 0;
-    }
-
-    .imgProd {
-        width: 200px;
-    }
-
-    .card-title {
-        margin-top: -20px;
-        font-size: 140%;
-    }
+    
 }
