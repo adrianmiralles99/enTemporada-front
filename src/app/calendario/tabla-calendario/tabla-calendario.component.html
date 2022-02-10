@@ -19,6 +19,7 @@
           <img class="miimg" src="../../assets/IMG/Articulos/basic/{{articulo.imagen}}" alt="">
           {{articulo.nombre}}
         </td>
+       
         <td (mouseover)="cambiaColor(articulo.id,'m')" (mouseout)="quitaColor(articulo.id,'m')"
           *ngFor="let mes of getMes(articulo.id); let indice=index" [ngClass]="{'cabFila': indice==mesActual}">
           <div class="temporada" [ngSwitch]="mes.estado">

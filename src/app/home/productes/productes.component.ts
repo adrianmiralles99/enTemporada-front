@@ -17,20 +17,26 @@ export class ProductesComponent implements OnInit {
   ngOnInit(): void {
     this.getProductes();
     this.getCalendario();
+    this.mesActualNumero ++;
+    if (this.mesActualNumero == 12) {
+      this.mesActualNumero =1;
+    }
   }
 
 
   productes: Productos[] = [];
   frutas: Productos[] = [];
+
   verduras: Productos[] = [];
   calendario!: Calendario[];
 
+  pruebacalendario !: Calendario[];
 
   meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
   mes = ["E", "F", "Mr", "Ab", "My", "Jn", "Jl", "Ag", "Sp", "O", "N", "D"];
   mesActual = this.meses[new Date().getMonth()];
-
+  mesActualNumero =new Date().getMonth();
 
 
   getProductes(): void {
@@ -41,7 +47,6 @@ export class ProductesComponent implements OnInit {
           this.frutas = this.productes.filter(element => element.tipo == "F");
 
           this.verduras = this.productes.filter(element => element.tipo == "V");
-
         },
         error: (e) => console.error(e)
       });
@@ -57,7 +62,8 @@ export class ProductesComponent implements OnInit {
     })
   }
 
-
+ 
+  
   getMes(id: number): Calendario[] {
     if (this.calendario) {
       return this.calendario.filter(element => element.id_prod == id);
@@ -67,7 +73,18 @@ export class ProductesComponent implements OnInit {
     }
   }
 
-
+  getTemporada(id:number):boolean{
+    let esta = true;
+    if (this.calendario) {
+      this.pruebacalendario = this.calendario.filter(element => element.id_prod == id);
+      this.pruebacalendario = this.pruebacalendario.filter(element => element.mes == this.mesActualNumero);
+      if (this.pruebacalendario[0].estado == "N"){
+        esta = false;
+      }   
+    }
+    return esta;
+  }
+  
   cambiaColor(id: number): void {
     var element = $("#" + id);
     if (element) {
