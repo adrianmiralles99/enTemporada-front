@@ -45,6 +45,7 @@ export class ProductesComponent implements OnInit {
         next: (data) => {
           this.productes = data;
           this.frutas = this.productes.filter(element => element.tipo == "F");
+
           this.verduras = this.productes.filter(element => element.tipo == "V");
         },
         error: (e) => console.error(e)
@@ -86,30 +87,20 @@ export class ProductesComponent implements OnInit {
   
   cambiaColor(id: number): void {
     var element = $("#" + id);
-    var tipo = "Frutas";
     if (element) {
       var articulo = this.productes.find(element => element.id == id);
       element.children().css("background-color", articulo?.color ?? "");
-      if (articulo?.tipo == "V") {
-        tipo = "Verduras"
-      }
-
-      element.find(".card-img-top").prop("src", "../../assets/IMG/" + tipo + "/background/" + articulo?.nombre + ".png");
+      element.find(".card-img-top").prop("src", "../../assets/IMG/Articulos/background/" + articulo?.imagen);
     }
   }
 
   quitaColor(id: number): void {
     var element = $("#" + id);
     var articulo = this.productes.find(element => element.id == id);
-    var tipo = "Frutas";
 
     if (element) {
-      if (articulo?.tipo == "V") {
-        tipo = "Verduras"
-      }
-
       element.children().css("background-color", "");
-      element.find(".card-img-top").prop("src", "../../assets/IMG/" + tipo + "/basic/" + articulo?.nombre + ".png");
+      element.find(".card-img-top").prop("src", "../../assets/IMG/Articulos/basic/" + articulo?.imagen);
     }
   }
 

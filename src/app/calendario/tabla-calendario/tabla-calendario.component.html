@@ -16,7 +16,7 @@
         <td class="mgr" [routerLink]="['/infoproducto', articulo.id]" (mouseover)="cambiaColor(articulo.id ,'m')"
           (mouseout)="quitaColor(articulo.id,'m')">
 
-          <img class="miimg" src="../../assets/IMG/Frutas/basic/{{articulo.imagen}}" alt="">
+          <img class="miimg" src="../../assets/IMG/Articulos/basic/{{articulo.imagen}}" alt="">
           {{articulo.nombre}}
         </td>
        
@@ -51,7 +51,7 @@
         <td class="mgr" [routerLink]="['/infoproducto', articulo.id]" (mouseover)="cambiaColor(articulo.id ,'m')"
           (mouseout)="quitaColor(articulo.id,'m')">
 
-          <img class="miimg" src="../../assets/IMG/Verduras/basic/{{articulo.imagen}}" alt="">
+          <img class="miimg" src="../../assets/IMG/Articulos/basic/{{articulo.imagen}}" alt="">
           {{articulo.nombre}}
         </td>
         <td (mouseover)="cambiaColor(articulo.id,'m')" (mouseout)="quitaColor(articulo.id,'m')"
@@ -107,7 +107,7 @@
       <tr *ngFor="let articulo of frutas;" id=s{{articulo.id}}>
         <td class="mgr" [routerLink]="['/infoproducto', articulo.id]" (mouseover)="cambiaColor(articulo.id,'s')"
           (mouseout)="quitaColor(articulo.id,'s')">
-          <img src="../../assets/IMG/Frutas/basic/{{articulo.imagen}}" alt="">
+          <img src="../../assets/IMG/Articulos/basic/{{articulo.imagen}}" alt="">
           {{articulo.nombre}}
         </td>
         <td class="cabFila">
@@ -147,7 +147,7 @@
       <tr *ngFor="let articulo of verduras;" id=s{{articulo.id}}>
         <td class="mgr" [routerLink]="['/infoproducto', articulo.id]" (mouseover)="cambiaColor(articulo.id,'s')"
           (mouseout)="quitaColor(articulo.id,'s')">
-          <img src="../../assets/IMG/Verduras/basic/{{articulo.imagen}}" alt="">
+          <img src="../../assets/IMG/Articulos/basic/{{articulo.imagen}}" alt="">
           {{articulo.nombre}}
         </td>
         <td class="cabFila">

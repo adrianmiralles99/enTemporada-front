@@ -3,7 +3,10 @@
     <app-datosproducto [articulo]="articulo"></app-datosproducto>
     <app-descripcion [descripcion]="articulo?.descripcion ?? ''"></app-descripcion>
     <br>
-    <app-relacionadas [recetas]="articulo?.relacionadas"></app-relacionadas>
+    <app-relacionadas *ngIf="articulo && articulo.relacionadas && articulo.relacionadas.length>0"
+        [recetas]="articulo?.relacionadas"></app-relacionadas>
 
 </div>
+
+<app-footer></app-footer>
 <app-subir></app-subir>

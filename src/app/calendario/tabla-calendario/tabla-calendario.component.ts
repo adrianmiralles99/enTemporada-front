@@ -81,17 +81,14 @@ export class TablaCalendarioComponent implements OnInit {
 
   cambiaColor(id: number, letra: string) {
     var element = $("#" + letra + id);
-    var tipo = "Frutas";
 
     if (element) {
       var articulo = this.productes.find(element => element.id == id);
 
-      if (articulo?.tipo == "V") {
-        tipo = "Verduras"
-      }
+
 
       element.children().css("background-color", articulo?.color ?? "");
-      element.find(".miimg").prop("src", "../../assets/IMG/" + tipo + "/background/" + articulo?.nombre + ".png");
+      element.find(".miimg").prop("src", "../../assets/IMG/Articulos/background/" + articulo?.imagen);
       element.find(".T").prop("src", "../../../assets/IMG/iconos/simbolos en temporada/en TemporadaW.png");
       element.find(".B").prop("src", "../../../assets/IMG/iconos/simbolos en temporada/Temporada bajaW.png");
       element.find(".F").prop("src", "../../../assets/IMG/iconos/simbolos en temporada/finalW.png");
@@ -102,15 +99,12 @@ export class TablaCalendarioComponent implements OnInit {
 
   quitaColor(id: number, letra: string) {
     var element = $("#" + letra + id);
-    var tipo = "Frutas";
 
     if (element) {
       var articulo = this.productes.find(element => element.id == id);
-      if (articulo?.tipo == "V") {
-        tipo = "Verduras"
-      }
+
       element.children().css("background-color", "");
-      element.find(".miimg").prop("src", "../../assets/IMG/" + tipo + "/basic/" + articulo?.nombre + ".png");
+      element.find(".miimg").prop("src", "../../assets/IMG/Articulos/basic/" + articulo?.imagen);
       element.find(".T").prop("src", "../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png");
       element.find(".B").prop("src", "../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png");
       element.find(".F").prop("src", "../../../assets/IMG/iconos/simbolos en temporada/final.png");

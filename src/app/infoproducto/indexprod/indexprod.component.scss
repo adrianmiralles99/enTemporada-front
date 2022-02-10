@@ -1,23 +1,6 @@
 @import "../../../styles.scss";
 
-::ng-deep nav {
-  background-color: $grey;
-
-  a {
-    color: white !important;
-  }
-
-  .boton {
-    a {
-      color: black !important;
-    }
-  }
-}
-
-::ng-deep .navbar-toggler {
-  color: white !important;
-}
-.fondo{
+.fondo {
   background-color: white;
   width: 90%;
   padding-top: 2.5%;

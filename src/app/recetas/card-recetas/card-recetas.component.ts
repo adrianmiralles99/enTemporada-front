@@ -1,6 +1,5 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Recetas } from 'src/app/modelos/recetas.model';
-import { RECETAS } from '../../mock-recetas';
 
 @Component({
   selector: 'app-card-recetas',
@@ -12,10 +11,12 @@ export class CardRecetasComponent implements OnInit {
   constructor() { }
 
   @Input() recetas!: Recetas[];
-  
+
   hover = false;
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+
+  }
 
 
 

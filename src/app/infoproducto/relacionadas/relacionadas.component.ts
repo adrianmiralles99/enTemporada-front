@@ -10,7 +10,8 @@ export class RelacionadasComponent implements OnInit {
 
   @Input() recetas?: Relacionadas[];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
 
