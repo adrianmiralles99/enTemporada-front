@@ -5,7 +5,7 @@
       <div class="col-lg-3" *ngFor="let articulo of frutas" id="{{articulo.id}}">
         <div class="card articulo" [routerLink]="['/infoproducto', articulo.id]" (mouseover)="cambiaColor(articulo.id)"
           (mouseout)="quitaColor(articulo.id)">
-          <img class="card-img-top imgFruta" src="../../assets/IMG/Frutas/basic/{{articulo.imagen}}"
+          <img class="card-img-top imgFruta" src="../../assets/IMG/Articulos/basic/{{articulo.imagen ?? 'Manazana.png'}}"
             alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">{{articulo.nombre}}</h5>
@@ -44,7 +44,7 @@
       <div class="col-lg-3" *ngFor="let articulo of verduras" id="{{articulo.id}}">
         <div class="card articulo" [routerLink]="['/infoproducto', articulo.id]" (mouseover)="cambiaColor(articulo.id)"
           (mouseout)="quitaColor(articulo.id)">
-          <img class="card-img-top imgFruta" src="../../assets/IMG/Verduras/basic/{{articulo.imagen}}"
+          <img class="card-img-top imgFruta" src="../../assets/IMG/Articulos/basic/{{articulo.imagen}}"
             alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">{{articulo.nombre}}</h5>

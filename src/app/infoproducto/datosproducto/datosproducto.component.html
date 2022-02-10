@@ -3,7 +3,9 @@
         <div class="producto col-lg-4 col-md-12">
             <div>
                 <img draggable="false" class="imgProd card-img-bottom"
-                    src="../../../assets/IMG/Frutas/basic/{{this.articulo?.nombre}}.png" alt="imgFruta">
+                    src="../../../assets/IMG/Articulos/basic/{{articulo?.imagen ?? 'Manzana.png'}}" alt="imgFruta">
+
+
                 <div class="card-body">
                     <h5 class="card-title"><strong>{{this.articulo?.nombre}}</strong></h5>
                 </div>
@@ -44,14 +46,14 @@
             <li><img src="../../../assets/IMG/iconos/simbolos en temporada/final.png">Final</li>
         </div>
         <div class="leyenda leyendamovil">
-          <ul>
-            <li><img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png">Inicio</li>
-            <li><img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png">En temporada</li>
-          </ul>
-          <ul>
-            <li><img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png">Temporada baja</li>
-            <li><img src="../../../assets/IMG/iconos/simbolos en temporada/final.png">Final</li>
-          </ul>
+            <ul>
+                <li><img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png">Inicio</li>
+                <li><img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png">En temporada</li>
+            </ul>
+            <ul>
+                <li><img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png">Temporada baja</li>
+                <li><img src="../../../assets/IMG/iconos/simbolos en temporada/final.png">Final</li>
+            </ul>
         </div>
 
 
@@ -84,34 +86,43 @@
         </table>
         <!-- VISTA MOVIL -->
         <table class="tabla movil">
-          <thead>
+            <thead>
 
-              <tr class="meses">
-                <th class="cabMes">{{mesact}}</th>
-                <th>{{messig}}</th>
-              </tr>
+                <tr class="meses">
+                    <th class="cabMes">{{mesact}}</th>
+                    <th>{{messig}}</th>
+                </tr>
 
-              <tr class="puntos">
-                    <td class="cabFila">
-                      <div class="temporada" [ngSwitch]="getMes(articulo.id)[mesActual].estado">
-                        <img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png" class="T" *ngSwitchCase="'T'">
-                        <img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png" class="I" *ngSwitchCase="'I'">
-                        <img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png" class="B"
-                          *ngSwitchCase="'B'">
-                        <img src="../../../assets/IMG/iconos/simbolos en temporada/final.png" class="F" *ngSwitchCase="'F'">
-                      </div>
-                    </td>
-                    <td><div class="temporada" [ngSwitch]="getMes(articulo.id)[mesActual + 1].estado">
-                      <img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png" class="T" *ngSwitchCase="'T'">
-                      <img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png" class="I" *ngSwitchCase="'I'">
-                      <img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png" class="B"
-                        *ngSwitchCase="'B'">
-                      <img src="../../../assets/IMG/iconos/simbolos en temporada/final.png" class="F" *ngSwitchCase="'F'">
-                    </div>
-                    </td>
-              </tr>
-          </thead>
-      </table>
+                <ng-container *ngIf="calendario">
+                    <tr class="puntos">
+                        <td class="cabFila">
+                            <div class="temporada" [ngSwitch]="getMes(articulo.id)[mesActual].estado">
+                                <img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png" class="T"
+                                    *ngSwitchCase="'T'">
+                                <img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png" class="I"
+                                    *ngSwitchCase="'I'">
+                                <img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png" class="B"
+                                    *ngSwitchCase="'B'">
+                                <img src="../../../assets/IMG/iconos/simbolos en temporada/final.png" class="F"
+                                    *ngSwitchCase="'F'">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="temporada" [ngSwitch]="getMes(articulo.id)[mesActual + 1].estado">
+                                <img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png" class="T"
+                                    *ngSwitchCase="'T'">
+                                <img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png" class="I"
+                                    *ngSwitchCase="'I'">
+                                <img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png" class="B"
+                                    *ngSwitchCase="'B'">
+                                <img src="../../../assets/IMG/iconos/simbolos en temporada/final.png" class="F"
+                                    *ngSwitchCase="'F'">
+                            </div>
+                        </td>
+                    </tr>
+                </ng-container>
+            </thead>
+        </table>
 
 
     </div>

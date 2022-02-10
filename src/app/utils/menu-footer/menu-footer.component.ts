@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MenuFooterInt } from 'src/app/menufooter';
+import { MenuFooter } from 'src/app/mock-menufooter';
 
 
 @Component({
@@ -10,11 +11,12 @@ import { MenuFooterInt } from 'src/app/menufooter';
 export class MenuFooterComponent implements OnInit {
   constructor() { }
   @Input() micard!: MenuFooterInt;
-  destinoL: string = "";
 
 
   ngOnInit(): void {
-    this.destinoL = this.micard.destinoL;
+    if (!this.micard) {
+      this.micard = (MenuFooter.filter(element => element.ruta == "/"))[0];
+    }
   }
 
 }

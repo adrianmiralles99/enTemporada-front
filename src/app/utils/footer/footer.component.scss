@@ -12,13 +12,10 @@ a {
   align-items: flex-end;
   text-align: right;
   font-family: neueB;
-
-
 }
 
 #entemp {
   margin-right: 7.5%;
-
 }
 
 #contact {
@@ -40,7 +37,7 @@ footer {
 }
 
 .top-megabuffer {
-  margin-top: 200px;
+  margin-top: 50px;
 }
 
 .top-buffer {
@@ -52,8 +49,8 @@ footer {
 }
 
 .uva {
-  width: 150px !important;
-  left: 57%;
+  width: 100px !important;
+  right: 30%;
   transform: rotate(15deg);
   position: absolute;
   z-index: 2 !important;
