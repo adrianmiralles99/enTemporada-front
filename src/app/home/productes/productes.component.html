@@ -54,6 +54,7 @@
               </thead>
               <tbody>
                 <td *ngFor="let mes of getMes(articulo.id)">
+                  
                   <div class="temporada" [ngSwitch]="mes.estado">
                     <img src="../../../assets/IMG/iconos/simbolos en temporada/en TemporadaW.png" class="T"
                       *ngSwitchCase="'T'">
