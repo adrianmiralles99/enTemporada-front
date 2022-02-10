@@ -47,7 +47,7 @@ table {
 
   img {
     width: 25%;
-    margin-right: 20px;
+    margin-right: 10px;
     user-select: none;
     pointer-events: none;
   }
@@ -55,6 +55,7 @@ table {
   th {
     border: none;
     letter-spacing: 1px;
+    overflow-wrap: break-word;
   }
 
   .tipo {
@@ -135,6 +136,22 @@ table {
   }
   .tipo {
     font-size: 250%;
+  }
+
+  th {
+    font-size: 150%;
+  }
+
+  table {
+    img {
+      margin-right: 0px;
+    }
+
+    tbody{
+      td{
+        font-size: 120%;
+      }
+    }
   }
   // .leyenda {
   //   padding: 1%;

@@ -2,10 +2,11 @@
   <h1><strong>Frutas</strong> en {{mesActual}}</h1>
   <div style="margin: 50px;">
     <div class="row">
-      <div class="col-sm-3" *ngFor="let articulo of frutas" id="{{articulo.id}}">
+      <div class="col-lg-3" *ngFor="let articulo of frutas" id="{{articulo.id}}">
         <div class="card articulo" [routerLink]="['/infoproducto', articulo.id]" (mouseover)="cambiaColor(articulo.id)"
           (mouseout)="quitaColor(articulo.id)">
-          <img class="card-img-top" src="../../assets/IMG/Frutas/basic/{{articulo.nombre}}.png" alt="Card image cap">
+          <img class="card-img-top imgFruta" src="../../assets/IMG/Frutas/basic/{{articulo.imagen}}"
+            alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">{{articulo.nombre}}</h5>
             <table>
@@ -13,7 +14,7 @@
                 <td *ngFor="let mes of mes">{{mes}}</td>
               </thead>
               <tbody>
-                <!-- <td *ngFor="let mes of getMes(articulo.id)">
+                <td *ngFor="let mes of getMes(articulo.id)">
                   <div class="temporada" [ngSwitch]="mes.estado">
                     <img src="../../../assets/IMG/iconos/simbolos en temporada/en TemporadaW.png" class="T"
                       *ngSwitchCase="'T'">
@@ -24,7 +25,7 @@
                     <img src="../../../assets/IMG/iconos/simbolos en temporada/finalW.png" class="F"
                       *ngSwitchCase="'F'">
                   </div>
-                </td> -->
+                </td>
               </tbody>
             </table>
 
@@ -34,14 +35,17 @@
     </div>
   </div>
 
+  <br>
+  <br>
 
   <h1><strong>Verduras</strong> en {{mesActual}}</h1>
   <div style="margin: 50px;">
     <div class="row">
-      <div class="col-sm-3" *ngFor="let articulo of verduras" id="{{articulo.id}}">
+      <div class="col-lg-3" *ngFor="let articulo of verduras" id="{{articulo.id}}">
         <div class="card articulo" [routerLink]="['/infoproducto', articulo.id]" (mouseover)="cambiaColor(articulo.id)"
           (mouseout)="quitaColor(articulo.id)">
-          <img class="card-img-top" src="../../assets/IMG/Verduras/basic/{{articulo.nombre}}.png" alt="Card image cap">
+          <img class="card-img-top imgFruta" src="../../assets/IMG/Verduras/basic/{{articulo.imagen}}"
+            alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">{{articulo.nombre}}</h5>
             <table>
@@ -49,7 +53,7 @@
                 <td *ngFor="let mes of mes;">{{mes}}</td>
               </thead>
               <tbody>
-                <!-- <td *ngFor="let mes of getMes(articulo.id)">
+                <td *ngFor="let mes of getMes(articulo.id)">
                   <div class="temporada" [ngSwitch]="mes.estado">
                     <img src="../../../assets/IMG/iconos/simbolos en temporada/en TemporadaW.png" class="T"
                       *ngSwitchCase="'T'">
@@ -60,7 +64,7 @@
                     <img src="../../../assets/IMG/iconos/simbolos en temporada/finalW.png" class="F"
                       *ngSwitchCase="'F'">
                   </div>
-                </td> -->
+                </td>
               </tbody>
             </table>
 

@@ -12,7 +12,7 @@ import { CalendarioService } from 'src/app/servicios/calendario.service';
 })
 
 export class DatosproductoComponent implements OnInit {
- 
+
   @Input() articulo!: Productos;
   calendario!: Calendario[];
 
@@ -24,7 +24,7 @@ export class DatosproductoComponent implements OnInit {
   messig = this.meses[this.mesActual + 1];
   ngOnInit(): void {
     this.getCalendario();
-    if (this.mesact == "Dic"){
+    if (this.mesact == "Dic") {
       this.messig = this.meses[0];
     }
   }
@@ -32,13 +32,18 @@ export class DatosproductoComponent implements OnInit {
     this.calendarioService.getAll().subscribe({
       next: (data) => {
         this.calendario = data;
-        
+
       }
     })
   }
+  
   getMes(id: number): Calendario[] {
-    console.log(this.calendario.filter(element => element.id == id) ?? []);
-    return this.calendario.filter(element => element.id == id) ?? [];
+    if (this.calendario) {
+      return this.calendario.filter(element => element.id_prod == id);
+    }
+    else {
+      return [];
+    }
   }
 
 }

@@ -1,18 +1,13 @@
 @import "../../../styles.scss";
 
 @media screen and (min-width: 700px) {
-  a {
-    text-decoration: none;
-    color: black;
-  }
-
   li {
     list-style: none;
   }
 
   h1 {
     text-align: center;
-    margin: 40px 0px 20px 0px;
+    margin: 70px 0px 20px 0px;
     font-family: recoletaB;
     font-size: 55px;
 
@@ -40,19 +35,16 @@
       }
     }
 
-    &:hover .card-img-top {
+    &:hover .imgFruta {
       transform: scale(120%);
     }
 
-    img {
+    .imgFruta {
       width: 8em;
       margin: auto;
+      transition: 0.3s;
     }
 
-    .card-img-top {
-      transition: 0.3s;
-      
-    }
     .card {
       margin: 20px;
     }
@@ -61,18 +53,18 @@
       text-align: center;
       td {
         font-size: 90%;
-        padding: 0.38em;
+        width: 100em;
       }
     }
   }
 }
-.temporada{
-  img{
+.temporada {
+  img {
     height: 15px;
     width: 15px;
   }
   td {
-     width: 10px;
+    width: 10px;
   }
 }
 @media screen and(max-width:812px) {
@@ -80,8 +72,8 @@
     font-size: 35px;
   }
 
-  .temporada{
-    >  img{
+  .temporada {
+    > img {
       height: 5px;
       width: 15px;
     }
@@ -110,7 +102,7 @@
       }
     }
 
-    img {
+    .imgFruta {
       width: 5em;
       float: left;
     }
@@ -119,9 +111,11 @@
       margin: 20px;
     }
     table {
+      margin: auto;
       margin-left: 3.6em;
       margin-top: -1em;
       display: none;
+      width: 100%;
       text-align: center;
       font-size: 5px;
       td {

@@ -52,7 +52,6 @@
   .container-fluid {
     background-color: $orange;
     margin-bottom: 30px;
-
   }
 }
 
@@ -66,38 +65,35 @@
 .gajo {
   transform: rotate(-10deg);
   left: 5%;
-  top: 230%;
-
+  top: 35vh;
 }
 
 .white {
   transform: rotate(5deg);
   left: 20%;
-  top: 350%;
-
+  top: 55vh;
 }
 
 .naranja {
   transform: rotate(-10deg);
   left: 15%;
-  top: 10%;
-
+  top: 5vh;
 }
 
 .limon {
   transform: rotate(25deg);
   left: 70%;
-  top: 340%;
+  top: 52vh;
 }
 
 .malacaton {
   transform: rotate(10deg);
   left: 65%;
-  top: 10%;
+  top: 5vh;
 }
 
 .sol {
   transform: rotate(10deg);
   left: 85%;
-  top: 150%;
+  top: 30vh;
 }

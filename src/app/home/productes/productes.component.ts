@@ -58,7 +58,12 @@ export class ProductesComponent implements OnInit {
 
 
   getMes(id: number): Calendario[] {
-    return this.calendario.filter(element => element.id == id) ?? [];
+    if (this.calendario) {
+      return this.calendario.filter(element => element.id_prod == id);
+    }
+    else {
+      return [];
+    }
   }
 
 

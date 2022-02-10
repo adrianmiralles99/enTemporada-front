@@ -46,13 +46,17 @@ export class TablaCalendarioComponent implements OnInit {
     this.calendarioService.getAll().subscribe({
       next: (data) => {
         this.calendario = data;
-
       }
     })
   }
 
   getMes(id: number): Calendario[] {
-    return this.calendario.filter(element => element.id_prod == id);
+    if (this.calendario) {
+      return this.calendario.filter(element => element.id_prod == id);
+    }
+    else {
+      return [];
+    }
   }
 
 

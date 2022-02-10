@@ -10,10 +10,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let articulo of frutas;let i=index" [ngClass]="{'ultimaFila':i==frutas.length-1}" id=m{{articulo.id}}>
+      <tr *ngFor="let articulo of frutas;let i=index" [ngClass]="{'ultimaFila':i==frutas.length-1}"
+        id="m{{articulo.id}}">
+
         <td class="mgr" [routerLink]="['/infoproducto', articulo.id]" (mouseover)="cambiaColor(articulo.id ,'m')"
           (mouseout)="quitaColor(articulo.id,'m')">
-          <img class="miimg" src="../../assets/IMG/Frutas/basic/{{articulo.nombre}}.png" alt="">
+
+          <img class="miimg" src="../../assets/IMG/Frutas/basic/{{articulo.imagen}}" alt="">
           {{articulo.nombre}}
         </td>
         <td (mouseover)="cambiaColor(articulo.id,'m')" (mouseout)="quitaColor(articulo.id,'m')"
@@ -30,9 +33,6 @@
 
     </tbody>
   </table>
-
-
-
 
   <table class="table">
     <thead>
@@ -45,13 +45,14 @@
     </thead>
     <tbody>
       <tr *ngFor="let articulo of verduras;let i=index" [ngClass]="{'ultimaFila':i==verduras.length-1}"
-        id=m{{articulo.id}}>
-        <td class="mgr" [routerLink]="['/infoproducto', articulo.id]" (mouseover)="cambiaColor(articulo.id,'m')"
+        id="m{{articulo.id}}">
+
+        <td class="mgr" [routerLink]="['/infoproducto', articulo.id]" (mouseover)="cambiaColor(articulo.id ,'m')"
           (mouseout)="quitaColor(articulo.id,'m')">
-          <img src="../../assets/IMG/Verduras/basic/{{articulo.nombre}}.png" alt="">
+
+          <img class="miimg" src="../../assets/IMG/Verduras/basic/{{articulo.imagen}}" alt="">
           {{articulo.nombre}}
         </td>
-
         <td (mouseover)="cambiaColor(articulo.id,'m')" (mouseout)="quitaColor(articulo.id,'m')"
           *ngFor="let mes of getMes(articulo.id); let indice=index" [ngClass]="{'cabFila': indice==mesActual}">
           <div class="temporada" [ngSwitch]="mes.estado">
@@ -66,6 +67,7 @@
 
     </tbody>
   </table>
+
 
 </div>
 
@@ -104,7 +106,7 @@
       <tr *ngFor="let articulo of frutas;" id=s{{articulo.id}}>
         <td class="mgr" [routerLink]="['/infoproducto', articulo.id]" (mouseover)="cambiaColor(articulo.id,'s')"
           (mouseout)="quitaColor(articulo.id,'s')">
-          <img src="../../assets/IMG/Frutas/basic/{{articulo.nombre}}.png" alt="">
+          <img src="../../assets/IMG/Frutas/basic/{{articulo.imagen}}" alt="">
           {{articulo.nombre}}
         </td>
         <td class="cabFila">
@@ -144,7 +146,7 @@
       <tr *ngFor="let articulo of verduras;" id=s{{articulo.id}}>
         <td class="mgr" [routerLink]="['/infoproducto', articulo.id]" (mouseover)="cambiaColor(articulo.id,'s')"
           (mouseout)="quitaColor(articulo.id,'s')">
-          <img src="../../assets/IMG/Verduras/basic/{{articulo.nombre}}.png" alt="">
+          <img src="../../assets/IMG/Verduras/basic/{{articulo.imagen}}" alt="">
           {{articulo.nombre}}
         </td>
         <td class="cabFila">
