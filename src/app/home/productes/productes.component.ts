@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Productos } from 'src/app/modelos/productos.model';
 import { Calendario } from 'src/app/modelos/calendario.model';
 import { ProductosService } from 'src/app/servicios/productos.service';
-import { CalendarioService } from 'src/app/servicios/calendario.service';
 @Component({
   selector: 'app-productes',
   templateUrl: './productes.component.html',
@@ -12,14 +11,13 @@ import { CalendarioService } from 'src/app/servicios/calendario.service';
 
 export class ProductesComponent implements OnInit {
 
-  constructor(private productosService: ProductosService, private calendarioService: CalendarioService) { }
+  constructor(private productosService: ProductosService) { }
 
   ngOnInit(): void {
     this.getProductes();
-    this.getCalendario();
-    this.mesActualNumero ++;
+    this.mesActualNumero++;
     if (this.mesActualNumero == 12) {
-      this.mesActualNumero =1;
+      this.mesActualNumero = 1;
     }
   }
 
@@ -36,11 +34,11 @@ export class ProductesComponent implements OnInit {
 
   mes = ["E", "F", "Mr", "Ab", "My", "Jn", "Jl", "Ag", "Sp", "O", "N", "D"];
   mesActual = this.meses[new Date().getMonth()];
-  mesActualNumero =new Date().getMonth();
+  mesActualNumero = new Date().getMonth();
 
 
   getProductes(): void {
-    this.productosService.getCard()
+    this.productosService.getCalendario()
       .subscribe({
         next: (data) => {
           this.productes = data;
@@ -53,38 +51,19 @@ export class ProductesComponent implements OnInit {
 
   }
 
-  getCalendario() {
-    this.calendarioService.getAll().subscribe({
-      next: (data) => {
-        this.calendario = data;
 
-      }
-    })
-  }
-
- 
-  
-  getMes(id: number): Calendario[] {
-    if (this.calendario) {
-      return this.calendario.filter(element => element.id_prod == id);
-    }
-    else {
-      return [];
-    }
-  }
-
-  getTemporada(id:number):boolean{
+  getTemporada(id: number): boolean {
     let esta = true;
     if (this.calendario) {
       this.pruebacalendario = this.calendario.filter(element => element.id_prod == id);
       this.pruebacalendario = this.pruebacalendario.filter(element => element.mes == this.mesActualNumero);
-      if (this.pruebacalendario[0].estado == "N"){
+      if (this.pruebacalendario[0].estado == "N") {
         esta = false;
-      }   
+      }
     }
     return esta;
   }
-  
+
   cambiaColor(id: number): void {
     var element = $("#" + id);
     if (element) {

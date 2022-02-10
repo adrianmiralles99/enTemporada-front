@@ -8,8 +8,8 @@
 
             <div class="card articulo" [routerLink]="['/infoproducto', articulo.id]"
               (mouseover)="cambiaColor(articulo.id)" (mouseout)="quitaColor(articulo.id)">
-              <img class="card-img-top imgFruta" src="../../assets/IMG/Articulos/basic/{{articulo.imagen ?? 'Manazana.png'}}"
-              alt="Card image cap">
+              <img class="card-img-top imgFruta"
+                src="../../assets/IMG/Articulos/basic/{{articulo.imagen ?? 'Manazana.png'}}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">{{articulo.nombre}}</h5>
                 <table>
@@ -17,7 +17,7 @@
                     <td *ngFor="let mes of mes">{{mes}}</td>
                   </thead>
                   <tbody>
-                    <td *ngFor="let mes of getMes(articulo.id)">
+                    <td *ngFor="let mes of articulo.calendario">
                       <div class="temporada" [ngSwitch]="mes.estado">
                         <img src="../../../assets/IMG/iconos/simbolos en temporada/en TemporadaW.png" class="T"
                           *ngSwitchCase="'T'">
@@ -53,8 +53,8 @@
           <div class="col-lg-3" id="{{articulo.id}}">
             <div class="card articulo" [routerLink]="['/infoproducto', articulo.id]"
               (mouseover)="cambiaColor(articulo.id)" (mouseout)="quitaColor(articulo.id)">
-              <img class="card-img-top imgFruta" src="../../assets/IMG/Articulos/basic/{{articulo.imagen ?? 'Manazana.png'}}"
-              alt="Card image cap">
+              <img class="card-img-top imgFruta"
+                src="../../assets/IMG/Articulos/basic/{{articulo.imagen ?? 'Manazana.png'}}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">{{articulo.nombre}}</h5>
                 <table>
@@ -62,7 +62,7 @@
                     <td *ngFor="let mes of mes;">{{mes}}</td>
                   </thead>
                   <tbody>
-                    <td *ngFor="let mes of getMes(articulo.id)">
+                    <td *ngFor="let mes of articulo.calendario">
                       <div class="temporada" [ngSwitch]="mes.estado">
                         <img src="../../../assets/IMG/iconos/simbolos en temporada/en TemporadaW.png" class="T"
                           *ngSwitchCase="'T'">

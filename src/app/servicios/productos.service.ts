@@ -22,6 +22,10 @@ export class ProductosService {
     return this.http.get<Productos>(`${baseUrl}/${id}` + "?expand=relacionadas");
   }
 
+  getCalendario(): Observable<Productos[]> {
+    return this.http.get<Productos[]>(baseUrl + "?expand=calendario");
+  }
+
   getCard(): Observable<Productos[]> {
     return this.http.get<Productos[]>(baseUrl + "?fields=id,nombre,color,imagen,tipo");
   }

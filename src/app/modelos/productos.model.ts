@@ -1,3 +1,4 @@
+import { Calendario } from "./calendario.model";
 import { Relacionadas } from "./relacionadas.model";
 export class Productos {
     id!: number;
@@ -8,4 +9,5 @@ export class Productos {
     tipo?: string;
     color?: string;
     relacionadas?: Relacionadas[];
+    calendario?: Calendario[];
 }
