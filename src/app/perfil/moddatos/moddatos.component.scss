@@ -41,12 +41,11 @@
 
   }
   .custom-file-upload {
-
     border: 2px solid #ccc;
     display: inline-block;
     padding: 6px 12px;
     border-radius: 5px;
-
+    
     cursor: pointer;
     padding: 15px 25px 15px 25px;
     &:hover {
@@ -57,6 +56,7 @@
     }
   }
   > .usuario {
+
     background-color: white;
     border: 2px solid rgba(0, 0, 0, 0.66);
     border-radius: 100%;
@@ -72,6 +72,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
   }
 }
 
@@ -97,8 +98,11 @@
  
 
 }
-
-@media screen and(min-width:750px) {
+.textarea {
+  max-width:100%;
+  max-height:100px;
+}
+@media screen and(min-width:813px) {
   .usuario {
     margin: auto;
     margin-top: 60px;
@@ -152,9 +156,7 @@
       margin-bottom: 2.5%;
     }
     textarea{
-      max-width:100%;
-      max-height:100px;
-      min-height: 100px;
+    
       padding: 5px;
       box-shadow: 0px 4px 4px rgba(32, 32, 32, 0.197), inset 0px 0px 10px rgba(47, 47, 47, 0.299);
       border: 1px solid rgba(30, 30, 30, 0.701);
@@ -173,7 +175,14 @@
   }
 }
 
-@media screen and(max-width:749px) {
+@media screen and(max-width:812px) {
+  textarea{
+    width: 100%;
+  }
+  .custom-file-upload {
+    margin-bottom: 20%;
+    margin-top: -20%;
+  }
   .usuario {
     margin: auto;
     width: 200px;
