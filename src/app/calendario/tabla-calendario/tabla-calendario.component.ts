@@ -49,7 +49,6 @@ export class TablaCalendarioComponent implements OnInit {
     this.calendarioService.getAll().subscribe({
       next: (data) => {
         this.calendario = data;
-        console.log(this.calendario);
 
       }
     })
