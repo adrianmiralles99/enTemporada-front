@@ -33,6 +33,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
   }
 
   > .b_usuario {
@@ -64,7 +65,7 @@
   font-family: neueR;
 }
 
-@media screen and(min-width:750px) {
+@media screen and(min-width:813px) {
   .usuario {
     margin: auto;
     margin-top: 60px;
@@ -78,6 +79,8 @@
     margin-top: -270px;
     width: 360px;
     height: 360px;
+    border-color: rgb(0, 76, 143);
+
   }
 
   .chef {
@@ -118,7 +121,7 @@
   }
 }
 
-@media screen and(max-width:749px) {
+@media screen and(max-width:812px) {
   .usuario {
     margin: auto;
     width: 200px;
@@ -132,6 +135,7 @@
     margin-top: -270px;
     width: 360px;
     height: 360px;
+    border-color: rgb(0, 76, 143);
   }
 
   .chef {
