@@ -13,13 +13,16 @@ export class TablaCalendarioComponent implements OnInit {
   constructor(private productosService: ProductosService, private calendarioService: CalendarioService) { }
   meses = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
   calendario!: Calendario[];
+  pruebacalendario !: Calendario[];
   productes!: Productos[];
   frutas: Productos[] = [];
   verduras: Productos[] = [];
   help = new Date();
   mesActual = this.help.getMonth();
+
   mesact = this.meses[this.mesActual];
   messig = this.meses[this.mesActual + 1];
+
 
 
 
@@ -46,17 +49,33 @@ export class TablaCalendarioComponent implements OnInit {
     this.calendarioService.getAll().subscribe({
       next: (data) => {
         this.calendario = data;
+        console.log(this.calendario);
+
       }
     })
   }
 
   getMes(id: number): Calendario[] {
     if (this.calendario) {
+     // console.log(this.calendario.filter(element => element.id_prod == id));
       return this.calendario.filter(element => element.id_prod == id);
     }
     else {
       return [];
     }
+  }
+  getTemporada(id:number):boolean{
+    console.log("get temñ" + this.mesActual);
+    let esta = true;
+    if (this.calendario) {
+      this.pruebacalendario = this.calendario.filter(element => element.id_prod == id);
+      this.pruebacalendario = this.pruebacalendario.filter(element => element.mes == this.mesActual+1);
+      console.log(this.pruebacalendario);
+      if (this.pruebacalendario[0].estado == "N"){
+        esta = false;
+      }   
+    }
+    return esta;
   }
 
 
