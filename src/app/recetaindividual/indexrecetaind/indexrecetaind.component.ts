@@ -11,7 +11,7 @@ import { Recetas } from 'src/app/modelos/recetas.model';
 export class IndexrecetaindComponent implements OnInit {
 
   constructor(private recetasService: RecetasService, private rutaActiva: ActivatedRoute) { }
-  
+
   id = this.rutaActiva.snapshot.paramMap.get('id');
   receta?: Recetas;
   arrayRec!: string[];
@@ -24,8 +24,6 @@ export class IndexrecetaindComponent implements OnInit {
           this.receta = data;
           this.arrayRec = this.receta!.ingredientes!.split('*|*');
           this.pasos = this.receta!.pasos!.split('*|*');
-
-          console.log(this.receta);
         },
         error: (e) => console.error(e)
       })
