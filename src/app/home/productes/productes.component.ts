@@ -15,7 +15,6 @@ export class ProductesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProductes();
-    this.mesActualNumero++;
     if (this.mesActualNumero == 12) {
       this.mesActualNumero = 1;
     }
@@ -34,7 +33,7 @@ export class ProductesComponent implements OnInit {
 
   mes = ["E", "F", "Mr", "Ab", "My", "Jn", "Jl", "Ag", "Sp", "O", "N", "D"];
   mesActual = this.meses[new Date().getMonth()];
-  mesActualNumero = new Date().getMonth();
+  mesActualNumero = new Date().getMonth() + 1;
 
 
   getProductes(): void {
