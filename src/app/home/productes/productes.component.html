@@ -3,41 +3,39 @@
   <div style="margin: 50px;">
     <div class="row">
       <ng-container *ngFor="let articulo of frutas">
-        <ng-container *ngIf="getTemporada(articulo.id)==true">
-          <div class="col-lg-3" id="{{articulo.id}}">
+        <div class="col-lg-3" id="{{articulo.id}}">
 
-            <div class="card articulo" [routerLink]="['/infoproducto', articulo.id]"
-              (mouseover)="cambiaColor(articulo.id)" (mouseout)="quitaColor(articulo.id)">
-              <img class="card-img-top imgFruta"
-                src="../../assets/IMG/Articulos/basic/{{articulo.imagen ?? 'Manazana.png'}}" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">{{articulo.nombre}}</h5>
-                <table>
-                  <thead>
-                    <td *ngFor="let mes of mes">{{mes}}</td>
-                  </thead>
-                  <tbody>
-                    <td *ngFor="let mes of articulo.calendario">
-                      <div class="temporada" [ngSwitch]="mes.estado">
-                        <img src="../../../assets/IMG/iconos/simbolos en temporada/en TemporadaW.png" class="T"
-                          *ngSwitchCase="'T'">
-                        <img src="../../../assets/IMG/iconos/simbolos en temporada/inicioW.png" class="I"
-                          *ngSwitchCase="'I'">
-                        <img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada bajaW.png" class="B"
-                          *ngSwitchCase="'B'">
-                        <img src="../../../assets/IMG/iconos/simbolos en temporada/finalW.png" class="F"
-                          *ngSwitchCase="'F'">
-                      </div>
-                    </td>
-                  </tbody>
-                </table>
-
-              </div>
+          <div class="card articulo" [routerLink]="['/infoproducto', articulo.id]"
+            (mouseover)="cambiaColor(articulo.id)" (mouseout)="quitaColor(articulo.id)">
+            <img class="card-img-top imgFruta"
+              src="../../assets/IMG/Articulos/basic/{{articulo.imagen ?? 'Manazana.png'}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{articulo.nombre}}</h5>
+              <table>
+                <thead>
+                  <td *ngFor="let mes of mes">{{mes}}</td>
+                </thead>
+                <tbody>
+                  <td *ngFor="let mes of articulo.calendario">
+                    <div class="temporada" [ngSwitch]="mes.estado">
+                      <img src="../../../assets/IMG/iconos/simbolos en temporada/en TemporadaW.png" class="T"
+                        *ngSwitchCase="'T'">
+                      <img src="../../../assets/IMG/iconos/simbolos en temporada/inicioW.png" class="I"
+                        *ngSwitchCase="'I'">
+                      <img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada bajaW.png" class="B"
+                        *ngSwitchCase="'B'">
+                      <img src="../../../assets/IMG/iconos/simbolos en temporada/finalW.png" class="F"
+                        *ngSwitchCase="'F'">
+                    </div>
+                  </td>
+                </tbody>
+              </table>
 
             </div>
 
           </div>
-        </ng-container>
+
+        </div>
       </ng-container>
     </div>
   </div>
@@ -49,38 +47,43 @@
   <div style="margin: 50px;">
     <div class="row">
       <ng-container *ngFor="let articulo of verduras">
-        <ng-container *ngIf="getTemporada(articulo.id)==true">
-          <div class="col-lg-3" id="{{articulo.id}}">
-            <div class="card articulo" [routerLink]="['/infoproducto', articulo.id]"
-              (mouseover)="cambiaColor(articulo.id)" (mouseout)="quitaColor(articulo.id)">
-              <img class="card-img-top imgFruta"
-                src="../../assets/IMG/Articulos/basic/{{articulo.imagen ?? 'Manazana.png'}}" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">{{articulo.nombre}}</h5>
-                <table>
-                  <thead>
-                    <td *ngFor="let mes of mes;">{{mes}}</td>
-                  </thead>
-                  <tbody>
-                    <td *ngFor="let mes of articulo.calendario">
-                      <div class="temporada" [ngSwitch]="mes.estado">
-                        <img src="../../../assets/IMG/iconos/simbolos en temporada/en TemporadaW.png" class="T"
-                          *ngSwitchCase="'T'">
-                        <img src="../../../assets/IMG/iconos/simbolos en temporada/inicioW.png" class="I"
-                          *ngSwitchCase="'I'">
-                        <img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada bajaW.png" class="B"
-                          *ngSwitchCase="'B'">
-                        <img src="../../../assets/IMG/iconos/simbolos en temporada/finalW.png" class="F"
-                          *ngSwitchCase="'F'">
-                      </div>
-                    </td>
-                  </tbody>
-                </table>
-              </div>
+        <div class="col-lg-3" id="{{articulo.id}}">
+          <div class="card articulo" [routerLink]="['/infoproducto', articulo.id]"
+            (mouseover)="cambiaColor(articulo.id)" (mouseout)="quitaColor(articulo.id)">
+            <img class="card-img-top imgFruta"
+              src="../../assets/IMG/Articulos/basic/{{articulo.imagen ?? 'Manazana.png'}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{articulo.nombre}}</h5>
+              <table>
+                <thead>
+                  <td *ngFor="let mes of mes;">{{mes}}</td>
+                </thead>
+                <tbody>
+                  <td *ngFor="let mes of articulo.calendario">
+                    <div class="temporada" [ngSwitch]="mes.estado">
+                      <img src="../../../assets/IMG/iconos/simbolos en temporada/en TemporadaW.png" class="T"
+                        *ngSwitchCase="'T'">
+                      <img src="../../../assets/IMG/iconos/simbolos en temporada/inicioW.png" class="I"
+                        *ngSwitchCase="'I'">
+                      <img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada bajaW.png" class="B"
+                        *ngSwitchCase="'B'">
+                      <img src="../../../assets/IMG/iconos/simbolos en temporada/finalW.png" class="F"
+                        *ngSwitchCase="'F'">
+                    </div>
+                  </td>
+                </tbody>
+              </table>
             </div>
           </div>
-        </ng-container>
+        </div>
       </ng-container>
     </div>
   </div>
 </div>
+
+<!-- <ng-template #elseTemplate> -->
+<!-- <div class="carga">
+    <img src="../../../assets/IMG/carga2.gif" alt="">
+    <h1>Loading...</h1>
+  </div> -->
+<!-- </ng-template> -->

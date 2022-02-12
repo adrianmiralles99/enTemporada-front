@@ -12,7 +12,7 @@ export class DetallesrecetasComponent implements OnInit {
 
   constructor() { }
 
-  @Input() misingredientes: string[] = [];
+  @Input() misingredientes?: string[] = [];
   @Input() receta?: Recetas;
   ngOnInit(): void {
     this.divideIngredientes();
@@ -24,7 +24,7 @@ export class DetallesrecetasComponent implements OnInit {
   }
 
   divideIngredientes() {
-    if (this.misingredientes?.length % 2 == 0) {
+    if (this.misingredientes?.length ?? 0 % 2 == 0) {
 
       this.ingredientes[0] = (this.misingredientes?.slice(0, (this.misingredientes?.length / 2)) ?? []);
     }
@@ -33,7 +33,6 @@ export class DetallesrecetasComponent implements OnInit {
     }
     this.ingredientes[1] = (this.misingredientes?.slice(this.ingredientes[0].length, this.misingredientes?.length) ?? []);
 
-    console.log(this.ingredientes);
 
   }
 

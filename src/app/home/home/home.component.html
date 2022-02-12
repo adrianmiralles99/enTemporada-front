@@ -1,6 +1,12 @@
-<app-barra></app-barra>
-<app-titulo-inicio></app-titulo-inicio>
-<app-productes></app-productes>
-<app-menu-footer [micard]="micard"></app-menu-footer>
-<app-footer></app-footer>
-<app-subir></app-subir>
+<ng-container *ngIf="productes; else elseTemplate">
+    <app-barra></app-barra>
+    <app-titulo-inicio></app-titulo-inicio>
+    <app-productes [productes]="productes"></app-productes>
+    <app-menu-footer [micard]="micard"></app-menu-footer>
+    <app-footer></app-footer>
+    <app-subir></app-subir>
+
+</ng-container>
+<ng-template #elseTemplate>
+    <app-carga></app-carga>
+</ng-template>

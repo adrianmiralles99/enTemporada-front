@@ -21,7 +21,7 @@
         </td>
        
         <td (mouseover)="cambiaColor(articulo.id,'m')" (mouseout)="quitaColor(articulo.id,'m')"
-          *ngFor="let mes of getMes(articulo.id); let indice=index" [ngClass]="{'cabFila': indice==mesActual}">
+          *ngFor="let mes of articulo.calendario; let indice=index" [ngClass]="{'cabFila': indice==mesActual}">
           <div class="temporada" [ngSwitch]="mes.estado">
             <img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png" class="T" *ngSwitchCase="'T'">
             <img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png" class="I" *ngSwitchCase="'I'">
@@ -55,7 +55,7 @@
           {{articulo.nombre}}
         </td>
         <td (mouseover)="cambiaColor(articulo.id,'m')" (mouseout)="quitaColor(articulo.id,'m')"
-          *ngFor="let mes of getMes(articulo.id); let indice=index" [ngClass]="{'cabFila': indice==mesActual}">
+          *ngFor="let mes of articulo.calendario; let indice=index" [ngClass]="{'cabFila': indice==mesActual}">
           <div class="temporada" [ngSwitch]="mes.estado">
             <img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png" class="T" *ngSwitchCase="'T'">
             <img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png" class="I" *ngSwitchCase="'I'">
@@ -80,20 +80,17 @@
   <li><img src="../../../assets/IMG/iconos/simbolos en temporada/final.png">Final</li>
 </div>
 
-<!-- TABLAS EN MOVIL -->
-<div class="container small d-md-none">
-  <!-- <div class="leyenda">
-    <ul class="arriba">
-      <li><img src="../../../assets/IMG/iconos/simbolos en temporada/inicio.png">Inicio</li>
-      <li><img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png">En temporada</li>
-    </ul>
-    <ul>
-      <li><img src="../../../assets/IMG/iconos/simbolos en temporada/Temporada baja.png">Temporada baja</li>
-      <li><img src="../../../assets/IMG/iconos/simbolos en temporada/final.png">Final</li>
-    </ul>
-  </div> -->
 
-  <!-- TABLA DE FRUTAS -->
+
+
+
+
+
+
+<!-- TABLAS EN MOVIL -->
+<!-- <div class="container small d-md-none">
+  
+
   <table class="table">
     <thead>
       <tr>
@@ -133,7 +130,6 @@
     </tbody>
   </table>
 
-  <!-- TABLA DE VERDURAS -->
   <table class="table">
     <thead>
       <tr>
@@ -173,4 +169,4 @@
     </tbody>
   </table>
 
-</div>
+</div> -->

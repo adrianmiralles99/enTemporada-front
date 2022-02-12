@@ -14,16 +14,16 @@ export class IndexrecetaindComponent implements OnInit {
 
   id = this.rutaActiva.snapshot.paramMap.get('id');
   receta?: Recetas;
-  arrayRec!: string[];
-  pasos!: string[];
+  ingredientes?: string[];
+  pasos?: string[];
 
   getReceta(): void {
     this.recetasService.getById(this.id)
       .subscribe({
         next: (data) => {
           this.receta = data;
-          this.arrayRec = this.receta!.ingredientes!.split('*|*');
-          this.pasos = this.receta!.pasos!.split('*|*');
+          this.ingredientes = this.receta?.ingredientes?.split('*|*');
+          this.pasos = this.receta?.pasos?.split('*|*');
         },
         error: (e) => console.error(e)
       })

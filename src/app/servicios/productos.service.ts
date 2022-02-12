@@ -5,6 +5,7 @@ import { Productos } from '../modelos/productos.model';
 import { serverUrl } from '../baseurl';
 
 const baseUrl = serverUrl + 'producto';
+const baseUrlVista = serverUrl + 'prodactuales';
 
 @Injectable({
   providedIn: 'root'
@@ -26,9 +27,10 @@ export class ProductosService {
     return this.http.get<Productos[]>(baseUrl + "?expand=calendario");
   }
 
-  getCard(): Observable<Productos[]> {
-    return this.http.get<Productos[]>(baseUrl + "?fields=id,nombre,color,imagen,tipo");
+  getActual(): Observable<Productos[]> {
+    return this.http.get<Productos[]>(baseUrlVista + "?expand=calendario");
   }
+
 
   getById(id: any): Observable<any> {
     return this.http.get(`${baseUrl}/${id}`);

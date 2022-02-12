@@ -9,6 +9,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SubirComponent } from './subir/subir.component';
 import { FormsModule } from '@angular/forms';
+import { CargaComponent } from './carga/carga.component';
 
 
 
@@ -19,6 +20,7 @@ import { FormsModule } from '@angular/forms';
     MenuFooterComponent,
     PopUpComponent,
     SubirComponent,
+    CargaComponent,
   ],
   imports: [
     CommonModule,
@@ -32,6 +34,7 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     MenuFooterComponent,
     SubirComponent,
+    CargaComponent,
     FormsModule
   ]
 })

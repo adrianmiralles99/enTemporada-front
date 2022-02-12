@@ -1,6 +1,13 @@
 <app-barra [color]="'orange'"></app-barra>
 <app-presentacion-calendario></app-presentacion-calendario>
-<app-tabla-calendario></app-tabla-calendario>
+
+<ng-container *ngIf="productes; else elseTemplate">
+    <app-tabla-calendario [productes]="productes"></app-tabla-calendario>
+</ng-container>
+<ng-template #elseTemplate>
+    <app-carga></app-carga>
+</ng-template>
+
 <app-menu-footer [micard]="micard"></app-menu-footer>
 <app-footer></app-footer>
 <app-subir></app-subir>
