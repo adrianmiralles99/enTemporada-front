@@ -5,6 +5,7 @@ import { IndexcreacionComponent } from './indexcreacion/indexcreacion.component'
 import { DatoscreacionComponent } from './datoscreacion/datoscreacion.component';
 import { PasosComponent } from './pasos/pasos.component';
 import { FormsModule } from '@angular/forms'; //
+import { RouterModule } from '@angular/router';
 
 
 
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms'; //
   imports: [
     CommonModule,
     UtilsModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ]
 })
 export class CreacionRecetaModule { }

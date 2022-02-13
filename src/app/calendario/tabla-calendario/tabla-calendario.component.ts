@@ -14,8 +14,7 @@ export class TablaCalendarioComponent implements OnInit {
   @Input() productes!: Productos[];
   frutas: Productos[] = [];
   verduras: Productos[] = [];
-  help = new Date();
-  mesActual = this.help.getMonth();
+  mesActual = new Date().getMonth();
   mesact = this.meses[this.mesActual];
   messig = this.meses[this.mesActual + 1];
 
@@ -31,16 +30,11 @@ export class TablaCalendarioComponent implements OnInit {
   }
 
 
-
-
-
   cambiaColor(id: number, letra: string) {
     var element = $("#" + letra + id);
 
     if (element) {
       var articulo = this.productes.find(element => element.id == id);
-
-
 
       element.children().css("background-color", articulo?.color ?? "");
       element.find(".miimg").prop("src", "../../assets/IMG/Articulos/background/" + articulo?.imagen);

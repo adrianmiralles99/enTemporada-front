@@ -13,7 +13,7 @@
       <tr *ngFor="let articulo of frutas;let i=index" [ngClass]="{'ultimaFila':i==frutas.length-1}"
         id="m{{articulo.id}}">
 
-        <td class="mgr" [routerLink]="['/infoproducto', articulo.id]" (mouseover)="cambiaColor(articulo.id ,'m')"
+        <td class="articulo" [routerLink]="['/infoproducto', articulo.id]" (mouseover)="cambiaColor(articulo.id ,'m')"
           (mouseout)="quitaColor(articulo.id,'m')">
 
           <img class="miimg" src="../../assets/IMG/Articulos/basic/{{articulo.imagen}}" alt="">

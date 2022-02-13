@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PRODUCTES } from '../../mock-articulos';
-import { Articulo } from '../../articulo';
+import { ProductosService } from 'src/app/servicios/productos.service';
+import { Productos } from 'src/app/modelos/productos.model';
 
 @Component({
   selector: 'app-datoscreacion',
@@ -9,31 +9,52 @@ import { Articulo } from '../../articulo';
 })
 export class DatoscreacionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private productoService: ProductosService) { }
 
+  comensales?: number;
+  tiempo: string = "";
+  tipo: string = "";
+  dificultad: string = "";
+  cantidadPrinc: string = "";
+
+
+  productos?: Productos[];
   misingredientes: string[] = [];
   cantidad: string = "";
   ingred: string = "";
 
   ingredientes: Array<Array<String>> = [];
 
+  tipoActualT: Productos[] = [];
+  tipoActualN: Productos[] = [];
 
-  tipoActualT: Articulo[] = [];
-  tipoActualN: Articulo[] = [];
 
   ngOnInit(): void {
-    this.divideIngredientes();
+    this.getProductos();
+  }
+
+  getProductos() {
+    this.productoService.getCalendario().subscribe({
+      next: (data) => {
+        this.productos = data;
+      }
+    });
   }
 
   selectTipo(tipo: string) {
-    if (tipo == "F") {
-      this.tipoActualT = PRODUCTES.filter(element => element.tipo == "F");
-      this.tipoActualN = PRODUCTES.filter(element => element.tipo == "F");
+    if (this.productos) {
+      if (tipo == "F") {
+        this.tipoActualT = this.productos!.filter(element => element.tipo == "F" && element.calendario![new Date().getMonth()].estado != "N");
+        this.tipoActualN = this.productos!.filter(element => element.tipo == "F" && element.calendario![new Date().getMonth()].estado == "N");
+      }
+      else if (tipo == "V") {
+        this.tipoActualT = this.productos!.filter(element => element.tipo == "V" && element.calendario![new Date().getMonth()].estado != "N");
+        this.tipoActualN = this.productos!.filter(element => element.tipo == "V" && element.calendario![new Date().getMonth()].estado == "N");
+      }
     }
-    else if (tipo == "V") {
-      this.tipoActualT = PRODUCTES.filter(element => element.tipo == "V");
-      this.tipoActualN = PRODUCTES.filter(element => element.tipo == "V");
-    }
+
+    console.log(this.tipoActualT);
+
 
   }
 

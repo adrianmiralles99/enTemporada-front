@@ -7,22 +7,29 @@
     background-color: transparent;
     border: none;
 }
-
-input {
+input,
+select {
     outline: none;
 }
 
-// PARTE IZERDA CON LA FOTO DE CARGAR IMAGEN
-
-.fondo {
-    width: 90%;
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(118, 118, 118, 0.537);
-    border-radius: 5px;
-    margin: auto;
-    margin-top: 1em;
+.campo {
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    > input,
+    select {
+        font-family: neueR;
+        padding: 3px 0px 3px 5px;
+        width: 55%;
+        height: 100%;
+        border: 1px solid rgba(56, 56, 56, 0.721);
+        border-radius: 5px;
+        box-shadow: inset 0 0px 5px rgba(52, 52, 52, 0.347);
+        outline: none;
+    }
 }
+
+// PARTE IZERDA CON LA FOTO DE CARGAR IMAGEN
 
 .upload {
     cursor: pointer;
@@ -34,7 +41,7 @@ input {
     > #img {
         background-image: url("../../../assets/IMG/iconos/uploadImage.png");
         background-size: 30%;
-        border: 1px solid $grey;
+        border: 1px solid rgba(96, 96, 96, 0.496);
         height: 330px;
         width: 100%;
         background-color: white;
@@ -86,21 +93,6 @@ input {
             text-align: center;
             font-family: neueB;
         }
-        .campo {
-            text-align: center;
-            margin-top: -10px;
-            margin-bottom: 10px;
-            > input,
-            select {
-                font-family: neueR;
-                padding: 3px 0px 3px 5px;
-                width: 60%;
-                height: 100%;
-                border: 1px solid rgba(56, 56, 56, 0.721);
-                border-radius: 5px;
-                box-shadow: inset 0 0px 5px rgba(52, 52, 52, 0.347);
-            }
-        }
     }
 }
 
@@ -117,9 +109,14 @@ input {
         color: black;
         font-family: recoletaB;
     }
+
     .inputTipo {
         * {
             vertical-align: middle !important;
+        }
+        div {
+            margin: auto;
+            padding: 0;
         }
         label {
             margin-top: 10px;
@@ -131,17 +128,26 @@ input {
                 margin-right: 4px;
             }
         }
-        select {
+        .desplegable {
             padding: 3px 0px 3px 5px;
             box-shadow: inset 0 0px 5px rgba(52, 52, 52, 0.347);
             width: 130px;
             border: 1px solid rgba(56, 56, 56, 0.721);
             border-radius: 5px;
+            outline: none;
             optgroup {
                 font-family: recoletaB;
                 option {
                     font-family: neueR;
                 }
+            }
+        }
+
+        .campo {
+            text-align: left;
+            margin-left: 20px;
+            input {
+                width: 30%;
             }
         }
     }

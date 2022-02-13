@@ -1,71 +1,78 @@
 <div class="container">
-    <div class="fondo">
-        <div class="row">
-            <div class="col-md-5 col-sm-12">
-                <label class="upload">
-                    <div id="img"></div>
-                    <input type="file" (change)="visualizar()" name="" id="inputIMG">
-                </label>
+    <div class="row">
+        <div class="col-lg-5 col-md-12">
+            <label class="upload">
+                <div id="img"></div>
+                <input type="file" (change)="visualizar()" name="" id="inputIMG">
+            </label>
 
-                <div class="nombre">
-                    <img src="../../../assets/IMG/iconos/icono.png" alt="">
-                    <input type="text" placeholder="Escriba el nombre de su receta...">
-                </div>
+            <div class="nombre">
+                <img class="mr-2" src="../../../assets/IMG/iconos/icono.png" alt="">
+                <input type="text" placeholder="Escriba el nombre de su receta...">
             </div>
+        </div>
 
-            <!-- DATOS E INGREDIENTES DE LA RECETA -->
-            <div class="col-md-7  col-sm-12">
-                <div class="datosfondo">
-                    <div class="row filadatos">
-                        <div class="columna col-3">
-                            <p class="mt-2">Nº de Comensales</p>
-                            <div class="campo">
-                                <img class="icono" src="../../../assets/IMG/iconos/grupo.png" alt="">
-                                <input type="number" name="" id="">
-                            </div>
-                        </div>
-                        <div class="columna col-2">
-                            <p class="mt-2">Tiempo</p>
-                            <div class="campo">
-                                <img class="icono" src="../../../assets/IMG/iconos/tiempo.png" alt="">
-                                <input type="text" name="" id="">
-                            </div>
-                        </div>
-                        <div class="columna col-3">
-                            <p class="mt-2">Tipo de plato</p>
-                            <div class="campo">
-                                <img class="icono" src="../../../assets/IMG/iconos/tipo.png" alt="">
-                                <select name="" id="">
-                                    <option selected>...</option>
-                                    <option name="" value="">Desayuno</option>
-                                    <option name="" value="">Almuerzo</option>
-                                    <option name="" value="">Comida</option>
-                                    <option name="" value="">Cena</option>
-                                    <option name="" value="">Postre</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="columna col-4">
-                            <p class="mt-2">Dificultad del plato</p>
-                            <div class="campo">
-                                <img class="icono" src="../../../assets/IMG/iconos/dificultad.png" alt="">
-                                <select name="" id="">
-                                    <option selected>...</option>
-                                    <option name="" value="">Fácil</option>
-                                    <option name="" value="">Intermedio</option>
-                                    <option name="" value="">Difícil</option>
-                                </select>
-                            </div>
+        <!-- DATOS E INGREDIENTES DE LA RECETA -->
+        <div class="col-lg-7  col-md-12">
+            <div class="datosfondo">
+                <div class="row filadatos">
+                    <div class="columna col-3">
+                        <p class="mt-2">Nº de Comensales</p>
+                        <div class="campo">
+                            <img class="icono" src="../../../assets/IMG/iconos/grupo.png" alt="">
+                            <input [(ngModel)]="comensales" type="number" min="0" name="" id="">
                         </div>
                     </div>
+                    <div class="columna col-2">
+                        <p class="mt-2">Tiempo</p>
+                        <div class="campo">
+                            <img class="icono" src="../../../assets/IMG/iconos/tiempo.png" alt="">
+                            <input [(ngModel)]="tiempo" type="text" name="" id="">
+                        </div>
+                    </div>
+                    <div class="columna col-3">
+                        <p class="mt-2">Tipo de plato</p>
+                        <div class="campo">
+                            <img class="icono" src="../../../assets/IMG/iconos/tipo.png" alt="">
+                            <select [(ngModel)]="tipo" id="">
+                                <option selected>...</option>
+                                <option name="desayuno" value="Desayuno">Desayuno</option>
+                                <option name="almuerzo" value="Almuerzo">Almuerzo</option>
+                                <option name="comida" value="Comida">Comida</option>
+                                <option name="cena" value="Cena">Cena</option>
+                                <option name="postre" value="Postre">Postre</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="columna col-4">
+                        <p class="mt-2">Dificultad del plato</p>
+                        <div class="campo">
+                            <img class="icono" src="../../../assets/IMG/iconos/dificultad.png" alt="">
+                            <select [(ngModel)]="dificultad" id="">
+                                <option selected>...</option>
+                                <option name="facil" value="Fácil">Fácil</option>
+                                <option name="intermedio" value="Intermedio">Intermedio</option>
+                                <option name="dificil" value="Difícil">Difícil</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
 
-                    <!-- INGREDIENTES -->
-                    <div class="ingredientes">
-                        <div class="row">
-                            <div class="col-md-6 col-sm-8">
-                                <h3>Ingrediente Principal:</h3>
+                <!-- INGREDIENTES -->
+                <div class="ingredientes">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-8">
+                            <h3>Ingrediente Principal:</h3>
+                        </div>
+                        <div class="row col-md-12 col-sm-4 inputTipo">
+                            <div class="col-5">
+                                <label class="campo">
+                                    <span> Cantidad:</span>
+                                    <input id="cantidad" min=1 type="text" [(ngModel)]="cantidadPrinc" name="">
+                                </label>
+
                             </div>
-                            <div class="col-md-6 col-sm-4 inputTipo">
+                            <div class="col-7">
                                 <label (click)="selectTipo('F')">
                                     <input type="radio" name="tipo">
                                     <span>Fruta</span>
@@ -75,7 +82,7 @@
                                     <span>Verdura</span>
                                 </label>
 
-                                <select>
+                                <select class="desplegable">
                                     <optgroup label="En Temporada" *ngIf="tipoActualT.length>0">
                                         <option *ngFor="let tipo of tipoActualT" value="{{tipo.nombre}}">
                                             {{tipo.nombre}}
@@ -83,7 +90,6 @@
                                     </optgroup>
                                     <optgroup></optgroup>
                                     <optgroup label="Fuera de Temporada" *ngIf="tipoActualN.length>1">
-
                                         <option *ngFor="let tipo of tipoActualN" value="{{tipo.nombre}}">
                                             {{tipo.nombre}}
                                         </option>
@@ -91,61 +97,60 @@
                                 </select>
                             </div>
                         </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-12">
-                                <h3>Ingredientes:</h3>
-                            </div>
-                        </div>
-                        <div class="row columnas">
-                            <div class="col-6">
-                                <!-- LISTA DE LA PRIMERA MITAD DE LOS INGREDIENTES -->
-                                <ul class="lista">
-                                    <div class="row elemento" *ngFor="let ingrediente of ingredientes[0];let i=index">
-                                        <div class="col-10">
-                                            <span>{{ingrediente}} </span>
-                                        </div>
-                                        <button (click)="quitarIngrediente(0,i)" class="quitar col-2"></button>
-                                    </div>
-                                </ul>
-                            </div>
-                            <div class="col-6">
-                                <!-- LISTA DE LA SEGUNDA MITAD DE LOS INGREDIENTES -->
-                                <ul class="lista">
-                                    <div class="row elemento" *ngFor="let ingrediente of ingredientes[1];let i=index">
-                                        <div class="col-10 ">
-                                            <span>{{ingrediente}}</span>
-                                        </div>
-                                        <button (click)="quitarIngrediente(1,i)" class="quitar col-2"></button>
-                                    </div>
-                                </ul>
-                            </div>
-                        </div>
 
-                        <div class="row crear">
-                            <div class="col-7">
-                                <label>
-                                    <span> Ingrediente:</span>
-                                    <input id="ingred" type="text" [(ngModel)]="ingred" name="">
-                                </label>
-                            </div>
-                            <div class="col-4">
-                                <label>
-                                    <span> Cantidad:</span>
-                                    <input id="cantidad" min=1 type="text" [(ngModel)]="cantidad" name="">
-                                </label>
-                            </div>
-                            <div class="col-1">
-                                <button id=enviar (click)="crearIngrediente()"></button>
-                            </div>
-                        </div>
 
                     </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-12">
+                            <h3>Ingredientes:</h3>
+                        </div>
+                    </div>
+                    <div class="row columnas">
+                        <div class="col-6">
+                            <!-- LISTA DE LA PRIMERA MITAD DE LOS INGREDIENTES -->
+                            <ul class="lista">
+                                <div class="row elemento" *ngFor="let ingrediente of ingredientes[0];let i=index">
+                                    <div class="col-10">
+                                        <span>{{ingrediente}} </span>
+                                    </div>
+                                    <button (click)="quitarIngrediente(0,i)" class="quitar col-2"></button>
+                                </div>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <!-- LISTA DE LA SEGUNDA MITAD DE LOS INGREDIENTES -->
+                            <ul class="lista">
+                                <div class="row elemento" *ngFor="let ingrediente of ingredientes[1];let i=index">
+                                    <div class="col-10 ">
+                                        <span>{{ingrediente}}</span>
+                                    </div>
+                                    <button (click)="quitarIngrediente(1,i)" class="quitar col-2"></button>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row crear">
+                        <div class="col-7">
+                            <label>
+                                <span> Ingrediente:</span>
+                                <input id="ingred" type="text" [(ngModel)]="ingred" name="">
+                            </label>
+                        </div>
+                        <div class="col-4">
+                            <label>
+                                <span> Cantidad:</span>
+                                <input id="cantidad" min=1 type="text" [(ngModel)]="cantidad" name="">
+                            </label>
+                        </div>
+                        <div class="col-1">
+                            <button id=enviar (click)="crearIngrediente()"></button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
-
-
-
     </div>
 </div>
