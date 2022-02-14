@@ -8,7 +8,7 @@
 
             <div class="nombre">
                 <img class="mr-2" src="../../../assets/IMG/iconos/icono.png" alt="">
-                <input type="text" placeholder="Escriba el nombre de su receta...">
+                <input [(ngModel)]="titulo" type="text" placeholder="Escriba el nombre de su receta...">
             </div>
         </div>
 
@@ -82,14 +82,17 @@
                                     <span>Verdura</span>
                                 </label>
 
-                                <select class="desplegable">
-                                    <optgroup label="En Temporada" *ngIf="tipoActualT.length>0">
+                                <select [(ngModel)]="prodPrinc" class="desplegable">
+                                    <option selected="true">{{default}}</option>
+                                    <optgroup label="En Temporada" *ngIf="tipoActualT && tipoActualT.length>0">
                                         <option *ngFor="let tipo of tipoActualT" value="{{tipo.nombre}}">
                                             {{tipo.nombre}}
                                         </option>
                                     </optgroup>
-                                    <optgroup></optgroup>
-                                    <optgroup label="Fuera de Temporada" *ngIf="tipoActualN.length>1">
+
+                                    <optgroup *ngIf="tipoActualT"></optgroup>
+
+                                    <optgroup label="Fuera de Temporada" *ngIf="tipoActualN && tipoActualN.length>0">
                                         <option *ngFor="let tipo of tipoActualN" value="{{tipo.nombre}}">
                                             {{tipo.nombre}}
                                         </option>
@@ -152,5 +155,44 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+
+<div class="containerpasos">
+    <div class="pasos" *ngFor="let paso of pasos; let i=index">
+        <img class="quitar" (click)="quitarPaso(i)" src="../../../assets/IMG/iconos/quitar.png" alt="">
+        <h2 class="numPaso">Paso {{i+1}}</h2>
+        <label class="titulo">
+            <span>Descripción del paso</span>
+            <br>
+            <textarea class="descripcion" value="{{paso}}" placeholder="Escriba aquí..."></textarea>
+        </label>
+    </div>
+    <div class="fondo">
+        <h2 class="numPaso">Paso {{getNumeroPaso()}}</h2>
+        <label class="titulo">
+            <span>Descripción del paso</span>
+            <br>
+            <textarea id="descripcion" [(ngModel)]="descripcion" placeholder="Escriba aquí..."></textarea>
+        </label>
+    </div>
+
+
+    <div class="alinear">
+        <button (click)="agregarPaso()" class="agregar">
+            <img src="../../../assets/IMG/iconos/añadir.png" alt="">
+            <p>Añadir Paso</p>
+        </button>
+    </div>
+</div>
+
+
+<div class="row gestionReceta">
+    <div class="col-6">
+        <button (click)="crearReceta()" class="crear">Crear</button>
+    </div>
+    <div class="col-6">
+        <button [routerLink]="['/recetas']" class="cancelar">Cancelar</button>
     </div>
 </div>

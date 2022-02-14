@@ -1,14 +1,9 @@
-<app-barra [color]="'black'"></app-barra>
-<div class="fondo">
-    <app-datoscreacion></app-datoscreacion>
-    <app-pasos></app-pasos>
-</div>
-
-<div class="row gestionReceta">
-    <div class="col-6">
-        <button class="crear">Crear</button>
+<ng-container *ngIf="productos; else elseTemplate">
+    <app-barra [color]="'black'"></app-barra>
+    <div class="fondo">
+        <app-datoscreacion [productos]="productos"></app-datoscreacion>
     </div>
-    <div class="col-6">
-        <button [routerLink]="['/recetas']" class="cancelar">Cancelar</button>
-    </div>
-</div>
+</ng-container>
+<ng-template #elseTemplate>
+    <app-carga></app-carga>
+</ng-template>

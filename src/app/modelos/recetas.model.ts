@@ -9,8 +9,8 @@ export class Recetas {
     comensales?: number;
     dificultad?: string;
     tipo?: string;
-    pasos?: string;
+    pasos?: Array<string>;
     fecha?: Date;
-    ingredientes?: string;
+    ingredientes?: Array<string>;
     nick?: { nick: string };
 }

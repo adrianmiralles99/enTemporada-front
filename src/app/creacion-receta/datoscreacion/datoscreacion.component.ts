@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ProductosService } from 'src/app/servicios/productos.service';
+import { Component, Input, OnInit } from '@angular/core';
 import { Productos } from 'src/app/modelos/productos.model';
+import { RecetasService } from 'src/app/servicios/recetas.service';
 
 @Component({
   selector: 'app-datoscreacion',
@@ -9,39 +9,38 @@ import { Productos } from 'src/app/modelos/productos.model';
 })
 export class DatoscreacionComponent implements OnInit {
 
-  constructor(private productoService: ProductosService) { }
+  constructor(private recetasService: RecetasService) { }
 
-  comensales?: number;
+  comensales: number = 0;
   tiempo: string = "";
   tipo: string = "";
   dificultad: string = "";
   cantidadPrinc: string = "";
-
-
-  productos?: Productos[];
+  prodPrinc: string = "";
+  titulo: string = "";
+  pasos: Array<string> = [];
+  descripcion: string = "";
   misingredientes: string[] = [];
+  imagen: string = "";
+
+  @Input() productos?: Productos[];
   cantidad: string = "";
   ingred: string = "";
 
   ingredientes: Array<Array<String>> = [];
 
-  tipoActualT: Productos[] = [];
-  tipoActualN: Productos[] = [];
+  tipoActualT?: Productos[];
+  tipoActualN?: Productos[];
 
 
-  ngOnInit(): void {
-    this.getProductos();
-  }
+  default = "Seleccione un campo"
 
-  getProductos() {
-    this.productoService.getCalendario().subscribe({
-      next: (data) => {
-        this.productos = data;
-      }
-    });
-  }
+  ngOnInit(): void { }
+
+
 
   selectTipo(tipo: string) {
+    this.prodPrinc = "";
     if (this.productos) {
       if (tipo == "F") {
         this.tipoActualT = this.productos!.filter(element => element.tipo == "F" && element.calendario![new Date().getMonth()].estado != "N");
@@ -52,16 +51,13 @@ export class DatoscreacionComponent implements OnInit {
         this.tipoActualN = this.productos!.filter(element => element.tipo == "V" && element.calendario![new Date().getMonth()].estado == "N");
       }
     }
-
-    console.log(this.tipoActualT);
-
-
   }
 
   // COPIADO DE INTERNET :D
   visualizar() {
     var file = $('#inputIMG').prop("files")[0];
     var reader = new FileReader();
+    this.imagen = file.name;
 
     reader.onload = function (e) {
       if (e.target) {
@@ -106,6 +102,46 @@ export class DatoscreacionComponent implements OnInit {
       this.misingredientes.splice(posicion + this.ingredientes[0].length, 1);
     }
     this.divideIngredientes();
+  }
+
+  crearReceta() {
+
+    if (this.prodPrinc && this.prodPrinc != this.default) {
+      var idprod = this.productos!.find(element => element.nombre == this.prodPrinc)!.id;
+      
+      this.recetasService.crearReceta(this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen).subscribe({
+        next: data => {
+          console.log(data);
+        }
+      });
+    }
+  }
+
+
+
+
+
+
+  // PASOS
+  agregarPaso() {
+    var descripcion = this.descripcion;
+    this.descripcion = "";
+
+    if (descripcion.length > 0) {
+      this.pasos.push(descripcion);
+    }
+
+    setTimeout(() => {
+      document.getElementById("descripcion")?.scrollIntoView({ behavior: "smooth" });
+    }, 1);
+  }
+
+  quitarPaso(pos: number) {
+    this.pasos.splice(pos, 1);
+  }
+
+  getNumeroPaso() {
+    return this.pasos.length + 1;
   }
 }
 
