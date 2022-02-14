@@ -7,6 +7,7 @@ import { DescripcionComponent } from './descripcion/descripcion.component';
 import { RelacionadasComponent } from './relacionadas/relacionadas.component';
 
 
+import { RouterModule } from '@angular/router';
 
 
 
@@ -20,7 +21,7 @@ import { RelacionadasComponent } from './relacionadas/relacionadas.component';
   ],
   imports: [
     CommonModule,
-    UtilsModule
+    UtilsModule,RouterModule
   ]
 })
 export class InfoproductoModule { }
