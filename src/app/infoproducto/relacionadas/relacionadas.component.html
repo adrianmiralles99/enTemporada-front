@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-md-4 col-sm-12 margen" *ngFor="let receta of recetas">
       <div class="tarjeta">
-        <button class="imagen"
+        <button class="imagen"  [routerLink]="['/recetaindividual', receta.id]"
           [ngStyle]="{'background-image':'url(../../../assets/IMG/recetas/'+receta.imagen+')'}"></button>
         <div class="row usuario">
           <div class="col-9">
