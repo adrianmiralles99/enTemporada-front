@@ -26,7 +26,6 @@ export class PopUpComponent implements OnInit {
   isLoginFailed = false;
   errorMessage = '';
   roles: string[] = [];
-
   nick: string = "";
   password: string = "";
 
@@ -34,12 +33,12 @@ export class PopUpComponent implements OnInit {
     this.authService.login(this.nick, this.password).subscribe({
       next: data => {
         console.log(data);
-
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
+        console.log(this.isLoggedIn);
       },
       error: err => {
         this.errorMessage = err.error.message;

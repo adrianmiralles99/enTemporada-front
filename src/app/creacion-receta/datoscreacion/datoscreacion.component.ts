@@ -28,6 +28,9 @@ export class DatoscreacionComponent implements OnInit {
   tipoActualT: Productos[] = [];
   tipoActualN: Productos[] = [];
 
+  pasos: Array<String> = [];
+  descripcion: string = "";
+
 
   ngOnInit(): void {
     this.getProductos();
@@ -107,5 +110,30 @@ export class DatoscreacionComponent implements OnInit {
     }
     this.divideIngredientes();
   }
+
+
+//CODIGO DE LOS PASOS
+
+  agregarPaso() {
+    var descripcion = this.descripcion;
+    this.descripcion = "";
+
+    if (descripcion.length > 0) {
+      this.pasos.push(descripcion);
+    }
+
+    setTimeout(() => {
+      document.getElementById("descripcion")?.scrollIntoView({ behavior: "smooth" });
+    }, 1);
+  }
+
+  quitarPaso(pos: number) {
+    this.pasos.splice(pos, 1);
+  }
+
+  getNumeroPaso() {
+    return this.pasos.length + 1;
+  }
+
 }
 
