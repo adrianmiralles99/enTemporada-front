@@ -8,7 +8,7 @@
 
             <div class="nombre">
                 <img class="mr-2" src="../../../assets/IMG/iconos/icono.png" alt="">
-                <input type="text" placeholder="Escriba el nombre de su receta...">
+                <input type="text" [(ngModel)]="titulo" placeholder="Escriba el nombre de su receta...">
             </div>
         </div>
 
@@ -84,13 +84,13 @@
 
                                 <select class="desplegable">
                                     <optgroup label="En Temporada" *ngIf="tipoActualT.length>0">
-                                        <option *ngFor="let tipo of tipoActualT" value="{{tipo.nombre}}">
+                                        <option *ngFor="let tipo of tipoActualT" value="{{tipo.id}}">
                                             {{tipo.nombre}}
                                         </option>
                                     </optgroup>
                                     <optgroup></optgroup>
                                     <optgroup label="Fuera de Temporada" *ngIf="tipoActualN.length>1">
-                                        <option *ngFor="let tipo of tipoActualN" value="{{tipo.nombre}}">
+                                        <option *ngFor="let tipo of tipoActualN" value="{{tipo.id}}">
                                             {{tipo.nombre}}
                                         </option>
                                     </optgroup>
@@ -197,7 +197,7 @@
 
 <div class="row gestionReceta">
     <div class="col-6">
-        <button class="crear">Crear</button>
+        <button (click)="enviarReceta()" class="crear">Crear</button>
     </div>
     <div class="col-6">
         <button [routerLink]="['/recetas']" class="cancelar">Cancelar</button>

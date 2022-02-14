@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from 'src/app/servicios/productos.service';
 import { Productos } from 'src/app/modelos/productos.model';
+import { RecetasService } from 'src/app/servicios/recetas.service';
 
 @Component({
   selector: 'app-datoscreacion',
@@ -9,15 +10,17 @@ import { Productos } from 'src/app/modelos/productos.model';
 })
 export class DatoscreacionComponent implements OnInit {
 
-  constructor(private productoService: ProductosService) { }
-
-  comensales?: number;
+  constructor(private productoService: ProductosService,private recetaService: RecetasService) { }
+  errores = new Map();
+  u_id = 1;
+  titulo: string = "";
+  comensales: number = 0;
   tiempo: string = "";
   tipo: string = "";
   dificultad: string = "";
   cantidadPrinc: string = "";
-
-
+  imagen: string = ""; 
+  id_prodp: number = 0; //  $(".desplegable option:selected" ).val());
   productos?: Productos[];
   misingredientes: string[] = [];
   cantidad: string = "";
@@ -36,6 +39,7 @@ export class DatoscreacionComponent implements OnInit {
     this.getProductos();
   }
 
+  
   getProductos() {
     this.productoService.getCalendario().subscribe({
       next: (data) => {
@@ -55,8 +59,8 @@ export class DatoscreacionComponent implements OnInit {
         this.tipoActualN = this.productos!.filter(element => element.tipo == "V" && element.calendario![new Date().getMonth()].estado == "N");
       }
     }
-
-    console.log(this.tipoActualT);
+   
+    
 
 
   }
@@ -65,7 +69,7 @@ export class DatoscreacionComponent implements OnInit {
   visualizar() {
     var file = $('#inputIMG').prop("files")[0];
     var reader = new FileReader();
-
+    this.imagen = file.name;
     reader.onload = function (e) {
       if (e.target) {
         $("#img").css({
@@ -92,10 +96,12 @@ export class DatoscreacionComponent implements OnInit {
     let c = this.cantidad;
     let i = this.ingred;
 
+    if ($(".desplegable option:selected" ).val() != null) {
     if (this.cantidad.length >= 1 && this.ingred.length >= 1) {
       this.misingredientes.push(c + " " + i);
       this.divideIngredientes();
     }
+  }
     this.ingred = "";
     this.cantidad = "";
   }
@@ -117,9 +123,12 @@ export class DatoscreacionComponent implements OnInit {
   agregarPaso() {
     var descripcion = this.descripcion;
     this.descripcion = "";
+ 
 
     if (descripcion.length > 0) {
       this.pasos.push(descripcion);
+      console.log(this.pasos);
+      
     }
 
     setTimeout(() => {
@@ -135,5 +144,44 @@ export class DatoscreacionComponent implements OnInit {
     return this.pasos.length + 1;
   }
 
-}
 
+  //FUNCION CREAR PRUEBA
+
+enviarReceta(){
+  this.agregarPaso();
+  this.id_prodp = $(".desplegable option:selected" ).val() as number;
+  // this.titulo = $("#titulo").text();
+  this.errores.clear();
+  if (this.tipo == "") {
+    this.errores.set("Tipo","Tipo esta vacio")
+  }
+  if (this.imagen == "") {
+    this.errores.set("Imagen","Imagen esta vacio")
+  }
+  if (this.titulo == "") {
+    this.errores.set("Titulo","Titulo esta vacio")
+  }
+  if (this.tiempo == "") {
+    this.errores.set("Tiempo","Tiempo esta vacio")
+  }
+  if (this.comensales == 0) {
+    this.errores.set("Comensales","Comensales esta vacio")
+  }
+  if (this.dificultad == "") {
+    this.errores.set("Dificultad","Dificultad esta vacio")
+  }
+  if (this.ingredientes.length == 0) {
+    this.errores.set("Ingredientes","Ingredientes esta vacio")
+  }
+  if (this.pasos.length == 0) {
+    this.errores.set("Pasos","Pasos esta vacio")
+  }
+  
+  if (this.errores.size == 0) {
+    this.recetaService.crearReceta(this.u_id, this.tipo, this.id_prodp, this.imagen, this.titulo, this.tiempo, this.dificultad, this.comensales, this.ingredientes,this.pasos);
+  }
+
+
+
+}
+}

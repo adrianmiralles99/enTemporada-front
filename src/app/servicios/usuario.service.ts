@@ -15,4 +15,9 @@ export class UsuarioService {
     return this.http.get(baseurl, { responseType: 'text' });
   }
 
+  getById(id: any): Observable<any> {
+    return this.http.get(`${baseurl}/${id}`);
+  }
+
+
 }
