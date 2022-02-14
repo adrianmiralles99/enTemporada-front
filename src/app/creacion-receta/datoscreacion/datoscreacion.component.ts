@@ -13,18 +13,18 @@ export class DatoscreacionComponent implements OnInit {
   constructor(private productoService: ProductosService,private recetaService: RecetasService) { }
   errores = new Map();
   u_id = 1;
-  titulo: string = "";
-  comensales: number = 0;
-  tiempo: string = "";
+  titulo: string = "PP";
+  comensales: number = 1;
+  tiempo: string = "1g";
   tipo: string = "";
   dificultad: string = "";
   cantidadPrinc: string = "";
-  imagen: string = ""; 
-  id_prodp: number = 0; //  $(".desplegable option:selected" ).val());
+  imagen: string = "asda"; 
+  id_prodp: number = 1; //  $(".desplegable option:selected" ).val());
   productos?: Productos[];
   misingredientes: string[] = [];
-  cantidad: string = "";
-  ingred: string = "";
+  cantidad: string = "a";
+  ingred: string = "1";
 
   ingredientes: Array<Array<String>> = [];
 
@@ -178,7 +178,8 @@ enviarReceta(){
   }
   
   if (this.errores.size == 0) {
-    this.recetaService.crearReceta(this.u_id, this.tipo, this.id_prodp, this.imagen, this.titulo, this.tiempo, this.dificultad, this.comensales, this.ingredientes,this.pasos);
+    console.log(this.recetaService.crearReceta(this.u_id, this.tipo, this.id_prodp, this.imagen, this.titulo, this.tiempo, this.dificultad, this.comensales, this.misingredientes,this.pasos));
+    
   }
 
 
