@@ -22,4 +22,6 @@ describe('IndexcreacionComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  
 });

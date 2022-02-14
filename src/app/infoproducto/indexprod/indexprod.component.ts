@@ -18,6 +18,8 @@ export class IndexprodComponent implements OnInit {
       .subscribe({
         next: (data) => {
           this.articulo = data;
+          console.log(data);
+          
         },
         error: (e) => console.error(e)
       })

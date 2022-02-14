@@ -33,6 +33,7 @@ export class DatoscreacionComponent implements OnInit {
   tipoActualN?: Productos[];
 
 
+
   default = "Seleccione un campo"
 
   ngOnInit(): void { }
@@ -58,7 +59,6 @@ export class DatoscreacionComponent implements OnInit {
     var file = $('#inputIMG').prop("files")[0];
     var reader = new FileReader();
     this.imagen = file.name;
-
     reader.onload = function (e) {
       if (e.target) {
         $("#img").css({
@@ -85,9 +85,11 @@ export class DatoscreacionComponent implements OnInit {
     let c = this.cantidad;
     let i = this.ingred;
 
-    if (this.cantidad.length >= 1 && this.ingred.length >= 1) {
-      this.misingredientes.push(c + " " + i);
-      this.divideIngredientes();
+    if ($(".desplegable option:selected").val() != null) {
+      if (this.cantidad.length >= 1 && this.ingred.length >= 1) {
+        this.misingredientes.push(c + " " + i);
+        this.divideIngredientes();
+      }
     }
     this.ingred = "";
     this.cantidad = "";
@@ -108,7 +110,7 @@ export class DatoscreacionComponent implements OnInit {
 
     if (this.prodPrinc && this.prodPrinc != this.default) {
       var idprod = this.productos!.find(element => element.nombre == this.prodPrinc)!.id;
-      
+
       this.recetasService.crearReceta(this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen).subscribe({
         next: data => {
           console.log(data);
@@ -116,11 +118,6 @@ export class DatoscreacionComponent implements OnInit {
       });
     }
   }
-
-
-
-
-
 
   // PASOS
   agregarPaso() {
@@ -144,4 +141,3 @@ export class DatoscreacionComponent implements OnInit {
     return this.pasos.length + 1;
   }
 }
-

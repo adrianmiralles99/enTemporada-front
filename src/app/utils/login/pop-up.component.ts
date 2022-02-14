@@ -26,7 +26,6 @@ export class PopUpComponent implements OnInit {
   isLoginFailed = false;
   errorMessage = '';
   roles: string[] = [];
-
   nick: string = "";
   password: string = "";
 

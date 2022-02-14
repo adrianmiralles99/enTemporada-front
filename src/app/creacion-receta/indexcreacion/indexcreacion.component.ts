@@ -24,4 +24,5 @@ export class IndexcreacionComponent implements OnInit {
     });
   }
 
+  
 }
