@@ -7,7 +7,7 @@
             Última receta visitada
           </p>
         </div>
-        <button class="imagen" [ngStyle]="{'background-image':'url(../../../assets/IMG/'+'tartaManzana'+'.jpg)'}">
+        <button class="imagen" [ngStyle]="{'background-image':'url(../../../assets/IMG/recetas/'+'tartaManzana'+'.jpg)'}">
         </button>
         <div class="row usuario">
           <div class="col-9">
@@ -32,7 +32,7 @@
             Receta más popular
           </p>
         </div>
-        <button class="imagen" [ngStyle]="{'background-image':'url(../../../assets/IMG/'+'risotto'+'.jpg)'}">
+        <button class="imagen" [ngStyle]="{'background-image':'url(../../../assets/IMG/recetas/'+'risotto'+'.jpg)'}">
         </button>
         <div class="row usuario">
           <div class="col-9">
@@ -41,7 +41,7 @@
         </div>
         <div class="user row">
           <div class="col-2">
-            <div class="icono"></div>
+            <div class="icono" [ngStyle]="{'background-image':'url(../../../assets/IMG/Usuarios/'+usuario.imagen+')'}"></div>
           </div>
           <div class="col-6">
             <sub class="autor"><br>by @adrimigo</sub>

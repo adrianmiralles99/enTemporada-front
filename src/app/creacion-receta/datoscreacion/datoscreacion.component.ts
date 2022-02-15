@@ -14,7 +14,7 @@ export class DatoscreacionComponent implements OnInit {
   errores = new Map();
   u_id = 1;
   titulo: string = "";
-  comensales: number = 0;
+  comensales: number = 1;
   tiempo: string = "";
   tipo: string = "";
   dificultad: string = "";

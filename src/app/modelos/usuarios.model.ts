@@ -1,5 +1,5 @@
 export class Usuarios {
-    id?: number;
+    id!: number;
     nombre?: string;
     apellido?: string;
     nick?: string;
@@ -12,6 +12,6 @@ export class Usuarios {
     tipo?: string;
     estado?: string;
     token?: string;
-    exp?: number;
+    exp!: number;
     id_ultima_receta?: number;
 }
