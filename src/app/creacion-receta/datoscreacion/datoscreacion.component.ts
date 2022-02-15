@@ -9,17 +9,9 @@ import { RecetasService } from 'src/app/servicios/recetas.service';
 })
 export class DatoscreacionComponent implements OnInit {
 
-<<<<<<< HEAD
-  constructor(private productoService: ProductosService,private recetaService: RecetasService) { }
-  errores = new Map();
-  u_id = 1;
-  titulo: string = "";
-  comensales: number = 1;
-=======
   constructor(private recetasService: RecetasService) { }
 
   comensales: number = 0;
->>>>>>> b9e68c0a810c539c5d6d17730def76fc4815c812
   tiempo: string = "";
   tipo: string = "";
   dificultad: string = "";

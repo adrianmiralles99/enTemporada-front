@@ -72,10 +72,10 @@ const routes: Routes = [
   },
   //si la ruta es equivocada salta el error 404
   {
-    path: '404', component: PaginaerrorComponent
+    path: 'error404', component: PaginaerrorComponent
   },
   {
-    path: '**', redirectTo: '/404'
+    path: '**', redirectTo: '/error404'
   },
 ];
 @NgModule({
