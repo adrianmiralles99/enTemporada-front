@@ -1,7 +1,8 @@
+
 import { HomeComponent } from './home/home/home.component';
 import { IndiceComponent } from './aboutus/indice/indice.component';
 import { CalendarioComponent } from './calendario/calendario/calendario.component';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';//importante
 import { NgModule } from '@angular/core';
 import { IndexregComponent } from './registro/indexreg/indexreg.component';
 import { IndexprodComponent } from './infoproducto/indexprod/indexprod.component';
