@@ -12,6 +12,7 @@ import { IndexrecetaindComponent } from './recetaindividual/indexrecetaind/index
 import { IndexguardadasComponent } from './recetas/indexguardadas/indexguardadas.component';
 import { IndexmisrecetasComponent } from './recetas/indexmisrecetas/indexmisrecetas.component';
 import { IndicemodperfilComponent } from './perfil/indicemodperfil/indicemodperfil.component';
+import { PaginaerrorComponent } from './error/paginaerror/paginaerror.component';
 
 
 const routes: Routes = [
@@ -68,6 +69,13 @@ const routes: Routes = [
   {
     path: 'modperfil',
     component: IndicemodperfilComponent,
+  },
+  //si la ruta es equivocada salta el error 404
+  {
+    path: '404', component: PaginaerrorComponent
+  },
+  {
+    path: '**', redirectTo: '/404'
   },
 ];
 @NgModule({

@@ -22,8 +22,10 @@ export class IndexrecetaindComponent implements OnInit {
       .subscribe({
         next: (data) => {
           this.receta = data;
-          this.ingredientes = this.receta?.ingredientes?.split('*|*');
-          this.pasos = this.receta?.pasos?.split('*|*');
+          this.ingredientes = this.receta?.ingredientes;
+          this.pasos = this.receta?.pasos;
+          console.log(data);
+          
         },
         error: (e) => console.error(e)
       })

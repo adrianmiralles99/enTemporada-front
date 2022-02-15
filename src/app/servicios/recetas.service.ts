@@ -9,6 +9,7 @@ const httpOptions = {
 };
 const baseUrl = serverUrl + 'recetas';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -21,27 +22,31 @@ export class RecetasService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Recetas[]> {
-    return this.http.get<Recetas[]>(baseUrl+"?expand=nick");
+    return this.http.get<Recetas[]>(baseUrl + "?expand=nick");
   }
 
   getById(id: any): Observable<any> {
-    return this.http.get(`${baseUrl}/${id}`+"?expand=nick");
+    return this.http.get(`${baseUrl}/${id}` + "?expand=nick");
   }
 
+  crearReceta(titulo: string, comensales: number, tiempo: string, tipo: string, dificultad: string, ingredientes: string[], pasos: string[], id_prodp: number, imagen: string): Observable<any> {
+    console.log("creando");
 
-crearReceta(u_id: number, tipo: string, id_prodp: number, imagen: string, titulo: string, tiempo: string, dificultad: string, comensales: number, ingredientes: Array<Array<String>>,pasos:  Array<String>): Observable<any> {
-    return this.http.post(baseUrl + "crearReceta", {
-      id_usuario: u_id,
-      tipo: tipo,
-      id_prodp: id_prodp,
-      imagen: imagen,
+    return this.http.post(baseUrl + "/crearreceta", {
       titulo: titulo,
-      tiempo: tiempo,
       comensales: comensales,
+      tiempo: tiempo,
+      tipo: tipo,
       dificultad: dificultad,
       ingredientes: ingredientes,
       pasos: pasos,
+      id_prodp: id_prodp,
+      imagen: imagen,
+      id_usuario: 2
     }, httpOptions);
 
   }
+
+
 }
+

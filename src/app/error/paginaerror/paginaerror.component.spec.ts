@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PasosComponent } from './pasos.component';
+import { PaginaerrorComponent } from './paginaerror.component';
 
-describe('PasosComponent', () => {
-  let component: PasosComponent;
-  let fixture: ComponentFixture<PasosComponent>;
+describe('PaginaerrorComponent', () => {
+  let component: PaginaerrorComponent;
+  let fixture: ComponentFixture<PaginaerrorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PasosComponent ]
+      declarations: [ PaginaerrorComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PasosComponent);
+    fixture = TestBed.createComponent(PaginaerrorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

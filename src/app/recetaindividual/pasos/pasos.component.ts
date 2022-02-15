@@ -7,7 +7,7 @@ import { Component, Input, OnInit, OnChanges } from '@angular/core';
 export class PasosComponent implements OnInit {
 
   @Input() pasos?: string[] = [];
-  mispasos: Array<Array<String>> = [[]];
+  mispasos?: string[];
   
   constructor() { }
 

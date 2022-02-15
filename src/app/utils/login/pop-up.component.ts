@@ -33,12 +33,12 @@ export class PopUpComponent implements OnInit {
     this.authService.login(this.nick, this.password).subscribe({
       next: data => {
         console.log(data);
-        this.tokenStorage.saveToken(data.accessToken);
+
+        this.tokenStorage.saveToken(data.token);
         this.tokenStorage.saveUser(data);
-        this.isLoginFailed = false;
-        this.isLoggedIn = true;
-        this.roles = this.tokenStorage.getUser().roles;
-        console.log(this.isLoggedIn);
+        // this.isLoginFailed = false;
+        // this.isLoggedIn = true;
+        // this.roles = this.tokenStorage.getUser().roles;
       },
       error: err => {
         this.errorMessage = err.error.message;
@@ -46,12 +46,5 @@ export class PopUpComponent implements OnInit {
       }
     });
   }
-  reloadPage(): void {
-    window.location.reload();
-  }
-
-
-
-
 }
 

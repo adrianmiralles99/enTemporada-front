@@ -8,7 +8,7 @@
 
             <div class="nombre">
                 <img class="mr-2" src="../../../assets/IMG/iconos/icono.png" alt="">
-                <input type="text" [(ngModel)]="titulo" placeholder="Escriba el nombre de su receta...">
+                <input [(ngModel)]="titulo" type="text" placeholder="Escriba el nombre de su receta...">
             </div>
         </div>
 
@@ -82,15 +82,18 @@
                                     <span>Verdura</span>
                                 </label>
 
-                                <select class="desplegable">
-                                    <optgroup label="En Temporada" *ngIf="tipoActualT.length>0">
-                                        <option *ngFor="let tipo of tipoActualT" value="{{tipo.id}}">
+                                <select [(ngModel)]="prodPrinc" class="desplegable">
+                                    <option selected="true">{{default}}</option>
+                                    <optgroup label="En Temporada" *ngIf="tipoActualT && tipoActualT.length>0">
+                                        <option *ngFor="let tipo of tipoActualT" value="{{tipo.nombre}}">
                                             {{tipo.nombre}}
                                         </option>
                                     </optgroup>
-                                    <optgroup></optgroup>
-                                    <optgroup label="Fuera de Temporada" *ngIf="tipoActualN.length>1">
-                                        <option *ngFor="let tipo of tipoActualN" value="{{tipo.id}}">
+
+                                    <optgroup *ngIf="tipoActualT"></optgroup>
+
+                                    <optgroup label="Fuera de Temporada" *ngIf="tipoActualN && tipoActualN.length>0">
+                                        <option *ngFor="let tipo of tipoActualN" value="{{tipo.nombre}}">
                                             {{tipo.nombre}}
                                         </option>
                                     </optgroup>
@@ -155,7 +158,6 @@
     </div>
 </div>
 
-<!-- Pasos -->
 
 <div class="containerpasos">
     <div class="pasos" *ngFor="let paso of pasos; let i=index">
@@ -183,21 +185,12 @@
             <p>Añadir Paso</p>
         </button>
     </div>
-
-
-
-
 </div>
-
-
-
-
-<!-- Boton -->
 
 
 <div class="row gestionReceta">
     <div class="col-6">
-        <button (click)="enviarReceta()" class="crear">Crear</button>
+        <button (click)="crearReceta()" class="crear">Crear</button>
     </div>
     <div class="col-6">
         <button [routerLink]="['/recetas']" class="cancelar">Cancelar</button>

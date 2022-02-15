@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ProductosService } from 'src/app/servicios/productos.service';
+import { Component, Input, OnInit } from '@angular/core';
 import { Productos } from 'src/app/modelos/productos.model';
 import { RecetasService } from 'src/app/servicios/recetas.service';
 
@@ -10,45 +9,47 @@ import { RecetasService } from 'src/app/servicios/recetas.service';
 })
 export class DatoscreacionComponent implements OnInit {
 
+<<<<<<< HEAD
   constructor(private productoService: ProductosService,private recetaService: RecetasService) { }
   errores = new Map();
   u_id = 1;
   titulo: string = "";
   comensales: number = 1;
+=======
+  constructor(private recetasService: RecetasService) { }
+
+  comensales: number = 0;
+>>>>>>> b9e68c0a810c539c5d6d17730def76fc4815c812
   tiempo: string = "";
   tipo: string = "";
   dificultad: string = "";
   cantidadPrinc: string = "";
-  imagen: string = ""; 
-  id_prodp: number = 0; //  $(".desplegable option:selected" ).val());
-  productos?: Productos[];
+  prodPrinc: string = "";
+  titulo: string = "";
+  pasos: Array<string> = [];
+  descripcion: string = "";
   misingredientes: string[] = [];
+  imagen: string = "";
+
+  @Input() productos?: Productos[];
   cantidad: string = "";
   ingred: string = "";
 
   ingredientes: Array<Array<String>> = [];
 
-  tipoActualT: Productos[] = [];
-  tipoActualN: Productos[] = [];
-
-  pasos: Array<String> = [];
-  descripcion: string = "";
+  tipoActualT?: Productos[];
+  tipoActualN?: Productos[];
 
 
-  ngOnInit(): void {
-    this.getProductos();
-  }
 
-  
-  getProductos() {
-    this.productoService.getCalendario().subscribe({
-      next: (data) => {
-        this.productos = data;
-      }
-    });
-  }
+  default = "Seleccione un campo"
+
+  ngOnInit(): void { }
+
+
 
   selectTipo(tipo: string) {
+    this.prodPrinc = "";
     if (this.productos) {
       if (tipo == "F") {
         this.tipoActualT = this.productos!.filter(element => element.tipo == "F" && element.calendario![new Date().getMonth()].estado != "N");
@@ -59,10 +60,6 @@ export class DatoscreacionComponent implements OnInit {
         this.tipoActualN = this.productos!.filter(element => element.tipo == "V" && element.calendario![new Date().getMonth()].estado == "N");
       }
     }
-   
-    
-
-
   }
 
   // COPIADO DE INTERNET :D
@@ -96,12 +93,12 @@ export class DatoscreacionComponent implements OnInit {
     let c = this.cantidad;
     let i = this.ingred;
 
-    if ($(".desplegable option:selected" ).val() != null) {
-    if (this.cantidad.length >= 1 && this.ingred.length >= 1) {
-      this.misingredientes.push(c + " " + i);
-      this.divideIngredientes();
+    if ($(".desplegable option:selected").val() != null) {
+      if (this.cantidad.length >= 1 && this.ingred.length >= 1) {
+        this.misingredientes.push(c + " " + i);
+        this.divideIngredientes();
+      }
     }
-  }
     this.ingred = "";
     this.cantidad = "";
   }
@@ -117,18 +114,26 @@ export class DatoscreacionComponent implements OnInit {
     this.divideIngredientes();
   }
 
+  crearReceta() {
 
-//CODIGO DE LOS PASOS
+    if (this.prodPrinc && this.prodPrinc != this.default) {
+      var idprod = this.productos!.find(element => element.nombre == this.prodPrinc)!.id;
 
+      this.recetasService.crearReceta(this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen).subscribe({
+        next: data => {
+          console.log(data);
+        }
+      });
+    }
+  }
+
+  // PASOS
   agregarPaso() {
     var descripcion = this.descripcion;
     this.descripcion = "";
- 
 
     if (descripcion.length > 0) {
       this.pasos.push(descripcion);
-      console.log(this.pasos);
-      
     }
 
     setTimeout(() => {
@@ -143,45 +148,4 @@ export class DatoscreacionComponent implements OnInit {
   getNumeroPaso() {
     return this.pasos.length + 1;
   }
-
-
-  //FUNCION CREAR PRUEBA
-
-enviarReceta(){
-  this.agregarPaso();
-  this.id_prodp = $(".desplegable option:selected" ).val() as number;
-  // this.titulo = $("#titulo").text();
-  this.errores.clear();
-  if (this.tipo == "") {
-    this.errores.set("Tipo","Tipo esta vacio")
-  }
-  if (this.imagen == "") {
-    this.errores.set("Imagen","Imagen esta vacio")
-  }
-  if (this.titulo == "") {
-    this.errores.set("Titulo","Titulo esta vacio")
-  }
-  if (this.tiempo == "") {
-    this.errores.set("Tiempo","Tiempo esta vacio")
-  }
-  if (this.comensales == 0) {
-    this.errores.set("Comensales","Comensales esta vacio")
-  }
-  if (this.dificultad == "") {
-    this.errores.set("Dificultad","Dificultad esta vacio")
-  }
-  if (this.ingredientes.length == 0) {
-    this.errores.set("Ingredientes","Ingredientes esta vacio")
-  }
-  if (this.pasos.length == 0) {
-    this.errores.set("Pasos","Pasos esta vacio")
-  }
-  
-  if (this.errores.size == 0) {
-    this.recetaService.crearReceta(this.u_id, this.tipo, this.id_prodp, this.imagen, this.titulo, this.tiempo, this.dificultad, this.comensales, this.ingredientes,this.pasos);
-  }
-
-
-
-}
 }
