@@ -1,0 +1,35 @@
+@import "/src/styles.scss";
+.contenedor{
+    text-align: center;
+    margin-top: 5%;
+    h1{
+        font-family: "recoletaB";
+        font-size: 325%;
+    }
+    h5{
+        font-family: "recoletaR";
+    }
+    .imgerror{
+        width: 25%;
+        margin-top: -2.5%;
+        margin-bottom: -2.5%;
+
+        padding: 0%;
+        //background-color: rebeccapurple;
+    }
+    button{
+        font-family: neueB;
+        color: white;
+        background-color: $green;
+        border: 2px solid white;
+        border-radius: 5px;
+        transition: 0.3s;
+        padding: 10px;
+        &:hover {
+        color: $green;
+        background-color: white;
+        border: 2px solid $green;
+        }
+    
+    }
+}

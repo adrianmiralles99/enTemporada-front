@@ -7,7 +7,7 @@ import { serverUrl } from '../baseurl';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
-const baseUrl = serverUrl + 'recetas/';
+const baseUrl = serverUrl + 'recetas';
 
 
 @Injectable({
