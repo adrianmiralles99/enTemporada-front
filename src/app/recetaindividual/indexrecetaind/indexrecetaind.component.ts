@@ -11,12 +11,12 @@ import { Recetas } from 'src/app/modelos/recetas.model';
 export class IndexrecetaindComponent implements OnInit {
 
   constructor(private recetasService: RecetasService, private rutaActiva: ActivatedRoute) { }
-
+  
   id = this.rutaActiva.snapshot.paramMap.get('id');
+  recetaid = Number( this.rutaActiva.snapshot.paramMap.get('id'));
   receta?: Recetas;
   ingredientes?: string[];
   pasos?: string[];
-
   getReceta(): void {
     this.recetasService.getById(this.id)
       .subscribe({
