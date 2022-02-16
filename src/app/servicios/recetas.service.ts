@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';//conexión http
+import { Observable } from 'rxjs';//sirve para manejar operaciones asincronas
 import { Recetas } from '../modelos/recetas.model';
 import { serverUrl } from '../baseurl';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
-const baseUrl = serverUrl + 'recetas/';
+const baseUrl = serverUrl + 'recetas';
 
 
-@Injectable({
+@Injectable({//indica que la clase puede necesitar dependencias
   providedIn: 'root'
 })
 
