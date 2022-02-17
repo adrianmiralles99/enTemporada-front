@@ -3,6 +3,8 @@ import { Recetas } from 'src/app/modelos/recetas.model';
 import { RecetasService } from 'src/app/servicios/recetas.service';
 import { Productos } from 'src/app/modelos/productos.model';
 import { ProductosService } from 'src/app/servicios/productos.service';
+import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-indexedicion',
   templateUrl: './indexedicion.component.html',
@@ -14,20 +16,22 @@ import { ProductosService } from 'src/app/servicios/productos.service';
 export class IndexedicionComponent implements OnInit {
 
 
-  constructor(private recetasservice: RecetasService,private productoService: ProductosService) { }
+  constructor(private recetasservice: RecetasService,private productoService: ProductosService, private rutaActiva: ActivatedRoute) { }
 
   recetas!: Recetas;
   productos?: Productos[];
-  @Input() recetaid!: number;
-
+  //@Input() recetaid!: number;
+  id = this.rutaActiva.snapshot.paramMap.get('id') ?? 0;
+  
   ngOnInit(): void {
-    console.log(this.recetaid);
+    console.log("OLAAAA");
+    console.log( this.id);
     this.getRecetas();
     this.getProductos();
   }
 
   getRecetas() {//cambiar la id por la que verdaderamente toca
-    this.recetasservice.getById(1).subscribe({
+    this.recetasservice.getById(this.id).subscribe({
       next: (data) => {
         console.log(data);
         this.recetas = data;

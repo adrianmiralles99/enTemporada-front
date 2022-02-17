@@ -25,8 +25,9 @@ export class DatoscreacionComponent implements OnInit {
   pasos: Array<string> = [];
   descripcion: string = "";
   misingredientes: string[] = [];
-  imagen: string = "";
-
+  imagen: string = "../../../assets/IMG/iconos/uploadImage.png";
+  
+  rutaimg: string ="../../../assets/IMG/recetas/";
 
   errores?: {
     comensales: number;
@@ -58,7 +59,9 @@ export class DatoscreacionComponent implements OnInit {
   imagen64: any;
 
   ngOnInit(): void { 
+    console.log("receta");
     console.log(this.recetas);
+
     if (this.recetas){
       this.productito = this.productos!.find(element => element.id ==this.recetas?.id_prodp);
 
@@ -67,17 +70,22 @@ export class DatoscreacionComponent implements OnInit {
       this.tiempo = String(this.recetas.tiempo);
       this.tipo = String(this.recetas.tipo);
       this.dificultad = String(this.recetas.dificultad);
-      console.log(this.dificultad);
+      //this.selectTipo(String(this.productito?.tipo));//pasamos el tipo para que en el desplegable salgan los productos
+      if (this.productito?.tipo == "F"){
+        console.log($("#selecF").click());
+      }else{
+        $("#selecT").click()
+      }
       this.prodPrinc = String(this.productito?.nombre);
-      console.log(this.prodPrinc);
-      console.log(this.productos!.find(element => element.id ==this.recetas?.id_prodp));
+      this.imagen = this.rutaimg + String(this.recetas.imagen);
+      console.log("IMAGEN -> " +this.imagen);
       this.misingredientes = this.recetas.ingredientes ?? [];
-      //this.prodPrinc = String(this.recetas.prod)
-      console.log(this.misingredientes);
-
+      this.cantidadPrinc = this.misingredientes[0].split(" ")[0];//cogemos la cantidad
+      this.misingredientes.shift();
+      this.divideIngredientes();
+      this.pasos= this.recetas.pasos ?? [];
       //this.comensales? = this.recetas?.comensales;
     }
-
   }
   ngOnChanges():void{
     //this.recetas.titulo;
