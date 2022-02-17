@@ -167,7 +167,8 @@ export class DatoscreacionComponent implements OnInit {
 
       this.recetasService.crearReceta(this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen, this.imagen64).subscribe({
         next: data => {
-          if (data.error) {
+          console.log(data);
+          if (data.error.length > 0) {
             this.errores = data.error;
             console.log(this.errores);
           }
