@@ -14,6 +14,7 @@ import { IndexguardadasComponent } from './recetas/indexguardadas/indexguardadas
 import { IndexmisrecetasComponent } from './recetas/indexmisrecetas/indexmisrecetas.component';
 import { IndicemodperfilComponent } from './perfil/indicemodperfil/indicemodperfil.component';
 import { PaginaerrorComponent } from './error/paginaerror/paginaerror.component';
+import { IndexedicionComponent } from './creacion-receta/indexedicion/indexedicion.component';
 
 
 const routes: Routes = [
@@ -62,6 +63,10 @@ const routes: Routes = [
   {
     path: 'creacionRecetas',
     component: IndexcreacionComponent,
+  },
+  {
+    path: 'editarReceta/:id',
+    component: IndexedicionComponent,
   },
   {
     path: 'perfil',
