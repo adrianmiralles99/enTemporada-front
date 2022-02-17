@@ -5,7 +5,9 @@ import { RecetasService } from 'src/app/servicios/recetas.service';
 @Component({
   selector: 'app-datoscreacion',
   templateUrl: './datoscreacion.component.html',
-  styleUrls: ['./datoscreacion.component.scss']
+  styleUrls: ['./datoscreacion.component.scss'],
+  providers: [RecetasService]
+
 })
 export class DatoscreacionComponent implements OnInit {
 
