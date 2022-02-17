@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Productos } from 'src/app/modelos/productos.model';
+import { Recetas } from 'src/app/modelos/recetas.model';
+
 import { RecetasService } from 'src/app/servicios/recetas.service';
 
 @Component({
@@ -40,7 +42,10 @@ export class DatoscreacionComponent implements OnInit {
     imagen: string;
   };
 
+  @Input() recetas?: Recetas;
   @Input() productos?: Productos[];
+
+  productito?:Productos;
   cantidad: string = "";
   ingred: string = "";
 
@@ -52,7 +57,31 @@ export class DatoscreacionComponent implements OnInit {
   default = "Seleccione un campo"
   imagen64: any;
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    console.log(this.recetas);
+    if (this.recetas){
+      this.productito = this.productos!.find(element => element.id ==this.recetas?.id_prodp);
+
+      this.titulo = String(this.recetas.titulo);//hay que hacerle cast si o si
+      this.comensales = Number(this.recetas.comensales);
+      this.tiempo = String(this.recetas.tiempo);
+      this.tipo = String(this.recetas.tipo);
+      this.dificultad = String(this.recetas.dificultad);
+      console.log(this.dificultad);
+      this.prodPrinc = String(this.productito?.nombre);
+      console.log(this.prodPrinc);
+      console.log(this.productos!.find(element => element.id ==this.recetas?.id_prodp));
+      this.misingredientes = this.recetas.ingredientes ?? [];
+      //this.prodPrinc = String(this.recetas.prod)
+      console.log(this.misingredientes);
+
+      //this.comensales? = this.recetas?.comensales;
+    }
+
+  }
+  ngOnChanges():void{
+    //this.recetas.titulo;
+  }
 
 
   selectTipo(tipo: string) {
