@@ -7,7 +7,7 @@ import { serverUrl } from '../baseurl';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
-const baseUrl = serverUrl + 'recetas/';
+const baseUrl = serverUrl + 'recetas';
 
 
 @Injectable({
@@ -29,8 +29,9 @@ export class RecetasService {
     return this.http.get(`${baseUrl}/${id}` + "?expand=nick");
   }
 
-  crearReceta(titulo: string, comensales: number, tiempo: string, tipo: string, dificultad: string, ingredientes: string[], pasos: string[], id_prodp: number, imagen: string): Observable<any> {
-    console.log("creando");
+  crearReceta(titulo: string, comensales: number, tiempo: string, tipo: string, dificultad: string, ingredientes: string[], pasos: string[], id_prodp: number, imagen: string, imagen64: any): Observable<any> {
+    // console.log(this.http.post(baseUrl, imagen64));
+    // console.log("adios");
 
     return this.http.post(baseUrl + "/crearreceta", {
       titulo: titulo,
@@ -44,7 +45,6 @@ export class RecetasService {
       imagen: imagen,
       id_usuario: 2
     }, httpOptions);
-
   }
 
 

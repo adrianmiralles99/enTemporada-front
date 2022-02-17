@@ -22,9 +22,6 @@ export class AuthService {
       nick: username,
       password: password
     }, httpOptions);
-
-
-
   }
 
   register(nick: string, nombre: string, apellidos: string, correo: string, password: string, direccion: string, localidad: string): Observable<any> {
