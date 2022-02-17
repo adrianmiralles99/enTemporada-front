@@ -15,6 +15,7 @@ import { CreacionRecetaModule } from './creacion-receta/creacion-receta.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { ErrorModule } from './error/error.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     CreacionRecetaModule,
     PerfilModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ErrorModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
