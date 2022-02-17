@@ -33,12 +33,15 @@ export class PopUpComponent implements OnInit {
     this.authService.login(this.nick, this.password).subscribe({
       next: data => {
         console.log(data);
+        if (!data.error) {
+          this.tokenStorage.saveToken(data.token);
+          this.tokenStorage.saveUser(data);
+          // this.isLoginFailed = false;
+          // this.isLoggedIn = true;
+          // this.roles = this.tokenStorage.getUser().roles;
+          window.location.reload();
+        }
 
-        this.tokenStorage.saveToken(data.token);
-        this.tokenStorage.saveUser(data);
-        // this.isLoginFailed = false;
-        // this.isLoggedIn = true;
-        // this.roles = this.tokenStorage.getUser().roles;
       },
       error: err => {
         this.errorMessage = err.error.message;

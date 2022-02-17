@@ -3,9 +3,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Productos } from '../modelos/productos.model';
 import { serverUrl } from '../baseurl';
+import { Calendario } from '../modelos/calendario.model';
 
 const baseUrl = serverUrl + 'producto';
-const baseUrlVista = serverUrl + 'prodactuales';
+const baseUrlActual = serverUrl + 'prodactuales';
+
+@Injectable()
 
 @Injectable({
   providedIn: 'root'
@@ -20,15 +23,19 @@ export class ProductosService {
   }
 
   getRelacionadas(id: any): Observable<Productos> {
+
     return this.http.get<Productos>(`${baseUrl}/${id}` + "?expand=relacionadas");
   }
 
   getCalendario(): Observable<Productos[]> {
+    console.log(baseUrl + "?expand=calendario");
+
     return this.http.get<Productos[]>(baseUrl + "?expand=calendario");
   }
 
-  getActual(): Observable<Productos[]> {
-    return this.http.get<Productos[]>(baseUrlVista + "?expand=calendario");
+  getActual(): Observable<Calendario[]> {
+    // return this.http.get<Productos[]>(baseUrl);
+    return this.http.get<Productos[]>(baseUrlActual);
   }
 
 
@@ -37,6 +44,7 @@ export class ProductosService {
   }
 
   create(data: any): Observable<any> {
+
     return this.http.post(baseUrl, data);
   }
 

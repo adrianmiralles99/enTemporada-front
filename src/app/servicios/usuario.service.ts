@@ -19,5 +19,4 @@ export class UsuarioService {
     return this.http.get(`${baseurl}/${id}`);
   }
 
-
 }

@@ -23,6 +23,21 @@ export class DatoscreacionComponent implements OnInit {
   misingredientes: string[] = [];
   imagen: string = "";
 
+
+  errores?: {
+    comensales: number;
+    tiempo: string;
+    tipo: string;
+    dificultad: string;
+    cantidadPrinc: string;
+    prodPrinc: string;
+    titulo: string;
+    pasos: Array<string>;
+    descripcion: string;
+    misingredientes: string[];
+    imagen: string;
+  };
+
   @Input() productos?: Productos[];
   cantidad: string = "";
   ingred: string = "";
@@ -32,12 +47,10 @@ export class DatoscreacionComponent implements OnInit {
   tipoActualT?: Productos[];
   tipoActualN?: Productos[];
 
-
-
   default = "Seleccione un campo"
+  imagen64: any;
 
   ngOnInit(): void { }
-
 
 
   selectTipo(tipo: string) {
@@ -55,18 +68,21 @@ export class DatoscreacionComponent implements OnInit {
   }
 
   // COPIADO DE INTERNET :D
-  visualizar() {
-    var file = $('#inputIMG').prop("files")[0];
-    var reader = new FileReader();
+  visualizar(ev: any) {
+    var file = ev.target.files[0];
+    var reader = new FileReader(),
+      result = 'empty';
+
     this.imagen = file.name;
-    reader.onload = function (e) {
-      if (e.target) {
-        $("#img").css({
-          "background-image": "url(" + e.target.result + ")",
-          "background-size": "cover",
-        });
-      }
+
+    reader.onload = (e) => {
+      $("#img").css({
+        "background-image": "url(" + e.target!.result + ")",
+        "background-size": "cover",
+      })
+      this.imagen64 = e.target!.result;
     }
+
     reader.readAsDataURL(file);
   }
 
@@ -107,13 +123,16 @@ export class DatoscreacionComponent implements OnInit {
   }
 
   crearReceta() {
-
     if (this.prodPrinc && this.prodPrinc != this.default) {
       var idprod = this.productos!.find(element => element.nombre == this.prodPrinc)!.id;
 
-      this.recetasService.crearReceta(this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen).subscribe({
+      this.recetasService.crearReceta(this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen, this.imagen64).subscribe({
         next: data => {
-          console.log(data);
+          if (data.error) {
+            this.errores = data.error;
+            console.log(this.errores);
+          }
+
         }
       });
     }
