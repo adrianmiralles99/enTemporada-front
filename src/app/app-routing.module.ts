@@ -1,7 +1,8 @@
+
 import { HomeComponent } from './home/home/home.component';
 import { IndiceComponent } from './aboutus/indice/indice.component';
 import { CalendarioComponent } from './calendario/calendario/calendario.component';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';//importante
 import { NgModule } from '@angular/core';
 import { IndexregComponent } from './registro/indexreg/indexreg.component';
 import { IndexprodComponent } from './infoproducto/indexprod/indexprod.component';
@@ -13,6 +14,7 @@ import { IndexguardadasComponent } from './recetas/indexguardadas/indexguardadas
 import { IndexmisrecetasComponent } from './recetas/indexmisrecetas/indexmisrecetas.component';
 import { IndicemodperfilComponent } from './perfil/indicemodperfil/indicemodperfil.component';
 import { PaginaerrorComponent } from './error/paginaerror/paginaerror.component';
+import { IndexedicionComponent } from './creacion-receta/indexedicion/indexedicion.component';
 
 
 const routes: Routes = [
@@ -63,6 +65,10 @@ const routes: Routes = [
     component: IndexcreacionComponent,
   },
   {
+    path: 'editarReceta/:id',
+    component: IndexedicionComponent,
+  },
+  {
     path: 'perfil',
     component: IndiceperfilComponent,
   },
@@ -72,10 +78,10 @@ const routes: Routes = [
   },
   //si la ruta es equivocada salta el error 404
   {
-    path: '404', component: PaginaerrorComponent
+    path: 'error404', component: PaginaerrorComponent
   },
   {
-    path: '**', redirectTo: '/404'
+    path: '**', redirectTo: '/error404'
   },
 ];
 @NgModule({

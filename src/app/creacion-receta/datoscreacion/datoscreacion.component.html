@@ -3,7 +3,7 @@
         <div class="col-lg-5 col-md-12">
             <label class="upload">
                 <div id="img"></div>
-                <input type="file" (change)="visualizar()" name="" id="inputIMG">
+                <input type="file" (change)="visualizar($event)" name="" id="inputIMG">
             </label>
 
             <div class="nombre">
@@ -19,21 +19,27 @@
                     <div class="columna col-3">
                         <p class="mt-2">Nº de Comensales</p>
                         <div class="campo">
-                            <img class="icono" src="../../../assets/IMG/iconos/grupo.png" alt="">
-                            <input [(ngModel)]="comensales" type="number" min="0" name="" id="">
+                            <img class="icono" draggable="false" src="../../../assets/IMG/iconos/grupo.png" alt="">
+                            <input [(ngModel)]="comensales" type="number" min="0" data-error="buenos dias" id="">
+                        </div>
+                        <div class="error">
+                            <sub *ngIf="errores?.comensales">{{errores?.comensales}}</sub>
                         </div>
                     </div>
                     <div class="columna col-2">
                         <p class="mt-2">Tiempo</p>
                         <div class="campo">
-                            <img class="icono" src="../../../assets/IMG/iconos/tiempo.png" alt="">
+                            <img class="icono" draggable="false" src="../../../assets/IMG/iconos/tiempo.png" alt="">
                             <input [(ngModel)]="tiempo" type="text" name="" id="">
+                        </div>
+                        <div class="error">
+                            <sub *ngIf="errores?.tiempo">{{errores?.tiempo}}</sub>
                         </div>
                     </div>
                     <div class="columna col-3">
                         <p class="mt-2">Tipo de plato</p>
                         <div class="campo">
-                            <img class="icono" src="../../../assets/IMG/iconos/tipo.png" alt="">
+                            <img class="icono" draggable="false" src="../../../assets/IMG/iconos/tipo.png" alt="">
                             <select [(ngModel)]="tipo" id="">
                                 <option selected>...</option>
                                 <option name="desayuno" value="Desayuno">Desayuno</option>
@@ -43,17 +49,23 @@
                                 <option name="postre" value="Postre">Postre</option>
                             </select>
                         </div>
+                        <div class="error">
+                            <sub *ngIf="errores?.tipo">{{errores?.tipo}}</sub>
+                        </div>
                     </div>
                     <div class="columna col-4">
                         <p class="mt-2">Dificultad del plato</p>
                         <div class="campo">
-                            <img class="icono" src="../../../assets/IMG/iconos/dificultad.png" alt="">
+                            <img class="icono" draggable="false" src="../../../assets/IMG/iconos/dificultad.png" alt="">
                             <select [(ngModel)]="dificultad" id="">
                                 <option selected>...</option>
                                 <option name="facil" value="Fácil">Fácil</option>
                                 <option name="intermedio" value="Intermedio">Intermedio</option>
                                 <option name="dificil" value="Difícil">Difícil</option>
                             </select>
+                        </div>
+                        <div class="error">
+                            <sub *ngIf="errores?.dificultad">{{errores?.dificultad}}</sub>
                         </div>
                     </div>
                 </div>
@@ -63,6 +75,9 @@
                     <div class="row">
                         <div class="col-md-12 col-sm-8">
                             <h3>Ingrediente Principal:</h3>
+                            <div class="error">
+                                <sub *ngIf="true">Debe elegir un producto principal</sub>
+                            </div>
                         </div>
                         <div class="row col-md-12 col-sm-4 inputTipo">
                             <div class="col-5">
