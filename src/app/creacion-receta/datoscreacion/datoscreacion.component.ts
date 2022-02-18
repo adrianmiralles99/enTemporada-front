@@ -104,7 +104,7 @@ export class DatoscreacionComponent implements OnInit {
     let i = this.ingred;
 
     if ($(".desplegable option:selected").val() != null) {
-      if (this.cantidad.length >= 1 && this.ingred.length >= 1) {
+      if (this.ingred.length > 0) {
         this.misingredientes.push(c + " " + i);
         this.divideIngredientes();
       }

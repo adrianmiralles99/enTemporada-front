@@ -22,8 +22,6 @@ export class BarraComponent implements OnInit {
       panelClass: 'custom-modalbox',
       backdropClass: 'fondo'
     });
-
-
   }
 
 
