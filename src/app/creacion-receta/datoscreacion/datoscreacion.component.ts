@@ -59,39 +59,39 @@ export class DatoscreacionComponent implements OnInit {
   imagen64: any;
 
   ngOnInit(): void { 
-    console.log("receta");
     console.log(this.recetas);
 
     if (this.recetas){
-      this.productito = this.productos!.find(element => element.id ==this.recetas?.id_prodp);
-
-      this.titulo = String(this.recetas.titulo);//hay que hacerle cast si o si
-      this.comensales = Number(this.recetas.comensales);
-      this.tiempo = String(this.recetas.tiempo);
-      this.tipo = String(this.recetas.tipo);
-      this.dificultad = String(this.recetas.dificultad);
-      //this.selectTipo(String(this.productito?.tipo));//pasamos el tipo para que en el desplegable salgan los productos
-      if (this.productito?.tipo == "F"){
-        console.log($("#selecF").click());
-      }else{
-        $("#selecT").click()
-      }
-      this.prodPrinc = String(this.productito?.nombre);
-      this.imagen = this.rutaimg + String(this.recetas.imagen);
-      console.log("IMAGEN -> " +this.imagen);
-      this.misingredientes = this.recetas.ingredientes ?? [];
-      this.cantidadPrinc = this.misingredientes[0].split(" ")[0];//cogemos la cantidad
-      this.misingredientes.shift();
-      this.divideIngredientes();
-      this.pasos= this.recetas.pasos ?? [];
-      //this.comensales? = this.recetas?.comensales;
+        this.cargarDatos();
     }
   }
   ngOnChanges():void{
     //this.recetas.titulo;
+
   }
 
-
+  cargarDatos(): void{
+    this.productito = this.productos!.find(element => element.id ==this.recetas?.id_prodp);
+    this.titulo = String(this.recetas?.titulo);//hay que hacerle cast si o si
+    this.comensales = Number(this.recetas?.comensales);
+    this.tiempo = String(this.recetas?.tiempo);
+    this.tipo = String(this.recetas?.tipo);
+    this.dificultad = String(this.recetas?.dificultad);
+    //this.selectTipo(String(this.productito?.tipo));//pasamos el tipo para que en el desplegable salgan los productos
+    if (this.productito?.tipo == "F"){
+     $("#selecF").click();
+    }else{
+      $("#selecT").click()
+    }
+    this.prodPrinc = String(this.productito?.nombre);
+    this.imagen = this.rutaimg + String(this.recetas?.imagen);
+    this.misingredientes = this.recetas?.ingredientes ?? [];
+    this.cantidadPrinc = this.misingredientes[0].split(" ")[0];//cogemos la cantidad
+    this.misingredientes.shift();
+    this.divideIngredientes();
+    this.pasos= this.recetas?.pasos ?? [];
+    //this.comensales? = this.recetas?.comensales;
+  }
   selectTipo(tipo: string) {
     this.prodPrinc = "";
     if (this.productos) {
@@ -167,10 +167,23 @@ export class DatoscreacionComponent implements OnInit {
 
       this.recetasService.crearReceta(this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen, this.imagen64).subscribe({
         next: data => {
-          console.log(data);
           if (data.error.length > 0) {
             this.errores = data.error;
-            console.log(this.errores);
+          }
+
+        }
+      });
+    }
+  }
+  actualizarReceta(){
+    console.log("ACTUALIZAR");
+    if (this.recetas) {
+      var idprod = this.productos!.find(element => element.nombre == this.prodPrinc)!.id;
+
+      this.recetasService.actualizarReceta(this.recetas.id,this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen, this.imagen64).subscribe({
+        next: data => {
+          if (data.error.length > 0) {
+            this.errores = data.error;
           }
 
         }
