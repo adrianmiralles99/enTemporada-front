@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Productos } from 'src/app/modelos/productos.model';
+import { Recetas } from 'src/app/modelos/recetas.model';
+
 import { RecetasService } from 'src/app/servicios/recetas.service';
 
 @Component({
@@ -23,8 +25,9 @@ export class DatoscreacionComponent implements OnInit {
   pasos: Array<string> = [];
   descripcion: string = "";
   misingredientes: string[] = [];
-  imagen: string = "";
-
+  imagen: string = "../../../assets/IMG/iconos/uploadImage.png";
+  
+  rutaimg: string ="../../../assets/IMG/recetas/";
 
   errores?: {
     comensales: number;
@@ -40,7 +43,10 @@ export class DatoscreacionComponent implements OnInit {
     imagen: string;
   };
 
+  @Input() recetas?: Recetas;
   @Input() productos?: Productos[];
+
+  productito?:Productos;
   cantidad: string = "";
   ingred: string = "";
 
@@ -52,9 +58,40 @@ export class DatoscreacionComponent implements OnInit {
   default = "Seleccione un campo"
   imagen64: any;
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    console.log(this.recetas);
 
+    if (this.recetas){
+        this.cargarDatos();
+    }
+  }
+  ngOnChanges():void{
+    //this.recetas.titulo;
 
+  }
+
+  cargarDatos(): void{
+    this.productito = this.productos!.find(element => element.id ==this.recetas?.id_prodp);
+    this.titulo = String(this.recetas?.titulo);//hay que hacerle cast si o si
+    this.comensales = Number(this.recetas?.comensales);
+    this.tiempo = String(this.recetas?.tiempo);
+    this.tipo = String(this.recetas?.tipo);
+    this.dificultad = String(this.recetas?.dificultad);
+    //this.selectTipo(String(this.productito?.tipo));//pasamos el tipo para que en el desplegable salgan los productos
+    if (this.productito?.tipo == "F"){
+     $("#selecF").click();
+    }else{
+      $("#selecT").click()
+    }
+    this.prodPrinc = String(this.productito?.nombre);
+    this.imagen = this.rutaimg + String(this.recetas?.imagen);
+    this.misingredientes = this.recetas?.ingredientes ?? [];
+    this.cantidadPrinc = this.misingredientes[0].split(" ")[0];//cogemos la cantidad
+    this.misingredientes.shift();
+    this.divideIngredientes();
+    this.pasos= this.recetas?.pasos ?? [];
+    //this.comensales? = this.recetas?.comensales;
+  }
   selectTipo(tipo: string) {
     this.prodPrinc = "";
     if (this.productos) {
@@ -130,9 +167,23 @@ export class DatoscreacionComponent implements OnInit {
 
       this.recetasService.crearReceta(this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen, this.imagen64).subscribe({
         next: data => {
-          if (data.error) {
+          if (data.error.length > 0) {
             this.errores = data.error;
-            console.log(this.errores);
+          }
+
+        }
+      });
+    }
+  }
+  actualizarReceta(){
+    console.log("ACTUALIZAR");
+    if (this.recetas) {
+      var idprod = this.productos!.find(element => element.nombre == this.prodPrinc)!.id;
+
+      this.recetasService.actualizarReceta(this.recetas.id,this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen, this.imagen64).subscribe({
+        next: data => {
+          if (data.error.length > 0) {
+            this.errores = data.error;
           }
 
         }

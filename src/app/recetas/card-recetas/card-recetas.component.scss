@@ -116,10 +116,78 @@
     opacity: 0;
   }
 }
+.tooltip {
+  position: relative;
+  display: inline-block;
+
+}
+
+.crear_b {
+  position: fixed;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 5px 5px rgba(76, 76, 76, 0.455));
+  z-index: 100;
+  right: 3.5%;
+  bottom: 12%;
+  border: none;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  margin: auto;
+  padding: 0;
+  border-radius: 10px;
+  transition: 0.3s;
+
+  .img {
+    background-image: url("../../../assets/IMG/iconos/plus.png");
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    background-color: $grey;
+    border-radius: 7px;
+    transition: 0.5s;
+  }
+  .texto {
+    display: none;
+    font-size: 15px;
+    color: white;
+
+  }
+  p {
+    opacity: 0;
+  }
+}
+
 
 .extender {
   width: 200px;
   background-color: white;
+  p {
+    display: table-cell;
+    vertical-align: middle;
+    font-family: neueB;
+    font-size: 120%;
+    letter-spacing: 0.5px;
+    animation: aparecer .9s forwards;
+  }
+  .img {
+    border-radius: 7px 0px 0px 7px;
+    background-size: 60%;
+  }
+
+  .texto {
+    display: table;
+    padding: 0;
+    margin: auto;
+  }
+}
+.extender_b {
+  width: 200px;
+  height: 50px;
+  background-color: $grey;
   p {
     display: table-cell;
     vertical-align: middle;

@@ -1,9 +1,9 @@
 <app-barra [color]="'green'"></app-barra>
-<app-moddatos></app-moddatos>
+<app-moddatos [usuario]="usuario" [rutaUser]="rutaUser" [rutaLogo]="rutaLogo"></app-moddatos>
 <div class="inf">
     <div class="container">
         <app-inferior></app-inferior>
-        <app-recetas></app-recetas>
+        <app-recetas [usuario]="usuario"></app-recetas>
         <app-botonnuevareceta></app-botonnuevareceta>
     </div>
 </div>

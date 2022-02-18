@@ -6,7 +6,8 @@ import { ProductosService } from 'src/app/servicios/productos.service';
 @Component({
   selector: 'app-indexprod',
   templateUrl: './indexprod.component.html',
-  styleUrls: ['./indexprod.component.scss']
+  styleUrls: ['./indexprod.component.scss'],
+  providers: [ProductosService]
 })
 export class IndexprodComponent implements OnInit {
   constructor(private productosService: ProductosService, private rutaActiva: ActivatedRoute) { }

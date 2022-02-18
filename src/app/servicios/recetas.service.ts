@@ -46,6 +46,23 @@ export class RecetasService {
       id_usuario: 2
     }, httpOptions);
   }
+  actualizarReceta(id:number,titulo: string, comensales: number, tiempo: string, tipo: string, dificultad: string, ingredientes: string[], pasos: string[], id_prodp: number, imagen: string, imagen64: any): Observable<any> {
+    // console.log(this.http.post(baseUrl, imagen64));
+    // console.log("adios");
+
+    return this.http.put(baseUrl + "/updatereceta?id="+id, {
+      titulo: titulo,
+      comensales: comensales,
+      tiempo: tiempo,
+      tipo: tipo,
+      dificultad: dificultad,
+      ingredientes: ingredientes,
+      pasos: pasos,
+      id_prodp: id_prodp,
+      imagen: imagen,
+      id_usuario: 2
+    }, httpOptions);
+  }
 
 
 }

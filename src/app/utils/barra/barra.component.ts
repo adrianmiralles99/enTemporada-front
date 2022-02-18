@@ -1,17 +1,23 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { PopUpComponent } from '../login/pop-up.component';
+import { TokenStorageService } from 'src/app/servicios/token-storage.service';
+import { UsuarioService } from 'src/app/servicios/usuario.service';
+import { Usuarios } from 'src/app/modelos/usuarios.model';
+import { Router } from '@angular/router';
 
 
 @Component({
   selector: 'app-barra',
   templateUrl: './barra.component.html',
-  styleUrls: ['./barra.component.scss']
+  styleUrls: ['./barra.component.scss'],
+  providers: [TokenStorageService,UsuarioService]
 })
 export class BarraComponent implements OnInit {
   @Input() color: string = "";
-
-  constructor(public dialogRef: MatDialog) { }
+  id_user = this.token.getId();
+  usuario!:Usuarios; 
+  constructor(private router: Router, private uService:UsuarioService, public dialogRef: MatDialog, private token: TokenStorageService) { }
 
   openDialog() {
 
@@ -22,11 +28,38 @@ export class BarraComponent implements OnInit {
       panelClass: 'custom-modalbox',
       backdropClass: 'fondo'
     });
+
   }
 
+  getUser(): void{
+    console.log(this.id_user);
+    
+    this.uService.getById(this.id_user).subscribe({
+      next: (data) => {
+        console.log(data);
+        
+        this.usuario = data;
+       
+        
+      }
+    })
+  }
 
-  sesion = false;
+  logout(){
+    this.token.signOut();
+    if (this.router.url == "/") {
+      window.location.reload
+    }
+  }
+ 
+  sesion!: boolean;
   ngOnInit(): void {
+    this.getUser();
+    if(this.token.getId()){
+      this.sesion = true;
+    }else{
+      this.sesion = false;
+    }
   }
 
 }

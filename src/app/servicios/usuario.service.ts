@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { serverUrl } from '../baseurl';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 const baseurl = serverUrl + "user";
 
@@ -19,4 +23,15 @@ export class UsuarioService {
     return this.http.get(`${baseurl}/${id}`);
   }
 
+
+ modificarUsuario(id: number,nick:string,imagen:string,descripcion:string): Observable<any> {
+    console.log(id);
+    return this.http.put(baseurl + "/updateuser?id="+ id, {
+      nick: nick,
+      imagen: imagen,
+      descripcion: descripcion, 
+    
+    }, httpOptions);
+
+  }
 }

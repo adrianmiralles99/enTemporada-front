@@ -1,26 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Usuarios } from 'src/app/modelos/usuarios.model';
+import { UsuarioService } from 'src/app/servicios/usuario.service';
+import { TokenStorageService } from 'src/app/servicios/token-storage.service';
 
 @Component({
   selector: 'app-moddatos',
   templateUrl: './moddatos.component.html',
-  styleUrls: ['./moddatos.component.scss']
+  styleUrls: ['./moddatos.component.scss'],
+  providers:[UsuarioService]
 })
 export class ModdatosComponent implements OnInit {
-
-  constructor() { }
-  prueba ="";
-  nombreuser="Cecilio G";//acá habrá que poner el nombre real del user con el $_session que exista
-  infouser = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididuntu"
- + " labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut";
-
+  @Input() usuario!: Usuarios;
+  @Input() exp_res!: number;
+  @Input() rutaUser!: string;
+  @Input() rutaLogo!: string;
+  constructor(private usuariosService: UsuarioService,private token: TokenStorageService) { }
+  nombreuser= "";//this.usuario.nick;  //acá habrá que poner el nombre real del user con el $_session que exista
+  infouser = "";//this.usuario.descripcion;
+  imagen!: string;
+  id_user = Number(this.token.getId());
+  nivel!: number;
   ngOnInit(): void {
-    console.log(this.prueba);
-
-  }
+    
+  } 
   visualizar() {
+    
     var file = $('#fotousuario').prop("files")[0];
     var reader = new FileReader();
-
     reader.onload = function (e) {
       if (e.target) {
         $(".usuario").css({
@@ -30,6 +36,17 @@ export class ModdatosComponent implements OnInit {
       }
     }
     reader.readAsDataURL(file);
+    console.log(file);
+    
   }
+
+modUser(){
+  this.usuariosService.modificarUsuario(this.id_user,this.nombreuser,this.imagen,this.infouser).subscribe({
+    next: (data) => {
+      console.log(data);
+      
+    }
+  })
+}
 
 }
