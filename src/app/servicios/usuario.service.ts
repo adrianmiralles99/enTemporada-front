@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { serverUrl } from '../baseurl';
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 const baseurl = serverUrl + "user";
 
@@ -21,21 +24,14 @@ export class UsuarioService {
   }
 
 
-//  modificarUsuario(titulo: string, comensales: number, tiempo: string, tipo: string, dificultad: string, ingredientes: string[], pasos: string[], id_prodp: number, imagen: string): Observable<any> {
-//     console.log("creando");
+ modificarUsuario(id: number,nick:string,imagen:string,descripcion:string): Observable<any> {
+    console.log(id);
+    return this.http.put(baseurl + "/updateuser?id="+ id, {
+      nick: nick,
+      imagen: imagen,
+      descripcion: descripcion, 
+    
+    }, httpOptions);
 
-//     return this.http.post(serverUrl + "/crearreceta", {
-//       titulo: titulo,
-//       comensales: comensales,
-//       tiempo: tiempo,
-//       tipo: tipo,
-//       dificultad: dificultad,
-//       ingredientes: ingredientes,
-//       pasos: pasos,
-//       id_prodp: id_prodp,
-//       imagen: imagen,
-//       id_usuario: 2
-//     }, httpOptions);
-
-//   }
+  }
 }

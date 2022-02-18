@@ -1,26 +1,32 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Usuarios } from 'src/app/modelos/usuarios.model';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
+import { TokenStorageService } from 'src/app/servicios/token-storage.service';
 
 @Component({
   selector: 'app-moddatos',
   templateUrl: './moddatos.component.html',
-  styleUrls: ['./moddatos.component.scss']
+  styleUrls: ['./moddatos.component.scss'],
+  providers:[UsuarioService]
 })
 export class ModdatosComponent implements OnInit {
-  @Input() id_usuario!: number;
+  @Input() usuario!: Usuarios;
   @Input() exp_res!: number;
-  constructor(private usuariosService: UsuarioService) { }
+  @Input() rutaUser!: string;
+  @Input() rutaLogo!: string;
+  constructor(private usuariosService: UsuarioService,private token: TokenStorageService) { }
   nombreuser= "";//this.usuario.nick;  //acá habrá que poner el nombre real del user con el $_session que exista
   infouser = "";//this.usuario.descripcion;
-  usuario!: Usuarios
+  imagen!: string;
+  id_user = Number(this.token.getId());
+  nivel!: number;
   ngOnInit(): void {
-    this.getUser();
-  }
+    
+  } 
   visualizar() {
+    
     var file = $('#fotousuario').prop("files")[0];
     var reader = new FileReader();
-
     reader.onload = function (e) {
       if (e.target) {
         $(".usuario").css({
@@ -30,16 +36,17 @@ export class ModdatosComponent implements OnInit {
       }
     }
     reader.readAsDataURL(file);
-  }
-  getUser(): void{
-    this.usuariosService.getById(this.id_usuario).subscribe({
-      next: (data) => {
-        this.usuario = data;
-        this.nombreuser = this.usuario.nick as string;
-        this.infouser = this.usuario.descripcion as string;
-      }
-    })
+    console.log(file);
+    
   }
 
+modUser(){
+  this.usuariosService.modificarUsuario(this.id_user,this.nombreuser,this.imagen,this.infouser).subscribe({
+    next: (data) => {
+      console.log(data);
+      
+    }
+  })
+}
 
 }
