@@ -6,7 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./presentacion-recetas.component.scss']
 })
 export class PresentacionRecetasComponent implements OnInit {
-  @Input()titulo:string="";
+  @Input() titulo: string = "";
+  @Input() cantidad: number = 0;
 
   constructor() { }
   ngOnInit(): void {
