@@ -18,8 +18,6 @@ export class DetallesrecetasComponent {
   ngOnChanges(): void {
     if (this.misingredientes) {
       this.divideIngredientes();
-      console.log("aqui");
-      
     }
   }
 

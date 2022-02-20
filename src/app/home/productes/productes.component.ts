@@ -15,7 +15,6 @@ export class ProductesComponent implements OnInit {
     this.frutas = this.productes?.filter(element => element.tipo == "F");
     this.verduras = this.productes?.filter(element => element.tipo == "V");
     this.mesActual = this.meses[new Date().getMonth()];
-    
   }
 
 

@@ -32,7 +32,7 @@ export class ProductosService {
   }
 
   getActual(): Observable<Calendario[]> {
-    return this.http.get<Productos[]>(baseUrlActual);
+    return this.http.get<Productos[]>(baseUrlActual+"?expand=calendario");
   }
 
 

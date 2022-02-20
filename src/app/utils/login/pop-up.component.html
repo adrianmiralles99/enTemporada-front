@@ -1,18 +1,23 @@
 <div class="ventana">
   <div *ngIf="!recupassword">
     <h1 class="titulo" mat-dialog-title>INICIAR SESION</h1>
+    
     <mat-dialog-content class="contenedor">
       <form (keydown.enter)="onSubmit()" #form="ngForm">
         <label class="campos">
           <h3>Usuario</h3>
           <input [(ngModel)]="nick" name="nick" type="text">
+          <div class="error">
+            <p>{{error.get("nick")}}</p>
+          </div>
         </label>
         <br>
         <label class="campos">
           <h3>Contraseña</h3>
           <input [(ngModel)]="password" name="password" type="password">
           <div class="error">
-            <sub>{{error.get("")}}</sub>
+            <p>{{error.get("password")}}</p>
+            <p>{{error.get("error")}}</p>
           </div>
         </label>
 
@@ -58,3 +63,6 @@
   </div>
 
 </div>
+
+<img class="logo lemon" src="../../../assets/IMG/En Temporada (IES FSL)/Stickers/Lemon.png" alt="">
+<img class="logo orange" src="../../../assets/IMG/En Temporada (IES FSL)/Stickers/Black Orange.png" alt="">

@@ -20,8 +20,7 @@ export class BarraComponent implements OnInit {
   constructor(private router: Router, private uService: UsuarioService, public dialogRef: MatDialog, private token: TokenStorageService) { }
 
   openDialog() {
-
-    const dialog = this.dialogRef.open(PopUpComponent, {
+    this.dialogRef.open(PopUpComponent, {
       position: { top: "100px" },
       width: "40%",
       maxWidth: "1000px",
@@ -47,13 +46,14 @@ export class BarraComponent implements OnInit {
   logout() {
     this.token.signOut();
     if (this.router.url == "/") {
-      window.location.reload
+      window.location.reload();
     }
   }
 
   sesion!: boolean;
-  ngOnInit(): void {
 
+  ngOnInit(): void {
+    this.openDialog();
     if (this.id_user) {
       this.sesion = true;
       this.getUser();

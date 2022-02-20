@@ -38,20 +38,19 @@ export class PopUpComponent implements OnInit {
     }
 
     if (!this.password || this.password.length == 0) {
-      this.error.set("password", "El password no puede estar vacio");
+      this.error.set("password", "La contraseña no puede estar vacia");
     }
 
     if (this.error.size == 0) {
       this.authService.login(this.nick, this.password).subscribe({
         next: data => {
-          console.log(data);
           if (!data.error) {
             this.tokenStorage.saveToken(data.token);
             this.tokenStorage.saveUser(data);
             window.location.reload();
           }
           else {
-            data.error();
+            this.error.set("error", "Usuario incorrecto");
           }
         }
       });
