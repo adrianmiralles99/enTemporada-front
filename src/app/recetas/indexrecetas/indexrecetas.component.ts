@@ -11,8 +11,10 @@ export class IndexrecetasComponent implements OnInit {
 
 
   constructor(private recetasservice: RecetasService) { }
-
+  tipo?: string;
   recetas!: Recetas[];
+  titulo: string = "Recetas en Temporada";
+  cantidad?: number;
 
   ngOnInit(): void {
     this.getRecetas();
@@ -22,9 +24,13 @@ export class IndexrecetasComponent implements OnInit {
     this.recetasservice.getAll().subscribe({
       next: (data) => {
         this.recetas = data;
+        this.cantidad = this.recetas.length
       },
       error: (e) => console.error(e)
     });
+  }
+  getRecetaTipo(tipo:string){
+    
   }
 
 }

@@ -12,7 +12,6 @@ import { UsuarioService } from 'src/app/servicios/usuario.service';
 export class IndicemodperfilComponent implements OnInit {
 
   usuario!: Usuarios;
-
   constructor(private usuariosService: UsuarioService, private token: TokenStorageService) { }
   exp_res = 0;
   nivel = 0;
@@ -26,11 +25,9 @@ export class IndicemodperfilComponent implements OnInit {
     this.usuariosService.getById(this.id_usuario).subscribe({
       next: (data) => {
         this.usuario = data;
-
         this.getLvl(this.usuario.exp);
         this.rutaUser = "../../../assets/IMG/Usuarios/" + this.usuario.imagen;
         this.rutaLogo = "../../../assets/IMG/Niveles/lvl_"+this.nivel+"-removebg-preview.png";
-
         
       }
     })
