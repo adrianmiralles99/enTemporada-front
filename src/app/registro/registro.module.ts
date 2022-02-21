@@ -4,6 +4,7 @@ import { UtilsModule } from '../utils/utils.module';
 import { IndexregComponent } from './indexreg/indexreg.component';
 import { DatosloginComponent } from './datoslogin/datoslogin.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     UtilsModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ]
   , exports: [
     IndexregComponent,

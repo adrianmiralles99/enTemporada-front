@@ -29,12 +29,10 @@ export class RecetasService {
     return this.http.get(`${baseUrl}/${id}` + "?expand=nick");
   }
 
-  crearReceta(id_user: number,titulo: string, comensales: number, tiempo: string, tipo: string, dificultad: string, ingredientes: string[], pasos: string[], id_prodp: number, imagen: string, imagen64: any): Observable<any> {
+  crearReceta(id_user: number, titulo: string, comensales: number, tiempo: string, tipo: string, dificultad: string, ingredientes: string[], pasos: string[], id_prodp: number, imagen: string, imagen64: any): Observable<any> {
     // console.log(this.http.post(baseUrl, imagen64));
     // console.log("adios");
-    console.log("OLEEEEEEEEEEEEEEEEEEEEEEEEEEE->"+id_user);
     return this.http.post(baseUrl + "/crearreceta", {
-      
       id_usuario: id_user,
       titulo: titulo,
       comensales: comensales,
@@ -47,21 +45,20 @@ export class RecetasService {
       imagen: imagen,
     }, httpOptions);
   }
-  actualizarReceta(id_user: number,id:number,titulo: string, comensales: number, tiempo: string, tipo: string, dificultad: string, ingredientes: string[], pasos: string[], id_prodp: number, imagen: string, imagen64: any): Observable<any> {
-    // console.log(this.http.post(baseUrl, imagen64));
-    // console.log("adios");
+  actualizarReceta(id: number, titulo: string, comensales: number, tiempo: string, tipo: string, dificultad: string, ingredientes: string[], pasos: string[], id_prodp: number, imagen: string, imagen64: any): Observable<any> {
 
-    return this.http.put(baseUrl + "/updatereceta?id="+id, {
-      id_usuario: id_user,
-      titulo: titulo,
-      comensales: comensales,
-      tiempo: tiempo,
-      tipo: tipo,
-      dificultad: dificultad,
-      ingredientes: ingredientes,
-      pasos: pasos,
-      id_prodp: id_prodp,
-    }, httpOptions);
+    return this.http.put(baseUrl + "/updatereceta?id=" + id,
+      {
+        titulo: titulo,
+        comensales: comensales,
+        tiempo: tiempo,
+        tipo: tipo,
+        dificultad: dificultad,
+        ingredientes: ingredientes,
+        pasos: pasos,
+        id_prodp: id_prodp,
+      }
+      , httpOptions);
   }
 
 

@@ -22,27 +22,27 @@
   </div>
 
 
-  
+
   <div class="btn-group dropdown-user">
-    <ng-container *ngIf="sesion; else sesionIniciada">
+    <ng-container *ngIf="sesion; else sinSesion">
       <button [routerLink]="'/creacionRecetas'" (mouseover)="hover=true" (mouseout)="hover=false"
-      [ngClass]="{'extender': hover==true}" class="crear row">
-      <div [ngClass]="{'col-3': hover==true,'col-12': hover==false}" class=" img"></div>
-      <div class="texto col-9">
-        <p>Nueva Receta</p>
-      </div>
-    </button>
+        [ngClass]="{'extender': hover==true}" class="crear row">
+        <div [ngClass]="{'col-3': hover==true,'col-12': hover==false}" class=" img"></div>
+        <div class="texto col-9">
+          <p>Nueva Receta</p>
+        </div>
+      </button>
     </ng-container>
 
-    <ng-template #sesionIniciada>
-      <button class="tooltip" (mouseover)="hover=true" (mouseout)="hover=false"
-      [ngClass]="{'extender_b': hover==true}" class="crear_b row">
-      <div [ngClass]="{'col-3': hover==true,'col-12': hover==false}" class=" img"></div>
-      <div class="texto col-9">
-        <p>Inicia sesion para acceder</p>
-      </div>
-      
-    </button> 
+    <ng-template #sinSesion>
+      <button (click)="openDialog()" (mouseover)="hover=true" (mouseout)="hover=false"
+        [ngClass]="{'extender_b': hover==true}" class="crear_b row">
+        <div [ngClass]="{'col-3': hover==true,'col-12': hover==false}" class=" img"></div>
+        <div class="texto col-9">
+          <p>Inicia sesion para acceder</p>
+        </div>
+
+      </button>
     </ng-template>
 
   </div>

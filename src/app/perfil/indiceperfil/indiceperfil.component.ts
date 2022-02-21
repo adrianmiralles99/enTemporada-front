@@ -9,51 +9,49 @@ import { UsuarioService } from 'src/app/servicios/usuario.service';
   selector: 'app-indiceperfil',
   templateUrl: './indiceperfil.component.html',
   styleUrls: ['./indiceperfil.component.scss'],
-  providers: [UsuarioService,TokenStorageService]
+  providers: [UsuarioService, TokenStorageService]
 })
 export class IndiceperfilComponent implements OnInit {
-  usuario!: Usuarios;
-  constructor(private usuariosService: UsuarioService,private token: TokenStorageService) { }
+  constructor(private usuariosService: UsuarioService, private token: TokenStorageService) { }
+
+  usuario?: Usuarios;
   id_usuario = this.token.getId();
-  nombreuser!: string;
-  infouser!: string;
-  imagen!: string;
-  rutaUser = "";
-  rutaLogo = "";
+  nombreuser?: string;
+  infouser?: string;
+  imagen?: string;
   exp_res = 0;
   nivel = 0;
+
   ngOnInit(): void {
-   this.getUser();
+    this.getUser();
   }
-  getUser(): void{
+
+  getUser(): void {
     this.usuariosService.getById(this.id_usuario).subscribe({
       next: (data) => {
         this.usuario = data;
-        this.nombreuser = this.usuario.nick as string;
-        this.infouser = this.usuario.descripcion as string;
-        this.imagen = this.usuario.imagen as string;
-        this.getLvl(this.usuario.exp);
-          this.rutaUser = "../../../assets/IMG/Usuarios/" + this.usuario.imagen;
-        this.rutaLogo = "../../../assets/IMG/Niveles/lvl_"+this.nivel+"-removebg-preview.png";
-        console.log(this.imagen);
-        
+        this.nombreuser = data.nick;
+        this.infouser = data.descripcion;
+        this.imagen = data.imagen;
+
+        this.getLvl(data.exp);
       }
     })
   }
-  getLvl(expe: number){
-    if(expe / 100 > 0){
+  getLvl(expe: number) {
+    if (expe / 100 > 0) {
       this.nivel = Math.floor(expe / 100) + 1;
       this.exp_res = ((expe / 100) % 1) * 100;
       // console.log("Nivel = " + this.nivel)
       // console.log("Exp = " + this.exp_res)
-    }if(expe >= 400){
+    } if (expe >= 400) {
       this.nivel = 5;
       this.exp_res = 100;
-  
-    }if (expe / 100 == 0) {
+
+    } if (expe / 100 == 0) {
       this.nivel = 1;
     }
   }
- 
+
 
 }
