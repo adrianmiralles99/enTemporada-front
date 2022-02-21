@@ -17,7 +17,7 @@ export class CardRecetasComponent implements OnInit {
 
   sesion!: boolean;
   ngOnInit(): void {
-
+    
     if(this.token.getId()){
       this.sesion = true;
     }else{
