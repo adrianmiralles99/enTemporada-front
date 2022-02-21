@@ -25,6 +25,8 @@ export class IndexrecetasComponent implements OnInit {
       next: (data) => {
         this.recetas = data;
         this.cantidad = this.recetas.length
+        console.log(data);
+        
       },
       error: (e) => console.error(e)
     });

@@ -36,7 +36,6 @@ export class BarraComponent implements OnInit {
 
     this.uService.getById(this.id_user).subscribe({
       next: (data) => {
-        console.log(data);
         this.usuario = data;
         this.imagen = this.usuario.imagen
         this.nickname = this.usuario.nick

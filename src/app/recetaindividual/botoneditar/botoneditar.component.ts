@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { TokenStorageService } from 'src/app/servicios/token-storage.service';
 import { Recetas } from 'src/app/modelos/recetas.model';
 import { RecetasService } from 'src/app/servicios/recetas.service';
@@ -14,27 +14,31 @@ export class BotoneditarComponent implements OnInit {
   recetas!: Recetas;
 
   mostrar = false;
-  constructor(private token : TokenStorageService, private recetasservice:RecetasService ) { 
+  constructor(private token: TokenStorageService, private recetasservice: RecetasService) {
   }
 
   ngOnInit(): void {
     this.getRecetas();
+
   }
-  mostrarBoton(idusuario:Number){
-    if(idusuario == Number(this.token.getId())){
+  mostrarBoton(idusuario: Number) {
+    console.log(idusuario);
+    console.log(this.token.getId());
+
+    if (idusuario == Number(this.token.getId())) {
       this.mostrar = true;
     }
   }
   getRecetas() {//cambiar la id por la que verdaderamente toca
     this.recetasservice.getById(this.recetaid).subscribe({
       next: (data) => {
-        console.log(data);
+        // console.log(data);
         this.recetas = data;
         this.mostrarBoton(this.recetas.id_usuario);
       },
       error: (e) => console.error(e)
     });
   }
-  
+
 
 }
