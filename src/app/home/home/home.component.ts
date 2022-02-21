@@ -23,12 +23,21 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProductes();
-    
-    
-    
+
+
+
   }
 
   getProductes(): void {
+    this.productosService.getPrueba()
+      .subscribe({
+        next: (data) => {
+          this.productes = data;
+          console.log(data);
+          
+        },
+        error: (e) => console.error(e)
+      });
     this.productosService.getActual()
       .subscribe({
         next: (data) => {
