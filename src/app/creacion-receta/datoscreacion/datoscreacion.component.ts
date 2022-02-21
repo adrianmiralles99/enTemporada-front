@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Productos } from 'src/app/modelos/productos.model';
 import { Recetas } from 'src/app/modelos/recetas.model';
-
+import { TokenStorageService } from 'src/app/servicios/token-storage.service';
 import { RecetasService } from 'src/app/servicios/recetas.service';
 
 @Component({
@@ -13,8 +13,8 @@ import { RecetasService } from 'src/app/servicios/recetas.service';
 })
 export class DatoscreacionComponent implements OnInit {
 
-  constructor(private recetasService: RecetasService) { }
-
+  constructor(private recetasService: RecetasService,private token: TokenStorageService) { }
+  iduser!: number;
   comensales: number = 0;
   tiempo: string = "";
   tipo: string = "";
@@ -90,6 +90,7 @@ export class DatoscreacionComponent implements OnInit {
     this.misingredientes.shift();
     this.divideIngredientes();
     this.pasos= this.recetas?.pasos ?? [];
+    this.iduser = Number(this.token.getId())
     //this.comensales? = this.recetas?.comensales;
   }
   selectTipo(tipo: string) {
@@ -165,7 +166,7 @@ export class DatoscreacionComponent implements OnInit {
     if (this.prodPrinc && this.prodPrinc != this.default) {
       var idprod = this.productos!.find(element => element.nombre == this.prodPrinc)!.id;
 
-      this.recetasService.crearReceta(this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen, this.imagen64).subscribe({
+      this.recetasService.crearReceta(this.iduser,this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen, this.imagen64).subscribe({
         next: data => {
           if (data.error.length > 0) {
             this.errores = data.error;
@@ -180,7 +181,7 @@ export class DatoscreacionComponent implements OnInit {
     if (this.recetas) {
       var idprod = this.productos!.find(element => element.nombre == this.prodPrinc)!.id;
 
-      this.recetasService.actualizarReceta(this.recetas.id,this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen, this.imagen64).subscribe({
+      this.recetasService.actualizarReceta(this.recetas.id,this.iduser,this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen, this.imagen64).subscribe({
         next: data => {
           if (data.error.length > 0) {
             this.errores = data.error;

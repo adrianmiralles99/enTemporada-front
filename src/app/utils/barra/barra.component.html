@@ -26,8 +26,8 @@
         <ng-container *ngIf="sesion; else sesionIniciada">
           <button type="button" class="boton dropdown-toggle pr-3 pl-3" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
-            <img  src="../../../assets/IMG/Usuarios/{{usuario.imagen}}" alt="">
-            <span>{{usuario.nick}}</span>
+            <img  src="../../../assets/IMG/Usuarios/{{imagen}}" alt="">
+            <span>{{nickname}}</span>
           </button>
           <div class="dropdown-menu dropdown-menu-right">
             <button class="dropdown-item" type="button" [routerLink]="'/perfil'">Perfil</button>
