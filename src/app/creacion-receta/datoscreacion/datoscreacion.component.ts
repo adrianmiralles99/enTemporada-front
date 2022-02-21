@@ -59,7 +59,6 @@ export class DatoscreacionComponent implements OnInit {
   imagen64: any;
 
   ngOnInit(): void { 
-    console.log(this.recetas);
 
     if (this.recetas){
         this.cargarDatos();
@@ -163,6 +162,7 @@ export class DatoscreacionComponent implements OnInit {
   }
 
   crearReceta() {
+    console.log("Ola");
     if (this.prodPrinc && this.prodPrinc != this.default) {
       var idprod = this.productos!.find(element => element.nombre == this.prodPrinc)!.id;
 
