@@ -3,7 +3,7 @@ import { Productos } from 'src/app/modelos/productos.model';
 import { Recetas } from 'src/app/modelos/recetas.model';
 import { TokenStorageService } from 'src/app/servicios/token-storage.service';
 import { RecetasService } from 'src/app/servicios/recetas.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-datoscreacion',
   templateUrl: './datoscreacion.component.html',
@@ -13,7 +13,7 @@ import { RecetasService } from 'src/app/servicios/recetas.service';
 })
 export class DatoscreacionComponent implements OnInit {
 
-  constructor(private recetasService: RecetasService, private token: TokenStorageService) { }
+  constructor(private router: Router, private recetasService: RecetasService, private token: TokenStorageService) { }
   iduser_crear = Number(this.token.getId());
   comensales: number = 0;
   tiempo: string = "";
@@ -164,6 +164,8 @@ export class DatoscreacionComponent implements OnInit {
   }
 
   crearReceta() {
+    this.router.navigate(['recetas']);
+
     if (this.prodPrinc && this.prodPrinc != this.default) {
       this.misingredientes.unshift(this.cantidadPrinc + " " + this.prodPrinc);
 

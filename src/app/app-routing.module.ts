@@ -44,7 +44,7 @@ const routes: Routes = [
   },
   {
     path: 'recetas-guardadas',
-    component: IndexguardadasComponent,
+    component: IndexguardadasComponent,canActivate:[UsuariologueadoGuard]
   },
   {
     path: 'recetas-misrecetas',
