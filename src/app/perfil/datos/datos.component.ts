@@ -7,12 +7,12 @@ import { UsuarioService } from 'src/app/servicios/usuario.service';
   styleUrls: ['./datos.component.scss']
 })
 export class DatosComponent implements OnInit {
+  @Input() exp_res!: number;
   @Input() rutaUser!: string;
   @Input() rutaLogo!: string;
    @Input() usuario!: Usuarios;
   constructor(private usuariosService: UsuarioService) {}
-  nivel!: number;
-  exp_res!: number;
+
 
   ngOnInit(): void {
  

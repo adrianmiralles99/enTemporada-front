@@ -15,13 +15,16 @@ export class ModdatosComponent implements OnInit {
   @Input() rutaUser!: string;
   @Input() rutaLogo!: string;
   constructor(private usuariosService: UsuarioService,private token: TokenStorageService) { }
-  nombreuser= "";//this.usuario.nick;  //acá habrá que poner el nombre real del user con el $_session que exista
-  infouser = "";//this.usuario.descripcion;
+  nombreuser= ""//this.usuario.nick as string;  //acá habrá que poner el nombre real del user con el $_session que exista
+  infouser = ""//this.usuario.descripcion as string;
   imagen!: string;
   id_user = Number(this.token.getId());
   nivel!: number;
-  ngOnInit(): void {
-    
+  ngOnChanges(): void { 
+    this.infouser = this.usuario.descripcion as string;
+    this.nombreuser = this.usuario.nick as string;
+  } 
+  ngOnInit(): void { 
   } 
   visualizar() {
     
@@ -35,18 +38,18 @@ export class ModdatosComponent implements OnInit {
         });
       }
     }
-    reader.readAsDataURL(file);
-    console.log(file);
+    reader.readAsDataURL(file);  
     
   }
 
 modUser(){
+  if(this.nombreuser != "" && this.imagen != ""){
   this.usuariosService.modificarUsuario(this.id_user,this.nombreuser,this.imagen,this.infouser).subscribe({
     next: (data) => {
       console.log(data);
-      
     }
   })
+}
 }
 
 }

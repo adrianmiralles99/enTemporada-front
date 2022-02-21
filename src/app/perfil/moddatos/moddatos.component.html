@@ -6,19 +6,19 @@
           <div [ngStyle]="{'background-image': 'url(' + rutaUser + ')'}" class="usuario"></div>
           <div  [ngStyle]="{'background-image': 'url(' + rutaLogo + ')'}"class="b_usuario"></div>
           <label class="custom-file-upload">
-            <input type="file"id="fotousuario"  (change)="visualizar()" name="avatar">
+            <input type="file"id="fotousuario"  (change)="visualizar()"name="avatar">
             Subir archivo
           </label>
         </div>
 
 
         <div class="col-lg-5 col-md-7 datos">
-          <h2 class="user">{{usuario.nick | uppercase }}</h2>
-          <input  [(ngModel)]="nombreuser" placeholder="{{usuario.nick}}" id ="moduser" type="text" name="texto" maxlength="12">
+          <h2 class="user">{{nombreuser | uppercase }}</h2>
+          <input  [(ngModel)]="nombreuser" placeholder="name" id ="moduser" type="text" name="texto" maxlength="12">
 
           <h4>Informacion del usuario: </h4>
-          <p class="infouser">{{usuario.descripcion}}</p>
-          <textarea [(ngModel)]="infouser" placeholder="{{usuario.descripcion}}" name="texto" rows="4" cols="60" maxlength="200"></textarea>
+          <p class="infouser">{{infouser}}</p>
+          <textarea [(ngModel)]="infouser" name="texto" rows="4" cols="60" maxlength="200"></textarea>
 
         </div>
 
