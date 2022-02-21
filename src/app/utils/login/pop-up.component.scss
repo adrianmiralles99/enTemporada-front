@@ -100,14 +100,17 @@ input:not([type="checkbox"]) {
 
 .logo {
     position: absolute;
-    top: -50px;
 }
+
 .orange {
     right: -40px;
     width: 150px;
+    top: -50px;
     transform: rotate(20deg);
 }
+
 .lemon {
     left: -40px;
-    width: 130px;
+    top: -40px;
+    width: 140px;
 }
