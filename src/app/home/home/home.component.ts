@@ -23,6 +23,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProductes();
+    
+    
+    
   }
 
   getProductes(): void {
@@ -30,8 +33,6 @@ export class HomeComponent implements OnInit {
       .subscribe({
         next: (data) => {
           this.productes = data;
-
-
         },
         error: (e) => console.error(e)
       });

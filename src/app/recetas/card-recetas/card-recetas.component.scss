@@ -66,7 +66,7 @@
 }
 
 .save {
-  background-image: url("../../../assets/IMG/iconos/bookmark_save.png");
+  background-image: url("../../../assets/IMG/iconos/bookmark.png");
   &:hover {
     filter: drop-shadow(0 3px 3px rgb(35, 35, 35));
     transform: scale(110%);
@@ -81,12 +81,12 @@
   }
 }
 
-.crear {
+.crear,
+.crear_b {
   position: fixed;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  filter: drop-shadow(0 5px 5px rgba(76, 76, 76, 0.455));
   z-index: 100;
   right: 3.5%;
   bottom: 12%;
@@ -98,14 +98,14 @@
   padding: 0;
   border-radius: 10px;
   transition: 0.3s;
-
+  filter: drop-shadow(0 5px 5px rgba(76, 76, 76, 0.455));
   .img {
     background-image: url("../../../assets/IMG/iconos/plus.png");
     background-size: 90%;
     background-repeat: no-repeat;
     background-position: center;
     height: 100%;
-    background-color: $orange;
+    background-color: $grey;
     border-radius: 7px;
     transition: 0.5s;
   }
@@ -117,27 +117,47 @@
   }
 }
 
-.extender {
-  width: 200px;
-  background-color: white;
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.crear_b {
+  .texto {
+    font-size: 15px;
+    color: white;
+  }
+}
+.extender,
+.extender_b {
   p {
     display: table-cell;
     vertical-align: middle;
     font-family: neueB;
     font-size: 120%;
     letter-spacing: 0.5px;
-    animation: aparecer .9s forwards;
+    animation: aparecer 0.9s forwards;
   }
   .img {
     border-radius: 7px 0px 0px 7px;
     background-size: 60%;
   }
-
   .texto {
     display: table;
     padding: 0;
     margin: auto;
   }
+}
+
+.extender {
+  width: 200px;
+  background-color: white;
+}
+
+.extender_b {
+  width: 220px;
+  height: 50px;
+  background-color: $grey;
 }
 
 @keyframes animFlecha {
@@ -165,7 +185,5 @@
 }
 
 @media screen and(max-width: 700px) {
-  .save {
-    background-size: 30px;
-  }
+  
 }

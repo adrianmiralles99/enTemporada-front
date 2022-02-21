@@ -1,30 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuarios } from 'src/app/modelos/usuarios.model';
+import { TokenStorageService } from 'src/app/servicios/token-storage.service';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 
 @Component({
   selector: 'app-indicemodperfil',
   templateUrl: './indicemodperfil.component.html',
-  styleUrls: ['./indicemodperfil.component.scss']
+  styleUrls: ['./indicemodperfil.component.scss'],
+  providers:[UsuarioService,TokenStorageService]
 })
 export class IndicemodperfilComponent implements OnInit {
 
   usuario!: Usuarios;
-  rutaUser = "../../../assets/IMG/Usuarios/";
-  constructor(private usuariosService: UsuarioService) { }
+
+  constructor(private usuariosService: UsuarioService, private token: TokenStorageService) { }
   exp_res = 0;
   nivel = 0;
-  id_usuario = 2;
+  rutaLogo= "";
+  rutaUser = "";
+  id_usuario = this.token.getId();
   ngOnInit(): void {
     this.getUser();
   }
-
   getUser(): void{
     this.usuariosService.getById(this.id_usuario).subscribe({
       next: (data) => {
         this.usuario = data;
-        this.getLvl(this.usuario.exp)
-        this.fotoUser()
+
+        this.getLvl(this.usuario.exp);
+        this.rutaUser = "../../../assets/IMG/Usuarios/" + this.usuario.imagen;
+        this.rutaLogo = "../../../assets/IMG/Niveles/lvl_"+this.nivel+"-removebg-preview.png";
+
+        
       }
     })
   }
@@ -42,13 +49,7 @@ export class IndicemodperfilComponent implements OnInit {
       this.nivel = 1;
     }
   }
-  
-  fotoUser(){
-    
-    //"../../../assets/IMG/Niveles/lvl_4-removebg-preview.png"
-    $(".foto > .usuario").css("background-image", 'url('+this.rutaUser + this.usuario.imagen+')')
-    $(".foto > .b_usuario").css("background-image","url('../../../assets/IMG/Niveles/lvl_"+this.nivel+"-removebg-preview.png')" )
-  }
+
   
 }
   

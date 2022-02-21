@@ -4,7 +4,8 @@ import { RecetasService } from 'src/app/servicios/recetas.service';
 @Component({
   selector: 'app-indexrecetas',
   templateUrl: './indexrecetas.component.html',
-  styleUrls: ['./indexrecetas.component.scss']
+  styleUrls: ['./indexrecetas.component.scss'],
+  providers: [RecetasService]
 })
 export class IndexrecetasComponent implements OnInit {
 
@@ -20,7 +21,6 @@ export class IndexrecetasComponent implements OnInit {
   getRecetas() {
     this.recetasservice.getAll().subscribe({
       next: (data) => {
-        console.log(data);
         this.recetas = data;
       },
       error: (e) => console.error(e)

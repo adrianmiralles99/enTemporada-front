@@ -10,7 +10,7 @@ import { TokenStorageService } from 'src/app/servicios/token-storage.service';
   styleUrls: ['./pop-up.component.scss']
 })
 export class PopUpComponent implements OnInit {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private authService: AuthService, private tokenStorage: TokenStorageService) {
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) {
   }
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -28,26 +28,36 @@ export class PopUpComponent implements OnInit {
   roles: string[] = [];
   nick: string = "";
   password: string = "";
+  error = new Map();
 
   onSubmit(): void {
-    this.authService.login(this.nick, this.password).subscribe({
-      next: data => {
-        console.log(data);
-        if (!data.error) {
-          this.tokenStorage.saveToken(data.token);
-          this.tokenStorage.saveUser(data);
-          // this.isLoginFailed = false;
-          // this.isLoggedIn = true;
-          // this.roles = this.tokenStorage.getUser().roles;
-          window.location.reload();
-        }
+    this.error = new Map();
 
-      },
-      error: err => {
-        this.errorMessage = err.error.message;
-        this.isLoginFailed = true;
-      }
-    });
+    if (!this.nick || this.nick.length == 0) {
+      this.error.set("nick", "El nick no puede estar vacio");
+    }
+
+    if (!this.password || this.password.length == 0) {
+      this.error.set("password", "La contraseña no puede estar vacia");
+    }
+
+    if (this.error.size == 0) {
+      this.authService.login(this.nick, this.password).subscribe({
+        next: data => {
+          if (!data.error) {
+            this.tokenStorage.saveToken(data.token);
+            this.tokenStorage.saveUser(data);
+            window.location.reload();
+          }
+          else {
+            this.error.set("error", "Usuario incorrecto");
+          }
+        }
+      });
+    }
   }
+
+
+
 }
 

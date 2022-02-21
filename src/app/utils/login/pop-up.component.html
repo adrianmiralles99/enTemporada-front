@@ -1,41 +1,52 @@
 <div class="ventana">
   <div *ngIf="!recupassword">
     <h1 class="titulo" mat-dialog-title>INICIAR SESION</h1>
+    
     <mat-dialog-content class="contenedor">
-      <label class="campos">
-        <h3>Usuario</h3>
-        <input [(ngModel)]="nick" type="text">
-      </label>
-      <br>
-      <label class="campos">
-        <h3>Contraseña</h3>
-        <input [(ngModel)]="password" type="password">
-      </label>
+      <form (keydown.enter)="onSubmit()" #form="ngForm">
+        <label class="campos">
+          <h3>Usuario</h3>
+          <input [(ngModel)]="nick" name="nick" type="text">
+          <div class="error">
+            <p>{{error.get("nick")}}</p>
+          </div>
+        </label>
+        <br>
+        <label class="campos">
+          <h3>Contraseña</h3>
+          <input [(ngModel)]="password" name="password" type="password">
+          <div class="error">
+            <p>{{error.get("password")}}</p>
+            <p>{{error.get("error")}}</p>
+          </div>
+        </label>
 
-      <div class="row">
-        <div class="col-5">
-          <label class="recuerdame">
-            <input type="checkbox" name="" id="">
-            <span>Recuerdame</span>
-          </label>
+        <div class="row">
+          <div class="col-5">
+            <label class="recuerdame">
+              <input type="checkbox" name="" id="">
+              <span>Recuerdame</span>
+            </label>
+          </div>
+          <div class="col-7 contraseña">
+            <p (click)="recupassword=true">¿Has olvidado tu contraseña?</p>
+          </div>
         </div>
-        <div class="col-7 contraseña">
-          <p (click)="recupassword=true">¿Has olvidado tu contraseña?</p>
+        <mat-dialog-actions class="boton">
+          <button class="acceder" (click)="onSubmit()">Acceder</button>
+
+        </mat-dialog-actions>
+        <div class="row registro">
+          <div class="col-12">
+            <p [routerLink]="'/registro'" [mat-dialog-close]>
+              ¿Todavia no tienes cuenta? Registrate para acceder a
+              una gran variedad de recetas de frutas y verduras en temporada</p>
+          </div>
         </div>
-      </div>
-      <mat-dialog-actions class="boton">
-        <button class="acceder" (click)="onSubmit()" [mat-dialog-close]="">Acceder</button>
-      </mat-dialog-actions>
-      <div class="row registro">
-        <div class="col-12">
-          <p [routerLink]="'/registro'" [mat-dialog-close]>
-            ¿Todavia no tienes cuenta? Registrate para acceder a
-            una gran variedad de recetas de frutas y verduras en temporada</p>
-        </div>
-      </div>
+      </form>
+
     </mat-dialog-content>
   </div>
-
   <div *ngIf="recupassword">
     <h1 class="titulo" mat-dialog-title>RECUPERACIÓN DE CONTRASEÑA</h1>
     <mat-dialog-content class="contenedor">
@@ -52,3 +63,6 @@
   </div>
 
 </div>
+
+<img class="logo lemon" src="../../../assets/IMG/En Temporada (IES FSL)/Stickers/Lemon.png" alt="">
+<img class="logo orange" src="../../../assets/IMG/En Temporada (IES FSL)/Stickers/Black Orange.png" alt="">

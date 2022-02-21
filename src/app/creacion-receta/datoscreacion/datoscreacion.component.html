@@ -205,8 +205,11 @@
 
 
 <div class="row gestionReceta">
-    <div class="col-6">
+    <div *ngIf="!recetas;" class="col-6">
         <button (click)="crearReceta()" class="crear">Crear</button>
+    </div>
+    <div *ngIf="recetas;" class="col-6">
+        <button (click)="actualizarReceta()" class="actualizar">Actualizar</button>
     </div>
     <div class="col-6">
         <button [routerLink]="['/recetas']" class="cancelar">Cancelar</button>

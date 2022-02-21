@@ -29,7 +29,10 @@
     .cancelar {
         background-color: rgb(255, 44, 44);
     }
-
+    .actualizar {
+        background-color: $green;
+        color: white;
+    }
     .crear {
         background-color: $yellow;
     }
