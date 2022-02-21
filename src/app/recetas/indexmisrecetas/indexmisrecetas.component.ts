@@ -9,6 +9,8 @@ export class IndexmisrecetasComponent implements OnInit {
 
   constructor() { }
 
+  titulo?: string = "Mis recetas"
+
   ngOnInit(): void {
   }
 

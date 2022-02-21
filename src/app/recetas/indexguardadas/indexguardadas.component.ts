@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class IndexguardadasComponent implements OnInit {
   constructor() { }
-
+  titulo?: string = "Recets guardadas"
   ngOnInit(): void {
   }
 

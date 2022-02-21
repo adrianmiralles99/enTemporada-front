@@ -53,7 +53,6 @@ export class BarraComponent implements OnInit {
   sesion!: boolean;
 
   ngOnInit(): void {
-    this.openDialog();
     if (this.id_user) {
       this.sesion = true;
       this.getUser();

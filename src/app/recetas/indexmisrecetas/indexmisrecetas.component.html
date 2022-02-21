@@ -1,5 +1,58 @@
 <app-barra [color]="'orange'"></app-barra>
-<app-presentacion-recetas [titulo]="'Mis recetas guardadas'"></app-presentacion-recetas>
+<div class="header">
+    <div class="col-sm">
+      <img src="../../../assets/IMG/tituloW.png" alt="" class="icono">
+      <h1>{{titulo}}</h1>
+      <img src="../../../assets/IMG/En Temporada (IES FSL)/Stickers/Orange Wedge.png" alt="" class="sticker gajo">
+      <img src="../../../assets/IMG/En Temporada (IES FSL)/Stickers/Classic White.png" alt="" class="sticker white">
+      <img src="../../../assets/IMG/En Temporada (IES FSL)/Stickers/Black Orange.png" alt="" class="sticker naranja">
+      <img src="../../../assets/IMG/En Temporada (IES FSL)/Stickers/Lemon.png" alt="" class="sticker limon">
+      <img src="../../../assets/IMG/En Temporada (IES FSL)/Stickers/Green Peach.png" alt="" class="sticker malacaton">
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="elemento">
+  
+      <div class="row barra">
+  
+        <div class="resultados col-5">
+          <p><strong>Resultados encontrados: </strong></p>
+        </div>
+  
+        <div class="ml-sm-2 col-lg-6 col-12 busqueda">
+          <div class="search row">
+  
+            <div class=" col-5  mr-2 campo">
+              <input type="text" placeholder="Busqueda...">
+              <button class="lupa"></button>
+            </div>
+  
+  
+            <div class="col-lg-6 col-md-5 filtro">
+              <div class="row">
+                <select  class="relevancia col-lg-6 col-5">
+                  <option value=""></option>
+                  <option value="">Relevancia</option>
+                  <option value="">Fecha de Subida</option>
+                </select>
+                <select class="tipo col-log-6 col-5">
+                  <option value=""></option>
+                  <option value="">Desayuno</option>
+                  <option value="">Almuerzo</option>
+                  <option value="">Comida</option>
+                  <option value="">Cena</option>
+                  <option value="">Postre</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+  
+      </div>
+    </div>
+  </div>
 <app-card-misrecetas [usuario]="'adrimigo'"></app-card-misrecetas>
 <app-footer></app-footer>
 <app-subir></app-subir>
