@@ -17,6 +17,8 @@ export class BarraComponent implements OnInit {
   @Input() color: string = "";
   id_user = this.token.getId();
   usuario!: Usuarios;
+  imagen?: string;
+  nickname?: string;
   constructor(private router: Router, private uService: UsuarioService, public dialogRef: MatDialog, private token: TokenStorageService) { }
 
   openDialog() {
@@ -35,10 +37,9 @@ export class BarraComponent implements OnInit {
     this.uService.getById(this.id_user).subscribe({
       next: (data) => {
         console.log(data);
-
         this.usuario = data;
-
-
+        this.imagen = this.usuario.imagen
+        this.nickname = this.usuario.nick
       }
     })
   }

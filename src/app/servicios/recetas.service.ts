@@ -29,11 +29,12 @@ export class RecetasService {
     return this.http.get(`${baseUrl}/${id}` + "?expand=nick");
   }
 
-  crearReceta(titulo: string, comensales: number, tiempo: string, tipo: string, dificultad: string, ingredientes: string[], pasos: string[], id_prodp: number, imagen: string, imagen64: any): Observable<any> {
+  crearReceta(id_user: number,titulo: string, comensales: number, tiempo: string, tipo: string, dificultad: string, ingredientes: string[], pasos: string[], id_prodp: number, imagen: string, imagen64: any): Observable<any> {
     // console.log(this.http.post(baseUrl, imagen64));
     // console.log("adios");
 
     return this.http.post(baseUrl + "/crearreceta", {
+      id_usuario: id_user,
       titulo: titulo,
       comensales: comensales,
       tiempo: tiempo,
@@ -43,14 +44,14 @@ export class RecetasService {
       pasos: pasos,
       id_prodp: id_prodp,
       imagen: imagen,
-      id_usuario: 2
     }, httpOptions);
   }
-  actualizarReceta(id:number,titulo: string, comensales: number, tiempo: string, tipo: string, dificultad: string, ingredientes: string[], pasos: string[], id_prodp: number, imagen: string, imagen64: any): Observable<any> {
+  actualizarReceta(id_user: number,id:number,titulo: string, comensales: number, tiempo: string, tipo: string, dificultad: string, ingredientes: string[], pasos: string[], id_prodp: number, imagen: string, imagen64: any): Observable<any> {
     // console.log(this.http.post(baseUrl, imagen64));
     // console.log("adios");
 
     return this.http.put(baseUrl + "/updatereceta?id="+id, {
+      id_usuario: id_user,
       titulo: titulo,
       comensales: comensales,
       tiempo: tiempo,
@@ -59,8 +60,6 @@ export class RecetasService {
       ingredientes: ingredientes,
       pasos: pasos,
       id_prodp: id_prodp,
-      imagen: imagen,
-      id_usuario: 2
     }, httpOptions);
   }
 
