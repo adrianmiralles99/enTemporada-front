@@ -8,6 +8,7 @@
     border-radius: 5px;
     padding: 5px 5px 0px 5px;
     border: none;
+    box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.258);
 
     * {
       font-family: neueR;
@@ -143,13 +144,15 @@
   }
 }
 
-.relevancia {
+.relevancia,
+.tipo {
   margin: auto;
   padding: 4px 5px 4px 5px;
   font-family: neueB;
   border-radius: 5px;
   border: none;
   background-color: white;
+  box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.258);
 
   * {
     vertical-align: middle !important;
@@ -165,16 +168,14 @@
 }
 
 @media screen and(max-width: 700px) {
-  .busqueda {
-    .search {
-      .campo {
-        width: 50%;
-        margin-left: 15px;
-      }
+  .search {
+    .campo {
+      width: 50%;
+      margin-left: 15px;
+    }
 
-      >div {
-        float: right;
-      }
+    > div {
+      float: right;
     }
   }
 

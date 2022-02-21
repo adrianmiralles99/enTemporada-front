@@ -25,7 +25,6 @@ export class CalendarioComponent implements OnInit {
   getProductos() {
     this.productosService.getCalendario().subscribe({
       next: (data) => {
-        console.log(data);
         this.productes = data;
 
       }

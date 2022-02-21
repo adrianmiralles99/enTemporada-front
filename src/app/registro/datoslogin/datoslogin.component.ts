@@ -32,11 +32,7 @@ export class DatosloginComponent implements OnInit {
     if (this.password === this.password2) {
       this.authService.register(this.nick, this.nombre, this.apellidos, this.correo, this.password, this.direccion, this.localidad).subscribe({
         next: data => {
-          this.isSuccessful = true;
-          this.isSignUpFailed = false;
-        },
-        error: err => {
-          this.isSignUpFailed = true;
+          console.log(data);
         }
       });
     }

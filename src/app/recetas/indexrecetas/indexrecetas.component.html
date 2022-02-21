@@ -1,5 +1,10 @@
-<app-barra [color]="'orange'"></app-barra>
-<app-presentacion-recetas [titulo]="'Recetas en temporada'"></app-presentacion-recetas>
-<app-card-recetas [recetas]="recetas"></app-card-recetas>
-<app-footer></app-footer>
-<app-subir></app-subir>
+<ng-container *ngIf="recetas else elseTemplate">
+    <app-barra [color]="'orange'"></app-barra>
+    <app-presentacion-recetas [titulo]="'Recetas en temporada'" [cantidad]="recetas.length"></app-presentacion-recetas>
+    <app-card-recetas [recetas]="recetas"></app-card-recetas>
+    <app-footer></app-footer>
+    <app-subir></app-subir>
+</ng-container>
+<ng-template #elseTemplate>
+    <app-carga></app-carga>
+</ng-template>

@@ -22,20 +22,17 @@ export class ProductosService {
     return this.http.get<Productos[]>(baseUrl);
   }
 
-  getRelacionadas(id: any): Observable<Productos> {
+  getInfoProducto(id: any): Observable<Productos> {
 
-    return this.http.get<Productos>(`${baseUrl}/${id}` + "?expand=relacionadas");
+    return this.http.get<Productos>(`${baseUrl}/${id}` + "?expand=relacionadas,calendario");
   }
 
   getCalendario(): Observable<Productos[]> {
-    console.log(baseUrl + "?expand=calendario");
-
     return this.http.get<Productos[]>(baseUrl + "?expand=calendario");
   }
 
   getActual(): Observable<Calendario[]> {
-    // return this.http.get<Productos[]>(baseUrl);
-    return this.http.get<Productos[]>(baseUrlActual);
+    return this.http.get<Productos[]>(baseUrlActual+"?expand=calendario");
   }
 
 

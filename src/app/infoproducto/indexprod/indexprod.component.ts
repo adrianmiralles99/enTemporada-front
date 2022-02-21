@@ -15,12 +15,10 @@ export class IndexprodComponent implements OnInit {
   articulo!: Productos;
 
   getIndividual(): void {
-    this.productosService.getRelacionadas(this.rutaActiva.snapshot.paramMap.get('id'))
+    this.productosService.getInfoProducto(this.rutaActiva.snapshot.paramMap.get('id'))
       .subscribe({
         next: (data) => {
           this.articulo = data;
-          console.log(data);
-          
         },
         error: (e) => console.error(e)
       })
