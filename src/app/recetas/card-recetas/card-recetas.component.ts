@@ -14,7 +14,7 @@ export class CardRecetasComponent implements OnInit {
 
   constructor(private token: TokenStorageService, public dialogRef: MatDialog) { }
 
-  @Input() recetas!: Recetas[];
+  @Input() recetas?: Recetas[];
   hover = false;
 
   sesion!: boolean;

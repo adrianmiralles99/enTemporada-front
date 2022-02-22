@@ -12,21 +12,21 @@ export class IndexguardadasComponent implements OnInit {
   constructor(private recetas: RecetasService) { }
   titulo?: string = "Recetas guardadas"
   guardadas!: Recetas[]
-  
   cantidad?: number;
+
   ngOnInit(): void {
     this.misRecetas();
   }
-misRecetas() {
-  this.recetas.getFav().subscribe({
-    next: (data) => {
-      this.guardadas = data;
-      this.cantidad = this.guardadas.length;
-      console.log(this.guardadas);
-      
-      
-    },
-    error: (e) => console.error(e)
-  });
-}
+  misRecetas() {
+    this.recetas.getFav().subscribe({
+      next: (data) => {
+        this.guardadas = data;
+        this.cantidad = this.guardadas.length;
+        console.log(this.guardadas);
+
+
+      },
+      error: (e) => console.error(e)
+    });
+  }
 }

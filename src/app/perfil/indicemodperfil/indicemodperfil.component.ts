@@ -22,7 +22,7 @@ export class IndicemodperfilComponent implements OnInit {
     this.getUser();
   }
   getUser(): void {
-    this.usuariosService.getById(this.id_usuario).subscribe({
+    this.usuariosService.getById().subscribe({
       next: (data) => {
         this.usuario = data;
         this.getLvl(this.usuario.exp);

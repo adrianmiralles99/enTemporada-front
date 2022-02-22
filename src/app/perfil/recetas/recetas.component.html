@@ -7,19 +7,20 @@
             Última receta visitada
           </p>
         </div>
-        <button class="imagen" [ngStyle]="{'background-image':'url(../../../assets/IMG/recetas/'+'tartaManzana'+'.jpg)'}">
+        <button class="imagen" [routerLink]="['/recetaindividual', ultimareceta?.id]"
+          style="background-image:url(/assets/IMG/recetas/{{ultimareceta?.imagen}})">
         </button>
         <div class="row usuario">
           <div class="col-9">
-            <p class="nombre">Tarta de manzana</p>
+            <p class="nombre">{{ultimareceta?.titulo}}</p>
           </div>
         </div>
         <div class="user row">
           <div class="col-2">
-            <div class="icono"></div>
+            <div class="icono" style="background-image:url(/assets/IMG/Usuarios/{{ultimareceta?.usuario_img}})"></div>
           </div>
           <div class="col-6">
-            <sub class="autor"><br>by @adrimigo</sub>
+            <sub class="autor"><br>by @{{ultimareceta?.nick}}</sub>
           </div>
         </div>
       </div>
@@ -32,19 +33,20 @@
             Receta más popular
           </p>
         </div>
-        <button class="imagen" [ngStyle]="{'background-image':'url(../../../assets/IMG/recetas/'+'risotto'+'.jpg)'}">
+        <button class="imagen" [routerLink]="['/recetaindividual', recetapopular?.id]"
+          style="background-image:url(/assets/IMG/recetas/{{recetapopular?.imagen}})">
         </button>
         <div class="row usuario">
           <div class="col-9">
-            <p class="nombre">Risotto</p>
+            <p class="nombre">{{recetapopular?.titulo}}</p>
           </div>
         </div>
         <div class="user row">
           <div class="col-2">
-            <div class="icono" [ngStyle]="{'background-image':'url(../../../assets/IMG/Usuarios/'+usuario.imagen+')'}"></div>
+            <div class="icono" style="background-image:url(/assets/IMG/Usuarios/{{recetapopular?.usuario_img}})"></div>
           </div>
           <div class="col-6">
-            <sub class="autor"><br>by @adrimigo</sub>
+            <sub class="autor"><br>by {{recetapopular?.nick}}</sub>
           </div>
         </div>
       </div>
