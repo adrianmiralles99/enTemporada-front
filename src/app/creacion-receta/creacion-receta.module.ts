@@ -5,6 +5,7 @@ import { IndexcreacionComponent } from './indexcreacion/indexcreacion.component'
 import { DatoscreacionComponent } from './datoscreacion/datoscreacion.component';
 import { FormsModule } from '@angular/forms'; //
 import { RouterModule } from '@angular/router';
+import { IndexedicionComponent } from './indexedicion/indexedicion.component';
 
 
 
@@ -12,6 +13,7 @@ import { RouterModule } from '@angular/router';
   declarations: [
     IndexcreacionComponent,
     DatoscreacionComponent,
+    IndexedicionComponent,
   ],
   imports: [
     CommonModule,

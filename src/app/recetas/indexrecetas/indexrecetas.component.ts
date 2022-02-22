@@ -4,14 +4,17 @@ import { RecetasService } from 'src/app/servicios/recetas.service';
 @Component({
   selector: 'app-indexrecetas',
   templateUrl: './indexrecetas.component.html',
-  styleUrls: ['./indexrecetas.component.scss']
+  styleUrls: ['./indexrecetas.component.scss'],
+  providers: [RecetasService]
 })
 export class IndexrecetasComponent implements OnInit {
 
 
   constructor(private recetasservice: RecetasService) { }
-
-  recetas!: Recetas[];
+  tipo?: string;
+  recetas?: Recetas[];
+  titulo: string = "Recetas en Temporada";
+  cantidad?: number;
 
   ngOnInit(): void {
     this.getRecetas();
@@ -20,11 +23,15 @@ export class IndexrecetasComponent implements OnInit {
   getRecetas() {
     this.recetasservice.getAll().subscribe({
       next: (data) => {
-        console.log(data);
         this.recetas = data;
+        this.cantidad = this.recetas.length
       },
       error: (e) => console.error(e)
     });
+  }
+  
+  getRecetaTipo(tipo:string){
+    
   }
 
 }

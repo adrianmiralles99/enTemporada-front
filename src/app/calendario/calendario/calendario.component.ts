@@ -7,7 +7,9 @@ import { ProductosService } from 'src/app/servicios/productos.service';
 @Component({
   selector: 'app-calendario',
   templateUrl: './calendario.component.html',
-  styleUrls: ['./calendario.component.scss']
+  styleUrls: ['./calendario.component.scss'],
+  providers: [ProductosService],
+
 })
 export class CalendarioComponent implements OnInit {
 

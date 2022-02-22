@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Productos } from '../modelos/productos.model';
 import { serverUrl } from '../baseurl';
+import { Calendario } from '../modelos/calendario.model';
 
 const baseUrl = serverUrl + 'producto';
-const baseUrlVista = serverUrl + 'prodactuales';
+const baseUrlActual = serverUrl + 'prodactuales';
+
+@Injectable()
 
 @Injectable({
   providedIn: 'root'
@@ -19,16 +22,21 @@ export class ProductosService {
     return this.http.get<Productos[]>(baseUrl);
   }
 
-  getRelacionadas(id: any): Observable<Productos> {
-    return this.http.get<Productos>(`${baseUrl}/${id}` + "?expand=relacionadas");
+  getInfoProducto(id: any): Observable<Productos> {
+
+    return this.http.get<Productos>(`${baseUrl}/${id}` + "?expand=relacionadas,calendario");
   }
 
   getCalendario(): Observable<Productos[]> {
     return this.http.get<Productos[]>(baseUrl + "?expand=calendario");
   }
 
-  getActual(): Observable<Productos[]> {
-    return this.http.get<Productos[]>(baseUrlVista + "?expand=calendario");
+  getActual(): Observable<Calendario[]> {
+    return this.http.get<Productos[]>(baseUrlActual + "?expand=calendario");
+  }
+
+  getPrueba(): Observable<Productos[]> {
+    return this.http.get<Productos[]>(`${baseUrl}?nombre=Manzana`);
   }
 
 
@@ -37,6 +45,7 @@ export class ProductosService {
   }
 
   create(data: any): Observable<any> {
+
     return this.http.post(baseUrl, data);
   }
 

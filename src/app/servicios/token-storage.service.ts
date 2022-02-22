@@ -19,6 +19,14 @@ export class TokenStorageService {
   public getToken(): string | null {
     return window.sessionStorage.getItem(TOKEN_KEY);
   }
+  public getId(): string | null{
+    if(window.sessionStorage.getItem(USER_KEY)){
+      return JSON.parse(window.sessionStorage.getItem(USER_KEY) ?? "").id;
+    }
+    else{
+      return null;
+    }
+  }
 
   public saveUser(user: any): void {
     window.sessionStorage.removeItem(USER_KEY);

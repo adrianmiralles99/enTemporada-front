@@ -3,8 +3,9 @@
     <div class="row">
 
       <div class="col-lg-3 col-md-1 foto">
-        <div class="usuario"></div>
-        <div class="b_usuario"></div>
+        <div [ngStyle]="{'background-image': 'url(/assets/IMG/Usuarios/' + rutaUser + ')'}" class="usuario"></div>
+        <div [ngStyle]="{'background-image': 'url(/assets/IMG/Niveles/lvl_' + rutaLogo + '-removebg-preview.png)'}"
+          class="b_usuario"></div>
       </div>
 
 
@@ -22,12 +23,12 @@
           </div>
           <div class=" col-lg-12">
             <div class="progress">
-              <div class="progress-bar   progress-bar-striped progress-bar-animated active" 
-              role="progressbar" aria-valuenow="exp_res" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width.%': exp_res}"></div>
+              <div class="progress-bar   progress-bar-striped progress-bar-animated active" role="progressbar"
+                aria-valuenow="exp_res" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width.%': exp_res}"></div>
             </div>
           </div>
           <div class="col-12">
-            <button [routerLink]="'/modperfil'"class="modificar">Modificar Perfil</button>
+            <button [routerLink]="'/modperfil'" class="modificar">Modificar Perfil</button>
           </div>
         </div>
       </div>

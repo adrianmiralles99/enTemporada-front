@@ -34,8 +34,6 @@
   background-repeat: no-repeat;
   background-position: center;
   user-select: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.571);
-  border-top: 1px solid rgba(0, 0, 0, 0.571);
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.299);
 }
 
@@ -43,9 +41,7 @@
   width: 60px;
   height: 60px;
   background-color: white;
-  border: 1px solid rgba(62, 62, 62, 0.456);
   border-radius: 100%;
-  background-image: url("../../../assets/IMG/ejemploUser.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -91,7 +87,7 @@
 }
 
 .save {
-  background-image: url("../../../assets/IMG/iconos/bookmark_save.png");
+  background-image: url("../../../assets/IMG/iconos/bookmark.png");
 }
 
 .mg {

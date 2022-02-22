@@ -12,5 +12,6 @@ export class Recetas {
     pasos?: Array<string>;
     fecha?: Date;
     ingredientes?: Array<string>;
-    nick?: { nick: string };
+    nick?: string;
+    usuario_img?: string;
 }

@@ -14,7 +14,8 @@ import { IndexguardadasComponent } from './recetas/indexguardadas/indexguardadas
 import { IndexmisrecetasComponent } from './recetas/indexmisrecetas/indexmisrecetas.component';
 import { IndicemodperfilComponent } from './perfil/indicemodperfil/indicemodperfil.component';
 import { PaginaerrorComponent } from './error/paginaerror/paginaerror.component';
-
+import { IndexedicionComponent } from './creacion-receta/indexedicion/indexedicion.component';
+import { UsuariologueadoGuard } from './guards/usuariologueado.guard';
 
 const routes: Routes = [
   {
@@ -43,11 +44,11 @@ const routes: Routes = [
   },
   {
     path: 'recetas-guardadas',
-    component: IndexguardadasComponent,
+    component: IndexguardadasComponent,canActivate:[UsuariologueadoGuard]
   },
   {
     path: 'recetas-misrecetas',
-    component: IndexmisrecetasComponent,
+    component: IndexmisrecetasComponent,canActivate:[UsuariologueadoGuard]
   },
   {
     path: 'recetaindividual/:id',
@@ -61,15 +62,19 @@ const routes: Routes = [
 
   {
     path: 'creacionRecetas',
-    component: IndexcreacionComponent,
+    component: IndexcreacionComponent,canActivate:[UsuariologueadoGuard]
+  },
+  {
+    path: 'editarReceta/:id',
+    component: IndexedicionComponent,canActivate:[UsuariologueadoGuard]
   },
   {
     path: 'perfil',
-    component: IndiceperfilComponent,
+    component: IndiceperfilComponent,canActivate:[UsuariologueadoGuard]
   },
   {
     path: 'modperfil',
-    component: IndicemodperfilComponent,
+    component: IndicemodperfilComponent,canActivate:[UsuariologueadoGuard]
   },
   //si la ruta es equivocada salta el error 404
   {

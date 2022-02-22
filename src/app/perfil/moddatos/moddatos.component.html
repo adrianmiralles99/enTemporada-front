@@ -3,8 +3,8 @@
       <div class="row">
 
         <div class="col-lg-3 col-md-1 foto">
-          <div class="usuario"></div>
-          <div class="b_usuario"></div>
+          <div [ngStyle]="{'background-image': 'url(' + rutaUser + ')'}" class="usuario"></div>
+          <div  [ngStyle]="{'background-image': 'url(' + rutaLogo + ')'}"class="b_usuario"></div>
           <label class="custom-file-upload">
             <input type="file"id="fotousuario"  (change)="visualizar()"name="avatar">
             Subir archivo
@@ -31,11 +31,11 @@
             <div class=" col-lg-12">
               <div class="progress">
                 <div class="progress-bar   progress-bar-striped progress-bar-animated" role="progressbar"
-                  aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                  aria-valuenow="exp_res" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width.%': exp_res}"></div>
               </div>
             </div>
             <div class="col-12 botones">
-              <button [routerLink]="'/perfil'"class="modificar">Aceptar cambios</button>
+              <button [routerLink]="'/perfil'" (click)="modUser()" class="modificar">Aceptar cambios</button>
               <button [routerLink]="'/perfil'"class="modificar">Cancelar cambios</button>
           </div>
         </div>

@@ -67,7 +67,7 @@
 
                 <tr class="puntos">
                     <ng-container *ngIf="calendario">
-                        <td *ngFor="let mes of  getMes(articulo.id); let indice=index"
+                        <td *ngFor="let mes of  articulo.calendario; let indice=index"
                             [ngClass]="{'cabFila': indice==mesActual}">
                             <div class="temporada" [ngSwitch]="mes.estado">
                                 <img src="../../../assets/IMG/iconos/simbolos en temporada/en Temporada.png" class="T"

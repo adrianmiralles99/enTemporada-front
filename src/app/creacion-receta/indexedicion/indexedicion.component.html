@@ -1,0 +1,10 @@
+
+<ng-container *ngIf="productos; else elseTemplate">
+    <app-barra [color]="'black'"></app-barra>
+    <div class="fondo">
+        <app-datoscreacion [recetas] ="recetas" [productos]="productos"></app-datoscreacion>
+    </div>
+</ng-container>
+<ng-template #elseTemplate>
+    <app-carga></app-carga>
+</ng-template>

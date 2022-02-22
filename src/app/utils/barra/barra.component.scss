@@ -8,6 +8,10 @@ nav {
     outline: none;
   }
 }
+
+.menu {
+  color: black;
+}
 .green {
   background-color: $green;
 }
@@ -65,7 +69,10 @@ nav {
   }
 
   img {
-    height: 30px;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    margin-right: 10px;
   }
 
   .boton {
@@ -77,6 +84,9 @@ nav {
     background-color: $yellow;
     transition: 0.3s;
     outline: none;
+    > img {
+      border: 100%;
+    }
   }
 }
 

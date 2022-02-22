@@ -96,7 +96,9 @@ body {
 }
 
 .custom-modalbox {
+  width: 45% !important;
   mat-dialog-container {
+    overflow: visible;
     border: 2px solid black;
     filter: drop-shadow(0 5px 10px rgba(50, 50, 50, 0.632));
   }
@@ -113,4 +115,13 @@ body {
   border-radius: 5px;
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.571);
   background-color: #3d423e;
+}
+
+@media screen and(max-width: 900px) {
+  .custom-modalbox {
+    width: 90% !important;
+    mat-dialog-container {
+      padding: 10px 0 10px 0;
+    }
+  }
 }

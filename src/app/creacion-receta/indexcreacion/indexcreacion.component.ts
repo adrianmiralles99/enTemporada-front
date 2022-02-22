@@ -5,7 +5,9 @@ import { ProductosService } from 'src/app/servicios/productos.service';
 @Component({
   selector: 'app-indexcreacion',
   templateUrl: './indexcreacion.component.html',
-  styleUrls: ['./indexcreacion.component.scss']
+  styleUrls: ['./indexcreacion.component.scss'],
+  providers: [ProductosService]
+
 })
 export class IndexcreacionComponent implements OnInit {
   constructor(private productoService: ProductosService) { }
@@ -24,5 +26,5 @@ export class IndexcreacionComponent implements OnInit {
     });
   }
 
-  
+
 }

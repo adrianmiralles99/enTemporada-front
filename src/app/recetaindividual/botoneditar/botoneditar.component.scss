@@ -1,0 +1,33 @@
+@import "../../../styles.scss";
+
+.gestionReceta {
+    font-family: neueB;
+    position: fixed;
+    bottom: 2%;
+    right: 8%;
+    text-align: center;
+    margin: auto;
+
+    > div {
+        margin: auto;
+        padding: 0 8px 0 8px;
+    }
+    button {
+        border: none;
+        height: 50px;
+        width: 110px;
+        border-radius: 10px;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.463);
+        transition: 0.3s;
+        &:hover {
+            transform: scale(110%);
+        }
+    }
+
+   
+    .crear {
+        background-color: $green;
+        color: white;
+    }
+}
+

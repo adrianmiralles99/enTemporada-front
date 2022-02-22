@@ -15,16 +15,19 @@ export class TablaCalendarioComponent implements OnInit {
   frutas: Productos[] = [];
   verduras: Productos[] = [];
   mesActual = new Date().getMonth();
-  mesact = this.meses[this.mesActual];
-  messig = this.meses[this.mesActual + 1];
+  mesSiguiente: number = 0;
 
 
 
 
   ngOnInit(): void {
     if (this.mesActual == 12) {
-      this.messig = this.meses[0];
+      this.mesSiguiente = 0;
     }
+    else {
+      this.mesSiguiente = this.mesActual + 1;
+    }
+
     this.frutas = this.productes.filter(element => element.tipo == "F");
     this.verduras = this.productes.filter(element => element.tipo == "V");
   }
