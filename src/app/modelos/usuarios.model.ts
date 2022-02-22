@@ -1,3 +1,4 @@
+import { Recetas } from "./recetas.model";
 export class Usuarios {
     id!: number;
     nombre?: string;
@@ -14,4 +15,5 @@ export class Usuarios {
     token?: string;
     exp!: number;
     id_ultima_receta?: number;
+    recetas?:Recetas[];
 }

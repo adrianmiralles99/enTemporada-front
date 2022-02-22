@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { Recetas } from 'src/app/modelos/recetas.model';
-
+import { TokenStorageService } from 'src/app/servicios/token-storage.service';
 @Component({
   selector: 'app-detallesrecetas',
   templateUrl: './detallesrecetas.component.html',
@@ -9,18 +9,43 @@ import { Recetas } from 'src/app/modelos/recetas.model';
 export class DetallesrecetasComponent {
 
   ingredientes: Array<Array<String>> = [[]];
+  like: boolean = false;
+  guardado: boolean = false;
 
-  constructor() { }
+  constructor(private token: TokenStorageService) { }
 
   @Input() receta?: Recetas;
   @Input() misingredientes?: string[] = [];
 
+  ngOnInit(){
+   // this.like= true;
+  }
   ngOnChanges(): void {
+    
     if (this.misingredientes) {
       this.divideIngredientes();
     }
   }
+  likedelete(){
+    if(this.token.getId()){
 
+    }
+  }
+  likeset(){
+    if(this.token.getId()){
+      
+    }
+  }
+  guardadodelete(){
+    if(this.token.getId()){
+      
+    }
+  }
+  guardadoset(){
+    if(this.token.getId()){
+      
+    }
+  }
   divideIngredientes() {
     if (this.misingredientes) {
 

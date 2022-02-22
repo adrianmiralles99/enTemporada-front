@@ -17,12 +17,19 @@
                         <div class="col-8">
                             <sub>By @{{receta?.nick?.nick}}</sub>
                         </div>
-                        <button class="col-1 mg">
+                        <button (click)="likedelete()"*ngIf="like"class="col-1 mg">
+                            <img src="../../../assets/IMG/iconos/mg_click.png" alt="">
+                        </button>
+                        <button (click)="likeset()" *ngIf="!like"class="col-1 mg">
                             <img src="../../../assets/IMG/iconos/mg.png" alt="">
                         </button>
-                        <button class="col-1 save">
+                        <button (click)="guardadodelete()" *ngIf="guardado"class="col-1 save">
+                            <img src="../../../assets/IMG/iconos/bookmark_click.png" alt="">
+                        </button>
+                        <button (click)="guardadoset()"*ngIf="!guardado"class="col-1 save">
                             <img src="../../../assets/IMG/iconos/bookmark.png" alt="">
                         </button>
+
                     </div>
 
                 </div>

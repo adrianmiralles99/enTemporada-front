@@ -28,6 +28,7 @@ export class RecetasService {
   getById(id: any): Observable<any> {
     return this.http.get(`${baseUrl}/${id}` + "?expand=nick");
   }
+  
 
   crearReceta(id_user: number, titulo: string, comensales: number, tiempo: string, tipo: string, dificultad: string, ingredientes: string[], pasos: string[], id_prodp: number, imagen: string, imagen64: any): Observable<any> {
     // console.log(this.http.post(baseUrl, imagen64));
