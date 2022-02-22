@@ -99,6 +99,7 @@
   border-radius: 10px;
   transition: 0.3s;
   filter: drop-shadow(0 5px 5px rgba(76, 76, 76, 0.455));
+  outline: none;
   .img {
     background-image: url("../../../assets/IMG/iconos/plus.png");
     background-size: 90%;
@@ -114,11 +115,6 @@
   p {
     opacity: 0;
   }
-}
-
-.tooltip {
-  position: relative;
-  display: inline-block;
 }
 
 .crear {

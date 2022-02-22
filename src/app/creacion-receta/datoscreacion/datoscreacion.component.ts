@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class DatoscreacionComponent implements OnInit {
 
-  constructor(private router:Router, private recetasService: RecetasService,private token: TokenStorageService) { }
+  constructor(private router: Router, private recetasService: RecetasService, private token: TokenStorageService) { }
   iduser_crear = Number(this.token.getId());
   comensales: number = 0;
   tiempo: string = "";
@@ -26,8 +26,8 @@ export class DatoscreacionComponent implements OnInit {
   descripcion: string = "";
   misingredientes: string[] = [];
   imagen: string = "../../../assets/IMG/iconos/uploadImage.png";
-  
-  rutaimg: string ="../../../assets/IMG/recetas/";
+
+  rutaimg: string = "../../../assets/IMG/recetas/";
 
   errores?: {
     comensales: number;
@@ -46,7 +46,7 @@ export class DatoscreacionComponent implements OnInit {
   @Input() recetas?: Recetas;
   @Input() productos?: Productos[];
 
-  productito?:Productos;
+  productito?: Productos;
   cantidad: string = "";
   ingred: string = "";
 
@@ -58,38 +58,40 @@ export class DatoscreacionComponent implements OnInit {
   default = "Seleccione un campo"
   imagen64: any;
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
 
-    if (this.recetas){
-        this.cargarDatos();
+    if (this.recetas) {
+      this.cargarDatos();
     }
   }
-  ngOnChanges():void{
+  ngOnChanges(): void {
     //this.recetas.titulo;
 
   }
 
-  cargarDatos(): void{
-    this.productito = this.productos!.find(element => element.id ==this.recetas?.id_prodp);
+  cargarDatos(): void {
+    this.productito = this.productos!.find(element => element.id == this.recetas?.id_prodp);
     this.titulo = String(this.recetas?.titulo);//hay que hacerle cast si o si
     this.comensales = Number(this.recetas?.comensales);
     this.tiempo = String(this.recetas?.tiempo);
     this.tipo = String(this.recetas?.tipo);
     this.dificultad = String(this.recetas?.dificultad);
-    //this.selectTipo(String(this.productito?.tipo));//pasamos el tipo para que en el desplegable salgan los productos
-    if (this.productito?.tipo == "F"){
-     $("#selecF").click();
-    }else{
+
+    if (this.productito?.tipo == "F") {
+      $("#selecF").click();
+    } else {
       $("#selecT").click()
     }
+
     this.prodPrinc = String(this.productito?.nombre);
     this.imagen = this.rutaimg + String(this.recetas?.imagen);
     this.misingredientes = this.recetas?.ingredientes ?? [];
+
     this.cantidadPrinc = this.misingredientes[0].split(" ")[0];//cogemos la cantidad
     this.misingredientes.shift();
     this.divideIngredientes();
-    this.pasos= this.recetas?.pasos ?? [];
-    
+    this.pasos = this.recetas?.pasos ?? [];
+
     //this.comensales? = this.recetas?.comensales;
   }
   selectTipo(tipo: string) {
@@ -165,29 +167,29 @@ export class DatoscreacionComponent implements OnInit {
     this.router.navigate(['recetas']);
 
     if (this.prodPrinc && this.prodPrinc != this.default) {
-      var idprod = this.productos!.find(element => element.nombre == this.prodPrinc)!.id;
+      this.misingredientes.unshift(this.cantidadPrinc + " " + this.prodPrinc);
 
-      this.recetasService.crearReceta(this.iduser_crear,this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen, this.imagen64).subscribe({
-        
+      var idprod = this.productos!.find(element => element.nombre == this.prodPrinc)!.id;
+      this.recetasService.crearReceta(this.iduser_crear, this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen, this.imagen64).subscribe({
         next: data => {
-          if (data.error.length > 0) {
+          if (data && data.error.length > 0) {
             this.errores = data.error;
+            this.misingredientes.shift();
           }
 
         }
       });
     }
   }
-  actualizarReceta(){
-    this.router.navigate(['recetas']);
-
+  actualizarReceta() {
     if (this.recetas) {
       var idprod = this.productos!.find(element => element.nombre == this.prodPrinc)!.id;
-
-      this.recetasService.actualizarReceta(this.recetas.id,this.recetas.id_usuario,this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen, this.imagen64).subscribe({
+      this.misingredientes.unshift(this.cantidadPrinc + " " + this.prodPrinc);
+      this.recetasService.actualizarReceta(this.recetas.id, this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen, this.imagen64).subscribe({
         next: data => {
-          if (data.error.length > 0) {
+          if (data.error && data.error.length > 0) {
             this.errores = data.error;
+            this.misingredientes.shift();
           }
 
         }

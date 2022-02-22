@@ -1,9 +1,15 @@
-<app-barra [color]="'green'"></app-barra>
-<app-datos [usuario] ="usuario" [rutaUser]="rutaUser" [rutaLogo]="rutaLogo" [exp_res]="exp_res"></app-datos>
-<div class="inf">
-    <div class="container">
-        <app-inferior></app-inferior>
-        <app-recetas [usuario] ="usuario"></app-recetas>
-        <app-botonnuevareceta></app-botonnuevareceta>
+<ng-container *ngIf="usuario; else elseTemplate">
+    <app-barra [color]="'green'"></app-barra>
+    <app-datos [usuario]="usuario" [rutaUser]="imagen ?? '' " [rutaLogo]="nivel+''" [exp_res]="exp_res">
+    </app-datos>
+    <div class="inf">
+        <div class="container">
+            <app-inferior></app-inferior>
+            <app-recetas [usuario]="usuario"></app-recetas>
+            <app-botonnuevareceta></app-botonnuevareceta>
+        </div>
     </div>
-</div>
+</ng-container>
+<ng-template #elseTemplate>
+    <app-carga></app-carga>
+</ng-template>

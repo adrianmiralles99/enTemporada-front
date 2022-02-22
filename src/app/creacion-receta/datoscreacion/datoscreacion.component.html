@@ -2,9 +2,10 @@
     <div class="row">
         <div class="col-lg-5 col-md-12">
             <label class="upload">
-                <div [ngStyle]="{'background-image': 'url(' + imagen + ')', 'background-size': imagen ==='../../../assets/IMG/iconos/uploadImage.png' ? '30%':'cover'}"  id="img"></div>
-               
-                <input  type="file" (change)="visualizar($event)" name="" id="inputIMG">
+                <div [ngStyle]="{'background-image': 'url(' + imagen + ')', 'background-size': imagen ==='../../../assets/IMG/iconos/uploadImage.png' ? '30%':'cover'}"
+                    id="img"></div>
+
+                <input type="file" (change)="visualizar($event)" name="" id="inputIMG">
             </label>
 
             <div class="nombre">
@@ -89,11 +90,11 @@
 
                             </div>
                             <div class="col-7">
-                                <label id ="selecF" (click)="selectTipo('F')">
+                                <label id="selecF" (click)="selectTipo('F')">
                                     <input type="radio" name="tipo">
                                     <span>Fruta</span>
                                 </label>
-                                <label id ="selecT" (click)="selectTipo('V')">
+                                <label id="selecT" (click)="selectTipo('V')">
                                     <input type="radio" name="tipo">
                                     <span>Verdura</span>
                                 </label>
@@ -209,7 +210,7 @@
         <button (click)="crearReceta()" class="crear">Crear</button>
     </div>
     <div *ngIf="recetas;" class="col-6">
-        <button (click)="actualizarReceta()" class="actualizar">Actualizar</button>
+        <button (click)="actualizarReceta()" [routerLink]="['/recetas']" class="actualizar">Actualizar</button>
     </div>
     <div class="col-6">
         <button [routerLink]="['/recetas']" class="cancelar">Cancelar</button>

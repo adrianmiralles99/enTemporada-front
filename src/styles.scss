@@ -117,8 +117,11 @@ body {
   background-color: #3d423e;
 }
 
-@media screen and(max-width: 700px) {
+@media screen and(max-width: 900px) {
   .custom-modalbox {
-    width: 80% !important;
+    width: 90% !important;
+    mat-dialog-container {
+      padding: 10px 0 10px 0;
+    }
   }
 }

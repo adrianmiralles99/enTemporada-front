@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Recetas } from 'src/app/modelos/recetas.model';
 import { TokenStorageService } from 'src/app/servicios/token-storage.service';
+import { PopUpComponent } from 'src/app/utils/login/pop-up.component';
 @Component({
   selector: 'app-card-recetas',
   templateUrl: './card-recetas.component.html',
@@ -9,7 +11,7 @@ import { TokenStorageService } from 'src/app/servicios/token-storage.service';
 })
 export class CardRecetasComponent implements OnInit {
 
-  constructor(private token: TokenStorageService,) { }
+  constructor(private token: TokenStorageService, public dialogRef: MatDialog) { }
 
   @Input() recetas!: Recetas[];
 
@@ -17,12 +19,20 @@ export class CardRecetasComponent implements OnInit {
 
   sesion!: boolean;
   ngOnInit(): void {
-    
-    if(this.token.getId()){
+
+    if (this.token.getId()) {
       this.sesion = true;
-    }else{
+    } else {
       this.sesion = false;
     }
+  }
+
+  openDialog() {
+    this.dialogRef.open(PopUpComponent, {
+      position: { top: "100px" },
+      panelClass: 'custom-modalbox',
+      backdropClass: 'fondo'
+    });
   }
 
 

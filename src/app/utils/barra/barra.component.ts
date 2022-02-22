@@ -24,12 +24,9 @@ export class BarraComponent implements OnInit {
   openDialog() {
     this.dialogRef.open(PopUpComponent, {
       position: { top: "100px" },
-      width: "40%",
-      maxWidth: "1000px",
       panelClass: 'custom-modalbox',
       backdropClass: 'fondo'
     });
-
   }
 
   getUser(): void {
@@ -37,8 +34,8 @@ export class BarraComponent implements OnInit {
     this.uService.getById(this.id_user).subscribe({
       next: (data) => {
         this.usuario = data;
-        this.imagen = this.usuario.imagen
-        this.nickname = this.usuario.nick
+        this.imagen = data.imagen;
+        this.nickname = data.nick
       }
     })
   }

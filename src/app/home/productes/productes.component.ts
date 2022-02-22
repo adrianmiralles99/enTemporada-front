@@ -31,7 +31,7 @@ export class ProductesComponent implements OnInit {
     if (element) {
       var articulo = this.productes?.find(element => element.id == id);
       element.children().css("background-color", articulo?.color ?? "");
-      element.find(".card-img-top").prop("src", "../../assets/IMG/Articulos/background/" + articulo?.imagen);
+      element.find(".card-img-top").prop("src", "/assets/IMG/Articulos/background/" + articulo?.imagen);
     }
   }
 
@@ -41,7 +41,7 @@ export class ProductesComponent implements OnInit {
 
     if (element) {
       element.children().css("background-color", "");
-      element.find(".card-img-top").prop("src", "../../assets/IMG/Articulos/basic/" + articulo?.imagen);
+      element.find(".card-img-top").prop("src", "/assets/IMG/Articulos/basic/" + articulo?.imagen);
     }
   }
 

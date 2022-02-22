@@ -21,13 +21,10 @@ export class IndexedicionComponent implements OnInit {
 
   recetas!: Recetas;
   productos?: Productos[];
-  //@Input() recetaid!: number;
   id = this.rutaActiva.snapshot.paramMap.get('id') ?? 0;
   idusuario = 0;
   ngOnInit(): void {
-
     this.getRecetas();
-   
     this.getProductos();
   }
   
@@ -40,9 +37,9 @@ export class IndexedicionComponent implements OnInit {
   getRecetas() {//cambiar la id por la que verdaderamente toca
     this.recetasservice.getById(this.id).subscribe({
       next: (data) => {
-        console.log(data);
         this.recetas = data;
         this.idusuario = this.recetas.id_usuario;
+        
         this.echarUsuario(this.idusuario);
       },
       error: (e) => console.error(e)

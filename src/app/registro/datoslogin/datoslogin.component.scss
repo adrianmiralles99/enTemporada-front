@@ -10,7 +10,6 @@
     margin: auto;
     margin-bottom: 80px;
     padding-bottom: 30px;
-    width: 75%;
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(148, 148, 148, 0.85);
@@ -108,12 +107,39 @@
 
     button {
         background-color: $orange;
+        border: none;
         color: white;
         font-family: "neueB";
-        width: 45%;
+        padding: 6px 0 6px 0;
         text-shadow: 0 4px 10px rgba(0, 0, 0, 0.367);
         margin: auto;
         font-size: 200%;
-        border-radius: 10px;
+        border-radius: 5px;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.374);
+        transition: 0.3s;
+    }
+}
+
+@media screen and(min-width: 850px) {
+    .elemento {
+        width: 75%;
+    }
+    .boton {
+        button:hover {
+            transform: scale(110%);
+            box-shadow: 0 5px 8px rgba(0, 0, 0, 0.252);
+            width: 45%;
+        }
+    }
+}
+@media screen and(max-width: 850px) {
+    .elemento {
+        width: 95%;
+    }
+
+    .boton {
+        button {
+            width: 75%;
+        }
     }
 }
