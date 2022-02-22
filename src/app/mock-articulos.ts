@@ -143,3 +143,22 @@ export const PRODUCTES: Articulo[] = [
     infonut: ["52 kcal", "0.3 g", "0.2 g", "11.4 g", "6 mg", "2.4 g", "107 mg", "0.1 mg", "3 mcg", "13 kcal"]
   },
 ];
+<<<<<<< Updated upstream
+
+=======
+export const VERDURAS: Articulo[] = [
+  { id: 1, nombre: 'Batata', tipo: 'V' },
+  { id: 2, nombre: 'Coloflor', tipo: 'V' },
+  { id: 3, nombre: 'Nabo', tipo: 'V' },
+  { id: 4, nombre: 'Alcachofa', tipo: 'V' },
+  { id: 5, nombre: 'Col', tipo: 'V' },
+  { id: 6, nombre: 'Lecuga', tipo: 'V' },
+  { id: 7, nombre: 'Aguacate', tipo: 'V' },
+  { id: 8, nombre: 'Lechuga', tipo: 'V' },
+  { id: 9, nombre: 'Pepino', tipo: 'V' },
+  { id: 10, nombre: 'Nabicol', tipo: 'V' },
+  { id: 11, nombre: 'Tomate', tipo: 'V' },
+  { id: 12, nombre: 'Patata', tipo: 'V' },
+  { id: 13, nombre: 'Ajo', tipo: 'V' },
+];
+>>>>>>> Stashed changes

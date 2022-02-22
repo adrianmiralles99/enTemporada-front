@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
       .subscribe({
         next: (data) => {
           this.productes = data;
-          
+
         },
         error: (e) => console.error(e)
       });
