@@ -170,7 +170,7 @@ export class DatoscreacionComponent implements OnInit {
         
         next: data => {
           if (data.error.length > 0) {
-            console.log("aaaaaaaaaaaaaaaaaa" + this.iduser_crear);
+
             this.errores = data.error;
           }
 
