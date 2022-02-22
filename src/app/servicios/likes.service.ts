@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';//conexión http
 import { Observable } from 'rxjs';//sirve para manejar operaciones asincronas
-import { Likes } from '../modelos/likes.model';
 import { serverUrl } from '../baseurl';
 
 const httpOptions = {
@@ -14,7 +13,7 @@ const baseUrl = serverUrl + 'like';
   providedIn: 'root'
 })
 
-export class likesSevice{
+export class LikesService{
   constructor(private http: HttpClient) { }
   create(id_user: any, id_receta: any): Observable<any> {
     return this.http.post(baseUrl + "/setlike", {

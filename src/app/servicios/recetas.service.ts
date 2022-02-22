@@ -61,6 +61,9 @@ export class RecetasService {
       , httpOptions);
   }
 
+  getFav(){
+    return this.http.get<Recetas[]>(baseUrl + "/getfav");
+  }
 
 }
 
