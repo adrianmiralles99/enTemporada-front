@@ -22,7 +22,10 @@ export class UsuarioService {
   getById(id: any): Observable<any> {
     return this.http.get(`${baseurl}/${id}`);
   }
-
+  getrecetasById(id: any): Observable<any> {
+    return this.http.get(`${baseurl}/${id}` + "?fields=nick,imagen&expand=recetas");
+  }
+ 
 
  modificarUsuario(id: number,nick:string,imagen:string,descripcion:string): Observable<any> {
     console.log(id);
