@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuFooterInt } from 'src/app/menufooter';
 import { MenuFooter } from 'src/app/mock-menufooter';
-import { Calendario } from 'src/app/modelos/calendario.model';
 import { Productos } from 'src/app/modelos/productos.model';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { ProductosService } from 'src/app/servicios/productos.service';
@@ -23,21 +22,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProductes();
-
-
-
   }
 
   getProductes(): void {
-    this.productosService.getPrueba()
-      .subscribe({
-        next: (data) => {
-          this.productes = data;
-          console.log(data);
-          
-        },
-        error: (e) => console.error(e)
-      });
     this.productosService.getActual()
       .subscribe({
         next: (data) => {

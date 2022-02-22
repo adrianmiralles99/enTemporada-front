@@ -24,7 +24,6 @@ export class IndexrecetaindComponent implements OnInit {
           this.receta = data;
           this.ingredientes = this.receta?.ingredientes;
           this.pasos = this.receta?.pasos;
-          console.log(data);
 
         },
         error: (e) => console.error(e)

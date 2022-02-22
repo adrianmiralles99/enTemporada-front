@@ -36,9 +36,6 @@ export class DatosloginComponent implements OnInit {
         }
       });
     }
-    else {
-
-    }
   }
 
 }

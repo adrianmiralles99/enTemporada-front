@@ -8,6 +8,10 @@ nav {
     outline: none;
   }
 }
+
+.menu {
+  color: black;
+}
 .green {
   background-color: $green;
 }
@@ -80,7 +84,7 @@ nav {
     background-color: $yellow;
     transition: 0.3s;
     outline: none;
-    > img{
+    > img {
       border: 100%;
     }
   }

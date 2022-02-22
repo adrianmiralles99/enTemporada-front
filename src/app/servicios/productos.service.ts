@@ -32,8 +32,6 @@ export class ProductosService {
   }
 
   getActual(): Observable<Calendario[]> {
-    var title = "Manzana";
-    console.log(`${baseUrl}?nombre=${title}`);
     return this.http.get<Productos[]>(baseUrlActual + "?expand=calendario");
   }
 

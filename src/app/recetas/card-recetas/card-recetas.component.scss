@@ -99,13 +99,13 @@
   border-radius: 10px;
   transition: 0.3s;
   filter: drop-shadow(0 5px 5px rgba(76, 76, 76, 0.455));
+  outline: none;
   .img {
     background-image: url("../../../assets/IMG/iconos/plus.png");
     background-size: 90%;
     background-repeat: no-repeat;
     background-position: center;
     height: 100%;
-    background-color: $grey;
     border-radius: 7px;
     transition: 0.5s;
   }
@@ -117,12 +117,16 @@
   }
 }
 
-.tooltip {
-  position: relative;
-  display: inline-block;
+.crear {
+  .img {
+    background-color: $orange;
+  }
 }
 
 .crear_b {
+  .img {
+    background-color: $grey;
+  }
   .texto {
     font-size: 15px;
     color: white;
@@ -185,5 +189,4 @@
 }
 
 @media screen and(max-width: 700px) {
-  
 }

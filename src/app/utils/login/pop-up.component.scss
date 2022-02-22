@@ -19,7 +19,6 @@
     padding: 5px 0px 5px 0px;
     border: none;
     border-radius: 5px;
-    font-size: 160%;
     text-shadow: 0 5px 4px rgba(64, 64, 64, 0.333);
     transition: 0.3s;
 }
@@ -31,18 +30,13 @@
 
 .campos {
     text-align: left;
-    width: 90%;
     h3 {
-        font-size: 150%;
         font-family: neueB;
-        margin: 10px 10px 7px 10px;
     }
 }
 
 input:not([type="checkbox"]) {
-    font-size: 110%;
     font-family: neueR;
-    padding: 7px 0px 7px 5px;
     width: 100%;
     height: 100%;
     border: 1px solid rgba(56, 56, 56, 0.721);
@@ -57,18 +51,12 @@ input:not([type="checkbox"]) {
 }
 
 .recuerdame {
-    input {
-        transform: scale(140%);
-    }
     span {
         user-select: none;
-        margin-left: 10px;
-        font-size: 120%;
     }
 }
 
 .contraseña {
-    font-size: 120%;
     text-decoration: underline;
     > p {
         cursor: pointer;
@@ -78,7 +66,6 @@ input:not([type="checkbox"]) {
 .registro {
     text-decoration: underline;
     margin-top: 40px;
-    font-size: 110%;
     > p {
         line-height: 10px;
         cursor: pointer;
@@ -103,14 +90,91 @@ input:not([type="checkbox"]) {
 }
 
 .orange {
-    right: -40px;
-    width: 150px;
-    top: -50px;
     transform: rotate(20deg);
 }
 
-.lemon {
-    left: -40px;
-    top: -40px;
-    width: 140px;
+@media screen and(min-width: 801px) {
+    .orange {
+        right: -40px;
+        width: 150px;
+        top: -50px;
+    }
+
+    .lemon {
+        left: -40px;
+        top: -40px;
+        width: 140px;
+    }
+
+    .campos {
+        width: 90%;
+        h3 {
+            font-size: 150%;
+            margin: 10px 10px 7px 10px;
+        }
+    }
+
+    input:not([type="checkbox"]) {
+        font-size: 110%;
+        padding: 7px 0px 7px 5px;
+    }
+
+    .contraseña {
+        font-size: 120%;
+    }
+
+    .recuerdame {
+        input {
+            transform: scale(140%);
+        }
+        span {
+            font-size: 120%;
+            margin-left: 10px;
+        }
+    }
+
+    .acceder {
+        font-size: 160%;
+    }
+
+    .registro {
+        font-size: 110%;
+    }
+}
+
+@media screen and(max-width: 800px) {
+    .orange {
+        right: -30px;
+        width: 100px;
+        top: -40px;
+    }
+
+    .lemon {
+        left: -30px;
+        top: -30px;
+        width: 90px;
+    }
+
+    .campos {
+        width: 90%;
+        h3 {
+            font-size: 150%;
+            margin: 5px 5px 4px 5px;
+        }
+    }
+
+    input:not([type="checkbox"]) {
+        // font-size: 110%;
+        padding: 5px 0px 5px 5px;
+    }
+
+    .recuerdame {
+        span {
+            margin-left: 5px;
+        }
+    }
+
+    .acceder {
+        font-size: 120%;
+    }
 }

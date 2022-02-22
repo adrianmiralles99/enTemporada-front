@@ -16,6 +16,7 @@
     height: 48px;
     z-index: 100;
     filter: drop-shadow(0 5px 5px rgba(76, 76, 76, 0.632));
+    outline: none;
     &:hover {
         animation: animFlecha 1.5s infinite;
     }
