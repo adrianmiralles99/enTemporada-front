@@ -45,30 +45,27 @@ export class CardRecetasComponent implements OnInit {
   }
 
   cambiaLike(id: number) {
-    if (this.clicked[id]) {
+    if (this.sesion == true) {
+      if (this.clicked[id]) {
+        // console.log("Lo borramos");
+        this.clicked[id] = false;
+        this.likeService.delete(id).subscribe({
+          next: (data) => {
+            console.log(data);
+          }
+        });
+      }
+      else {
+        // console.log("Lo creamos");
+        this.clicked[id] = true;
+        this.likeService.create(id).subscribe({
+          next: (data) => {
 
-      // console.log("Lo borramos");
-      this.clicked[id] = false;
-      this.likeService.delete(id).subscribe({
-        next: (data) => {
-          console.log(data);
-        }
-      });
+          }
+        });
+
+      }
     }
-    else {
-      // console.log("Lo creamos");
-      this.clicked[id] = true;
-      this.likeService.create(id).subscribe({
-        next: (data) => {
-
-        }
-      });
-
-    }
-  }
-
-  cambiaFav(id: number) {
-
   }
 
 
