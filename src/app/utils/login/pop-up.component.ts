@@ -44,13 +44,14 @@ export class PopUpComponent implements OnInit {
     if (this.error.size == 0) {
       this.authService.login(this.nick, this.password).subscribe({
         next: data => {
+          console.log(data.error);
           if (!data.error) {
             this.tokenStorage.saveToken(data.token);
             this.tokenStorage.saveUser(data);
             window.location.reload();
           }
           else {
-            this.error.set("error", "Usuario incorrecto");
+            this.error.set("error", "Usuario o contraseña incorrecta ");
           }
         }
       });

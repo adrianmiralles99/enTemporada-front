@@ -29,6 +29,9 @@ export class DatoscreacionComponent implements OnInit {
 
   rutaimg: string = "../../../assets/IMG/recetas/";
 
+
+  error = new Map();
+/*
   errores?: {
     comensales: number;
     tiempo: string;
@@ -42,6 +45,7 @@ export class DatoscreacionComponent implements OnInit {
     misingredientes: string[];
     imagen: string;
   };
+  */
 
   @Input() recetas?: Recetas;
   @Input() productos?: Productos[];
@@ -164,39 +168,93 @@ export class DatoscreacionComponent implements OnInit {
   }
 
   crearReceta() {
-    if (this.prodPrinc && this.prodPrinc != this.default) {
-      this.misingredientes.unshift(this.cantidadPrinc + " " + this.prodPrinc);
+    this.comprobacionErrores();
+    if (this.error.size == 0){
 
-      var idprod = this.productos!.find(element => element.nombre == this.prodPrinc)!.id;
-      this.recetasService.crearReceta(this.iduser_crear, this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen, this.imagen64).subscribe({
-        next: data => {
-          if (data.error && data.error.length > 0) {
-            this.errores = data.error;
-            this.misingredientes.shift();
-            console.log(data.errores);
-            
-          }
-          else {
-            this.router.navigate(['recetas']);
-          }
+      if (this.prodPrinc && this.prodPrinc != this.default) {
+        this.misingredientes.unshift(this.cantidadPrinc + " " + this.prodPrinc);
 
-        }
-      });
+        var idprod = this.productos!.find(element => element.nombre == this.prodPrinc)!.id;
+        this.recetasService.crearReceta(this.iduser_crear, this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen, this.imagen64).subscribe({
+          next: data => {
+            if (data.error && data.error.length > 0) {
+              this.misingredientes.shift();
+
+            }
+            else {
+              this.router.navigate(['recetas']);
+            }
+
+          }
+        });
+      }
     }
+
+
   }
   actualizarReceta() {
-    if (this.recetas) {
-      var idprod = this.productos!.find(element => element.nombre == this.prodPrinc)!.id;
-      this.misingredientes.unshift(this.cantidadPrinc + " " + this.prodPrinc);
-      this.recetasService.actualizarReceta(this.recetas.id, this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen, this.imagen64).subscribe({
-        next: data => {
-          if (data.error && data.error.length > 0) {
-            this.errores = data.error;
-            this.misingredientes.shift();
-          }
+    this.comprobacionErrores();
+    console.log(this.error);
+    if (this.error.size == 0){
 
-        }
-      });
+      if (this.recetas) {
+        var idprod = this.productos!.find(element => element.nombre == this.prodPrinc)!.id;
+        this.misingredientes.unshift(this.cantidadPrinc + " " + this.prodPrinc);
+        this.recetasService.actualizarReceta(this.recetas.id, this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen, this.imagen64).subscribe({
+          next: data => {
+            if (data.error && data.error.length > 0) {
+              this.misingredientes.shift();
+            }
+
+          }
+        });
+      }
+    }
+  }
+
+  //errores
+  comprobacionErrores(){
+    this.error = new Map();
+    //campos arriba
+    if(!this.comensales){
+      this.error.set("comensales", "Comensales debe estar lleno");
+    } else if(this.comensales == 0){
+      this.error.set("comensales", "Comensales debe ser mayor que 0");
+    }
+    if (!this.tiempo){
+      this.error.set("tiempo", "Tiempo debe estar lleno");
+    }
+    if (!this.tipo){
+      this.error.set("tipo", "Tipo debe estar lleno");
+    }
+    else if (this.dificultad =="..."){
+      this.error.set("tipo", "Tipo debe tener una opción válida");
+
+    }
+    if (!this.dificultad){
+      this.error.set("dificultad", "Dificultad debe estar lleno");
+    } else if (this.dificultad =="..."){
+      this.error.set("dificultad", "Dificultad debe tener una opción válida");
+    }
+    //titulo
+    if (!this.titulo){
+      this.error.set("titulo", "Titulo debe estar lleno");
+    }
+    if (this.imagen == "../../../assets/IMG/iconos/uploadImage.png"){
+      this.error.set("imagen", "Debe seleccionar una imagen");
+    }
+    if(this.misingredientes.length==0){
+      this.error.set("ingredientes", "Debe seleccionar los ingredientes");
+
+    }
+    if(this.pasos.length==0){
+        this.error.set("pasos", "Debe explicar como se hace la receta");
+    }
+    if (this.cantidadPrinc ==""){
+      this.error.set("cantidadPrinc", "Debe seleccionar una cantidad");
+    }
+    if(this.prodPrinc==""){
+      this.error.set("prodPrinc", "Debe seleccionar un producto principal");
     }
   }
 
@@ -221,4 +279,5 @@ export class DatoscreacionComponent implements OnInit {
   getNumeroPaso() {
     return this.pasos.length + 1;
   }
+
 }
