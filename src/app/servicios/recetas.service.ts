@@ -22,7 +22,7 @@ export class RecetasService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Recetas[]> {
-    return this.http.get<Recetas[]>(baseUrl+"?expand=usuario,likes,favoritos");
+    return this.http.get<Recetas[]>(baseUrl+"?expand=usuario,likes,totallikes,favoritos");//se configuran los expand en el modelo
   }
 
   getById(id: any): Observable<any> {
