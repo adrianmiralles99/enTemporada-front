@@ -21,13 +21,13 @@ export class CardRecetasComponent implements OnInit {
   sesion!: boolean;
   cont = 0;
   clicked: Array<boolean> = [];
+  fav: Array<boolean> = [];
 
   ngOnInit(): void {
     if ((this.id = this.token.getId()) && this.recetas) {
       this.sesion = true;
       for (let i = 0; i < this.recetas.length; i++) {
-        this.clicked[this.recetas[i].id] =
-          this.boolLike(this.recetas[i].id)
+        this.boolLike(this.recetas[i].id)
       }
 
     } else {
@@ -45,46 +45,63 @@ export class CardRecetasComponent implements OnInit {
   }
 
   cambiaLike(id: number) {
-    if(this.sesion == true){
-    if (this.clicked[id]) {
-      // console.log("Lo borramos");
-      this.clicked[id] = false;
-      this.likeService.delete(id).subscribe({
-        next: (data) => {
-          console.log(data);
-        }
-      });
+    if (this.sesion == true) {
+      if (this.clicked[id]) {
+        // console.log("Lo borramos");
+        this.clicked[id] = false;
+        this.likeService.delete(id).subscribe({
+          next: (data) => {
+            console.log(data);
+          }
+        });
+      }
+      else {
+        // console.log("Lo creamos");
+        this.clicked[id] = true;
+        this.likeService.create(id).subscribe({
+          next: (data) => {
+
+          }
+        });
+
+      }
     }
-    else {
-      // console.log("Lo creamos");
-      this.clicked[id] = true;
-      this.likeService.create(id).subscribe({
-        next: (data) => {
-
-        }
-      });
-
-    }
-  }else{
-    console.log("NO");
-    
-  }
-    // this.likeService.create(id).subscribe({
-    //   next: (data) => {
-    //     console.log(data);
-
-    //   }
-    // })
   }
 
+  cambiaFav(id: number) {
+    if (this.sesion == true) {
+      if (this.fav[id]) {
+        // console.log("Lo borramos");
+        this.fav[id] = false;
+        this.favService.delete(id).subscribe({
+          next: (data) => {
+            // console.log(data);
+          }
+        });
+      }
+      else {
+        // console.log("Lo creamos");
+        this.fav[id] = true;
+        this.favService.create(id).subscribe({
+          next: (data) => {
 
-  boolLike(id: number): boolean {
+          }
+        });
+
+      }
+    }
+  }
+
+
+  boolLike(id: number) {
     var aux = this.recetas?.find(element => element.id == id)?.likes?.find(element => element.id_usuario == this.id);
     if (aux) {
-      return true;
+      this.clicked[id] = true;
+      this.fav[id] = true;
     }
     else {
-      return false;
+      this.clicked[id] = false;
+      this.fav[id] = false;
 
     }
   }
