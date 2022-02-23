@@ -65,13 +65,10 @@ export class CardRecetasComponent implements OnInit {
       });
 
     }
+  }
 
-    // this.likeService.create(id).subscribe({
-    //   next: (data) => {
-    //     console.log(data);
+  cambiaFav(id: number) {
 
-    //   }
-    // })
   }
 
 
