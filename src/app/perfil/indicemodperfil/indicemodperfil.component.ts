@@ -25,8 +25,8 @@ export class IndicemodperfilComponent implements OnInit {
     this.usuariosService.getById().subscribe({
       next: (data) => {
         this.usuario = data;
-        this.getLvl(this.usuario.exp);
-       
+        this.getLvl(this.usuario.exp ?? 0);
+
         this.rutaUser = "../../../assets/IMG/Usuarios/" + this.usuario.imagen;
         this.rutaLogo = "../../../assets/IMG/Niveles/lvl_" + this.nivel + "-removebg-preview.png";
 

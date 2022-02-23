@@ -1,11 +1,14 @@
-<app-barra [color]="'black'"></app-barra>
-<div class="fondo">
-    <app-detallesrecetas [misingredientes]="ingredientes" [receta]="receta"></app-detallesrecetas>
-    <app-pasos [pasos]="pasos"></app-pasos>
-    <app-botoneditar [recetaid]="recetaid"></app-botoneditar>
-    
-</div>
-<br>
-
-<br>
-<app-subir></app-subir>
+<ng-container *ngIf="receta; else elseTemplate">
+    <app-barra [color]="'black'"></app-barra>
+    <div class="fondo">
+        <app-detallesrecetas [misingredientes]="ingredientes" [receta]="receta"></app-detallesrecetas>
+        <app-pasos [pasos]="pasos"></app-pasos>
+        <app-botoneditar [recetaid]="recetaid"></app-botoneditar>
+    </div>
+    <br>
+    <br>
+    <app-subir></app-subir>
+</ng-container>
+<ng-template #elseTemplate>
+    <app-carga></app-carga>
+</ng-template>

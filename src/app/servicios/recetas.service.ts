@@ -26,7 +26,7 @@ export class RecetasService {
   }
 
   getById(id: any): Observable<any> {
-    return this.http.get(`${baseUrl}/${id}` + "?expand=usuario");
+    return this.http.get(`${baseUrl}/${id}` + "?expand=usuario,likes,favoritos");
   }
 
 
@@ -62,11 +62,11 @@ export class RecetasService {
   }
 
   getFav() {
-    return this.http.get<Recetas[]>(baseUrl + "/getfav?expand=usuario");
+    return this.http.get<Recetas[]>(baseUrl + "/getfav?expand=usuario,likes,favoritos");
   }
 
   getMias() {
-    return this.http.get<Recetas[]>(baseUrl + "/getmias?expand=usuario");
+    return this.http.get<Recetas[]>(baseUrl + "/getmias?expand=usuario,likes,favoritos");
   }
 
 

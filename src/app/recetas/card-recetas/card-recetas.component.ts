@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Recetas } from 'src/app/modelos/recetas.model';
 import { FavoritosService } from 'src/app/servicios/favoritos.service';
-import { LikesSevice } from 'src/app/servicios/likes.service';
+import { LikesService } from 'src/app/servicios/likes.service';
 import { TokenStorageService } from 'src/app/servicios/token-storage.service';
 import { PopUpComponent } from 'src/app/utils/login/pop-up.component';
 @Component({
@@ -13,7 +13,7 @@ import { PopUpComponent } from 'src/app/utils/login/pop-up.component';
 })
 export class CardRecetasComponent implements OnInit {
 
-  constructor(private token: TokenStorageService, public dialogRef: MatDialog, public likeService: LikesSevice, public favService: FavoritosService) { }
+  constructor(private token: TokenStorageService, public dialogRef: MatDialog, public likeService: LikesService, public favService: FavoritosService) { }
 
   @Input() recetas?: Recetas[];
   hover = false;

@@ -15,7 +15,7 @@ const baseUrl = serverUrl + 'likes';
   providedIn: 'root'
 })
 
-export class LikesSevice {
+export class LikesService {
   constructor(private http: HttpClient, private token: TokenStorageService) { }
 
   create(id_receta: any): Observable<any> {
