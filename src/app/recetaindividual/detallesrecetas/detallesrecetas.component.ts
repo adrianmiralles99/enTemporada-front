@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { Recetas } from 'src/app/modelos/recetas.model';
-import { TokenStorageService } from 'src/app/servicios/token-storage.service';
+
+import { TokenStorageService } from '../../servicios/token-storage.service';
+import { Recetas } from '../../modelos/recetas.model';
 @Component({
   selector: 'app-detallesrecetas',
   templateUrl: './detallesrecetas.component.html',
