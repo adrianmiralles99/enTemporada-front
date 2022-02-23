@@ -12,7 +12,7 @@ export class IndexrecetasComponent implements OnInit {
 
   constructor(private recetasservice: RecetasService) { }
   tipo?: string;
-  recetas!: Recetas[];
+  recetas?: Recetas[];
   titulo: string = "Recetas en Temporada";
   cantidad?: number;
 
@@ -25,11 +25,11 @@ export class IndexrecetasComponent implements OnInit {
       next: (data) => {
         this.recetas = data;
         this.cantidad = this.recetas.length
-        
       },
       error: (e) => console.error(e)
     });
   }
+  
   getRecetaTipo(tipo:string){
     
   }

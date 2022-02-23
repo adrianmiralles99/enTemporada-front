@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Usuarios } from 'src/app/modelos/usuarios.model';
-import { UsuarioService } from 'src/app/servicios/usuario.service';
+import { Recetas } from 'src/app/modelos/recetas.model';
 
 @Component({
   selector: 'app-recetas',
@@ -10,12 +10,15 @@ import { UsuarioService } from 'src/app/servicios/usuario.service';
 export class RecetasComponent implements OnInit {
 
   @Input() usuario!: Usuarios;
+  @Input() ultimareceta?: Recetas;
+  @Input() recetapopular?: Recetas;
 
-  constructor(private usuariosService: UsuarioService) { }
+  constructor() { }
 
   ngOnInit(): void {
-  
   }
 
- 
+
+
+
 }

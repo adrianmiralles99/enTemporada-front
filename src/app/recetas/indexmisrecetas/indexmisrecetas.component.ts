@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from 'src/app/servicios/usuario.service';
-import { Usuarios } from 'src/app/modelos/usuarios.model';
 import { TokenStorageService } from 'src/app/servicios/token-storage.service';
 import { Recetas } from 'src/app/modelos/recetas.model';
+import { RecetasService } from 'src/app/servicios/recetas.service';
 @Component({
   selector: 'app-indexmisrecetas',
   templateUrl: './indexmisrecetas.component.html',
@@ -10,23 +9,21 @@ import { Recetas } from 'src/app/modelos/recetas.model';
 })
 export class IndexmisrecetasComponent implements OnInit {
 
-  constructor(private token: TokenStorageService, private usuarioService: UsuarioService) { }
+  constructor(private token: TokenStorageService, private recetasService: RecetasService) { }
 
   titulo?: string = "Mis recetas"
-  nick?: string;
-  imagen?: string;
   recetas?: Recetas[];
+  cantidad?: number;
+
   ngOnInit(): void {
     this.GetrecetasById();
   }
-  
+
   GetrecetasById() {
-    this.usuarioService.getrecetasById(this.token.getId()).subscribe({
+    this.recetasService.getMias().subscribe({
       next: (data) => {
-        console.log(data);
-        this.nick = (String(data.nick));
-        this.imagen = (String(data.imagen));
-        this.recetas = (data.recetas);
+        this.recetas = (data);
+        this.cantidad = data.length;
       },
       error: (e) => console.error(e)
     });

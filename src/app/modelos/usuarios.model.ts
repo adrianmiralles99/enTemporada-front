@@ -16,4 +16,5 @@ export class Usuarios {
     exp!: number;
     id_ultima_receta?: number;
     recetas?:Recetas[];
+    ultimareceta?:Recetas;
 }

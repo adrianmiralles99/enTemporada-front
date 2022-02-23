@@ -1,9 +1,28 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';//conexión http
+import { Observable } from 'rxjs';//sirve para manejar operaciones asincronas
+import { serverUrl } from '../baseurl';
+import { Favoritos } from '../modelos/favoritos.model';
+import { Recetas } from '../modelos/recetas.model';
 
+const baseUrl = serverUrl + 'favoritos';
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 @Injectable({
   providedIn: 'root'
 })
 export class FavoritosService {
-
-  constructor() { }
+  constructor(private http: HttpClient) { }
+  create(id_user: any, id_receta: any): Observable<any> {
+    return this.http.post(serverUrl + "/createFavorito", {
+      id_usuario: id_user,
+      id_receta: id_receta,
+    }, httpOptions);
+  }
+  
+  getUserfav(): Observable<Favoritos[]> {
+    return this.http.get<Favoritos[]>(baseUrl + "/getfavoritos" + "?expand=receta");
+  }
 }
+

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';//conexión http
 import { Observable } from 'rxjs';//sirve para manejar operaciones asincronas
-import { Likes } from '../modelos/likes.model';
 import { serverUrl } from '../baseurl';
+import { Likes } from '../modelos/likes.model';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })

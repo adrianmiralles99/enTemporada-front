@@ -31,7 +31,7 @@ export class BarraComponent implements OnInit {
 
   getUser(): void {
 
-    this.uService.getById(this.id_user).subscribe({
+    this.uService.getById().subscribe({
       next: (data) => {
         this.usuario = data;
         this.imagen = data.imagen;

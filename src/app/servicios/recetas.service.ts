@@ -22,17 +22,15 @@ export class RecetasService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Recetas[]> {
-    return this.http.get<Recetas[]>(baseUrl + "?expand=nick");
+    return this.http.get<Recetas[]>(baseUrl);
   }
 
   getById(id: any): Observable<any> {
     return this.http.get(`${baseUrl}/${id}` + "?expand=nick");
   }
-  
+
 
   crearReceta(id_user: number, titulo: string, comensales: number, tiempo: string, tipo: string, dificultad: string, ingredientes: string[], pasos: string[], id_prodp: number, imagen: string, imagen64: any): Observable<any> {
-    // console.log(this.http.post(baseUrl, imagen64));
-    // console.log("adios");
     return this.http.post(baseUrl + "/crearreceta", {
       id_usuario: id_user,
       titulo: titulo,
@@ -46,6 +44,7 @@ export class RecetasService {
       imagen: imagen,
     }, httpOptions);
   }
+
   actualizarReceta(id: number, titulo: string, comensales: number, tiempo: string, tipo: string, dificultad: string, ingredientes: string[], pasos: string[], id_prodp: number, imagen: string, imagen64: any): Observable<any> {
 
     return this.http.put(baseUrl + "/updatereceta?id=" + id,
@@ -62,6 +61,22 @@ export class RecetasService {
       , httpOptions);
   }
 
+  getFav() {
+    return this.http.get<Recetas[]>(baseUrl + "/getfav");
+  }
+
+  getMias() {
+    return this.http.get<Recetas[]>(baseUrl + "/getmias");
+  }
+
+
+  getUltimaReceta(): Observable<any> {
+    return this.http.get(baseUrl + "/ultimareceta");
+  }
+
+  getRecetaPopular(): Observable<any> {
+    return this.http.get(baseUrl + "/popularreceta");
+  }
 
 }
 

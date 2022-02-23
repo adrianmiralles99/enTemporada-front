@@ -20,12 +20,14 @@
 }
 
 .icono {
-  width: 30px;
+  height: 40px;
+  width: 40px;
   user-select: none;
   pointer-events: none;
   margin-right: 5px;
   margin-left: 10px;
   margin-top: 5px;
+  border-radius: 100%;
 }
 
 .tarjeta {
