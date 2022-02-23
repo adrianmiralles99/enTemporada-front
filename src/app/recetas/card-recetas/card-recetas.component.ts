@@ -28,6 +28,7 @@ export class CardRecetasComponent implements OnInit {
       this.sesion = true;
       for (let i = 0; i < this.recetas.length; i++) {
         this.boolLike(this.recetas[i].id)
+        this.boolLikeFav(this.recetas[i].id)
       }
 
     } else {
@@ -97,12 +98,19 @@ export class CardRecetasComponent implements OnInit {
     var aux = this.recetas?.find(element => element.id == id)?.likes?.find(element => element.id_usuario == this.id);
     if (aux) {
       this.clicked[id] = true;
-      this.fav[id] = true;
     }
     else {
       this.clicked[id] = false;
-      this.fav[id] = false;
+    }
+  }
 
+  boolLikeFav(id: number) {
+    var aux = this.recetas?.find(element => element.id == id)?.favoritos?.find(element => element.id_usuario == this.id);
+    if (aux) {
+      this.fav[id] = true;
+    }
+    else {
+      this.fav[id] = false;
     }
   }
 
