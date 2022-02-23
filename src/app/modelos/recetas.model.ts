@@ -20,4 +20,5 @@ export class Recetas {
     usuario?: Usuarios;
     likes?: Likes[];
     favoritos?: Favoritos[];
+    totallikes?: {total:number};
 }
