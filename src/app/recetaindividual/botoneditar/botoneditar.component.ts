@@ -22,9 +22,6 @@ export class BotoneditarComponent implements OnInit {
 
   }
   mostrarBoton(idusuario: Number) {
-    console.log(idusuario);
-    console.log(this.token.getId());
-
     if (idusuario == Number(this.token.getId())) {
       this.mostrar = true;
     }
@@ -32,7 +29,6 @@ export class BotoneditarComponent implements OnInit {
   getRecetas() {//cambiar la id por la que verdaderamente toca
     this.recetasservice.getById(this.recetaid).subscribe({
       next: (data) => {
-        // console.log(data);
         this.recetas = data;
         this.mostrarBoton(this.recetas.id_usuario);
       },

@@ -53,9 +53,13 @@
 .autor {
   margin-bottom: -5px;
 }
-
+.numlikes{
+  font-size: 80%;
+  margin-right: -5px;
+}
 .save,
-.mg {
+.mg,
+.pendiente {
   background-color: transparent;
   background-size: contain;
   background-repeat: no-repeat;
@@ -64,11 +68,10 @@
   width: 35px;
   height: 35px;
   margin-right: 7px;
-  transition: 0.5s;
+  transition: 0.2s;
 }
 
 .save {
-  background-image: url("../../../assets/IMG/iconos/bookmark.png");
   &:hover {
     filter: drop-shadow(0 3px 3px rgb(35, 35, 35));
     transform: scale(110%);
@@ -76,7 +79,6 @@
 }
 
 .mg {
-  background-image: url("../../../assets/IMG/iconos/mg.png");
   &:hover {
     filter: drop-shadow(0 3px 3px rgb(167, 57, 44));
     transform: scale(110%);

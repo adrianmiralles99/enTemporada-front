@@ -1,28 +1,28 @@
 <div class="row">
   <div [routerLink]="['/recetas-misrecetas']" class="col col-lg-3 col-md-6">
     <button class="green">
-      <h4> 20</h4>
+      <h4>{{totalrecetas}}</h4>
       <p> Recetas publicadas</p>
     </button>
   </div>
 
-  <div  [routerLink]="['/recetas-guardadas']"class="col col-lg-3 col-md-6">
+  <div [routerLink]="['/recetas-guardadas']" class="col col-lg-3 col-md-6">
     <button class="green">
-      <h4> 12</h4>
+      <h4>{{totalguardadas}}</h4>
       <p>Recetas guardadas</p>
     </button>
   </div>
 
   <div class="col col-lg-3 col-md-6">
     <button class="white">
-      <h4>17</h4>
+      <h4>{{totallikes}}</h4>
       <p> Likes recibidos</p>
     </button>
   </div>
 
   <div class="col col-lg-3 col-md-6">
     <button class="white">
-      <h4> 40</h4>
+      <h4>{{totalfavoritos}}</h4>
       <p>Recetas favoritas</p>
     </button>
   </div>

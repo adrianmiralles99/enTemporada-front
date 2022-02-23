@@ -1,6 +1,9 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { Recetas } from 'src/app/modelos/recetas.model';
-import { TokenStorageService } from 'src/app/servicios/token-storage.service';
+
+import { TokenStorageService } from '../../servicios/token-storage.service';
+import { Recetas } from '../../modelos/recetas.model';
+import { LikesService } from 'src/app/servicios/likes.service';
+import { FavoritosService } from 'src/app/servicios/favoritos.service';
 @Component({
   selector: 'app-detallesrecetas',
   templateUrl: './detallesrecetas.component.html',
@@ -12,38 +15,84 @@ export class DetallesrecetasComponent {
   like: boolean = false;
   guardado: boolean = false;
 
-  constructor(private token: TokenStorageService) { }
+  constructor(private token: TokenStorageService, public likeService: LikesService, public favService: FavoritosService) { }
+
+  clicked: boolean = false;
+  fav: boolean = false;
+  id?: any;
+  sesion!: boolean;
 
   @Input() receta?: Recetas;
   @Input() misingredientes?: string[] = [];
 
-  ngOnInit(){
-   // this.like= true;
-  }
-  ngOnChanges(): void {
-    
+  ngOnInit() {
     if (this.misingredientes) {
       this.divideIngredientes();
     }
-  }
-  likedelete(){
-    if(this.token.getId()){
 
+    if ((this.id = this.token.getId())) {
+      this.sesion = true;
+      if (this.receta?.likes?.find(element => element.id_usuario == this.id)) {
+        this.clicked = true;
+      }
+      else {
+        this.clicked = false;
+      }
+      if (this.receta?.favoritos?.find(element => element.id_usuario == this.id)) {
+        this.fav = true;
+      }
+      else {
+        this.fav = false;
+      }
+    }
+    else {
+      this.sesion = false;
+    }
+
+  }
+
+  cambiaLike() {
+    if (this.sesion == true) {
+      if (this.clicked) {
+        // console.log("Lo borramos");
+        this.clicked = false;
+        this.likeService.delete(this.receta?.id).subscribe({
+          next: (data) => {
+          }
+        });
+      }
+      else {
+        // console.log("Lo creamos");
+        this.clicked = true;
+        this.likeService.create(this.receta?.id).subscribe({
+          next: (data) => {
+          }
+        });
+
+      }
     }
   }
-  likeset(){
-    if(this.token.getId()){
-      
-    }
-  }
-  guardadodelete(){
-    if(this.token.getId()){
-      
-    }
-  }
-  guardadoset(){
-    if(this.token.getId()){
-      
+
+  cambiaFav() {
+    if (this.sesion == true) {
+      if (this.fav) {
+        // console.log("Lo borramos");
+        this.fav = false;
+        this.favService.delete(this.receta?.id).subscribe({
+          next: (data) => {
+          }
+        });
+      }
+      else {
+        // console.log("Lo creamos");
+        this.fav = true;
+        this.favService.create(this.receta?.id).subscribe({
+          next: (data) => {
+
+          }
+        });
+
+      }
     }
   }
   divideIngredientes() {

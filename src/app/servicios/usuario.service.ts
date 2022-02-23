@@ -23,7 +23,7 @@ export class UsuarioService {
   }
 
   getById(): Observable<any> {
-    return this.http.get(`${baseUrl}/${this.token.getId()}`);
+    return this.http.get(`${baseUrl}/${this.token.getId()}?expand=totalrecetas,totalguardadas,totalfavoritos,totallikes`);
   }
 
   modificarUsuario(id: number, nick: string, imagen: string, descripcion: string): Observable<any> {

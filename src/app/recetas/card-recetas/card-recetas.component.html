@@ -3,24 +3,34 @@
     <div class="col-lg-4 col-md-6 margen" *ngFor="let receta of recetas">
       <div class="tarjeta">
         <button class="imagen" [routerLink]="['/recetaindividual', receta.id]"
-          [ngStyle]="{'background-image':'url(../../../assets/IMG/recetas/'+receta.imagen+')'}"></button>
+          [ngStyle]="{'background-image':'url(/assets/IMG/recetas/'+receta.imagen+')'}"></button>
         <div class="row usuario">
           <div class="col-8">
             <p class="autor">{{receta.titulo}}</p>
           </div>
           <div class="col-4 botones">
-            <button class="mg"></button>
-            <button class="save"></button>
+            <ng-container *ngIf="receta.estado=='A'; else elseTemplate">
+              <button (click)="cambiaLike(receta.id)" class="mg"
+                [style.background-image]="clicked[receta.id] ?'url(/assets/IMG/iconos/mg_click.png)':'url(/assets/IMG/iconos/mg.png)'"></button>
+              <button (click)="cambiaFav(receta.id)" class="save"
+                [style.background-image]="fav[receta.id] ?'url(/assets/IMG/iconos/bookmark_click.png)':'url(/assets/IMG/iconos/bookmark.png)'"></button>
+            </ng-container>
+            <ng-template #elseTemplate>
+              <!-- <div class="pendiente"></div> -->
+              <h2>Pendiente</h2>
+            </ng-template>
+
           </div>
         </div>
         <div>
-          <img class="icono" src="../../../assets/IMG/Usuarios/{{receta.usuario_img}}">
-          <sub class="autor">by @{{receta.nick}}</sub>
+          <img class="icono" src="/assets/IMG/Usuarios/{{receta.usuario?.imagen}}">
+          <sub class="autor">by @{{receta.usuario?.nick}}</sub>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- [style.background-image]="boolLike(receta.id) ?'url(/assets/IMG/iconos/mg_click.png)':'url(/assets/IMG/iconos/mg.png)'" -->
 
 
   <div class="btn-group dropdown-user">

@@ -13,8 +13,12 @@ export class Usuarios {
     tipo?: string;
     estado?: string;
     token?: string;
-    exp!: number;
+    exp?: number;
     id_ultima_receta?: number;
-    recetas?:Recetas[];
-    ultimareceta?:Recetas;
+    recetas?: Recetas[];
+    ultimareceta?: Recetas;
+    totallikes?: { total: number };
+    totalfavoritos?: { total: number };
+    totalguardadas?: { total: number };
+    totalrecetas?: { total: number };
 }

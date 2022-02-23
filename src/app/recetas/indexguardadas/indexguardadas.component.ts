@@ -22,9 +22,6 @@ export class IndexguardadasComponent implements OnInit {
       next: (data) => {
         this.guardadas = data;
         this.cantidad = this.guardadas.length;
-        console.log(this.guardadas);
-
-
       },
       error: (e) => console.error(e)
     });
