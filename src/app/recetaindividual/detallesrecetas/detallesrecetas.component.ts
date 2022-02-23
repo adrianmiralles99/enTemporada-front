@@ -19,8 +19,10 @@ export class DetallesrecetasComponent {
 
   ngOnInit(){
    // this.like= true;
+   
   }
   ngOnChanges(): void {
+    console.log(this.receta?.usuario?.nick);
     
     if (this.misingredientes) {
       this.divideIngredientes();
