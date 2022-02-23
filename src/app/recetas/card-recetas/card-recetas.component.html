@@ -10,9 +10,9 @@
           </div>
           <div class="col-4 botones">
             <button (click)="cambiaLike(receta.id)" class="mg"
-            [style.background-image]="clicked[receta.id] ?'url(/assets/IMG/iconos/mg_click.png)':'url(/assets/IMG/iconos/mg.png)'"
-              ></button>
-            <button class="save"></button>
+              [style.background-image]="clicked[receta.id] ?'url(/assets/IMG/iconos/mg_click.png)':'url(/assets/IMG/iconos/mg.png)'"></button>
+            <button (click)="cambiaFav(receta.id)" class="save"
+              [style.background-image]="fav[receta.id] ?'url(/assets/IMG/iconos/bookmark_click.png)':'url(/assets/IMG/iconos/bookmark.png)'"></button>
           </div>
         </div>
         <div>

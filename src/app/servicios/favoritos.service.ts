@@ -14,13 +14,17 @@ const httpOptions = {
 })
 export class FavoritosService {
   constructor(private http: HttpClient) { }
-  create(id_user: any, id_receta: any): Observable<any> {
-    return this.http.post(serverUrl + "/createFavorito", {
-      id_usuario: id_user,
+
+  create(id_receta: any): Observable<any> {
+    return this.http.post(baseUrl + "/createfavorito", {
       id_receta: id_receta,
     }, httpOptions);
   }
-  
+
+  delete(id_receta: any): Observable<any> {
+    return this.http.delete(baseUrl + "/deletefavorito?id_receta=" + id_receta);
+  }
+
   getUserfav(): Observable<Favoritos[]> {
     return this.http.get<Favoritos[]>(baseUrl + "/getfavoritos" + "?expand=receta");
   }
