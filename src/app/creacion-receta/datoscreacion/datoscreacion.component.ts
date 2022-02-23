@@ -164,17 +164,20 @@ export class DatoscreacionComponent implements OnInit {
   }
 
   crearReceta() {
-    this.router.navigate(['recetas']);
-
     if (this.prodPrinc && this.prodPrinc != this.default) {
       this.misingredientes.unshift(this.cantidadPrinc + " " + this.prodPrinc);
 
       var idprod = this.productos!.find(element => element.nombre == this.prodPrinc)!.id;
       this.recetasService.crearReceta(this.iduser_crear, this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen, this.imagen64).subscribe({
         next: data => {
-          if (data && data.error.length > 0) {
+          if (data.error && data.error.length > 0) {
             this.errores = data.error;
             this.misingredientes.shift();
+            console.log(data.errores);
+            
+          }
+          else {
+            this.router.navigate(['recetas']);
           }
 
         }

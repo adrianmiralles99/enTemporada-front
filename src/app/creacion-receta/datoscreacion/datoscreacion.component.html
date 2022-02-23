@@ -19,7 +19,7 @@
             <div class="datosfondo">
                 <div class="row filadatos">
                     <div class="columna col-3">
-                        <p class="mt-2">Nº de Comensales</p>
+                        <p class="mt-2">Comensales</p>
                         <div class="campo">
                             <img class="icono" draggable="false" src="../../../assets/IMG/iconos/grupo.png" alt="">
                             <input [(ngModel)]="comensales" type="number" min="0" data-error="buenos dias" id="">
@@ -56,7 +56,7 @@
                         </div>
                     </div>
                     <div class="columna col-4">
-                        <p class="mt-2">Dificultad del plato</p>
+                        <p class="mt-2">Dificultad</p>
                         <div class="campo">
                             <img class="icono" draggable="false" src="../../../assets/IMG/iconos/dificultad.png" alt="">
                             <select [(ngModel)]="dificultad" id="">
@@ -75,13 +75,13 @@
                 <!-- INGREDIENTES -->
                 <div class="ingredientes">
                     <div class="row">
-                        <div class="col-md-12 col-sm-8">
+                        <div class="col-md-12">
                             <h3>Ingrediente Principal:</h3>
-                            <div class="error">
+                            <!-- <div class="error">
                                 <sub *ngIf="true">Debe elegir un producto principal</sub>
-                            </div>
+                            </div> -->
                         </div>
-                        <div class="row col-md-12 col-sm-4 inputTipo">
+                        <div class="row col-12 inputTipo">
                             <div class="col-5">
                                 <label class="campo">
                                     <span> Cantidad:</span>
@@ -210,7 +210,7 @@
         <button (click)="crearReceta()" class="crear">Crear</button>
     </div>
     <div *ngIf="recetas;" class="col-6">
-        <button (click)="actualizarReceta()" [routerLink]="['/recetas']" class="actualizar">Actualizar</button>
+        <button (click)="actualizarReceta()" class="actualizar">Actualizar</button>
     </div>
     <div class="col-6">
         <button [routerLink]="['/recetas']" class="cancelar">Cancelar</button>
