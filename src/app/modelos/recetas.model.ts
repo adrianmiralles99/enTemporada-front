@@ -1,3 +1,5 @@
+import { Usuarios } from "./usuarios.model";
+import { Likes } from "./likes.model";
 export class Recetas {
     id!: number;
     id_usuario!: number;
@@ -14,4 +16,6 @@ export class Recetas {
     ingredientes?: Array<string>;
     nick?: string;
     usuario_img?: string;
+    usuario?: Usuarios;
+    likes?: Likes[];
 }

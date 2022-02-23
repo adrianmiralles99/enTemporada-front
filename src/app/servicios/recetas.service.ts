@@ -22,7 +22,7 @@ export class RecetasService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Recetas[]> {
-    return this.http.get<Recetas[]>(baseUrl);
+    return this.http.get<Recetas[]>(baseUrl+"?expand=usuario,likes");
   }
 
   getById(id: any): Observable<any> {
@@ -62,11 +62,11 @@ export class RecetasService {
   }
 
   getFav() {
-    return this.http.get<Recetas[]>(baseUrl + "/getfav");
+    return this.http.get<Recetas[]>(baseUrl + "/getfav?expand=usuario");
   }
 
   getMias() {
-    return this.http.get<Recetas[]>(baseUrl + "/getmias");
+    return this.http.get<Recetas[]>(baseUrl + "/getmias?expand=usuario");
   }
 
 
