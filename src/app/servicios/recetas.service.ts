@@ -26,7 +26,7 @@ export class RecetasService {
   }
 
   getById(id: any): Observable<any> {
-    return this.http.get(`${baseUrl}/${id}` + "?expand=nick");
+    return this.http.get(`${baseUrl}/${id}` + "?expand=usuario");
   }
 
 
