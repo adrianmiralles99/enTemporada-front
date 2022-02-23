@@ -45,8 +45,8 @@ export class CardRecetasComponent implements OnInit {
   }
 
   cambiaLike(id: number) {
+    if(this.sesion == true){
     if (this.clicked[id]) {
-
       // console.log("Lo borramos");
       this.clicked[id] = false;
       this.likeService.delete(id).subscribe({
@@ -65,7 +65,10 @@ export class CardRecetasComponent implements OnInit {
       });
 
     }
-
+  }else{
+    console.log("NO");
+    
+  }
     // this.likeService.create(id).subscribe({
     //   next: (data) => {
     //     console.log(data);
