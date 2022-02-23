@@ -1,4 +1,4 @@
-<ng-container *ngIf="usuario && ultimareceta && recetapopular; else elseTemplate">
+<ng-container *ngIf="usuario; else elseTemplate">
     <app-barra [color]="'green'"></app-barra>
     <app-datos [usuario]="usuario" [rutaUser]="imagen ?? '' " [rutaLogo]="nivel+''" [exp_res]="exp_res">
     </app-datos>
