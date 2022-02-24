@@ -15,7 +15,9 @@
         <div class="col-lg-5 col-md-7 datos">
           <h2 class="user">{{nombreuser | uppercase }}</h2>
           <input  [(ngModel)]="nombreuser" placeholder="name" id ="moduser" type="text" name="texto" maxlength="12">
-
+          <div class="error">
+            <p>{{error.get("nombreuser")}}</p>
+          </div>
           <h4>Informacion del usuario: </h4>
           <p class="infouser">{{infouser}}</p>
           <textarea [(ngModel)]="infouser" name="texto" rows="4" cols="60" maxlength="200"></textarea>
@@ -35,7 +37,7 @@
               </div>
             </div>
             <div class="col-12 botones">
-              <button [routerLink]="'/perfil'" (click)="modUser()" class="modificar">Aceptar cambios</button>
+              <button  (click)="modUser()" class="modificar">Aceptar cambios</button>
               <button [routerLink]="'/perfil'"class="modificar">Cancelar cambios</button>
           </div>
         </div>

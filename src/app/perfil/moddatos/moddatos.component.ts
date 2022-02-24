@@ -15,17 +15,18 @@ export class ModdatosComponent implements OnInit {
   @Input() exp_res!: number;
   @Input() rutaUser!: string;
   @Input() rutaLogo!: string;
-
-  constructor(private route: Router, private usuariosService: UsuarioService, private token: TokenStorageService) { }
-
+  constructor(private router: Router, private usuariosService: UsuarioService, private token: TokenStorageService) { }
   nombreuser = ""//this.usuario.nick as string;  //acá habrá que poner el nombre real del user con el $_session que exista
   infouser = ""//this.usuario.descripcion as string;
   imagen!: string;
   id_user = Number(this.token.getId());
   nivel!: number;
+  error = new Map();
+
   ngOnChanges(): void {
     this.infouser = this.usuario.descripcion as string;
     this.nombreuser = this.usuario.nick as string;
+
   }
   ngOnInit(): void {
   }
@@ -46,16 +47,20 @@ export class ModdatosComponent implements OnInit {
   }
 
   modUser() {
-    if (this.nombreuser != "" && this.imagen != "") {
-      console.log(this.imagen);
+    // console.log(imagen);
 
-      // this.usuariosService.modificarUsuario(this.id_user,this.nombreuser,this.imagen,this.infouser).subscribe({
-      //   next: (data) => {
-      //     console.log(data);
-      this.route.navigate(['/perfil']);
-      //   }
-      // })
+    if (this.nombreuser == "") {
+      this.error.set("nombreuser", "El nombre de usuario debe estar lleno");
+    } else {
+      this.usuariosService.modificarUsuario(this.id_user, this.nombreuser, this.imagen, this.infouser).subscribe({
+        next: (data) => {
+          console.log(data);
+        }
+      })
+      this.router.navigate(['/perfil']);
     }
-  }
 
+  }
 }
+
+
