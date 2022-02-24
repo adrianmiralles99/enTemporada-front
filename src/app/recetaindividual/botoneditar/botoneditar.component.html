@@ -1,6 +1,11 @@
 <div *ngIf="mostrar" class="row gestionReceta">
 
-    <div class="col-12">
+    <div class="col-6">
         <button [routerLink]="['/editarReceta',recetaid]" class="crear">Editar</button>
+
+    </div>
+    <div class="col-6">
+        <button (click)="deleteReceta()" class="eliminar">Eliminar</button>
+
     </div>
 </div>

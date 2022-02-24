@@ -4,6 +4,9 @@ import { Recetas } from 'src/app/modelos/recetas.model';
 import { TokenStorageService } from 'src/app/servicios/token-storage.service';
 import { RecetasService } from 'src/app/servicios/recetas.service';
 import { Router } from '@angular/router';
+import { UtilsModule } from 'src/app/utils/utils.module';
+import {MatSnackBar} from "@angular/material/snack-bar";
+
 @Component({
   selector: 'app-datoscreacion',
   templateUrl: './datoscreacion.component.html',
@@ -12,8 +15,9 @@ import { Router } from '@angular/router';
 
 })
 export class DatoscreacionComponent implements OnInit {
+  dialogRef: any;
 
-  constructor(private router: Router, private recetasService: RecetasService, private token: TokenStorageService) { }
+  constructor(private snackBar: MatSnackBar,private router: Router, private recetasService: RecetasService, private token: TokenStorageService) { }
   iduser_crear = Number(this.token.getId());
   comensales: number = 0;
   tiempo: string = "";
@@ -31,21 +35,9 @@ export class DatoscreacionComponent implements OnInit {
 
 
   error = new Map();
-/*
-  errores?: {
-    comensales: number;
-    tiempo: string;
-    tipo: string;
-    dificultad: string;
-    cantidadPrinc: string;
-    prodPrinc: string;
-    titulo: string;
-    pasos: Array<string>;
-    descripcion: string;
-    misingredientes: string[];
-    imagen: string;
-  };
-  */
+
+  titulocomprobacion = "";
+  textocomprobacion="";
 
   @Input() recetas?: Recetas;
   @Input() productos?: Productos[];
@@ -169,6 +161,8 @@ export class DatoscreacionComponent implements OnInit {
 
   crearReceta() {
     this.comprobacionErrores();
+    
+    
     if (this.error.size == 0){
 
       if (this.prodPrinc && this.prodPrinc != this.default) {
@@ -179,22 +173,27 @@ export class DatoscreacionComponent implements OnInit {
           next: data => {
             if (data.error && data.error.length > 0) {
               this.misingredientes.shift();
-
             }
             else {
-              this.router.navigate(['recetas']);
+                const miSnackBar = this.snackBar.open("Receta creada correctamente", "Aceptar",{panelClass:'alertcool'});
+                miSnackBar.onAction().subscribe(() => {
+                  this.router.navigate(['recetas']);
+                });
             }
 
           }
         });
       }
     }
+      
+    
 
 
   }
   actualizarReceta() {
     this.comprobacionErrores();
-    console.log(this.error);
+
+    
     if (this.error.size == 0){
 
       if (this.recetas) {
@@ -204,8 +203,14 @@ export class DatoscreacionComponent implements OnInit {
           next: data => {
             if (data.error && data.error.length > 0) {
               this.misingredientes.shift();
-            }
 
+            }else{
+              const miSnackBar = this.snackBar.open("Receta actualizada correctamente", "Aceptar",{panelClass:'alertcool'});
+              miSnackBar.onAction().subscribe(() => {
+                this.router.navigate(['recetas']);
+              });
+            }
+          
           }
         });
       }
@@ -258,6 +263,10 @@ export class DatoscreacionComponent implements OnInit {
     }
   }
 
+  
+
+    
+  
   // PASOS
   agregarPaso() {
     var descripcion = this.descripcion;
