@@ -13,6 +13,9 @@
                         <div class="icono nombreUser"></div>
                         <input type="text" [(ngModel)]="nick" name="" id="" placeholder="Ingrese el Nombre de Usuario*">
                     </div>
+                    <div class="error">
+                        <p>{{error.get("usuario")}}</p>
+                      </div>
                 </label>
             </div>
             <div class="col-md-6 col-sm-12">
