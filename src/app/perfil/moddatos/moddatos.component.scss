@@ -1,4 +1,11 @@
 @import "../../../styles.scss";
+.error {
+  text-align: left;
+  color: red;
+  font-family: neueR;
+  text-align: center;
+}
+
 .row > div {
   margin: auto;
 }
