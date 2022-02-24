@@ -48,6 +48,7 @@ export class PopUpComponent implements OnInit {
           if (!data.error) {
             this.tokenStorage.saveToken(data.token);
             this.tokenStorage.saveUser(data);
+
             window.location.reload();
           }
           else {

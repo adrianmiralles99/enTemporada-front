@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { Usuarios } from 'src/app/modelos/usuarios.model';
 import { Router } from '@angular/router';
+import {MatSnackBar} from "@angular/material/snack-bar";
+
 @Component({
   selector: 'app-datoslogin',
   templateUrl: './datoslogin.component.html',
@@ -9,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class DatosloginComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router:Router) { }
+  constructor(private snackBar: MatSnackBar,private authService: AuthService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -37,7 +39,10 @@ export class DatosloginComponent implements OnInit {
           console.log(data);
         }
       });
-      this.router.navigate(['']);
+      const miSnackBar = this.snackBar.open("Registro realizado completamente", "Aceptar",{panelClass:'alertcool'});
+      miSnackBar.onAction().subscribe(() => {
+        this.router.navigate(['']);
+      });
     }
       
     

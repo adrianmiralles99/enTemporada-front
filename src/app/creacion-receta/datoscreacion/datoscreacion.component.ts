@@ -175,7 +175,7 @@ export class DatoscreacionComponent implements OnInit {
               this.misingredientes.shift();
             }
             else {
-                const miSnackBar = this.snackBar.open("Receta creada correctamente", "Aceptar");
+                const miSnackBar = this.snackBar.open("Receta creada correctamente", "Aceptar",{panelClass:'alertcool'});
                 miSnackBar.onAction().subscribe(() => {
                   this.router.navigate(['recetas']);
                 });
@@ -205,7 +205,7 @@ export class DatoscreacionComponent implements OnInit {
               this.misingredientes.shift();
 
             }else{
-              const miSnackBar = this.snackBar.open("Receta actualizada correctamente", "Aceptar");
+              const miSnackBar = this.snackBar.open("Receta actualizada correctamente", "Aceptar",{panelClass:'alertcool'});
               miSnackBar.onAction().subscribe(() => {
                 this.router.navigate(['recetas']);
               });

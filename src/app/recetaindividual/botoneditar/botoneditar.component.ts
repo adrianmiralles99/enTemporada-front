@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { TokenStorageService } from 'src/app/servicios/token-storage.service';
 import { Recetas } from 'src/app/modelos/recetas.model';
 import { RecetasService } from 'src/app/servicios/recetas.service';
+import { Router } from '@angular/router';
+import { data } from 'jquery';
 @Component({
   selector: 'app-botoneditar',
   templateUrl: './botoneditar.component.html',
@@ -14,7 +16,7 @@ export class BotoneditarComponent implements OnInit {
   recetas!: Recetas;
 
   mostrar = false;
-  constructor(private token: TokenStorageService, private recetasservice: RecetasService) {
+  constructor(private router:Router,private token: TokenStorageService, private recetasservice: RecetasService) {
   }
 
   ngOnInit(): void {
@@ -34,6 +36,15 @@ export class BotoneditarComponent implements OnInit {
       },
       error: (e) => console.error(e)
     });
+  }
+  deleteReceta(){
+    console.log("ye");
+    this.recetasservice.borrarReceta(this.recetaid).subscribe({
+      next:(data) =>{
+        console.log(data);
+      }
+    })
+    this.router.navigate(['recetas']);
   }
 
 
