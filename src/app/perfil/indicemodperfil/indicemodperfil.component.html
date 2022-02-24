@@ -3,7 +3,8 @@
 
 <div class="inf">
     <div class="container">
-        <app-inferior></app-inferior>
+        <app-inferior [totalfavoritos]="usuario.totalfavoritos?.total" [totalrecetas]="usuario.totalrecetas?.total"
+        [totalguardadas]="usuario.totalguardadas?.total" [totallikes]="usuario.totallikes?.total"></app-inferior>
         <app-recetas [usuario]="usuario"></app-recetas>
         <app-botonnuevareceta></app-botonnuevareceta>
     </div>
