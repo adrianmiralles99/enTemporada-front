@@ -4,6 +4,7 @@ import { RecetasService } from 'src/app/servicios/recetas.service';
 import { Recetas } from 'src/app/modelos/recetas.model';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 import { TokenStorageService } from 'src/app/servicios/token-storage.service';
+import { data } from 'jquery';
 
 @Component({
   selector: 'app-indexrecetaind',
@@ -43,7 +44,11 @@ export class IndexrecetaindComponent implements OnInit {
   ngOnInit(): void {
     this.getReceta();
     if(this.token.getId()){
-      this.usservice.ultimareceta(this.receta?.id as number);
+      this.usservice.ultimareceta(this.recetaid, Number(this.token.getId())).subscribe({
+        next:(data)=>{
+          console.log(data);
+        }
+      });
     }else{
       console.log("No va");
       
