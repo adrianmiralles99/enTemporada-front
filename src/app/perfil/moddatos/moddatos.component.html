@@ -1,44 +1,44 @@
 <div class="info">
-    <div class="container">
-      <div class="row">
+  <div class="container">
+    <div class="row">
 
-        <div class="col-lg-3 col-md-1 foto">
-          <div [ngStyle]="{'background-image': 'url(' + rutaUser + ')'}" class="usuario"></div>
-          <div  [ngStyle]="{'background-image': 'url(' + rutaLogo + ')'}"class="b_usuario"></div>
-          <label class="custom-file-upload">
-            <input type="file"id="fotousuario"  (change)="visualizar()"name="avatar">
-            Subir archivo
-          </label>
+      <div class="col-lg-3 col-md-1 foto">
+        <div [ngStyle]="{'background-image': 'url(' + rutaUser + ')'}" class="usuario"></div>
+        <div [ngStyle]="{'background-image': 'url(' + rutaLogo + ')'}" class="b_usuario"></div>
+        <label class="custom-file-upload">
+          <input type="file" id="fotousuario" (change)="visualizar($event)" name="avatar">
+          Subir archivo
+        </label>
+      </div>
+
+
+      <div class="col-lg-5 col-md-7 datos">
+        <h2 class="user">{{nombreuser | uppercase }}</h2>
+        <input [(ngModel)]="nombreuser" placeholder="name" id="moduser" type="text" name="texto" maxlength="12">
+        <div class="error">
+          <p>{{error.get("nombreuser")}}</p>
         </div>
+        <h4>Informacion del usuario: </h4>
+        <p class="infouser">{{infouser}}</p>
+        <textarea [(ngModel)]="infouser" name="texto" rows="4" cols="60" maxlength="200"></textarea>
+
+      </div>
 
 
-        <div class="col-lg-5 col-md-7 datos">
-          <h2 class="user">{{nombreuser | uppercase }}</h2>
-          <input  [(ngModel)]="nombreuser" placeholder="name" id ="moduser" type="text" name="texto" maxlength="12">
-          <div class="error">
-            <p>{{error.get("nombreuser")}}</p>
+      <div class="col-lg-4 col-md-4 derecha">
+        <div class="chef row">
+          <div class="col-lg-12">
+            <h4>Nivel: CHEF</h4>
           </div>
-          <h4>Informacion del usuario: </h4>
-          <p class="infouser">{{infouser}}</p>
-          <textarea [(ngModel)]="infouser" name="texto" rows="4" cols="60" maxlength="200"></textarea>
-
-        </div>
-
-
-        <div class="col-lg-4 col-md-4 derecha">
-          <div class="chef row">
-            <div class="col-lg-12">
-              <h4>Nivel: CHEF</h4>
+          <div class=" col-lg-12">
+            <div class="progress">
+              <div class="progress-bar   progress-bar-striped progress-bar-animated" role="progressbar"
+                aria-valuenow="exp_res" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width.%': exp_res}"></div>
             </div>
-            <div class=" col-lg-12">
-              <div class="progress">
-                <div class="progress-bar   progress-bar-striped progress-bar-animated" role="progressbar"
-                  aria-valuenow="exp_res" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width.%': exp_res}"></div>
-              </div>
-            </div>
-            <div class="col-12 botones">
-              <button  (click)="modUser()" class="modificar">Aceptar cambios</button>
-              <button [routerLink]="'/perfil'"class="modificar">Cancelar cambios</button>
+          </div>
+          <div class="col-12 botones">
+            <button (click)="modUser()" class="modificar">Aceptar cambios</button>
+            <button [routerLink]="'/perfil'" class="modificar">Cancelar cambios</button>
           </div>
         </div>
       </div>
