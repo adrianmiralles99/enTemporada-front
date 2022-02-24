@@ -36,8 +36,8 @@ export class RecetasService {
     fd.append('tiempo', tiempo);
     fd.append('tipo', tipo);
     fd.append('dificultad', dificultad);
-    fd.append('ingredientes', ingredientes + "");
-    fd.append('pasos', pasos + "");
+    fd.append('ingredientes', JSON.stringify(ingredientes));
+    fd.append('pasos', JSON.stringify(pasos));
     fd.append('id_prodp', id_prodp + "");
 
     return this.http.post(baseUrl + "/crearreceta", fd)
@@ -52,10 +52,10 @@ export class RecetasService {
     fd.append('tiempo', tiempo);
     fd.append('tipo', tipo);
     fd.append('dificultad', dificultad);
-    fd.append('ingredientes', ingredientes + "");
-    fd.append('pasos', pasos + "");
+    fd.append('ingredientes', JSON.stringify(ingredientes));
+    fd.append('pasos', JSON.stringify(pasos));
     fd.append('id_prodp', id_prodp + "");
-    
+
     return this.http.put(baseUrl + "/updatereceta?id=" + id, fd)
   }
   borrarReceta(id: number) {

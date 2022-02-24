@@ -200,7 +200,6 @@ export class DatoscreacionComponent implements OnInit {
           next: data => {
             if (data.error && data.error.length > 0) {
               this.misingredientes.shift();
-
             } else {
               const miSnackBar = this.snackBar.open("Receta actualizada correctamente", "Aceptar", { panelClass: 'alertcool' });
               miSnackBar.onAction().subscribe(() => {
