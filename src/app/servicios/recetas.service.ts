@@ -22,11 +22,11 @@ export class RecetasService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Recetas[]> {
-    return this.http.get<Recetas[]>(baseUrl+"?expand=usuario,likes");
+    return this.http.get<Recetas[]>(baseUrl+"?expand=usuario,likes,totallikes,favoritos");//se configuran los expand en el modelo
   }
 
   getById(id: any): Observable<any> {
-    return this.http.get(`${baseUrl}/${id}` + "?expand=usuario");
+    return this.http.get(`${baseUrl}/${id}` + "?expand=usuario,likes,favoritos");
   }
 
 
@@ -62,11 +62,11 @@ export class RecetasService {
   }
 
   getFav() {
-    return this.http.get<Recetas[]>(baseUrl + "/getfav?expand=usuario");
+    return this.http.get<Recetas[]>(baseUrl + "/getfav?expand=usuario,likes,favoritos");
   }
 
   getMias() {
-    return this.http.get<Recetas[]>(baseUrl + "/getmias?expand=usuario");
+    return this.http.get<Recetas[]>(baseUrl + "/getmias?expand=usuario,likes,favoritos");
   }
 
 

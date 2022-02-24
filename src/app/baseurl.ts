@@ -5,5 +5,6 @@
 //export const serverUrl = 'http://localhost/enTemporada/EnTemporada_restapi/web/';
 // export const serverUrl = 'http://localhost/enTemporada/EnTemporada_restapi/web/';
 
- //export const serverUrl = 'http://localhost/restapi/EnTemporada_restapi/web/';   
-
+ //export const serverUrl = 'http://localhost/restapi/EnTemporada_restapi/web/';
+// API ADRI CASA
+//export const serverUrl = 'http://localhost/enTemporada/EnTemporada_restapi/web/';

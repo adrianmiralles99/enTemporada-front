@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-inferior',
@@ -8,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class InferiorComponent implements OnInit {
 
   constructor() { }
+
+  @Input() totallikes?: number;
+  @Input() totalfavoritos?: number;
+  @Input() totalguardadas?: number;
+  @Input() totalrecetas?: number;
 
   ngOnInit(): void {
   }

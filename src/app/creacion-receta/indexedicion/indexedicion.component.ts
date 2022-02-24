@@ -31,7 +31,6 @@ export class IndexedicionComponent implements OnInit {
   echarUsuario(idusuario:Number){
     if(idusuario != Number(this.token.getId())){
       this.router.navigate(['recetas']);
-
     }
   }
   getRecetas() {//cambiar la id por la que verdaderamente toca
@@ -39,7 +38,6 @@ export class IndexedicionComponent implements OnInit {
       next: (data) => {
         this.recetas = data;
         this.idusuario = this.recetas.id_usuario;
-        
         this.echarUsuario(this.idusuario);
       },
       error: (e) => console.error(e)

@@ -22,6 +22,8 @@ export class FavoritosService {
   }
 
   delete(id_receta: any): Observable<any> {
+    console.log(baseUrl + "/deletefavorito?id_receta=" + id_receta);
+    
     return this.http.delete(baseUrl + "/deletefavorito?id_receta=" + id_receta);
   }
 

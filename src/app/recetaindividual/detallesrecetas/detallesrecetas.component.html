@@ -12,23 +12,15 @@
                     <h3>{{receta?.titulo}}</h3>
                     <div class="row">
                         <div class="col-1 icono">
-                            <img src="../../../assets/IMG/iconos/icono.png" alt="">
+                            <img src="../../../assets/IMG/Usuarios/{{receta?.usuario?.imagen}}" alt="">
                         </div>
                         <div class="col-8">
                             <sub>By @{{receta?.usuario?.nick}}</sub>
                         </div>
-                        <button (click)="likedelete()"*ngIf="like"class="col-1 mg">
-                            <img src="../../../assets/IMG/iconos/mg_click.png" alt="">
-                        </button>
-                        <button (click)="likeset()" *ngIf="!like"class="col-1 mg">
-                            <img src="../../../assets/IMG/iconos/mg.png" alt="">
-                        </button>
-                        <button (click)="guardadodelete()" *ngIf="guardado"class="col-1 save">
-                            <img src="../../../assets/IMG/iconos/bookmark_click.png" alt="">
-                        </button>
-                        <button (click)="guardadoset()"*ngIf="!guardado"class="col-1 save">
-                            <img src="../../../assets/IMG/iconos/bookmark.png" alt="">
-                        </button>
+                        <button (click)="cambiaLike()" class="mg"
+                            [style.background-image]="clicked ?'url(/assets/IMG/iconos/mg_click.png)':'url(/assets/IMG/iconos/mg.png)'"></button>
+                        <button (click)="cambiaFav()" class="save"
+                            [style.background-image]="fav ?'url(/assets/IMG/iconos/bookmark_click.png)':'url(/assets/IMG/iconos/bookmark.png)'"></button>
 
                     </div>
 

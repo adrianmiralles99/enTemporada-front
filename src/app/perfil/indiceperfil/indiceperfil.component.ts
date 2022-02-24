@@ -38,7 +38,6 @@ export class IndiceperfilComponent implements OnInit {
         this.nombreuser = data.nick;
         this.infouser = data.descripcion;
         this.imagen = data.imagen;
-
         this.getLvl(data.exp);
       }
     })
@@ -62,6 +61,18 @@ export class IndiceperfilComponent implements OnInit {
     this.recetasService.getUltimaReceta().subscribe({
       next: (data) => {
         this.ultimareceta = data;
+        if (!data) {
+          this.ultimareceta = {
+            id: 0,
+            id_usuario: 0,
+            imagen: "default.gif",
+            titulo: "No encontrada",
+            tiempo: "",
+            usuario_img: "default.png",
+            nick: "Nobody",
+            dificultad: "",
+          };
+        }
       }
     })
   }
@@ -70,6 +81,20 @@ export class IndiceperfilComponent implements OnInit {
     this.recetasService.getRecetaPopular().subscribe({
       next: (data) => {
         this.recetapopular = data;
+        if (!data) {
+          this.recetapopular = {
+            id: 0,
+            id_usuario: 0,
+            imagen: "default.gif",
+            titulo: "No encontrada",
+            tiempo: "",
+            usuario_img: "default.png",
+            nick: "Nobody",
+            dificultad: "",
+          };
+        }
+
+
       }
     })
   }

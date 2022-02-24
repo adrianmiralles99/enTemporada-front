@@ -29,9 +29,5 @@ export class IndexrecetasComponent implements OnInit {
       error: (e) => console.error(e)
     });
   }
-  
-  getRecetaTipo(tipo:string){
-    
-  }
 
 }

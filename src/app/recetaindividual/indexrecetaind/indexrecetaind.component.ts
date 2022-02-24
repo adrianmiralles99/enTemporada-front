@@ -1,10 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RecetasService } from 'src/app/servicios/recetas.service';
 import { Recetas } from 'src/app/modelos/recetas.model';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 import { TokenStorageService } from 'src/app/servicios/token-storage.service';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-indexrecetaind',
@@ -13,23 +12,31 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 })
 export class IndexrecetaindComponent implements OnInit {
 
-  constructor(private token: TokenStorageService,private usservice: UsuarioService,private recetasService: RecetasService, private rutaActiva: ActivatedRoute) { }
+  constructor(private router: Router,private token: TokenStorageService,private usservice: UsuarioService,private recetasService: RecetasService, private rutaActiva: ActivatedRoute) { }
 
   id = this.rutaActiva.snapshot.paramMap.get('id');
   recetaid = Number(this.rutaActiva.snapshot.paramMap.get('id'));
   receta?: Recetas;
   ingredientes?: string[];
   pasos?: string[];
+
   getReceta(): void {
     this.recetasService.getById(this.id)
       .subscribe({
         next: (data) => {
-          this.receta = data;
-          this.ingredientes = this.receta?.ingredientes;
-          this.pasos = this.receta?.pasos;
+          if (data) {
+            this.receta = data;
+            this.ingredientes = this.receta?.ingredientes;
+            this.pasos = this.receta?.pasos;
+          }
+          else {
+            this.router.navigate(['recetas'])
+          }
 
         },
-        error: (e) => console.error(e)
+        error: (e) => {
+          this.router.navigate(['recetas'])
+        }
       })
   }
 
