@@ -34,6 +34,12 @@ export class UsuarioService {
       descripcion: descripcion,
 
     }, httpOptions);
+  }
+  ultimareceta(id_ultima_receta :number){
+    return this.http.put(baseUrl + "/updateuser", {
+      
+      id_ultima_receta: id_ultima_receta
 
+    }, httpOptions);
   }
 }

@@ -2,6 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RecetasService } from 'src/app/servicios/recetas.service';
 import { Recetas } from 'src/app/modelos/recetas.model';
+import { UsuarioService } from 'src/app/servicios/usuario.service';
+import { TokenStorageService } from 'src/app/servicios/token-storage.service';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-indexrecetaind',
@@ -10,7 +13,7 @@ import { Recetas } from 'src/app/modelos/recetas.model';
 })
 export class IndexrecetaindComponent implements OnInit {
 
-  constructor(private recetasService: RecetasService, private rutaActiva: ActivatedRoute) { }
+  constructor(private token: TokenStorageService,private usservice: UsuarioService,private recetasService: RecetasService, private rutaActiva: ActivatedRoute) { }
 
   id = this.rutaActiva.snapshot.paramMap.get('id');
   recetaid = Number(this.rutaActiva.snapshot.paramMap.get('id'));
@@ -32,6 +35,12 @@ export class IndexrecetaindComponent implements OnInit {
 
   ngOnInit(): void {
     this.getReceta();
+    if(this.token.getId()){
+      this.usservice.ultimareceta(this.receta?.id as number);
+    }else{
+      console.log("No va");
+      
+    }
   }
 
 }
