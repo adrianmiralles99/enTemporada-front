@@ -233,6 +233,6 @@
         <button (click)="actualizarReceta()" class="actualizar">Actualizar</button>
     </div>
     <div class="col-6">
-        <button [routerLink]="['/recetas']" class="cancelar">Cancelar</button>
+        <button [routerLink]="['/recetaindividual', recetas!.id]" class="cancelar">Cancelar</button>
     </div>
 </div>
