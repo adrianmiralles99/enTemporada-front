@@ -78,5 +78,16 @@ export class RecetasService {
     return this.http.get(baseUrl + "/popularreceta");
   }
 
+
+
+  getByTipo(tipo: any, fecha: any): Observable<any> {
+    if (tipo) {
+      return this.http.get(baseUrl + "/bytipo?tipo=" + tipo + "&expand=usuario,likes,totallikes,favoritos");
+    }
+    else {
+      return this.http.get(baseUrl + "/bytipo?fecha=" + fecha + "&expand=usuario,likes,totallikes,favoritos");
+    }
+  }
+
 }
 
