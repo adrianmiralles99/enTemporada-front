@@ -24,12 +24,24 @@ h2 {
   user-select: none;
 }
 
+.user{
+  margin-top: 15px;
+  *{
+    vertical-align: middle;
+  }
+}
+
 .icono {
-  width: 30px;
-  user-select: none;
-  pointer-events: none;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  border-radius: 100%;
   margin-right: 5px;
   margin-left: 10px;
+  user-select: none;
   margin-top: 5px;
 }
 

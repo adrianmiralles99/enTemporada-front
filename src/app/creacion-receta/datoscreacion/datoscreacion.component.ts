@@ -6,6 +6,7 @@ import { RecetasService } from 'src/app/servicios/recetas.service';
 import { Router } from '@angular/router';
 import { UtilsModule } from 'src/app/utils/utils.module';
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { UsuarioService } from 'src/app/servicios/usuario.service';
 
 @Component({
   selector: 'app-datoscreacion',
@@ -17,7 +18,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 export class DatoscreacionComponent implements OnInit {
   dialogRef: any;
 
-  constructor(private snackBar: MatSnackBar, private router: Router, private recetasService: RecetasService, private token: TokenStorageService) { }
+  constructor(private snackBar: MatSnackBar, private usuarioService: UsuarioService, private router: Router, private recetasService: RecetasService, private token: TokenStorageService) { }
   iduser_crear = Number(this.token.getId());
   comensales: number = 0;
   tiempo: string = "";
@@ -30,6 +31,7 @@ export class DatoscreacionComponent implements OnInit {
   descripcion: string = "";
   misingredientes: string[] = [];
   imagen!: File;
+  vistaImagen?: string = "default.png";
 
   rutaimg: string = "../../../assets/IMG/recetas/";
 
@@ -45,24 +47,30 @@ export class DatoscreacionComponent implements OnInit {
   productito?: Productos;
   cantidad: string = "";
   ingred: string = "";
-
+  imagenUser: string = "default.png";
   ingredientes: Array<Array<String>> = [];
 
   tipoActualT?: Productos[];
   tipoActualN?: Productos[];
 
   default = "Seleccione un campo"
-  imagen64: any;
 
   ngOnInit(): void {
-
     if (this.recetas) {
       this.cargarDatos();
     }
+    this.getUser();
   }
   ngOnChanges(): void {
     //this.recetas.titulo;
 
+  }
+  getUser() {
+    this.usuarioService.getById().subscribe({
+      next: (data) => {
+        this.imagenUser = data.imagen;
+      }
+    })
   }
 
   cargarDatos(): void {
@@ -72,6 +80,9 @@ export class DatoscreacionComponent implements OnInit {
     this.tiempo = String(this.recetas?.tiempo);
     this.tipo = String(this.recetas?.tipo);
     this.dificultad = String(this.recetas?.dificultad);
+    if (this.recetas?.imagen) {
+      this.vistaImagen = this.recetas?.imagen;
+    }
 
     if (this.productito?.tipo == "F") {
       $("#selecF").click();
@@ -105,6 +116,7 @@ export class DatoscreacionComponent implements OnInit {
 
   // COPIADO DE INTERNET :D
   visualizar(ev: any) {
+    this.vistaImagen = "";
     var file = ev.target.files[0];
     var reader = new FileReader();
 
@@ -115,7 +127,6 @@ export class DatoscreacionComponent implements OnInit {
         "background-image": "url(" + e.target!.result + ")",
         "background-size": "cover",
       })
-      this.imagen64 = e.target!.result;
     }
 
     reader.readAsDataURL(file);
@@ -158,7 +169,7 @@ export class DatoscreacionComponent implements OnInit {
   }
 
   crearReceta() {
-    // this.comprobacionErrores();
+    this.comprobacionErrores();
 
 
     if (this.error.size == 0) {
@@ -203,7 +214,7 @@ export class DatoscreacionComponent implements OnInit {
             } else {
               const miSnackBar = this.snackBar.open("Receta actualizada correctamente", "Aceptar", { panelClass: 'alertcool' });
               miSnackBar.onAction().subscribe(() => {
-                this.router.navigate(['recetas']);
+                this.router.navigate(['/recetaindividual', this.recetas?.id]);
               });
             }
 
@@ -241,7 +252,7 @@ export class DatoscreacionComponent implements OnInit {
     if (!this.titulo) {
       this.error.set("titulo", "Titulo debe estar lleno");
     }
-    if (!this.imagen) {
+    if (!this.imagen && this.vistaImagen == "default.png") {
       this.error.set("imagen", "Debe seleccionar una imagen");
     }
     if (this.misingredientes.length == 0) {

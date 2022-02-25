@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-lg-5 col-md-12">
             <label class="upload">
-                <div [ngStyle]="{'background-image': 'url(/assets/IMG/iconos/uploadImage.png)', 'background-size': !imagen ? '30%':'cover'}"
+                <div [ngStyle]="{'background-image': 'url(/assets/IMG/recetas/'+(vistaImagen ?? 'default.png')+')', 'background-size': vistaImagen=='default.png' ? '30%':'cover'}"
                     id="img"></div>
                 <input type="file" (change)="visualizar($event)" name="" id="inputIMG">
             </label>
@@ -11,7 +11,7 @@
                 <p>{{error.get("imagen")}}</p>
             </div>
             <div class="nombre">
-                <img class="mr-2" src="/assets/IMG/iconos/icono.png" alt="">
+                <img class="mr-2" src="/assets/IMG/Usuarios/{{imagenUser}}" alt="">
                 <input [(ngModel)]="titulo" type="text" placeholder="Escriba el nombre de su receta...">
             </div>
             <div class="error">
@@ -233,6 +233,13 @@
         <button (click)="actualizarReceta()" class="actualizar">Actualizar</button>
     </div>
     <div class="col-6">
-        <button [routerLink]="['/recetaindividual', recetas!.id]" class="cancelar">Cancelar</button>
+        <ng-container *ngIf="recetas?.id; else elseTemplate">
+            <button [routerLink]="['/recetaindividual', recetas?.id]" class="cancelar">Cancelar</button>
+        </ng-container>
+        <ng-template #elseTemplate>
+            <button [routerLink]="['/recetas']" class="cancelar">Cancelars</button>
+
+        </ng-template>
+
     </div>
 </div>

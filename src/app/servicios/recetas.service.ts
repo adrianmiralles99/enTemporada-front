@@ -30,7 +30,6 @@ export class RecetasService {
   crearReceta(id_user: number, titulo: string, comensales: number, tiempo: string, tipo: string, dificultad: string, ingredientes: string[], pasos: string[], id_prodp: number, imagen: File): Observable<any> {
     var fd = new FormData();
     fd.append('eventImage', imagen);
-    fd.append('id_usuario', id_user + "");
     fd.append('titulo', titulo);
     fd.append('comensales', comensales + "");
     fd.append('tiempo', tiempo);

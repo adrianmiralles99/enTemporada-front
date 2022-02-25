@@ -7,7 +7,8 @@
             <app-inferior [totalfavoritos]="usuario.totalfavoritos?.total" [totalrecetas]="usuario.totalrecetas?.total"
                 [totalguardadas]="usuario.totalguardadas?.total" [totallikes]="usuario.totallikes?.total">
             </app-inferior>
-            <app-recetas [usuario]="usuario"></app-recetas>
+            <app-recetas [usuario]="usuario" [ultimareceta]="ultimareceta" [recetapopular]="recetapopular">
+            </app-recetas>
             <app-botonnuevareceta></app-botonnuevareceta>
         </div>
     </div>

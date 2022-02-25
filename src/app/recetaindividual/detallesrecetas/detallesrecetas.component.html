@@ -10,11 +10,13 @@
 
                 <div class="nombre">
                     <h3>{{receta?.titulo}}</h3>
-                    <div class="row">
-                        <div class="col-1 icono">
-                            <img src="../../../assets/IMG/Usuarios/{{receta?.usuario?.imagen}}" alt="">
+                    <div class="row user">
+                        <div class="col-2 icono">
+                            <a class="icono"
+                                style="background-image: url(/assets/IMG/Usuarios/{{receta?.usuario?.imagen}});"
+                                alt=""></a>
                         </div>
-                        <div class="col-8">
+                        <div class="col-7">
                             <sub>By @{{receta?.usuario?.nick}}</sub>
                         </div>
                         <button (click)="cambiaLike()" class="mg"

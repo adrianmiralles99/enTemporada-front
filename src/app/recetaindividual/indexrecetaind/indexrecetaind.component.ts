@@ -46,12 +46,8 @@ export class IndexrecetaindComponent implements OnInit {
     if(this.token.getId()){
       this.usservice.ultimareceta(this.recetaid, Number(this.token.getId())).subscribe({
         next:(data)=>{
-          console.log(data);
         }
       });
-    }else{
-      console.log("No va");
-      
     }
   }
 
