@@ -44,7 +44,8 @@ const routes: Routes = [
   },
   {
     path: 'recetas-guardadas',
-    component: IndexguardadasComponent,canActivate:[UsuariologueadoGuard]
+    component: IndexguardadasComponent,canActivate:[UsuariologueadoGuard]//CAN ACTIVATE TIENE UN ARRAY EN EL QUE PUEDES PONER TODOS LOS GUARDS QUE QUIERAS
+                                                                        // LO PONEMOS EN LAS PÁGINAS DONDE UN USUARIO NO REGISTRADO NO PUEDE ACCEDER
   },
   {
     path: 'recetas-misrecetas',

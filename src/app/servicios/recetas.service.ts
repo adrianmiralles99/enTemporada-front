@@ -62,7 +62,7 @@ export class RecetasService {
   }
   borrarReceta(id: number){
     return this.http.delete(baseUrl + "/deletereceta?id=" + id);
- 
+
   }
   getFav() {
     return this.http.get<Recetas[]>(baseUrl + "/getfav?expand=usuario,likes,favoritos");

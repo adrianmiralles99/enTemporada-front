@@ -5,6 +5,8 @@ import { TokenStorageService } from '../servicios/token-storage.service';
 @Injectable({
   providedIn: 'root'
 })
+//CanActivate: Mira si el usuario puede acceder a una página determinada.
+//HAY DISTINTOS TIPOS DE GUARDS, EL MÁS COMÚN ES EL CAN ACTIVATE
 export class UsuariologueadoGuard implements CanActivate {
       constructor(private router:Router, private token:TokenStorageService){}
       canActivate(
@@ -18,5 +20,5 @@ export class UsuariologueadoGuard implements CanActivate {
         // Si devolvemos TRUE si se permitirá el acceso.
         return true;
       }
-    } 
+    }
 
