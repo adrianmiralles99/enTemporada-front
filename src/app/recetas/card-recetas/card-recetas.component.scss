@@ -18,16 +18,23 @@
   user-select: none;
   transition: 0.5s;
 }
-
+.user{
+  *{
+    vertical-align: middle;
+  }
+}
 .icono {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   height: 40px;
   width: 40px;
-  user-select: none;
-  pointer-events: none;
+  display: inline-block;
+  border-radius: 100%;
   margin-right: 5px;
   margin-left: 10px;
   margin-top: 5px;
-  border-radius: 100%;
+  user-select: none;
 }
 
 .tarjeta {

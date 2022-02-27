@@ -49,7 +49,7 @@ const routes: Routes = [
   },
   {
     path: 'recetas-misrecetas',
-    component: IndexmisrecetasComponent,canActivate:[UsuariologueadoGuard]
+    component: IndexmisrecetasComponent, canActivate: [UsuariologueadoGuard]
   },
   {
     path: 'recetaindividual/:id',
@@ -63,19 +63,19 @@ const routes: Routes = [
 
   {
     path: 'creacionRecetas',
-    component: IndexcreacionComponent,canActivate:[UsuariologueadoGuard]
+    component: IndexcreacionComponent, canActivate: [UsuariologueadoGuard]
   },
   {
     path: 'editarReceta/:id',
-    component: IndexedicionComponent,canActivate:[UsuariologueadoGuard]
+    component: IndexedicionComponent, canActivate: [UsuariologueadoGuard]
   },
   {
     path: 'perfil',
-    component: IndiceperfilComponent,canActivate:[UsuariologueadoGuard]
+    component: IndiceperfilComponent, canActivate: [UsuariologueadoGuard]
   },
   {
     path: 'modperfil',
-    component: IndicemodperfilComponent,canActivate:[UsuariologueadoGuard]
+    component: IndicemodperfilComponent, canActivate: [UsuariologueadoGuard]
   },
   //si la ruta es equivocada salta el error 404
   {

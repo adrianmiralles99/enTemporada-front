@@ -1,21 +1,21 @@
 <div class="container">
-   
+
     <div class="row">
         <div class="col-lg-5 col-md-12">
             <label class="upload">
-                <div [ngStyle]="{'background-image': 'url(' + imagen + ')', 'background-size': imagen ==='../../../assets/IMG/iconos/uploadImage.png' ? '30%':'cover'}"
+                <div [ngStyle]="{'background-image': 'url(/assets/IMG/recetas/'+(vistaImagen ?? 'default.png')+')', 'background-size': vistaImagen=='default.png' ? '30%':'cover'}"
                     id="img"></div>
                 <input type="file" (change)="visualizar($event)" name="" id="inputIMG">
             </label>
             <div class="error">
-              <p>{{error.get("imagen")}}</p>
+                <p>{{error.get("imagen")}}</p>
             </div>
             <div class="nombre">
-                <img class="mr-2" src="../../../assets/IMG/iconos/icono.png" alt="">
+                <img class="mr-2" src="/assets/IMG/Usuarios/{{imagenUser}}" alt="">
                 <input [(ngModel)]="titulo" type="text" placeholder="Escriba el nombre de su receta...">
             </div>
             <div class="error">
-              <p>{{error.get("titulo")}}</p>
+                <p>{{error.get("titulo")}}</p>
             </div>
         </div>
 
@@ -26,28 +26,28 @@
                     <div class="columna col-3">
                         <p class="mt-2">Comensales</p>
                         <div class="campo">
-                            <img class="icono" draggable="false" src="../../../assets/IMG/iconos/grupo.png" alt="">
+                            <img class="icono" draggable="false" src="/assets/IMG/iconos/grupo.png" alt="">
                             <input [(ngModel)]="comensales" type="number" min="0" data-error="buenos dias" id="">
                         </div>
                         <div class="error">
-                          <p>{{error.get("comensales")}}</p>
+                            <p>{{error.get("comensales")}}</p>
                         </div>
 
                     </div>
                     <div class="columna col-2">
                         <p class="mt-2">Tiempo</p>
                         <div class="campo">
-                            <img class="icono" draggable="false" src="../../../assets/IMG/iconos/tiempo.png" alt="">
+                            <img class="icono" draggable="false" src="/assets/IMG/iconos/tiempo.png" alt="">
                             <input [(ngModel)]="tiempo" type="text" name="" id="">
                         </div>
                         <div class="error">
-                          <p>{{error.get("tiempo")}}</p>
+                            <p>{{error.get("tiempo")}}</p>
                         </div>
                     </div>
                     <div class="columna col-3">
                         <p class="mt-2">Tipo de plato</p>
                         <div class="campo">
-                            <img class="icono" draggable="false" src="../../../assets/IMG/iconos/tipo.png" alt="">
+                            <img class="icono" draggable="false" src="/assets/IMG/iconos/tipo.png" alt="">
                             <select [(ngModel)]="tipo" id="">
                                 <option selected>...</option>
                                 <option name="desayuno" value="Desayuno">Desayuno</option>
@@ -58,13 +58,13 @@
                             </select>
                         </div>
                         <div class="error">
-                          <p>{{error.get("tipo")}}</p>
+                            <p>{{error.get("tipo")}}</p>
                         </div>
                     </div>
                     <div class="columna col-4">
                         <p class="mt-2">Dificultad</p>
                         <div class="campo">
-                            <img class="icono" draggable="false" src="../../../assets/IMG/iconos/dificultad.png" alt="">
+                            <img class="icono" draggable="false" src="/assets/IMG/iconos/dificultad.png" alt="">
                             <select [(ngModel)]="dificultad" id="">
                                 <option selected>...</option>
                                 <option name="facil" value="Fácil">Fácil</option>
@@ -73,7 +73,7 @@
                             </select>
                         </div>
                         <div class="error">
-                          <p>{{error.get("dificultad")}}</p>
+                            <p>{{error.get("dificultad")}}</p>
                         </div>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
                                     <input id="cantidad" min=1 type="text" [(ngModel)]="cantidadPrinc" name="">
                                 </label>
                                 <div class="error">
-                                  <p>{{error.get("cantidadPrinc")}}</p>
+                                    <p>{{error.get("cantidadPrinc")}}</p>
                                 </div>
 
                             </div>
@@ -125,7 +125,7 @@
                                     </optgroup>
                                 </select>
                                 <div class="error">
-                                  <p>{{error.get("prodPrinc")}}</p>
+                                    <p>{{error.get("prodPrinc")}}</p>
                                 </div>
                             </div>
 
@@ -144,9 +144,9 @@
                         <div class="col-6">
                             <!-- LISTA DE LA PRIMERA MITAD DE LOS INGREDIENTES -->
                             <ul class="lista">
-                              <div class="error">
-                                <p>{{error.get("ingredientes")}}</p>
-                              </div>
+                                <div class="error">
+                                    <p>{{error.get("ingredientes")}}</p>
+                                </div>
                                 <div class="row elemento" *ngFor="let ingrediente of ingredientes[0];let i=index">
                                     <div class="col-10">
                                         <span>{{ingrediente}} </span>
@@ -194,11 +194,11 @@
 
 
 <div class="containerpasos">
-  <div class="error">
-    <p>{{error.get("pasos")}}</p>
-  </div>
+    <div class="error">
+        <p>{{error.get("pasos")}}</p>
+    </div>
     <div class="pasos" *ngFor="let paso of pasos; let i=index">
-        <img class="quitar" (click)="quitarPaso(i)" src="../../../assets/IMG/iconos/quitar.png" alt="">
+        <img class="quitar" (click)="quitarPaso(i)" src="/assets/IMG/iconos/quitar.png" alt="">
         <h2 class="numPaso">Paso {{i+1}}</h2>
         <label class="titulo">
             <span>Descripción del paso</span>
@@ -218,7 +218,7 @@
 
     <div class="alinear">
         <button (click)="agregarPaso()" class="agregar">
-            <img src="../../../assets/IMG/iconos/añadir.png" alt="">
+            <img src="/assets/IMG/iconos/añadir.png" alt="">
             <p>Añadir Paso</p>
         </button>
     </div>
@@ -233,6 +233,13 @@
         <button (click)="actualizarReceta()" class="actualizar">Actualizar</button>
     </div>
     <div class="col-6">
-        <button [routerLink]="['/recetas']" class="cancelar">Cancelar</button>
+        <ng-container *ngIf="recetas?.id; else elseTemplate">
+            <button [routerLink]="['/recetaindividual', recetas?.id]" class="cancelar">Cancelar</button>
+        </ng-container>
+        <ng-template #elseTemplate>
+            <button [routerLink]="['/recetas']" class="cancelar">Cancelars</button>
+
+        </ng-template>
+
     </div>
 </div>

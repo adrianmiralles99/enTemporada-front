@@ -42,16 +42,6 @@ nav {
   }
 }
 
-.icono {
-  a {
-    border: 1px solid black;
-  }
-
-  img {
-    height: 10%;
-  }
-}
-
 .navbar-toggler {
   border: none;
   color: black;
@@ -68,13 +58,6 @@ nav {
     text-decoration: none;
   }
 
-  img {
-    height: 40px;
-    width: 40px;
-    border-radius: 100%;
-    margin-right: 10px;
-  }
-
   .boton {
     text-align: center !important;
     border: none;
@@ -84,11 +67,22 @@ nav {
     background-color: $yellow;
     transition: 0.3s;
     outline: none;
-    > img {
-      border: 100%;
+    .icono {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 40px;
+      width: 40px;
+      display: inline-block;
+      border-radius: 100%;
+      margin-right: 10px;
+    }
+    *{
+      vertical-align: middle !important;
     }
   }
 }
+
 
 @media screen and(max-width: 700px) {
   .oscura {

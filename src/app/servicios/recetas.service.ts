@@ -14,15 +14,12 @@ const baseUrl = serverUrl + 'recetas';
   providedIn: 'root'
 })
 
-
-
-
 export class RecetasService {
 
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Recetas[]> {
-    return this.http.get<Recetas[]>(baseUrl+"?expand=usuario,likes,totallikes,favoritos");//se configuran los expand en el modelo
+    return this.http.get<Recetas[]>(baseUrl + "?expand=usuario,likes,totallikes,favoritos");//se configuran los expand en el modelo
   }
 
   getById(id: any): Observable<any> {
@@ -30,37 +27,37 @@ export class RecetasService {
   }
 
 
-  crearReceta(id_user: number, titulo: string, comensales: number, tiempo: string, tipo: string, dificultad: string, ingredientes: string[], pasos: string[], id_prodp: number, imagen: string, imagen64: any): Observable<any> {
-    return this.http.post(baseUrl + "/crearreceta", {
-      id_usuario: id_user,
-      titulo: titulo,
-      comensales: comensales,
-      tiempo: tiempo,
-      tipo: tipo,
-      dificultad: dificultad,
-      ingredientes: ingredientes,
-      pasos: pasos,
-      id_prodp: id_prodp,
-      imagen: imagen,
-    }, httpOptions);
+  crearReceta(id_user: number, titulo: string, comensales: number, tiempo: string, tipo: string, dificultad: string, ingredientes: string[], pasos: string[], id_prodp: number, imagen: File): Observable<any> {
+    var fd = new FormData();
+    fd.append('eventImage', imagen);
+    fd.append('titulo', titulo);
+    fd.append('comensales', comensales + "");
+    fd.append('tiempo', tiempo);
+    fd.append('tipo', tipo);
+    fd.append('dificultad', dificultad);
+    fd.append('ingredientes', JSON.stringify(ingredientes));
+    fd.append('pasos', JSON.stringify(pasos));
+    fd.append('id_prodp', id_prodp + "");
+
+    return this.http.post(baseUrl + "/crearreceta", fd)
   }
 
-  actualizarReceta(id: number, titulo: string, comensales: number, tiempo: string, tipo: string, dificultad: string, ingredientes: string[], pasos: string[], id_prodp: number, imagen: string, imagen64: any): Observable<any> {
+  actualizarReceta(id: number, titulo: string, comensales: number, tiempo: string, tipo: string, dificultad: string, ingredientes: string[], pasos: string[], id_prodp: number, imagen: File): Observable<any> {
 
-    return this.http.put(baseUrl + "/updatereceta?id=" + id,
-      {
-        titulo: titulo,
-        comensales: comensales,
-        tiempo: tiempo,
-        tipo: tipo,
-        dificultad: dificultad,
-        ingredientes: ingredientes,
-        pasos: pasos,
-        id_prodp: id_prodp,
-      }
-      , httpOptions);
+    var fd = new FormData();
+    fd.append('eventImage', imagen);
+    fd.append('titulo', titulo);
+    fd.append('comensales', comensales + "");
+    fd.append('tiempo', tiempo);
+    fd.append('tipo', tipo);
+    fd.append('dificultad', dificultad);
+    fd.append('ingredientes', JSON.stringify(ingredientes));
+    fd.append('pasos', JSON.stringify(pasos));
+    fd.append('id_prodp', id_prodp + "");
+
+    return this.http.put(baseUrl + "/updatereceta?id=" + id, fd)
   }
-  borrarReceta(id: number){
+  borrarReceta(id: number) {
     return this.http.delete(baseUrl + "/deletereceta?id=" + id);
 
   }

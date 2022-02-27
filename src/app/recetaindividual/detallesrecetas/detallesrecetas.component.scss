@@ -29,11 +29,23 @@
     div {
         margin: auto;
     }
-    .icono img {
-        height: 50px;
-        width: 50px;
+    .user{
+        *{
+          vertical-align: middle;
+        }
+      }
+      .icono a{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 70px;
+        width: 70px;
+        display: inline-block;
         border-radius: 100%;
-    }
+        margin-left: 10px;
+        margin-top: 5px;
+        user-select: none;
+      }
     h3 {
         word-wrap: break-word;
         font-family: recoletaB;
@@ -175,16 +187,18 @@
                 height: 270px;
             }
         }
-        .nombre {
-            margin-bottom: 50px;
-            h3 {
-                font-size: 150%;
-            }
-            .row {
-                font-size: 90%;
-            }
-        }
+
         padding-bottom: 5%;
+    }
+
+    .nombre {
+        margin-bottom: 15px;
+        h3 {
+            font-size: 150%;
+        }
+        .row {
+            font-size: 90%;
+        }
     }
 
     .filadatos {

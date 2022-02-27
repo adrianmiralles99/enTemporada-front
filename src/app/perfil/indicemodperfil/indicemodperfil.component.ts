@@ -27,6 +27,7 @@ export class IndicemodperfilComponent implements OnInit {
     this.getUltimaReceta();
     this.getRecetaPopular();
   }
+  
   getUser(): void {
     this.usuariosService.getById().subscribe({
       next: (data) => {

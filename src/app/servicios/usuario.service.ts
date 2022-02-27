@@ -5,6 +5,7 @@ import { serverUrl } from '../baseurl';
 import { TokenStorageService } from './token-storage.service';
 
 const httpOptions = {
+  // headers: new HttpHeaders({ 'Content-Type': 'multipart/form-data' })
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
@@ -26,16 +27,20 @@ export class UsuarioService {
     return this.http.get(`${baseUrl}/${this.token.getId()}?expand=totalrecetas,totalguardadas,totalfavoritos,totallikes`);
   }
 
-  modificarUsuario(id: number, nick: string, imagen: string, descripcion: string): Observable<any> {
-    console.log(id);
-    return this.http.put(baseUrl + "/updateuser?id=" + id, {
-      nick: nick,
-      imagen: imagen,
-      descripcion: descripcion,
+  modificarUsuario(id: number, nick: string, imagen: File, descripcion: string): Observable<any> {
+    var fd = new FormData();
+    fd.append('eventImage', imagen);
+    fd.append('nick', nick);
+    fd.append('descripcion', descripcion);
+    return this.http.put(baseUrl + "/updateuser?id=" + id, fd)
 
-    }, httpOptions);
+    // return this.http.put(baseUrl + "/updateuser?id=" + id, {
+    //   nick: nick,
+    //   eventImage: imagen,
+    //   descripcion: descripcion,
+    // }, httpOptions);
   }
-  ultimareceta(id_ultima_receta :number, id: number){
+  ultimareceta(id_ultima_receta: number, id: number) {
     return this.http.put(baseUrl + "/updateuser?id=" + id, {
       id_ultima_receta: id_ultima_receta
 

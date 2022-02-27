@@ -5,7 +5,8 @@ import { TokenStorageService } from 'src/app/servicios/token-storage.service';
 import { RecetasService } from 'src/app/servicios/recetas.service';
 import { Router } from '@angular/router';
 import { UtilsModule } from 'src/app/utils/utils.module';
-import {MatSnackBar} from "@angular/material/snack-bar";
+import { MatSnackBar } from "@angular/material/snack-bar";
+import { UsuarioService } from 'src/app/servicios/usuario.service';
 
 @Component({
   selector: 'app-datoscreacion',
@@ -17,7 +18,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 export class DatoscreacionComponent implements OnInit {
   dialogRef: any;
 
-  constructor(private snackBar: MatSnackBar,private router: Router, private recetasService: RecetasService, private token: TokenStorageService) { }
+  constructor(private snackBar: MatSnackBar, private usuarioService: UsuarioService, private router: Router, private recetasService: RecetasService, private token: TokenStorageService) { }
   iduser_crear = Number(this.token.getId());
   comensales: number = 0;
   tiempo: string = "";
@@ -29,7 +30,8 @@ export class DatoscreacionComponent implements OnInit {
   pasos: Array<string> = [];
   descripcion: string = "";
   misingredientes: string[] = [];
-  imagen: string = "../../../assets/IMG/iconos/uploadImage.png";
+  imagen!: File;
+  vistaImagen?: string = "default.png";
 
   rutaimg: string = "../../../assets/IMG/recetas/";
 
@@ -37,7 +39,7 @@ export class DatoscreacionComponent implements OnInit {
   error = new Map();
 
   titulocomprobacion = "";
-  textocomprobacion="";
+  textocomprobacion = "";
 
   @Input() recetas?: Recetas;
   @Input() productos?: Productos[];
@@ -45,24 +47,30 @@ export class DatoscreacionComponent implements OnInit {
   productito?: Productos;
   cantidad: string = "";
   ingred: string = "";
-
+  imagenUser: string = "default.png";
   ingredientes: Array<Array<String>> = [];
 
   tipoActualT?: Productos[];
   tipoActualN?: Productos[];
 
   default = "Seleccione un campo"
-  imagen64: any;
 
   ngOnInit(): void {
-
     if (this.recetas) {
       this.cargarDatos();
     }
+    this.getUser();
   }
   ngOnChanges(): void {
     //this.recetas.titulo;
 
+  }
+  getUser() {
+    this.usuarioService.getById().subscribe({
+      next: (data) => {
+        this.imagenUser = data.imagen;
+      }
+    })
   }
 
   cargarDatos(): void {
@@ -72,6 +80,9 @@ export class DatoscreacionComponent implements OnInit {
     this.tiempo = String(this.recetas?.tiempo);
     this.tipo = String(this.recetas?.tipo);
     this.dificultad = String(this.recetas?.dificultad);
+    if (this.recetas?.imagen) {
+      this.vistaImagen = this.recetas?.imagen;
+    }
 
     if (this.productito?.tipo == "F") {
       $("#selecF").click();
@@ -80,7 +91,6 @@ export class DatoscreacionComponent implements OnInit {
     }
 
     this.prodPrinc = String(this.productito?.nombre);
-    this.imagen = this.rutaimg + String(this.recetas?.imagen);
     this.misingredientes = this.recetas?.ingredientes ?? [];
 
     this.cantidadPrinc = this.misingredientes[0].split(" ")[0];//cogemos la cantidad
@@ -106,18 +116,17 @@ export class DatoscreacionComponent implements OnInit {
 
   // COPIADO DE INTERNET :D
   visualizar(ev: any) {
+    this.vistaImagen = "";
     var file = ev.target.files[0];
-    var reader = new FileReader(),
-      result = 'empty';
+    var reader = new FileReader();
 
-    this.imagen = file.name;
+    this.imagen = file;
 
     reader.onload = (e) => {
       $("#img").css({
         "background-image": "url(" + e.target!.result + ")",
         "background-size": "cover",
       })
-      this.imagen64 = e.target!.result;
     }
 
     reader.readAsDataURL(file);
@@ -161,56 +170,54 @@ export class DatoscreacionComponent implements OnInit {
 
   crearReceta() {
     this.comprobacionErrores();
-    
-    
-    if (this.error.size == 0){
+
+
+    if (this.error.size == 0) {
 
       if (this.prodPrinc && this.prodPrinc != this.default) {
         this.misingredientes.unshift(this.cantidadPrinc + " " + this.prodPrinc);
 
         var idprod = this.productos!.find(element => element.nombre == this.prodPrinc)!.id;
-        this.recetasService.crearReceta(this.iduser_crear, this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen, this.imagen64).subscribe({
+        this.recetasService.crearReceta(this.iduser_crear, this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen).subscribe({
           next: data => {
             if (data.error && data.error.length > 0) {
               this.misingredientes.shift();
             }
             else {
-                const miSnackBar = this.snackBar.open("Receta creada correctamente", "Aceptar",{panelClass:'alertcool'});
-                miSnackBar.onAction().subscribe(() => {
-                  this.router.navigate(['recetas']);
-                });
+              const miSnackBar = this.snackBar.open("Receta creada correctamente", "Aceptar", { panelClass: 'alertcool' });
+              miSnackBar.onAction().subscribe(() => {
+                this.router.navigate(['recetas']);
+              });
             }
-
           }
         });
       }
     }
-      
-    
+
+
 
 
   }
   actualizarReceta() {
     this.comprobacionErrores();
 
-    
-    if (this.error.size == 0){
+
+    if (this.error.size == 0) {
 
       if (this.recetas) {
         var idprod = this.productos!.find(element => element.nombre == this.prodPrinc)!.id;
         this.misingredientes.unshift(this.cantidadPrinc + " " + this.prodPrinc);
-        this.recetasService.actualizarReceta(this.recetas.id, this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen, this.imagen64).subscribe({
+        this.recetasService.actualizarReceta(this.recetas.id, this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen).subscribe({
           next: data => {
             if (data.error && data.error.length > 0) {
               this.misingredientes.shift();
-
-            }else{
-              const miSnackBar = this.snackBar.open("Receta actualizada correctamente", "Aceptar",{panelClass:'alertcool'});
+            } else {
+              const miSnackBar = this.snackBar.open("Receta actualizada correctamente", "Aceptar", { panelClass: 'alertcool' });
               miSnackBar.onAction().subscribe(() => {
-                this.router.navigate(['recetas']);
+                this.router.navigate(['/recetaindividual', this.recetas?.id]);
               });
             }
-          
+
           }
         });
       }
@@ -218,55 +225,55 @@ export class DatoscreacionComponent implements OnInit {
   }
 
   //errores
-  comprobacionErrores(){
+  comprobacionErrores() {
     this.error = new Map();
     //campos arriba
-    if(!this.comensales){
+    if (!this.comensales) {
       this.error.set("comensales", "Comensales debe estar lleno");
-    } else if(this.comensales == 0){
+    } else if (this.comensales == 0) {
       this.error.set("comensales", "Comensales debe ser mayor que 0");
     }
-    if (!this.tiempo){
+    if (!this.tiempo) {
       this.error.set("tiempo", "Tiempo debe estar lleno");
     }
-    if (!this.tipo){
+    if (!this.tipo) {
       this.error.set("tipo", "Tipo debe estar lleno");
     }
-    else if (this.dificultad =="..."){
+    else if (this.dificultad == "...") {
       this.error.set("tipo", "Tipo debe tener una opción válida");
 
     }
-    if (!this.dificultad){
+    if (!this.dificultad) {
       this.error.set("dificultad", "Dificultad debe estar lleno");
-    } else if (this.dificultad =="..."){
+    } else if (this.dificultad == "...") {
       this.error.set("dificultad", "Dificultad debe tener una opción válida");
     }
     //titulo
-    if (!this.titulo){
+    if (!this.titulo) {
       this.error.set("titulo", "Titulo debe estar lleno");
     }
-    if (this.imagen == "../../../assets/IMG/iconos/uploadImage.png"){
+    if (!this.imagen && this.vistaImagen == "default.png") {
       this.error.set("imagen", "Debe seleccionar una imagen");
     }
-    if(this.misingredientes.length==0){
+    if (this.misingredientes.length == 0) {
       this.error.set("ingredientes", "Debe seleccionar los ingredientes");
 
     }
-    if(this.pasos.length==0){
-        this.error.set("pasos", "Debe explicar como se hace la receta");
+    if (this.pasos.length == 0) {
+      this.error.set("pasos", "Debe explicar como se hace la receta");
     }
-    if (this.cantidadPrinc ==""){
+    if (this.cantidadPrinc == "") {
       this.error.set("cantidadPrinc", "Debe seleccionar una cantidad");
     }
-    if(this.prodPrinc==""){
+    if (this.prodPrinc == "") {
       this.error.set("prodPrinc", "Debe seleccionar un producto principal");
     }
   }
 
-  
 
-    
-  
+
+
+
   // PASOS
   agregarPaso() {
     var descripcion = this.descripcion;

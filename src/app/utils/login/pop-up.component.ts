@@ -12,6 +12,7 @@ import { TokenStorageService } from 'src/app/servicios/token-storage.service';
 export class PopUpComponent implements OnInit {
   constructor(private authService: AuthService, private tokenStorage: TokenStorageService) {
   }
+  
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
