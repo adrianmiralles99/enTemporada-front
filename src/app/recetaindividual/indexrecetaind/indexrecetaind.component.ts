@@ -4,7 +4,6 @@ import { RecetasService } from 'src/app/servicios/recetas.service';
 import { Recetas } from 'src/app/modelos/recetas.model';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 import { TokenStorageService } from 'src/app/servicios/token-storage.service';
-import { data } from 'jquery';
 
 @Component({
   selector: 'app-indexrecetaind',

@@ -38,14 +38,16 @@ export class IndexrecetasComponent implements OnInit {
     this.buscando = false;
     if (this.sort == "relevancia") {
       this.recetas?.sort((a, b) => a.totallikes!.total + b.totallikes!.total);
+      this.cantidad = this.recetas?.length;
       this.buscando = true;
     }
     else if (this.sort == "fecha") {
 
       this.recetasservice.getByTipo(null, "a").subscribe({
         next: (data) => {
-        this.buscando = true;
-        this.recetas = data;
+          this.buscando = true;
+          this.recetas = data;
+          this.cantidad = this.recetas?.length;
         }
       })
     }
@@ -56,6 +58,7 @@ export class IndexrecetasComponent implements OnInit {
     this.recetasservice.getByTipo(this.sort, null).subscribe({
       next: (data) => {
         this.recetas = data;
+        this.cantidad = this.recetas?.length;
         this.buscando = true;
       }
     })
