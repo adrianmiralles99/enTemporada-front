@@ -4,8 +4,8 @@
     color: red;
     font-family: neueR;
     text-align: center;
-  }
-  
+}
+
 .titulo {
     text-align: center;
     margin: 2%;
@@ -131,10 +131,12 @@
         width: 75%;
     }
     .boton {
+        button {
+            width: 45%;
+        }
         button:hover {
             transform: scale(110%);
             box-shadow: 0 5px 8px rgba(0, 0, 0, 0.252);
-            width: 45%;
         }
     }
 }
