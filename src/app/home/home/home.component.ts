@@ -7,6 +7,9 @@ import { ProductosService } from 'src/app/servicios/productos.service';
 import { TokenStorageService } from 'src/app/servicios/token-storage.service';
 
 import { UsuarioService } from 'src/app/servicios/usuario.service';
+
+import { EntradasService } from 'src/app/servicios/entradas.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -15,13 +18,14 @@ import { UsuarioService } from 'src/app/servicios/usuario.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private productosService: ProductosService, private pruebaService: UsuarioService, private authService: AuthService, private tokenStorage: TokenStorageService) { }
+  constructor(private productosService: ProductosService, private pruebaService: UsuarioService, private authService: AuthService, private tokenStorage: TokenStorageService,private entradasService: EntradasService) { }
 
   productes?: Productos[];
   micard: MenuFooterInt = (MenuFooter.filter(element => element.ruta == "/"))[0];
 
   ngOnInit(): void {
     this.getProductes();
+    this.getEntradas();
   }
 
   getProductes(): void {
@@ -52,4 +56,13 @@ export class HomeComponent implements OnInit {
     this.tokenStorage.signOut();
   }
 
+
+  getEntradas() {
+    this.entradasService.getAll().subscribe({
+      next: (data) => {
+        console.log(data);
+      },
+      error: (e) => console.error(e)
+    });
+  }
 }

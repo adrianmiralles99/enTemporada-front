@@ -17,6 +17,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { ErrorModule } from './error/error.module';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { EntradasModule } from './entradas/entradas.module';
+import { EntradaindividualModule } from './entradaindividual/entradaindividual.module';
+import { CreacionEntradaModule } from './creacion-entrada/creacion-entrada.module';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -38,8 +42,12 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     BrowserAnimationsModule,
     HttpClientModule,
     ErrorModule,
-    MatSnackBarModule
-  
+    MatSnackBarModule,
+    EntradasModule,
+    EntradaindividualModule,
+    CreacionEntradaModule
+
+
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],

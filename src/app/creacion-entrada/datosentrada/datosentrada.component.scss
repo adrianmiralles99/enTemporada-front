@@ -1,0 +1,147 @@
+
+
+@import "../../../styles.scss";
+
+.arriba{
+  width: 55%;
+  margin-left: auto;
+  margin-right: auto;
+ // margin-top: 5%;
+  .imagen{
+    .upload {
+      cursor: pointer;
+      width: 100%;
+      input {
+          display: none;
+      }
+
+      > #img {
+          background-size: 30%;
+          border: 1px solid rgba(96, 96, 96, 0.496);
+          height: 600px;
+          width: 100%;
+          background-color: white;
+          border-radius: 5px;
+          box-shadow: inset 0 0 25px rgba(140, 140, 140, 0.837);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-color: transparent;
+          border: none;
+      }
+    }
+
+  }
+  .nombre{
+    margin-top: 15px;
+    * {
+        vertical-align: middle;
+    }
+    .icono {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 45px;
+      width: 45px;
+      display: inline-block;
+      border-radius: 100%;
+      margin-right: 5px;
+      margin-top: 5px;
+      user-select: none;
+    }
+    .autor {
+      margin-bottom: -5px;
+      font-size: 105%;
+      font-family: neueB;
+
+    }
+    input {
+        margin-top: 5px;
+        font-family: recoletaB;
+        border-radius: 5px;
+        border: 1px solid rgba(57, 57, 57, 0.129);
+        padding: 3px 5px 3px 5px;
+        width: 100%;
+        box-shadow: inset 0 0px 5px rgba(52, 52, 52, 0.347);
+        font-size: 135%;
+    }
+  }
+  .categoria{
+    margin-top: 20px;
+    .textocat{
+      font-size: 120%;
+      font-family: neueB;
+      padding-top: 5px;
+    }
+    select {
+      text-align: center;
+      font-family: recoletaB;
+      border-radius: 5px;
+      border: 1px solid rgba(57, 57, 57, 0.129);
+      padding: 3px 5px 3px 5px;
+      box-shadow: inset 0 0px 5px rgba(52, 52, 52, 0.347);
+      font-size: 125%;
+      min-width:100%;
+
+    }
+  }
+}
+.abajo{
+  margin-top: 2.5%;
+  background-color: $grey;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  color: white;
+  border-radius: 10px;
+
+  .descripcion{
+
+  }
+  textarea{
+    width: 100%;
+    padding: 5px;
+    min-height: 400px;
+  }
+  .titulo{
+    font-family: "neueB";
+    font-size: 180%;
+  }
+}
+
+.gestionReceta {
+  font-family: neueB;
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+  text-align: center;
+  margin: auto;
+
+  > div {
+      margin: auto;
+      padding: 0 8px 0 8px;
+  }
+  button {
+      border: none;
+      height: 50px;
+      width: 110px;
+      border-radius: 10px;
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.463);
+      transition: 0.3s;
+      &:hover {
+          transform: scale(110%);
+      }
+  }
+
+  .cancelar {
+      background-color: rgb(255, 44, 44);
+  }
+  .actualizar {
+      background-color: $green;
+      color: white;
+  }
+  .crear {
+      background-color: $yellow;
+  }
+}
+

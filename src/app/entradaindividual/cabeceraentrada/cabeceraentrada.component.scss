@@ -1,0 +1,112 @@
+@import "../../../styles.scss";
+.colcat{
+  text-align: center;
+  font-family: neueB;
+  font-size: 150%;
+  .categoria{
+    text-decoration: underline;
+  }
+
+}
+.coltitulo{
+  text-align: center;
+  .titulo{
+    font-size: 250%;
+    font-family: recoletaB;
+
+  }
+}
+.colfecha{
+  text-align: center;
+  font-family: neueB;
+  font-size: 125%;
+}
+.usuario {
+  //padding-left:32px ;
+  padding-left: 0%;
+ // margin-left: 10px;
+}
+.user{
+  *{
+    vertical-align: middle;
+  }
+}
+
+.icono {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 45px;
+  width: 45px;
+  display: inline-block;
+  border-radius: 100%;
+  margin-right: 5px;
+  //margin-left: 10px;
+  margin-top: 5px;
+  user-select: none;
+}
+.autor {
+  margin-bottom: -5px;
+  font-size: 105%;
+font-family: neueB;
+
+}
+.botones{
+  padding: 0%;
+  margin-top: 0.5%;
+  text-align: right;
+
+  .numerolikes{
+    font-size: 75%;
+    margin-right: 5px;
+  }
+  .textresponder{
+    font-size: 90%;
+    margin-right: 5px;
+    margin-left: 3px;
+
+  }
+}
+.save,
+.mg,
+.resp {
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  width: 35px;
+  height: 35px;
+
+  margin-right: 0px;
+  transition: 0.2s;
+}
+.resp{
+  height: 34px;
+  &:hover {
+    filter: drop-shadow(0 3px 3px rgb(35, 35, 35));
+    transform: scale(110%);
+  }
+}
+.save {
+  //margin-left: -20px;
+
+  &:hover {
+    filter: drop-shadow(0 3px 3px rgb(35, 35, 35));
+    transform: scale(110%);
+  }
+}
+
+.mg {
+  &:hover {
+    filter: drop-shadow(0 3px 3px rgb(167, 57, 44));
+    transform: scale(110%);
+  }
+}
+.parteabajo{
+  padding-bottom: 15px;
+  border-bottom: 4px black groove;
+  max-width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}

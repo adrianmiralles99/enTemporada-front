@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="arriba">
+
+      <div class="imagen">
+        <label class="upload">
+          <div [ngStyle]="{'background-image': 'url(/assets/IMG/entradas/'+(vistaImagen ?? 'default.png')+')', 'background-size': vistaImagen=='default.png' ? '50%':'cover'}"
+              id="img"></div>
+          <input type="file" (change)="visualizar($event)" name="" id="inputIMG">
+        </label>
+      </div>
+        <div class="tituloycat">
+          <div class="nombre row">
+            <div class=" col-4">
+              <a class="icono" style="background-image: url(/assets/IMG/Usuarios/{{imagenUser}});" alt=""></a>
+              <sub class="autor">by @{{autor}}</sub>
+            </div>
+            <div class="col-8">
+              <input [(ngModel)]="titulo" type="text" placeholder="Escriba el título de su entrada...">
+            </div>
+          </div>
+
+          <div class="categoria row">
+              <div class="col-5">
+                <h5 class="textocat">
+                  Seleccione la categoría de su entrada
+                </h5>
+              </div>
+              <div class="col-7">
+                <select  [(ngModel)]="idcategoria" class="tipo col-log-6 col-5">
+                  <option value=""></option>
+                  <option [value]="item.id" *ngFor="let item of categorias">{{item.nombre}}</option>
+                </select>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="abajo">
+    <div class="descripcion">
+        <h5 class="titulo">
+          Escribir entrada
+        </h5>
+        <div class="cuerpo">
+          <textarea [(ngModel)]="cuerpoentrada"   placeholder="Escriba el texto de su entrada..."></textarea>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="row gestionReceta">
+  <div *ngIf="!entradas;" class="col-6">
+      <button (click)="crearEntrada()" class="crear">Crear</button>
+  </div>
+  <div *ngIf="entradas;" class="col-6">
+      <button (click)="actualizarReceta()" class="actualizar">Actualizar</button>
+  </div>
+  <div class="col-6">
+      <ng-container *ngIf="entradas?.id; else elseTemplate">
+          <button [routerLink]="['/entradaindividual', entradas?.id]" class="cancelar">Cancelar</button>
+      </ng-container>
+      <ng-template #elseTemplate>
+          <button [routerLink]="['/entradas']" class="cancelar">Cancelar</button>
+
+      </ng-template>
+
+  </div>
+</div>
+

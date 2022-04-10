@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+      <div class="col-12 colcat">
+          <h5 class ="categoria">{{entrada?.categoria?.nombre}}</h5>
+      </div>
+      <div class="col-12 coltitulo">
+        <h1 class ="titulo">{{entrada?.titulo}}</h1>
+      </div>
+      <div class="col-12 colfecha">
+        <h1 class ="fecha">{{getFechabonita(entrada?.fecha!)}}</h1>
+      </div>
+  </div>
+  <div class="row parteabajo">
+    <div class="col-4 usuario">
+      <div class="user">
+        <a class="icono" style="background-image: url(/assets/IMG/Usuarios/{{entrada?.usuario?.imagen}});" alt=""></a>
+        <sub class="autor">by @{{entrada?.usuario?.nick}}</sub>
+      </div>
+    </div>
+    <div class="col-6">
+
+    </div>
+
+    <div class="col-2 botones">
+      <ng-container *ngIf="entrada?.estado=='A';">
+        <button  class="resp"
+        [style.background-image]="'url(/assets/IMG/iconos/responder4.png)'"></button>
+        <span class="textresponder">Responder</span>
+
+        <button (click)="cambiaLike(entrada!.id)" class="mg"
+        [style.background-image]="clicked ?'url(/assets/IMG/iconos/mg_click.png)':'url(/assets/IMG/iconos/mg.png)'"></button>
+        <span class="numerolikes">{{entrada?.totallikes?.total}}</span>
+
+        <button (click)="cambiaFav(entrada!.id)" class="save"
+          [style.background-image]="fav ?'url(/assets/IMG/iconos/bookmark_click.png)':'url(/assets/IMG/iconos/bookmark.png)'"></button>
+
+      </ng-container>
+  </div>
+</div>
+

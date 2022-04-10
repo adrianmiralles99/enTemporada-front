@@ -1,0 +1,24 @@
+@import "../../../styles.scss";
+
+.fondo {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(118, 118, 118, 0.537);
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+@media screen and(min-width: 850px) {
+    .fondo {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+@media screen and(max-width: 850px) {
+    .fondo {
+        width: 100%;
+        padding: 20px 0 20px 0;
+    }
+}

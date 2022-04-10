@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="imagenprinc">
+    <div id="img"
+    [ngStyle]="{'background-image':'url(../../../assets/IMG/entradas/'+(entrada?.imagen??'default.gif')+')'}">
+    </div>
+  </div>
+  <div class="container divtexto" >
+    <div *ngFor="let lineas of texto">
+      <p>{{lineas}}</p>
+
+    </div>
+  </div>
+</div>

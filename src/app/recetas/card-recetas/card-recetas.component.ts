@@ -46,6 +46,7 @@ export class CardRecetasComponent implements OnInit {
   }
 
   cambiaLike(id: number) {
+
     if (this.sesion == true) {
       if (this.clicked[id]) {
         // console.log("Lo borramos");
@@ -66,6 +67,7 @@ export class CardRecetasComponent implements OnInit {
         });
 
       }
+
     }
   }
 

@@ -1,0 +1,15 @@
+<ng-container *ngIf="entrada; else elseTemplate">
+  <app-barra [color]="'black'"></app-barra>
+  <div class="fondo">
+    <app-cabeceraentrada [entrada]="entrada"></app-cabeceraentrada>
+    <app-cuerpoentrada [entrada]="entrada" ></app-cuerpoentrada>
+    <app-seccioncomentarios [entradaid]="entradaid"></app-seccioncomentarios>
+  </div>
+  <br>
+  <br>
+  <app-subir></app-subir>
+  <app-footer></app-footer>
+</ng-container>
+<ng-template #elseTemplate>
+  <app-carga></app-carga>
+</ng-template>

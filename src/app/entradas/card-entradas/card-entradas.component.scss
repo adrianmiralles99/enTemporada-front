@@ -1,0 +1,246 @@
+@import "../../../styles.scss";
+
+.container {
+  margin-top: 50px;
+  max-width: 90em;
+}
+.bordeimagen{
+  padding:  5% 5% 2.5% 5%;
+}
+.imagen {
+  border: none;
+  width: 100%;
+  height: 370px;
+  margin-bottom: 15px;
+  border-radius: 5px 5px 0px 0px;
+  background-color: transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  user-select: none;
+  transition: 0.5s;
+}
+.user{
+  *{
+    vertical-align: middle;
+  }
+}
+.categoria{
+  text-decoration: underline;
+  margin-top: 1%;
+  font-size: 115%;
+  text-align: center;
+}
+.fecha{
+  .date{
+    font-size: 110%;
+  }
+  text-align: center;
+  margin-top: 8.5%;
+
+  *{
+    vertical-align: middle;
+  }
+}
+
+.icono {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 45px;
+  width: 45px;
+  display: inline-block;
+  border-radius: 100%;
+  margin-right: 5px;
+  margin-left: 10px;
+  margin-top: 5px;
+  user-select: none;
+}
+
+.tarjeta {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 30px;
+  background-color: white;
+  box-shadow: 0 4px 5px rgba(108, 108, 108, 0.34);
+  padding-bottom: 20px;
+  border-radius: 5px;
+  font-family: neueB;
+  transition: 0.3s;
+  min-height:610px;
+
+  max-height:610px;
+}
+.botones{
+  margin-top: 0.5%;
+  .numerolikes{
+    font-size: 75%;
+    margin-right: 5px;
+  }
+  margin-left: 5%;
+  //background-color: aqua;
+}
+
+.usuario {
+  padding-left:32px ;
+ // margin-left: 10px;
+}
+
+.margen {
+  margin-bottom: 40px;
+}
+.divtitulo{
+  margin-left: auto;
+  margin-right: auto;
+
+  max-width: 90%;
+  .titulo{
+    text-align: center;
+    font-size: 130%;
+  }
+}
+
+.autor {
+  margin-bottom: -5px;
+  font-size: 105%;
+}
+
+.save,
+.mg,
+.pendiente {
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  width: 35px;
+  height: 35px;
+  margin-right: 0px;
+  transition: 0.2s;
+}
+
+.save {
+  //margin-left: -20px;
+
+  &:hover {
+    filter: drop-shadow(0 3px 3px rgb(35, 35, 35));
+    transform: scale(110%);
+  }
+}
+
+.mg {
+  &:hover {
+    filter: drop-shadow(0 3px 3px rgb(167, 57, 44));
+    transform: scale(110%);
+  }
+}
+
+.crear,
+.crear_b {
+  position: fixed;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 100;
+  right: 3.5%;
+  bottom: 12%;
+  border: none;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  margin: auto;
+  padding: 0;
+  border-radius: 10px;
+  transition: 0.3s;
+  filter: drop-shadow(0 5px 5px rgba(76, 76, 76, 0.455));
+  outline: none;
+  .img {
+    background-image: url("../../../assets/IMG/iconos/plus.png");
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    border-radius: 7px;
+    transition: 0.5s;
+  }
+  .texto {
+    display: none;
+  }
+  p {
+    opacity: 0;
+  }
+}
+
+.crear {
+  .img {
+    background-color: $orange;
+  }
+}
+
+.crear_b {
+  .img {
+    background-color: $grey;
+  }
+  .texto {
+    font-size: 15px;
+    color: white;
+  }
+}
+.extender,
+.extender_b {
+  p {
+    display: table-cell;
+    vertical-align: middle;
+    font-family: neueB;
+    font-size: 120%;
+    letter-spacing: 0.5px;
+    animation: aparecer 0.9s forwards;
+  }
+  .img {
+    border-radius: 7px 0px 0px 7px;
+    background-size: 60%;
+  }
+  .texto {
+    display: table;
+    padding: 0;
+    margin: auto;
+  }
+}
+
+.extender {
+  width: 200px;
+  background-color: white;
+}
+
+.extender_b {
+  width: 220px;
+  height: 50px;
+  background-color: $grey;
+}
+
+@keyframes animFlecha {
+  0% {
+    bottom: 4%;
+  }
+
+  50% {
+    bottom: 5%;
+  }
+
+  100% {
+    bottom: 4%;
+  }
+}
+
+@keyframes aparecer {
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and(max-width: 700px) {
+}

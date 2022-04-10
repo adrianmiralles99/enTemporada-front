@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';//conexión http
 import { Observable } from 'rxjs';//sirve para manejar operaciones asincronas
 import { serverUrl } from '../baseurl';
 import { Favoritos } from '../modelos/favoritos.model';
-import { Recetas } from '../modelos/recetas.model';
 
 const baseUrl = serverUrl + 'favoritos';
 const httpOptions = {
@@ -23,7 +22,7 @@ export class FavoritosService {
 
   delete(id_receta: any): Observable<any> {
     console.log(baseUrl + "/deletefavorito?id_receta=" + id_receta);
-    
+
     return this.http.delete(baseUrl + "/deletefavorito?id_receta=" + id_receta);
   }
 

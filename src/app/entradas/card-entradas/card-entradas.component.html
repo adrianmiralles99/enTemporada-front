@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 margen" *ngFor="let entrada of entradas|filter:filterPost ">
+      <div class="tarjeta">
+        <div class="bordeimagen">
+          <button class="imagen" [routerLink]="['/entradaindividual', entrada.id]"
+          [ngStyle]="{'background-image':'url(/assets/IMG/entradas/'+entrada.imagen+')'}"></button>
+        </div>
+
+        <div class="row">
+
+          <div class="divtitulo col-12">
+            <p class="titulo">{{entrada.titulo}}</p>
+          </div>
+          <div class=" col-12">
+            <p class="categoria">{{entrada.categoria?.nombre}}</p>
+          </div>
+          <div class="col-4 usuario">
+            <div class="user">
+              <a class="icono" style="background-image: url(/assets/IMG/Usuarios/{{entrada.usuario?.imagen}});" alt=""></a>
+              <sub class="autor">by @{{entrada.usuario?.nick}}</sub>
+
+            </div>
+          </div>
+          <div class=" col-4">
+            <div class="fecha">
+              <p class="date">
+                {{entrada.fecha}}
+              </p>
+            </div>
+          </div>
+          <div class=" col-1">
+            </div>
+          <div class="col-2 botones">
+            <ng-container *ngIf="entrada.estado=='A'; else elseTemplate">
+              <button (click)="cambiaLike(entrada.id)" class="mg"
+                [style.background-image]="clicked[entrada.id] ?'url(/assets/IMG/iconos/mg_click.png)':'url(/assets/IMG/iconos/mg.png)'"></button>
+                <span class="numerolikes">{{entrada.totallikes?.total}}</span>
+
+              <button (click)="cambiaFav(entrada.id)" class="save"
+                [style.background-image]="fav[entrada.id] ?'url(/assets/IMG/iconos/bookmark_click.png)':'url(/assets/IMG/iconos/bookmark.png)'"></button>
+            </ng-container>
+            <ng-template #elseTemplate>
+              <!-- <div class="pendiente"></div> -->
+              <h2>Pendiente</h2>
+            </ng-template>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="btn-group dropdown-user">
+    <ng-container *ngIf="sesion; else sinSesion">
+      <button [routerLink]="'/creacionEntradas'" (mouseover)="hover=true" (mouseout)="hover=false"
+        [ngClass]="{'extender': hover==true}" class="crear row">
+        <div [ngClass]="{'col-3': hover==true,'col-12': hover==false}" class=" img"></div>
+        <div class="texto col-9">
+          <p>Nueva Entrada</p>
+        </div>
+      </button>
+    </ng-container>
+
+    <ng-template #sinSesion>
+      <button (click)="openDialog()" (mouseover)="hover=true" (mouseout)="hover=false"
+        [ngClass]="{'extender_b': hover==true}" class="crear_b row">
+        <div [ngClass]="{'col-3': hover==true,'col-12': hover==false}" class=" img"></div>
+        <div class="texto col-9">
+          <p>Inicia sesion para acceder</p>
+        </div>
+
+      </button>
+    </ng-template>
+
+  </div>
+  </div>
+

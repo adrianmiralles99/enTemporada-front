@@ -16,7 +16,9 @@ import { IndicemodperfilComponent } from './perfil/indicemodperfil/indicemodperf
 import { PaginaerrorComponent } from './error/paginaerror/paginaerror.component';
 import { IndexedicionComponent } from './creacion-receta/indexedicion/indexedicion.component';
 import { UsuariologueadoGuard } from './guards/usuariologueado.guard';
-
+import { IndexentradasComponent } from './entradas/indexentradas/indexentradas.component';
+import { IndexentradaindComponent } from './entradaindividual/indexentradaind/indexentradaind.component';
+import { IndexcreacionentradaComponent } from './creacion-entrada/indexcreacionentrada/indexcreacionentrada.component';
 const routes: Routes = [
   {
     path: '',
@@ -54,6 +56,19 @@ const routes: Routes = [
   {
     path: 'recetaindividual/:id',
     component: IndexrecetaindComponent,
+  },
+  //Blog
+  {
+    path: 'entradas',
+    component: IndexentradasComponent,
+  },
+  {
+    path: 'entradaindividual/:id',
+    component: IndexentradaindComponent,
+  },
+  {
+    path: 'creacionEntradas',
+    component: IndexcreacionentradaComponent, canActivate: [UsuariologueadoGuard]
   },
   /*probando cosas rutas dont worry be happy :)*/
   {

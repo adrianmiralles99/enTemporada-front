@@ -1,0 +1,148 @@
+@import "../../../styles.scss";
+.cantcomentarios{
+  width: 28%;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5%;
+  padding: 0%;
+  border-bottom: 3px solid black;
+
+}
+.numerocomments{
+  text-align: center;
+  font-size: 135%;
+  font-family: neueB;
+}
+.comentario{
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5%;
+  border: 2px $green solid;
+
+  .textocomentario{
+    margin-top: 10px;
+    text-align: justify;
+
+    p{
+      padding:5px ;
+      padding-left:15px ;
+      padding-right:15px ;
+      font-family: "recoletaR";
+      font-size: 110%;
+
+    }
+  }
+}
+.headercomentario{
+  *{
+    vertical-align: middle;
+  }
+  background-color: $green;
+  padding: 5px;
+  padding-left:15px ;
+  color: white;
+
+}
+.icono {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  border-radius: 100%;
+  margin-right: 5px;
+  //margin-left: 10px;
+  margin-top: 5px;
+  user-select: none;
+}
+.autor, .fecha, .guion, .enrespuesta {
+  margin-bottom: -5px;
+  font-size: 105%;
+  font-family: neueB;
+}
+.guion{
+  margin-left: 7.5px;
+  margin-right: 7.5px;
+}
+.enrespuesta{
+  text-align: right;
+  position: relative;
+  bottom: 29px;
+  //bottom: 50px;
+ // transform: translateX(2000px);
+}
+
+.subcomentario{
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: 2.5%;
+  margin-bottom: 2.5%;
+  border: 2px $green solid;
+  .headercomentario{
+    background-color: $green;
+    padding-right:15px ;
+    max-height: 55px;
+
+  }
+  .textocomentario{
+    margin-top: 10px;
+    text-align: justify;
+
+    p{
+      padding-left:15px ;
+      padding-right:15px ;
+      font-family: "recoletaR";
+      font-size: 110%;
+
+    }
+  }
+}
+.botones{
+  padding: 5px;
+  padding-left:15px ;
+
+  margin-top: 0.5%;
+  text-align: left;
+
+  .numerolikes{
+    font-size: 75%;
+    margin-right: 5px;
+  }
+  .textresponder{
+    font-size: 90%;
+    margin-right: 5px;
+    margin-left: 3px;
+
+  }
+}
+.mg,
+.resp {
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  width: 30px;
+  height: 30px;
+  margin-right: 0px;
+  transition: 0.2s;
+}
+.resp{
+  height: 29px;
+  &:hover {
+    filter: drop-shadow(0 3px 3px rgb(35, 35, 35));
+    transform: scale(110%);
+  }
+}
+.mg {
+  &:hover {
+    filter: drop-shadow(0 3px 3px rgb(167, 57, 44));
+    transform: scale(110%);
+  }
+}
+
+
+

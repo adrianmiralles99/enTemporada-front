@@ -40,7 +40,7 @@ export class IndiceperfilComponent implements OnInit {
         this.imagen = data.imagen;
         this.getLvl(data.exp);
         console.log(data);
-        
+
       }
     })
   }

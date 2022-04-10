@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="cantcomentarios">
+    <h3 class="numerocomments"> {{cantcommentsprinc}}</h3>
+
+  </div>
+
+  <div *ngFor="let comentario of comentarios" class="comentarios">
+   <div class="comentario">
+        <div class="headercomentario">
+          <a class="icono" style="background-image: url(/assets/IMG/Usuarios/{{comentario?.usuario?.imagen}});" alt=""></a>
+          <sub class="autor">by @{{comentario?.usuario?.nick}}</sub>
+          <sub class="guion">-</sub>
+          <sub class="fecha">{{getFechabonita(comentario?.fecha!)}}</sub>
+        </div>
+        <div class="textocomentario">
+          <p> {{ comentario.texto }}</p>
+        </div>
+        <div class="botones">
+          <ng-container *ngIf="comentario?.estado=='V';">
+            <button  class="resp"
+            [style.background-image]="'url(/assets/IMG/iconos/responder4.png)'"></button>
+            <span class="textresponder">Responder</span>
+            <button (click)="cambiaLike(comentario!.id)" class="mg"
+            [style.background-image]="clicked[comentario.id] ?'url(/assets/IMG/iconos/mg_click.png)':'url(/assets/IMG/iconos/mg.png)'"></button>
+            <span class="numerolikes">{{comentario?.totallikes?.total}}</span>
+          </ng-container>
+        </div>
+       <!--{{comentario?.subcomentarios![0].id}}-->
+
+   </div>
+   <!--<div *ngFor="let subcomentario of comentario?.subcomentarios!" class=" subcomentarios"> -->
+   <div *ngFor="let subcomentario of subcomentariosmap.get(comentario.id)" class=" subcomentarios">
+    <div class="subcomentario">
+      <div class="headercomentario">
+        <a class="icono" style="background-image: url(/assets/IMG/Usuarios/{{subcomentario?.usuario?.imagen}});" alt=""></a>
+        <sub class="autor">by @{{subcomentario?.usuario?.nick}}</sub>
+        <sub class="guion">-</sub>
+        <sub class="fecha">{{getFechabonita(subcomentario?.fecha!)}}</sub>
+        <h5 class="enrespuesta">en respuesta a @{{comentario?.usuario?.nick}}</h5>
+
+      </div>
+      <div class="textocomentario">
+        <p> {{ subcomentario.texto }}</p>
+      </div>
+      <div class="botones">
+        <ng-container *ngIf="subcomentario?.estado=='V';">
+          <button  class="resp"
+          [style.background-image]="'url(/assets/IMG/iconos/responder4.png)'"></button>
+          <span class="textresponder">Responder</span>
+          <button (click)="cambiaLikeSub(subcomentario!.id)" class="mg"
+          [style.background-image]="clickedSub[subcomentario.id] ?'url(/assets/IMG/iconos/mg_click.png)':'url(/assets/IMG/iconos/mg.png)'"></button>
+          <span class="numerolikes">{{subcomentario?.totallikes?.total}}</span>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
