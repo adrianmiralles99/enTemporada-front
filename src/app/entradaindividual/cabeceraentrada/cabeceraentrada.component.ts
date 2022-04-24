@@ -3,6 +3,8 @@ import { Entradas } from 'src/app/modelos/entradas.model';
 import { FavoritosEntradaService } from 'src/app/servicios/favoritos-entrada.service';
 import { LikesEntradaService } from 'src/app/servicios/likes-entrada.service';
 import { TokenStorageService } from 'src/app/servicios/token-storage.service';
+import { MatSnackBar } from "@angular/material/snack-bar";
+
 @Component({
   selector: 'app-cabeceraentrada',
   templateUrl: './cabeceraentrada.component.html',
@@ -10,7 +12,7 @@ import { TokenStorageService } from 'src/app/servicios/token-storage.service';
 })
 export class CabeceraentradaComponent implements OnInit {
 
-  constructor(private token: TokenStorageService, public likeService: LikesEntradaService, public favService: FavoritosEntradaService) { }
+  constructor(private snackBar: MatSnackBar,private token: TokenStorageService, public likeService: LikesEntradaService, public favService: FavoritosEntradaService) { }
   @Input() entrada?: Entradas;
   id?: any;
   hover = false;
@@ -53,10 +55,13 @@ export class CabeceraentradaComponent implements OnInit {
         });
       }
       window.location.reload();
+    }else{
+      let miSnackBar = this.snackBar.open("Para poder dar like a una entrada debe iniciar sesión", "Aceptar", { panelClass: 'alertsad' });
+      miSnackBar.onAction().subscribe(() => {
+      });
     }
   }
   cambiaFav(id: number) {
-
     if (this.sesion == true) {
       if (this.fav) {
         // console.log("Lo borramos");
@@ -72,11 +77,14 @@ export class CabeceraentradaComponent implements OnInit {
         this.fav= true;
         this.favService.create(id).subscribe({
           next: (data) => {
-
           }
         });
-
       }
+    }
+    else{
+      let miSnackBar = this.snackBar.open("Para poder guardar una entrada debe iniciar sesión", "Aceptar", { panelClass: 'alertsad' });
+      miSnackBar.onAction().subscribe(() => {
+      });
     }
 
   }

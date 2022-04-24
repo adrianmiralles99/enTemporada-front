@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { UtilsModule } from '../utils/utils.module';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { IndexrecetaindComponent } from './indexrecetaind/indexrecetaind.component';
 import { DetallesrecetasComponent } from './detallesrecetas/detallesrecetas.component';
@@ -20,7 +21,8 @@ import { BotoneditarComponent } from './botoneditar/botoneditar.component';
   imports: [
     CommonModule,
     RouterModule,
-    UtilsModule
+    UtilsModule,
+    MatDialogModule
   ],
   exports: [
     IndexrecetaindComponent,

@@ -1,0 +1,36 @@
+<div class="ventana">
+    <h1 class="titulo" mat-dialog-title>Reportando usuario...</h1>
+
+    <mat-dialog-content class="contenedor">
+      <form (keydown.enter)="onSubmit()" #form="ngForm">
+        <label class="campos">
+          <h3>Motivo del reporte</h3>
+          <textarea placeholder="Reporto a este usuario porque el comentario me parece..." [(ngModel)]="motivo" name="motivo" type="text">
+          </textarea>
+          <div class="error">
+            <p>{{error.get("motivo")}}</p>
+          </div>
+        </label>
+        <br>
+        <label class="campos">
+          <h3>Texto del comentario reportado:</h3>
+          <div class="textocomment">
+            <p>{{textocomment}}</p>
+          </div>
+        </label>
+        <label class="campos">
+          <h3>Usuario reportado:</h3>
+          <div class="user">
+            <p>{{nicknameusuarioreportado}}</p>
+          </div>
+        </label>
+        <mat-dialog-actions class="boton">
+          <button class="acceder" (click)="onSubmit()">Reportar</button>
+
+        </mat-dialog-actions>
+
+      </form>
+
+    </mat-dialog-content>
+
+</div>

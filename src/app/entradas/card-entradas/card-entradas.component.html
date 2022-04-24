@@ -35,7 +35,7 @@
             <ng-container *ngIf="entrada.estado=='A'; else elseTemplate">
               <button (click)="cambiaLike(entrada.id)" class="mg"
                 [style.background-image]="clicked[entrada.id] ?'url(/assets/IMG/iconos/mg_click.png)':'url(/assets/IMG/iconos/mg.png)'"></button>
-                <span class="numerolikes">{{entrada.totallikes?.total}}</span>
+                <span *ngIf="entrada.totallikes?.total!=0" class="numerolikes">{{entrada.totallikes?.total}}</span>
 
               <button (click)="cambiaFav(entrada.id)" class="save"
                 [style.background-image]="fav[entrada.id] ?'url(/assets/IMG/iconos/bookmark_click.png)':'url(/assets/IMG/iconos/bookmark.png)'"></button>

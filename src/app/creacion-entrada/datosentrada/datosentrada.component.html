@@ -6,6 +6,9 @@
           <div [ngStyle]="{'background-image': 'url(/assets/IMG/entradas/'+(vistaImagen ?? 'default.png')+')', 'background-size': vistaImagen=='default.png' ? '50%':'cover'}"
               id="img"></div>
           <input type="file" (change)="visualizar($event)" name="" id="inputIMG">
+          <div class="error">
+            <p>{{error.get("imagen")}}</p>
+          </div>
         </label>
       </div>
         <div class="tituloycat">
@@ -16,7 +19,11 @@
             </div>
             <div class="col-8">
               <input [(ngModel)]="titulo" type="text" placeholder="Escriba el título de su entrada...">
+              <div class="error">
+                <p>{{error.get("titulo")}}</p>
+              </div>
             </div>
+
           </div>
 
           <div class="categoria row">
@@ -30,32 +37,43 @@
                   <option value=""></option>
                   <option [value]="item.id" *ngFor="let item of categorias">{{item.nombre}}</option>
                 </select>
+                <div class="error">
+                  <p>{{error.get("categoria")}}</p>
+                </div>
               </div>
+
           </div>
         </div>
   </div>
+
   <div class="abajo">
-    <div class="descripcion">
-        <h5 class="titulo">
-          Escribir entrada
-        </h5>
-        <div class="cuerpo">
-          <textarea [(ngModel)]="cuerpoentrada"   placeholder="Escriba el texto de su entrada..."></textarea>
-        </div>
+    <div class="error">
+      <p>{{error.get("cuerpoentrada")}}</p>
+    </div>
+    <div class="cuerpotexto">
+      <div class="descripcion">
+          <h5 class="titulo">
+            Escribir entrada
+          </h5>
+          <div class="cuerpo">
+            <textarea [(ngModel)]="cuerpoentrada"   placeholder="Escriba el texto de su entrada..."></textarea>
+          </div>
+
+      </div>
     </div>
   </div>
 </div>
 
 <div class="row gestionReceta">
-  <div *ngIf="!entradas;" class="col-6">
+  <div *ngIf="!entrada;" class="col-6">
       <button (click)="crearEntrada()" class="crear">Crear</button>
   </div>
-  <div *ngIf="entradas;" class="col-6">
-      <button (click)="actualizarReceta()" class="actualizar">Actualizar</button>
+  <div *ngIf="entrada;" class="col-6">
+      <button (click)="actualizarEntrada()" class="actualizar">Actualizar</button>
   </div>
   <div class="col-6">
-      <ng-container *ngIf="entradas?.id; else elseTemplate">
-          <button [routerLink]="['/entradaindividual', entradas?.id]" class="cancelar">Cancelar</button>
+      <ng-container *ngIf="entrada?.id; else elseTemplate">
+          <button [routerLink]="['/entradaindividual', entrada?.id]" class="cancelar">Cancelar</button>
       </ng-container>
       <ng-template #elseTemplate>
           <button [routerLink]="['/entradas']" class="cancelar">Cancelar</button>

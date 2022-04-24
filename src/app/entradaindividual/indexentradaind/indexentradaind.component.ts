@@ -16,7 +16,7 @@ export class IndexentradaindComponent implements OnInit {
   id = this.rutaActiva.snapshot.paramMap.get('id');
   entradaid = Number(this.rutaActiva.snapshot.paramMap.get('id'));
   entrada?:  Entradas;
-
+  idPropietarioEntrada?: number;
   ngOnInit(): void {
     this.getEntrada();
   }
@@ -30,6 +30,7 @@ export class IndexentradaindComponent implements OnInit {
         console.log(data);
         if (data) {
           this.entrada = data;
+          this.idPropietarioEntrada=data?.usuario?.id;
         }
         else {
           this.router.navigate(['entradas'])

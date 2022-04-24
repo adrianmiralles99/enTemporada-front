@@ -1,0 +1,132 @@
+@import "../../../styles.scss";
+.ventana{
+  padding: 0;
+}
+.titulo {
+    text-align: center;
+    font-family: recoletaB;
+    font-size: 250%;
+    text-shadow: 0 5px 4px rgba(64, 64, 64, 0.333);
+}
+.boton {
+    align-items: center;
+}
+
+.acceder {
+    font-family: neueB;
+    color: white;
+    background-color: $orange;
+    margin: auto;
+    width: 20%;
+    padding: 5px 0px 5px 0px;
+    border: none;
+    border-radius: 5px;
+    text-shadow: 0 5px 4px rgba(64, 64, 64, 0.333);
+    transition: 0.3s;
+}
+
+.contenedor {
+    margin: 0px 0 5px 0;
+    text-align: center;
+    overflow-y: hidden;
+    padding-left: 0%;
+    padding-right: 0%;
+    padding-bottom: 15px;
+
+}
+.textocomment{
+  font-size: 120% ;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: neueR;
+
+}
+.user{
+  font-size: 130% ;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: neueR;
+
+}
+.campos {
+    text-align: left;
+    h3 {
+        font-family: neueB;
+    }
+}
+
+textarea{
+  padding:10px;
+    font-family: neueR;
+    width: 100%;
+    min-height: 150px;
+    max-height: 150px;
+    font-size: 115%;
+    border: 1px solid rgba(56, 56, 56, 0.721);
+    border-radius: 5px;
+    box-shadow: inset 0 0px 5px rgba(52, 52, 52, 0.347);
+    outline: none;
+}
+
+
+.registro {
+    text-decoration: underline;
+    margin-top: 40px;
+    > p {
+        line-height: 10px;
+        cursor: pointer;
+    }
+}
+
+
+.error {
+    text-align: left;
+    color: red;
+    font-family: neueR;
+    text-align: center;
+}
+
+
+@media screen and(min-width: 801px) {
+    .campos {
+        width: 90%;
+        h3 {
+            font-size: 150%;
+            margin: 10px 10px 7px 10px;
+        }
+    }
+
+    input:not([type="checkbox"]) {
+        font-size: 110%;
+        padding: 7px 0px 7px 5px;
+    }
+
+    .acceder {
+        font-size: 160%;
+    }
+
+    .registro {
+        font-size: 110%;
+    }
+}
+
+@media screen and(max-width: 800px) {
+
+
+    .campos {
+        width: 90%;
+        h3 {
+            font-size: 150%;
+            margin: 5px 5px 4px 5px;
+        }
+    }
+
+    input:not([type="checkbox"]) {
+        // font-size: 110%;
+        padding: 5px 0px 5px 5px;
+    }
+
+    .acceder {
+        font-size: 120%;
+    }
+}

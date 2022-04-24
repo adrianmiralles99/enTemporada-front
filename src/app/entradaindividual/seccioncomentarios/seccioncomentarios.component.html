@@ -3,9 +3,26 @@
     <h3 class="numerocomments"> {{cantcommentsprinc}}</h3>
 
   </div>
+  <div *ngIf="sesion">
+    <div class="comentario comentarioasubir" id = "plantillacomment">
+      <div class="headercomentario">
+        <a class="icono" style="background-image: url(/assets/IMG/Usuarios/{{imagen}});" alt=""></a>
+        <sub class="autor">Comentar como @{{nickname}}</sub>
+      </div>
+      <div class="textocomentario">
+        <textarea placeholder="Introduce su comentario..." [(ngModel)]="textocomentarioprinc"></textarea>
+      </div>
+      <div class="error">
+        <p>{{error.get("comentario")}}</p>
+      </div>
+      <div class="botones">
+        <button (click)="publicarComentarioPrincipal()"type="button" class="btn btn-outline-success btn-sm">Publicar</button>
+      </div>
+    </div>
+  </div>
 
-  <div *ngFor="let comentario of comentarios" class="comentarios">
-   <div class="comentario">
+  <div *ngFor="let comentario of comentarios" class="comentarios" id="comentarios">
+   <div class="comentario" id="comentario-{{comentario.id}}">
         <div class="headercomentario">
           <a class="icono" style="background-image: url(/assets/IMG/Usuarios/{{comentario?.usuario?.imagen}});" alt=""></a>
           <sub class="autor">by @{{comentario?.usuario?.nick}}</sub>
@@ -17,18 +34,39 @@
         </div>
         <div class="botones">
           <ng-container *ngIf="comentario?.estado=='V';">
-            <button  class="resp"
+            <button (click)="visibilizarBloque(comentario!.id)" class="resp"
             [style.background-image]="'url(/assets/IMG/iconos/responder4.png)'"></button>
             <span class="textresponder">Responder</span>
             <button (click)="cambiaLike(comentario!.id)" class="mg"
             [style.background-image]="clicked[comentario.id] ?'url(/assets/IMG/iconos/mg_click.png)':'url(/assets/IMG/iconos/mg.png)'"></button>
-            <span class="numerolikes">{{comentario?.totallikes?.total}}</span>
+            <span *ngIf="comentario?.totallikes?.total!=0" class="numerolikes">{{comentario?.totallikes?.total}}</span>
+            <button class="puntos" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+              [style.background-image]="'url(/assets/IMG/iconos/3puntitos.png)'"></button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" (click)="BorrarComentario(comentario.usuario?.id!, comentario.id!)">Borrar</a>
+              <a class="dropdown-item" (click)="openDialog(comentario.usuario?.id!,comentario.usuario?.nick!, comentario.id!, comentario.texto!, 'C')">Reportar usuario</a>
+            </div>
           </ng-container>
         </div>
-       <!--{{comentario?.subcomentarios![0].id}}-->
 
    </div>
-   <!--<div *ngFor="let subcomentario of comentario?.subcomentarios!" class=" subcomentarios"> -->
+   <div *ngIf="sesion">
+    <div class="subcomentario comentarioasubir subcomentarioasubir" id = "plantillasubcomment-{{comentario.id}}">
+      <div class="headercomentario">
+        <a class="icono" style="background-image: url(/assets/IMG/Usuarios/{{imagen}});" alt=""></a>
+        <sub class="autor">Comentar como @{{nickname}}</sub>
+      </div>
+      <div class="textocomentario">
+        <textarea placeholder="Introduce su subcomentario..." [(ngModel)]="textosubcomentarioprinc"></textarea>
+      </div>
+      <div class="error">
+        <p>{{error.get("subcomentario")}}</p>
+        </div>
+      <div class="botones">
+        <button (click)="publicarSubComentario()"type="button" class="btn btn-outline-success btn-sm">Publicar</button>
+      </div>
+    </div>
+  </div>
    <div *ngFor="let subcomentario of subcomentariosmap.get(comentario.id)" class=" subcomentarios">
     <div class="subcomentario">
       <div class="headercomentario">
@@ -44,15 +82,27 @@
       </div>
       <div class="botones">
         <ng-container *ngIf="subcomentario?.estado=='V';">
+          <!--
           <button  class="resp"
           [style.background-image]="'url(/assets/IMG/iconos/responder4.png)'"></button>
           <span class="textresponder">Responder</span>
+          -->
           <button (click)="cambiaLikeSub(subcomentario!.id)" class="mg"
           [style.background-image]="clickedSub[subcomentario.id] ?'url(/assets/IMG/iconos/mg_click.png)':'url(/assets/IMG/iconos/mg.png)'"></button>
-          <span class="numerolikes">{{subcomentario?.totallikes?.total}}</span>
+          <span *ngIf="subcomentario?.totallikes?.total!=0" class="numerolikes">{{subcomentario?.totallikes?.total}}</span>
+          <button class="puntos" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+          [style.background-image]="'url(/assets/IMG/iconos/3puntitos.png)'"></button>
+        <div *ngIf="sesion" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" (click)="BorrarSubComentario(subcomentario.usuario?.id!, subcomentario.id!)">Borrar</a>
+          <a class="dropdown-item" (click)="openDialog(subcomentario.usuario?.id!,subcomentario.usuario?.nick!, subcomentario.id!, subcomentario.texto!, 'S')">Reportar usuario</a>
+        </div>
         </ng-container>
       </div>
     </div>
   </div>
+
+
+
+
   </div>
 </div>

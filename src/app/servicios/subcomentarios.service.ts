@@ -23,6 +23,18 @@ export class SubcomentariosService {
 
   getComentariosByIdComentarioPrincipal(id_comentarioprinc: any): Observable<any> {
     return this.http.get(baseUrl + "/getsubcomentarios?idcomentarioprinc=" + id_comentarioprinc + "&expand=usuario,totallikes,likes");
-
   }
+  crearSubComentario(id_comentarioprinc:number, texto:string):Observable<any>{
+    console.log("dedede")
+    var fd = new FormData();
+    fd.append('id_comentarioprinc', id_comentarioprinc + "");
+    fd.append('texto', texto);
+    return this.http.post(baseUrl + "/crearsubcomentario", fd)
+  }
+  borrarSubComentario(id: number){
+    var fd = new FormData();
+    fd.append('estado', "I")
+    return this.http.put(baseUrl+"/ocultarsubcomentario?id=" + id, fd);
+  }
+
 }

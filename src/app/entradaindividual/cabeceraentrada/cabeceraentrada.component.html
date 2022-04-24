@@ -23,13 +23,14 @@
 
     <div class="col-2 botones">
       <ng-container *ngIf="entrada?.estado=='A';">
+        <!--
         <button  class="resp"
         [style.background-image]="'url(/assets/IMG/iconos/responder4.png)'"></button>
         <span class="textresponder">Responder</span>
-
+        -->
         <button (click)="cambiaLike(entrada!.id)" class="mg"
         [style.background-image]="clicked ?'url(/assets/IMG/iconos/mg_click.png)':'url(/assets/IMG/iconos/mg.png)'"></button>
-        <span class="numerolikes">{{entrada?.totallikes?.total}}</span>
+        <span *ngIf="entrada?.totallikes?.total!=0" class="numerolikes">{{entrada?.totallikes?.total}}</span>
 
         <button (click)="cambiaFav(entrada!.id)" class="save"
           [style.background-image]="fav ?'url(/assets/IMG/iconos/bookmark_click.png)':'url(/assets/IMG/iconos/bookmark.png)'"></button>

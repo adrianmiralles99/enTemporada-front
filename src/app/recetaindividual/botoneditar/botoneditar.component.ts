@@ -3,7 +3,6 @@ import { TokenStorageService } from 'src/app/servicios/token-storage.service';
 import { Recetas } from 'src/app/modelos/recetas.model';
 import { RecetasService } from 'src/app/servicios/recetas.service';
 import { Router } from '@angular/router';
-import { data } from 'jquery';
 @Component({
   selector: 'app-botoneditar',
   templateUrl: './botoneditar.component.html',

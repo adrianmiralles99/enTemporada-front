@@ -1,7 +1,13 @@
 
 
 @import "../../../styles.scss";
-
+.error {
+  text-align: left;
+  color: red;
+  font-family: neueR;
+  text-align: center;
+  margin-top: 10px;
+}
 .arriba{
   width: 55%;
   margin-left: auto;
@@ -87,15 +93,14 @@
 }
 .abajo{
   margin-top: 2.5%;
-  background-color: $grey;
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px;
-  color: white;
-  border-radius: 10px;
-
-  .descripcion{
+  .cuerpotexto{
+    background-color: $grey;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
 
   }
   textarea{
@@ -135,6 +140,8 @@
 
   .cancelar {
       background-color: rgb(255, 44, 44);
+      color: white;
+
   }
   .actualizar {
       background-color: $green;

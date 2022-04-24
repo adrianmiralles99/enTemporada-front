@@ -5,11 +5,13 @@ import { FormsModule } from '@angular/forms'; //
 import { RouterModule } from '@angular/router';
 import { DatosentradaComponent } from './datosentrada/datosentrada.component';
 import { IndexcreacionentradaComponent } from './indexcreacionentrada/indexcreacionentrada.component';
+import { IndexedicionentradaComponent } from './indexedicionentrada/indexedicionentrada.component';
 
 @NgModule({
   declarations: [
     DatosentradaComponent,
-    IndexcreacionentradaComponent
+    IndexcreacionentradaComponent,
+    IndexedicionentradaComponent
   ],
   imports: [
     CommonModule,

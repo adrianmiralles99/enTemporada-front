@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SubirComponent } from './subir/subir.component';
 import { FormsModule } from '@angular/forms';
 import { CargaComponent } from './carga/carga.component';
+import { ReporteComponent } from './reporte/reporte.component';
 
 
 
@@ -21,6 +22,7 @@ import { CargaComponent } from './carga/carga.component';
     PopUpComponent,
     SubirComponent,
     CargaComponent,
+    ReporteComponent,
   ],
   imports: [
     CommonModule,
@@ -35,7 +37,8 @@ import { CargaComponent } from './carga/carga.component';
     MenuFooterComponent,
     SubirComponent,
     CargaComponent,
-    FormsModule
+    FormsModule,
+    ReporteComponent
   ]
 })
 export class UtilsModule { }

@@ -170,13 +170,9 @@ export class DatoscreacionComponent implements OnInit {
 
   crearReceta() {
     this.comprobacionErrores();
-
-
     if (this.error.size == 0) {
-
       if (this.prodPrinc && this.prodPrinc != this.default) {
         this.misingredientes.unshift(this.cantidadPrinc + " " + this.prodPrinc);
-
         var idprod = this.productos!.find(element => element.nombre == this.prodPrinc)!.id;
         this.recetasService.crearReceta(this.iduser_crear, this.titulo, this.comensales, this.tiempo, this.tipo, this.dificultad, this.misingredientes, this.pasos, idprod, this.imagen).subscribe({
           next: data => {
@@ -193,17 +189,10 @@ export class DatoscreacionComponent implements OnInit {
         });
       }
     }
-
-
-
-
   }
   actualizarReceta() {
     this.comprobacionErrores();
-
-
     if (this.error.size == 0) {
-
       if (this.recetas) {
         var idprod = this.productos!.find(element => element.nombre == this.prodPrinc)!.id;
         this.misingredientes.unshift(this.cantidadPrinc + " " + this.prodPrinc);

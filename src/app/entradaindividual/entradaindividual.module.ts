@@ -7,23 +7,29 @@ import { IndexentradaindComponent } from './indexentradaind/indexentradaind.comp
 import { CabeceraentradaComponent } from './cabeceraentrada/cabeceraentrada.component';
 import { CuerpoentradaComponent } from './cuerpoentrada/cuerpoentrada.component';
 import { SeccioncomentariosComponent } from './seccioncomentarios/seccioncomentarios.component';
-
-
-
+import { BotonesabajoComponent } from './botonesabajo/botonesabajo.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ReporteComponent } from '../utils/reporte/reporte.component';
 @NgModule({
   declarations: [
     IndexentradaindComponent,
     CabeceraentradaComponent,
     CuerpoentradaComponent,
-    SeccioncomentariosComponent
+    SeccioncomentariosComponent,
+    BotonesabajoComponent,
+
   ],
   imports: [
     CommonModule,
     RouterModule,
-    UtilsModule
+    UtilsModule,
+    MatDialogModule
+
   ],
   exports:[
     IndexentradaindComponent
-  ]
+  ],
+  entryComponents: [ReporteComponent],
+
 })
 export class EntradaindividualModule { }

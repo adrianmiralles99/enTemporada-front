@@ -9,12 +9,25 @@
   border-bottom: 3px solid black;
 
 }
+.error {
+  text-align: left;
+  color: red;
+  font-family: neueR;
+  text-align: center;
+  margin-top: 5px;
+  font-family: 80%;
+}
 .numerocomments{
   text-align: center;
   font-size: 135%;
   font-family: neueB;
 }
+
 .comentario{
+  border-radius: 35px 0px 35px 0px;
+-moz-border-radius: 35px 0px 35px 0px;
+-webkit-border-radius: 35px 0px 35px 0px;
+
   width: 95%;
   margin-left: auto;
   margin-right: auto;
@@ -24,7 +37,8 @@
   .textocomentario{
     margin-top: 10px;
     text-align: justify;
-
+    max-height: 125px;
+    overflow-y: auto;
     p{
       padding:5px ;
       padding-left:15px ;
@@ -43,6 +57,8 @@
   padding: 5px;
   padding-left:15px ;
   color: white;
+  border-radius: 30px 0px 0px 0px;
+
 
 }
 .icono {
@@ -76,6 +92,9 @@
 }
 
 .subcomentario{
+  border-radius: 35px 0px 35px 0px;
+  -moz-border-radius: 35px 0px 35px 0px;
+  -webkit-border-radius: 35px 0px 35px 0px;
   width: 87.5%;
   margin-left: auto;
   margin-right: 2.5%;
@@ -85,13 +104,16 @@
     background-color: $green;
     padding-right:15px ;
     max-height: 55px;
+    border-radius: 30px 0px 0px 0px;
 
   }
   .textocomentario{
     margin-top: 10px;
     text-align: justify;
-
-    p{
+    max-height: 125px;
+    overflow-y: auto;
+     p{
+      padding:5px ;
       padding-left:15px ;
       padding-right:15px ;
       font-family: "recoletaR";
@@ -107,6 +129,12 @@
   margin-top: 0.5%;
   text-align: left;
 
+  .btn{
+   border-color: $green;
+  }
+  .btn:hover{
+    background-color: $green;
+   }
   .numerolikes{
     font-size: 75%;
     margin-right: 5px;
@@ -119,6 +147,7 @@
   }
 }
 .mg,
+.puntos,
 .resp {
   background-color: transparent;
   background-size: contain;
@@ -143,6 +172,34 @@
     transform: scale(110%);
   }
 }
+.puntos {
+  margin-left: 10px;
+  &:hover {
+    filter: drop-shadow(0 3px 3px rgb(167, 57, 44));
+    transform: scale(110%);
+  }
+}
 
+.comentarioasubir{
+  border: 2px #175537b2 solid;
+  .textocomentario{
+    overflow: hidden;
 
+  }
+  textarea{
+    width: 98%;
+    margin-left: 12.5px;
+    margin-right: 12.5px;
+    min-height: 100px;
+    max-height: 100px;
+    padding: 10px;
+  }
+  .headercomentario{
+    background-color: #175537b2 ;
+  }
+}
+
+.subcomentarioasubir{
+  display: none;
+}
 

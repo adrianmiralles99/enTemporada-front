@@ -4,6 +4,7 @@ import { IndiceComponent } from './aboutus/indice/indice.component';
 import { CalendarioComponent } from './calendario/calendario/calendario.component';
 import { Routes, RouterModule } from '@angular/router';//importante
 import { NgModule } from '@angular/core';
+
 import { IndexregComponent } from './registro/indexreg/indexreg.component';
 import { IndexprodComponent } from './infoproducto/indexprod/indexprod.component';
 import { IndexrecetasComponent } from './recetas/indexrecetas/indexrecetas.component';
@@ -19,6 +20,7 @@ import { UsuariologueadoGuard } from './guards/usuariologueado.guard';
 import { IndexentradasComponent } from './entradas/indexentradas/indexentradas.component';
 import { IndexentradaindComponent } from './entradaindividual/indexentradaind/indexentradaind.component';
 import { IndexcreacionentradaComponent } from './creacion-entrada/indexcreacionentrada/indexcreacionentrada.component';
+import { IndexedicionentradaComponent } from './creacion-entrada/indexedicionentrada/indexedicionentrada.component';
 const routes: Routes = [
   {
     path: '',
@@ -69,6 +71,10 @@ const routes: Routes = [
   {
     path: 'creacionEntradas',
     component: IndexcreacionentradaComponent, canActivate: [UsuariologueadoGuard]
+  },
+  {
+    path: 'editarEntrada/:id',
+    component: IndexedicionentradaComponent, canActivate: [UsuariologueadoGuard]
   },
   /*probando cosas rutas dont worry be happy :)*/
   {
