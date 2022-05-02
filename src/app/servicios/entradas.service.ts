@@ -46,4 +46,19 @@ export class EntradasService {
   borrarEntrada(id: number) {
     return this.http.delete(baseUrl + "/deleteentrada?id=" + id);
   }
+
+  getUltimaEntrada(): Observable<any> {
+    return this.http.get(baseUrl + "/ultimaentrada");
+  }
+  getEntradaPopular(): Observable<any> {
+    return this.http.get(baseUrl + "/popularentrada");
+  }
+  getMias() {
+    return this.http.get<Entradas[]>(baseUrl + "/getmias?expand=usuario,likes,favoritos");
+  }
+  getFav() {
+    return this.http.get<Entradas[]>(baseUrl + "/getfav?expand=usuario,likes,favoritos");
+  }
+
+
 }

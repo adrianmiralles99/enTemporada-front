@@ -21,4 +21,8 @@ export class Usuarios {
     totalfavoritos?: { total: number };
     totalguardadas?: { total: number };
     totalrecetas?: { total: number };
+    totallikesentrada?: { total: number };
+    totalfavoritosentrada?: { total: number };
+    totalentradas?: { total: number };
+    totalguardadasentrada?: { total: number };
 }

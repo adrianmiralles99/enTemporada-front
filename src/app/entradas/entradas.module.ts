@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 import { UtilsModule } from '../utils/utils.module';
 import { CardEntradasComponent } from './card-entradas/card-entradas.component';
 import { FilterPipe } from '../pipes/filter.pipe';
+import { IndexmisentradasComponent } from './indexmisentradas/indexmisentradas.component';
+import { IndexentradasguardadasComponent } from './indexentradasguardadas/indexentradasguardadas.component';
 
 
 
@@ -13,7 +15,9 @@ import { FilterPipe } from '../pipes/filter.pipe';
   declarations: [
     IndexentradasComponent,
     CardEntradasComponent,
-    FilterPipe
+    FilterPipe,
+    IndexmisentradasComponent,
+    IndexentradasguardadasComponent,
   ],
   imports: [
     CommonModule,

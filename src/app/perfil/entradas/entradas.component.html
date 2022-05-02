@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 col-md-12 margen izq">
+      <div class="tarjeta">
+        <div class="titulo">
+          <p>
+            Última entrada visitada
+          </p>
+        </div>
+        <button class="imagen" [routerLink]="['/entradaindividual', ultimaentrada?.id]"
+          style="background-image:url(/assets/IMG/entradas/{{ultimaentrada?.imagen}})">
+        </button>
+        <div class="row usuario">
+          <div class="col-9">
+            <p class="nombre">{{ultimaentrada?.titulo}}</p>
+          </div>
+        </div>
+        <div class="user row">
+          <div class="col-2">
+            <div class="icono" style="background-image:url(/assets/IMG/Usuarios/{{ultimaentrada?.usuario_img}})"></div>
+          </div>
+          <div class="col-6">
+            <sub class="autor"><br>by @{{ultimaentrada?.nick}}</sub>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12 margen der">
+      <div class="tarjeta">
+        <div class="titulo">
+          <p>
+            Entrada más popular
+          </p>
+        </div>
+        <button class="imagen" [routerLink]="['/entradaindividual', entradapopular?.id]"
+          style="background-image:url(/assets/IMG/recetas/{{entradapopular?.imagen}})">
+        </button>
+        <div class="row usuario">
+          <div class="col-9">
+            <p class="nombre">{{entradapopular?.titulo}}</p>
+          </div>
+        </div>
+        <div class="user row">
+          <div class="col-2">
+            <div class="icono" style="background-image:url(/assets/IMG/Usuarios/{{entradapopular?.usuario_img}})"></div>
+          </div>
+          <div class="col-6">
+            <sub class="autor"><br>by @{{entradapopular?.nick}}</sub>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

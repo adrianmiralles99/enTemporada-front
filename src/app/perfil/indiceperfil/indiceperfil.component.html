@@ -4,12 +4,28 @@
     </app-datos>
     <div class="inf">
         <div class="container">
-            <app-inferior [totalfavoritos]="usuario.totalfavoritos?.total" [totalrecetas]="usuario.totalrecetas?.total"
+          <mat-button-toggle-group name="eleccion" aria-label="eleccion">
+            <mat-button-toggle (click)="visualizarRecetas()"  value="red">Recetas</mat-button-toggle>
+            <mat-button-toggle (click)="visualizarEntradas()" value="green">Entradas</mat-button-toggle>
+          </mat-button-toggle-group>
+          <!--<button  (click)="prueba()">Prueba </button>-->
+          <ng-container class="recetas">
+            <app-inferior class="recetas"  [totalfavoritos]="usuario.totalfavoritos?.total" [totalrecetas]="usuario.totalrecetas?.total"
                 [totalguardadas]="usuario.totalguardadas?.total" [totallikes]="usuario.totallikes?.total">
             </app-inferior>
-            <app-recetas [usuario]="usuario" [ultimareceta]="ultimareceta" [recetapopular]="recetapopular">
+            <app-recetas class="recetas" [usuario]="usuario" [ultimareceta]="ultimareceta" [recetapopular]="recetapopular">
             </app-recetas>
-            <app-botonnuevareceta></app-botonnuevareceta>
+            <app-botonnuevareceta class="recetas"></app-botonnuevareceta>
+          </ng-container>
+          <ng-container class="entradas">
+            <app-inferior-ent class="entradas"  [totalfavoritos]="usuario.totalfavoritosentrada?.total" [totalentradas]="usuario.totalentradas?.total"
+              [totalguardadas]="usuario.totalguardadasentrada?.total" [totallikes]="usuario.totallikesentrada?.total">
+            </app-inferior-ent>
+            <app-entradas class="entradas" [usuario]="usuario" [ultimaentrada]="ultimaentrada" [entradapopular]="entradapopular">
+            </app-entradas>
+            <app-botonnuevaentrada class="entradas"></app-botonnuevaentrada>
+          </ng-container>
+
         </div>
     </div>
 </ng-container>

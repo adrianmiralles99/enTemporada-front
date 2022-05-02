@@ -19,6 +19,12 @@ export class IndexentradaindComponent implements OnInit {
   idPropietarioEntrada?: number;
   ngOnInit(): void {
     this.getEntrada();
+    if(this.token.getId()){
+      this.usservice.ultimaentrada(this.entradaid, Number(this.token.getId())).subscribe({
+        next:(data)=>{
+        }
+      });
+    }
   }
   ngOnchanges():void{
     console.log(this.entrada);

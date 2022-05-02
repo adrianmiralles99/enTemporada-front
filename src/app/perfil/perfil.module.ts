@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 import { CommonModule } from '@angular/common';
 import { IndiceperfilComponent } from './indiceperfil/indiceperfil.component';
@@ -11,7 +12,12 @@ import { BotonnuevarecetaComponent } from './botonnuevareceta/botonnuevareceta.c
 import { IndicemodperfilComponent } from './indicemodperfil/indicemodperfil.component';
 import { ModdatosComponent } from './moddatos/moddatos.component';
 
-import { FormsModule } from '@angular/forms'; // <-- NgModel está aquí
+import { FormsModule } from '@angular/forms';
+import { IndiceperfilentradasComponent } from './indiceperfilentradas/indiceperfilentradas.component';
+import { InferiorEntComponent } from './inferior-ent/inferior-ent.component';
+import { EntradasComponent } from './entradas/entradas.component';
+import { BotonnuevaentradaComponent } from './botonnuevaentrada/botonnuevaentrada.component'; // <-- NgModel está aquí
+
 
 @NgModule({
   declarations: [
@@ -21,13 +27,18 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel está aquí
     RecetasComponent,
     BotonnuevarecetaComponent,
     IndicemodperfilComponent,
-    ModdatosComponent
+    ModdatosComponent,
+    IndiceperfilentradasComponent,
+    InferiorEntComponent,
+    EntradasComponent,
+    BotonnuevaentradaComponent
   ],
   imports: [
     CommonModule
     ,UtilsModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    MatButtonToggleModule
   ],
   exports:[
     IndiceperfilComponent

@@ -24,7 +24,7 @@ export class UsuarioService {
   }
 
   getById(): Observable<any> {
-    return this.http.get(`${baseUrl}/${this.token.getId()}?expand=totalrecetas,totalguardadas,totalfavoritos,totallikes`);
+    return this.http.get(`${baseUrl}/${this.token.getId()}?expand=totalrecetas,totalguardadas,totalfavoritos,totallikes,totallikesentrada,totalfavoritosentrada,totalentradas,totalguardadasentrada`);
   }
 
   modificarUsuario(id: number, nick: string, imagen: File, descripcion: string): Observable<any> {
@@ -43,6 +43,12 @@ export class UsuarioService {
   ultimareceta(id_ultima_receta: number, id: number) {
     return this.http.put(baseUrl + "/updateuser?id=" + id, {
       id_ultima_receta: id_ultima_receta
+
+    }, httpOptions);
+  }
+  ultimaentrada(id_ultima_entrada: number, id: number) {
+    return this.http.put(baseUrl + "/updateuser?id=" + id, {
+      id_ultima_entrada: id_ultima_entrada
 
     }, httpOptions);
   }

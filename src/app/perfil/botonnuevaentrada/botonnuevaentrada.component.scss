@@ -1,0 +1,21 @@
+@import "/src/styles.scss";
+.boton {
+    padding-bottom: 30px;
+    font-size: 120%;
+    font-family: neueB;
+    transition: 0.3s;
+    button {
+        border: none;
+        color: white;
+        width: 150px;
+        padding: 10px 5px 5px 5px;
+        background-color: $orange;
+        border-radius: 10px;
+        box-shadow: 0 5px 8px rgba(0, 0, 0, 0.299);
+    }
+    img {
+        height: 60px;
+        margin-bottom: 5px;
+        filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.265));
+    }
+}

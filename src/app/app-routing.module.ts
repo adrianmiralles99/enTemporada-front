@@ -21,6 +21,9 @@ import { IndexentradasComponent } from './entradas/indexentradas/indexentradas.c
 import { IndexentradaindComponent } from './entradaindividual/indexentradaind/indexentradaind.component';
 import { IndexcreacionentradaComponent } from './creacion-entrada/indexcreacionentrada/indexcreacionentrada.component';
 import { IndexedicionentradaComponent } from './creacion-entrada/indexedicionentrada/indexedicionentrada.component';
+import { IndexmisentradasComponent } from './entradas/indexmisentradas/indexmisentradas.component';
+import { IndexentradasguardadasComponent } from './entradas/indexentradasguardadas/indexentradasguardadas.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -63,6 +66,14 @@ const routes: Routes = [
   {
     path: 'entradas',
     component: IndexentradasComponent,
+  },
+  {
+    path: 'entradas-misentradas',
+    component: IndexmisentradasComponent,canActivate:[UsuariologueadoGuard]
+  },
+  {
+    path: 'entradas-guardadas',
+    component: IndexentradasguardadasComponent,canActivate:[UsuariologueadoGuard]
   },
   {
     path: 'entradaindividual/:id',
