@@ -182,6 +182,11 @@ export class DatoscreacionComponent implements OnInit {
             else {
               const miSnackBar = this.snackBar.open("Receta creada correctamente", "Aceptar", { panelClass: 'alertcool' });
               miSnackBar.onAction().subscribe(() => {
+                this.usuarioService.sumarExperiencia(this.iduser_crear, 25).subscribe({
+                  next: (data) => {
+                    console.log(data);
+                  }
+                })
                 this.router.navigate(['recetas']);
               });
             }

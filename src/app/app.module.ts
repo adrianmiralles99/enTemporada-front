@@ -20,7 +20,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { EntradasModule } from './entradas/entradas.module';
 import { EntradaindividualModule } from './entradaindividual/entradaindividual.module';
 import { CreacionEntradaModule } from './creacion-entrada/creacion-entrada.module';
+import { CategoriasEntradaModule } from './categorias-entrada/categorias-entrada.module';
 import { FilterPipe } from './pipes/filter.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +47,7 @@ import { FilterPipe } from './pipes/filter.pipe';
     EntradasModule,
     EntradaindividualModule,
     CreacionEntradaModule,
-
+    CategoriasEntradaModule
 
 
   ],

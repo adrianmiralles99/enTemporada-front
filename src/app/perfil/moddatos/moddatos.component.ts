@@ -58,12 +58,19 @@ export class ModdatosComponent implements OnInit {
 
       this.usuariosService.modificarUsuario(this.id_user, this.nombreuser, this.imagen, this.infouser).subscribe({
         next: (data) => {
-          console.log(data);
           this.router.navigate(['/perfil']);
         }
       })
     }
 
+  }
+  explicacion():void{
+    if ($(".explicacion").is(':visible')) {
+      $(".explicacion").hide();
+
+    }else{
+      $(".explicacion").show();
+    }
   }
 }
 

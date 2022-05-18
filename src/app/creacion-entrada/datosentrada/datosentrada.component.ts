@@ -17,6 +17,7 @@ export class DatosentradaComponent implements OnInit {
   @Input() categorias?: Categorias[];
   @Input() entrada?: Entradas;
 
+  idusuario?:number = 0;
   idcategoria?: number = 0;
   imagen!: File;
   vistaImagen?: string = "default.png";
@@ -34,9 +35,7 @@ export class DatosentradaComponent implements OnInit {
     this.getUser();
   }
   ngOnChanges():void {
-    console.log(this.idcategoria);
     if (this.entrada){
-      console.log("ola");
       this.cargarDatos();
     }
   }
@@ -45,6 +44,7 @@ export class DatosentradaComponent implements OnInit {
       next: (data) => {
         this.imagenUser = data.imagen;
         this.autor = data.nick;
+        this.idusuario = data.id;
       }
     })
   }
@@ -74,7 +74,6 @@ export class DatosentradaComponent implements OnInit {
   }
 
   crearEntrada(){
-    console.log("creando entrada");
     this.comprobacionErrores();
     if (this.error.size == 0) {
       this.entradasService.crearEntrada(this.titulo, this.cuerpoentrada, this.idcategoria!,this.imagen).subscribe({
@@ -86,6 +85,11 @@ export class DatosentradaComponent implements OnInit {
           }else{
             const miSnackBar = this.snackBar.open("Entrada creada correctamente", "Aceptar", { panelClass: 'alertcool' });
             miSnackBar.onAction().subscribe(() => {
+              this.usuarioService.sumarExperiencia(this.idusuario!, 3).subscribe({
+                next: (data) => {
+                  console.log(data);
+                }
+              })
               this.router.navigate(['entradas']);
             });
           }
@@ -94,7 +98,6 @@ export class DatosentradaComponent implements OnInit {
     }
   }
   actualizarEntrada(){
-    console.log("ACTUAÑIZANDO LA ENTRADa...");
     this.comprobacionErrores();
     if (this.error.size == 0) {
       this.entradasService.actualizarEntrada(this.entrada!.id,this.titulo, this.cuerpoentrada, this.idcategoria!,this.imagen).subscribe({
@@ -142,7 +145,6 @@ export class DatosentradaComponent implements OnInit {
     else if (numeroPalabras < 100){
       this.error.set("cuerpoentrada", "El cuerpo de la entrada debe tener más de 100 palabras (tiene " + numeroPalabras + ")");
     }
-    console.log(this.cuerpoentrada.length);
   }
 
 }

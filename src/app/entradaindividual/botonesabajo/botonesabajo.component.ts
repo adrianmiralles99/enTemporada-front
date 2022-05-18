@@ -36,11 +36,9 @@ export class BotonesabajoComponent implements OnInit {
     });
   }
   deleteEntrada(){
-    console.log("Borrando voy");
 
     this.entradasservice.borrarEntrada(this.entradaid).subscribe({
       next:(data) =>{
-        console.log(data);
       }
     })
     this.router.navigate(['entradas']);

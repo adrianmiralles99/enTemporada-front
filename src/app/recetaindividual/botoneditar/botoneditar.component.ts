@@ -37,10 +37,8 @@ export class BotoneditarComponent implements OnInit {
     });
   }
   deleteReceta(){
-    console.log("ye");
     this.recetasservice.borrarReceta(this.recetaid).subscribe({
       next:(data) =>{
-        console.log(data);
       }
     })
     this.router.navigate(['recetas']);

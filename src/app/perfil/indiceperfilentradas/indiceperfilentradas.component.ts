@@ -40,7 +40,6 @@ export class IndiceperfilentradasComponent implements OnInit {
         this.infouser = data.descripcion;
         this.imagen = data.imagen;
         this.getLvl(data.exp);
-        console.log(data);
 
       }
     })

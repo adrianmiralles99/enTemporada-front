@@ -26,7 +26,6 @@ export class ReporteComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log(this.data);
     this.idcomment = this.data['idcomment'];
     this.idusuarioreportado = this.data['idusuarioreportado'];
     this.nicknameusuarioreportado = '@' + this.data['nicknameuser'];
@@ -55,7 +54,6 @@ export class ReporteComponent implements OnInit {
     //window.location.reload();
   }
   comprobarErrores(){
-    console.log(this.motivo.length);
     this.error = new Map();
     if (!this.motivo || this.motivo == "") {
       this.error.set("motivo", "Para hacer un reporte debe rellenar claramente el motivo de este.");

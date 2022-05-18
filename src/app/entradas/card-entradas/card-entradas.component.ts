@@ -6,6 +6,8 @@ import { LikesEntradaService } from 'src/app/servicios/likes-entrada.service';
 import { FilterPipe } from 'src/app/pipes/filter.pipe';
 import { TokenStorageService } from 'src/app/servicios/token-storage.service';
 import { PopUpComponent } from 'src/app/utils/login/pop-up.component';
+import { Router } from '@angular/router';
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-card-entradas',
@@ -21,7 +23,7 @@ export class CardEntradasComponent implements OnInit {
   sesion!: boolean;
   clicked: Array<boolean> = [];
   fav: Array<boolean> = [];
-  constructor(private token: TokenStorageService, public dialogRef: MatDialog, public likeService: LikesEntradaService, public favService: FavoritosEntradaService) { }
+  constructor(private router:Router, private snackBar: MatSnackBar,private token: TokenStorageService, public dialogRef: MatDialog, public likeService: LikesEntradaService, public favService: FavoritosEntradaService) { }
 
   ngOnInit(): void {
     if ((this.id = this.token.getId()) && this.entradas) {
@@ -38,6 +40,10 @@ export class CardEntradasComponent implements OnInit {
   ngOnChanges(): void {
     //console.log("Post -> " + this.filterPost);
   }
+  verCategoria(categorianombre:string){
+    window.localStorage.setItem('categoria', categorianombre);
+    this.router.navigate(['categorias']);
+  }
   cambiaLike(id: number) {
 
     if (this.sesion == true) {
@@ -46,7 +52,6 @@ export class CardEntradasComponent implements OnInit {
         this.clicked[id] = false;
         this.likeService.delete(id).subscribe({
           next: (data) => {
-            console.log(data);
           }
         });
       }
@@ -60,8 +65,12 @@ export class CardEntradasComponent implements OnInit {
         });
 
       }
+      window.location.reload();
+    }else{
+      let miSnackBar = this.snackBar.open("Para poder dar like a una entrada debe iniciar sesión", "Aceptar", { panelClass: 'alertsad' });
+      miSnackBar.onAction().subscribe(() => {
+      });
     }
-    window.location.reload();
 
   }
 
@@ -86,6 +95,10 @@ export class CardEntradasComponent implements OnInit {
         });
 
       }
+    }else{
+      let miSnackBar = this.snackBar.open("Para poderguardar una entrada debe iniciar sesión", "Aceptar", { panelClass: 'alertsad' });
+      miSnackBar.onAction().subscribe(() => {
+      });
     }
 
   }

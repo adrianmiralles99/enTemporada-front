@@ -9,6 +9,18 @@ nav {
   }
 }
 
+.dropdown{
+
+  .dropdown-menu{
+    background-color:#ffd500;
+    a{
+      color: black !important;
+     }
+     a:hover{
+       background-color: #ffd500;
+     }
+  }
+}
 .menu {
   color: black;
 }
@@ -51,7 +63,68 @@ nav {
   margin-right: 40px;
   font-size: 120%;
 }
-
+.cajanotificaciones{
+  display: none;
+  position: absolute;
+  width: 620px;
+  height: 600px;
+  overflow-y: auto;
+  background-color:white;
+  border-radius: 10px;
+  border: 1px solid rgb(202, 202, 202);
+  font-family: "neueB";
+  top: 65px;
+  right: 15px;
+  z-index: 4;
+  .headernot{
+    font-size: 95%;
+    h5{
+      padding-top: 10px;
+      padding-left: 0px;
+    }
+    width: 100%;
+    margin-left: 0;
+    border-bottom: 1px solid rgb(202, 202, 202)!important;
+  }
+  .cuerponot{
+    margin-top: 20px;
+    margin-bottom: -5px;
+    width: 100%;
+    margin-left: 0px;
+    font-size: 85%;
+    .col-9{
+      padding-left: 25px;
+      font-weight: normal;
+      font-family: "neueR";
+    }
+  }
+}
+.col-1{
+  padding: 0%;
+}
+.basura, .cerrar {
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  width: 25px;
+  height: 22px;
+  transition: 0.2s;
+}
+.basura{
+  &:hover {
+    filter: drop-shadow(0 3px 3px rgb(35, 35, 35));
+    transform: scale(110%);
+  }
+}
+.cerrar{
+  margin-top: 5px;
+  &:hover {
+    filter: drop-shadow(0 3px 3px rgb(35, 35, 35));
+    transform: scale(110%);
+  }
+}
 .dropdown-user {
   * {
     color: black;

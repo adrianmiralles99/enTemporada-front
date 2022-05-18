@@ -46,14 +46,19 @@ export class PopUpComponent implements OnInit {
     if (this.error.size == 0) {
       this.authService.login(this.nick, this.password).subscribe({
         next: (data) => {
-          console.log(data.error);
           if (!data.error) {
+
             this.tokenStorage.saveToken(data.token);
             this.tokenStorage.saveUser(data);
 
             window.location.reload();
           } else {
-            this.error.set('error', 'Usuario o contraseña incorrecta ');
+            let tipoerror = [] = (data.error.split(" "));
+            if (tipoerror[1] =="bloqueado."){
+              this.error.set('error', 'Usuario bloqueado del sistema. Envie un mensaje al administrador para resolver su dudas');
+            }else{
+              this.error.set('error', 'Usuario o contraseña incorrecta ');
+            }
           }
         },
       });

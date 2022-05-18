@@ -22,7 +22,34 @@
 .progress-bar {
   background-color: $orange;
 }
+.explicacion{
+  font-family: neueR;
 
+  display: none;
+  h5{
+    font-size: 115%;
+  }
+
+}
+.puntos {
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  width: 40px;
+  height: 45px;
+
+  margin-right: 0px;
+  transition: 0.2s;
+}
+.puntos {
+  margin-left: 0px;
+  &:hover {
+    filter: drop-shadow(0 3px 3px rgb(255, 145, 0));
+    transform: scale(110%);
+  }
+}
 .foto {
   text-align: center;
   > .usuario {
@@ -87,7 +114,7 @@
       font-family: neueB;
       font-size: 170%;
       margin-top: 40px;
-      margin-left: 30px;
+      //margin-left: 30px;
     }
     > div {
       margin-bottom: 20px;

@@ -14,9 +14,17 @@
       <li class="nav-item active">
         <a class="nav-link" [routerLink]="'/recetas'" routerLinkActive="router-link-active">Recetas</a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" [routerLink]="'/entradas'" routerLinkActive="router-link-active">Blog</a>
+      <li class="nav-item active dropdown">
+        <a class="tituloblog nav-link dropdown-toggle"  [routerLink]="'/entradas'" routerLinkActive="router-link-active" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Blog
+        </a>
+        <div class="dropdown-menu active" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item"  [routerLink]="'/entradas'" routerLinkActive="router-link-active">Entradas</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" [routerLink]="'/categorias'" routerLinkActive="router-link-active">Categorías</a>
+        </div>
       </li>
+
     </ul>
     <ul class="navbar-nav my-lg-0">
       <li class="nav-item active">
@@ -38,12 +46,42 @@
             <button class="dropdown-item" type="button" [routerLink]="'/perfil'">Perfil</button>
             <div class="dropdown-divider"></div>
             <button class="dropdown-item" type="button" [routerLink]="'/'" (click)="logout()">Log Out</button>
+            <div class="dropdown-divider"></div>
+            <button class="dropdown-item" type="button" (click)="mostrarCajanotificaciones()">Notificaciones</button>
+
           </div>
         </ng-container>
         <ng-template #sesionIniciada>
           <button class="boton pr-3 pl-3" (click)="openDialog()">Log In</button>
         </ng-template>
       </div>
+
     </ul>
+  </div>
+  <div class="cajanotificaciones">
+    <div class="headernot row ">
+      <div class ="col-11">
+        <h5>Notificaciones</h5>
+      </div>
+      <div class ="col-1">
+        <button (click)="ocultarCajanotificaciones()" class="cerrar"
+        [style.background-image]="'url(/assets/IMG/iconos/eliminar.png)'"></button>
+      </div>
+
+    </div>
+    <div class="cuerponot row" *ngFor="let notificacion of notificaciones">
+
+        <div class="col-2 not-{{notificacion.id}}">
+          {{notificacion.asunto}}
+        </div>
+        <div class="col-9 not-{{notificacion.id}}">
+          {{notificacion.texto}}
+        </div>
+        <div class="col-1 not-{{notificacion.id}}">
+          <button (click)="borrarNoti(notificacion!.id)" class="basura"
+          [style.background-image]="'url(/assets/IMG/iconos/basura.png)'"></button>
+        </div>
+
+    </div>
   </div>
 </nav>

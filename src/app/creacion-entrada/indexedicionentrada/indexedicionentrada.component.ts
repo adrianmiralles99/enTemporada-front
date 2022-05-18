@@ -34,7 +34,6 @@ export class IndexedicionentradaComponent implements OnInit {
     this.categoriasService.getAll().subscribe({
       next: (data) => {
         this.categorias = data;
-        console.log(data);
       },
       error: (e) => console.error(e)
     });

@@ -36,7 +36,6 @@ export class IndexentradasguardadasComponent implements OnInit {
     this.buscando = false;
     this.entradasService.getFav().subscribe({
       next: (data) => {
-        console.log(data);
         this.buscando = true;
         this.entradas = data;
         this.cantidad = data.length;

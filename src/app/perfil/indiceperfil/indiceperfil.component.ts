@@ -57,24 +57,23 @@ export class IndiceperfilComponent implements OnInit {
         this.infouser = data.descripcion;
         this.imagen = data.imagen;
         this.getLvl(data.exp);
-        console.log(data);
 
       }
     })
   }
   getLvl(expe: number) {
-    if (expe / 100 > 0) {
-      this.nivel = Math.floor(expe / 100) + 1;
-      this.exp_res = ((expe / 100) % 1) * 100;
-      // console.log("Nivel = " + this.nivel)
-      // console.log("Exp = " + this.exp_res)
-    } if (expe >= 400) {
-      this.nivel = 5;
-      this.exp_res = 100;
-
-    } if (expe / 100 == 0) {
+    if(expe >= 0 && expe < 150){
       this.nivel = 1;
+    }else if(expe >= 150 && expe <300){
+      this.nivel = 2;
+    }else if (expe >= 300 && expe <400){
+      this.nivel = 3;
+    }else if (expe >= 400 && expe < 475){
+      this.nivel = 4;
+    }else{
+      this.nivel = 5;
     }
+    this.exp_res = (expe * 100) / 500;
   }
 
   getUltimaReceta() {
@@ -100,7 +99,6 @@ export class IndiceperfilComponent implements OnInit {
   getUltimaEntrada() {
     this.entradasService.getUltimaEntrada().subscribe({
       next: (data) => {
-        console.log(data);
 
         this.ultimaentrada = data;
         if (!data) {

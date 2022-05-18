@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { Entradas } from 'src/app/modelos/entradas.model';
 import { EntradasService } from 'src/app/servicios/entradas.service';
 import { Categorias } from 'src/app/modelos/categorias.model';
 import { CategoriasService } from 'src/app/servicios/categorias.service';
+
 @Component({
   selector: 'app-indexentradas',
   templateUrl: './indexentradas.component.html',
@@ -10,7 +13,9 @@ import { CategoriasService } from 'src/app/servicios/categorias.service';
 })
 export class IndexentradasComponent implements OnInit {
 
-  constructor(private entradasservice: EntradasService, private categoriasservice: CategoriasService) { }
+  constructor(private entradasservice: EntradasService, private categoriasservice: CategoriasService,private rutaActiva: ActivatedRoute) { }
+  nombrecategoria = this.rutaActiva.snapshot.paramMap.get('categoria');
+
   titulo: string = "Blog en temporada";
   entradas?: Entradas[];
 
@@ -21,7 +26,7 @@ export class IndexentradasComponent implements OnInit {
   textofiltro: string = "";
   filterPost: string = "";
   opcion:string = "";
-  id_entrada:number = 0;
+  id_cat:number = 0;
 
   sort?: string;
   buscando = false;
@@ -29,6 +34,8 @@ export class IndexentradasComponent implements OnInit {
   ngOnInit(): void {
     this.getEntradas();
     this.getCategorias();
+
+
   }
   getEntradas(){
     this.buscando = false;
@@ -45,17 +52,26 @@ export class IndexentradasComponent implements OnInit {
     this.categoriasservice.getAll().subscribe({
       next: (data) => {
         this.categorias = data;
+        if(this.nombrecategoria){
+          this.categorias!.forEach(element => {
+            if (element.nombre?.toLowerCase() == this.nombrecategoria){
+              this.id_cat = element.id;
+              this.filtrarTipo();
+            }
+          });
+        }
         this.cantidadcategorias = this.categorias.length
       },
       error: (e) => console.error(e)
     });
   }
+
   filtrar() {
     this.filterPost = this.textofiltro;
   }
 
   filtrarTipo() {
-    this.entradasservice.getfiltro(this.id_entrada,this.opcion).subscribe({
+    this.entradasservice.getfiltro(this.id_cat,this.opcion).subscribe({
       next: (data) => {
         this.entradas = data;
         this.cantidad = this.entradas?.length;

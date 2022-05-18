@@ -53,7 +53,6 @@ export class CardRecetasComponent implements OnInit {
         this.clicked[id] = false;
         this.likeService.delete(id).subscribe({
           next: (data) => {
-            console.log(data);
           }
         });
       }

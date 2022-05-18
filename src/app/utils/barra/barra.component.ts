@@ -4,6 +4,8 @@ import { PopUpComponent } from '../login/pop-up.component';
 import { TokenStorageService } from 'src/app/servicios/token-storage.service';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 import { Usuarios } from 'src/app/modelos/usuarios.model';
+import { NotificacionesService } from 'src/app/servicios/notificaciones.service';
+import { Notificaciones } from 'src/app/modelos/notificaciones.model';
 import { Router } from '@angular/router';
 
 
@@ -19,7 +21,8 @@ export class BarraComponent implements OnInit {
   usuario!: Usuarios;
   imagen?: string;
   nickname?: string;
-  constructor(private router: Router, private uService: UsuarioService, public dialogRef: MatDialog, private token: TokenStorageService) { }
+  notificaciones!: any;
+  constructor(private router: Router, private uService: UsuarioService, private notificacionesService:NotificacionesService, public dialogRef: MatDialog, private token: TokenStorageService) { }
 
   openDialog() {
     this.dialogRef.open(PopUpComponent, {
@@ -53,9 +56,40 @@ export class BarraComponent implements OnInit {
     if (this.id_user) {
       this.sesion = true;
       this.getUser();
+      this.getNotificaciones();
     } else {
       this.sesion = false;
     }
+  }
+
+  getNotificaciones(){
+    this.notificacionesService.getNotificaciones().subscribe({
+      next: (data) => {
+        console.log(data);
+        this.notificaciones = data;
+        console.log(this.notificaciones);
+      },
+      error: (e) => console.error(e)
+    });
+  }
+  ocultarCajanotificaciones(){
+
+    $(".cajanotificaciones").hide();
+  }
+  mostrarCajanotificaciones(){
+    if ($(".cajanotificaciones").is(':visible')){
+      $(".cajanotificaciones").hide();
+    }else{
+      $(".cajanotificaciones").show();
+    }
+  }
+  borrarNoti(id:number){
+    $(".not-"+id).hide();
+    this.notificacionesService.borrarNotificacion(id).subscribe({
+      next: (data) => {
+      },
+      error: (e) => console.error(e)
+    });
   }
 
 }

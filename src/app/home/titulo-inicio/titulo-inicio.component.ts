@@ -12,6 +12,6 @@ export class TituloInicioComponent implements OnInit {
 
   }
   bajar(){
-    document.getElementById("productos")?.scrollIntoView({behavior: "smooth"})
+    document.getElementById("productos")?.scrollIntoView({behavior: "smooth"});
   }
 }

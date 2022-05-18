@@ -42,7 +42,6 @@ export class HomeComponent implements OnInit {
   login(): void {
     this.authService.login("Adrimigo", "1234").subscribe({
       next: data => {
-        console.log(data);
         if (!data.error) {
           this.tokenStorage.saveToken(data.token);
           this.tokenStorage.saveUser(data);
@@ -60,7 +59,6 @@ export class HomeComponent implements OnInit {
   getEntradas() {
     this.entradasService.getAll().subscribe({
       next: (data) => {
-        console.log(data);
       },
       error: (e) => console.error(e)
     });

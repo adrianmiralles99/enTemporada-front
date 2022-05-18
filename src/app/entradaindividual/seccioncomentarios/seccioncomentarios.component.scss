@@ -22,7 +22,42 @@
   font-size: 135%;
   font-family: neueB;
 }
+.popover{
+  border-radius: 25px 0px 25px 0px;
+  -moz-border-radius: 25px 0px 25px 0px;
+  -webkit-border-radius: 25px 0px 25px 0px;
+  border: 2px solid rgb(219, 219, 219);
+  background-color: rgb(255, 255, 255);
+  color: black;
+  width: 200px;
+  position: relative;
+  display: none;
+  height: 140px;
+  position: absolute;
+  overflow-y: auto;
+  font-family: "neueR";
+  p{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px ;
+  }
+  .headerpopover{
 
+    background-color: rgb(219, 219, 219);
+    border-bottom: 1px groove black;
+
+    h5{
+      font-size: 120%;
+      font-family: "neueB";
+      padding: 10px;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.seccion{
+  background-color: aqua;
+}
 .comentario{
   border-radius: 35px 0px 35px 0px;
 -moz-border-radius: 35px 0px 35px 0px;

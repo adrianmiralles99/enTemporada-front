@@ -40,7 +40,7 @@
 
               </select>
 
-              <select (change)="filtrarTipo()" [(ngModel)]="id_entrada" class="tipo col-log-6 col-5">
+              <select (change)="filtrarTipo()" [(ngModel)]="id_cat" class="tipo col-log-6 col-5">
                 <option value=""></option>
                 <option [value]="item.id" *ngFor="let item of categorias">{{item.nombre}}</option>
               </select>

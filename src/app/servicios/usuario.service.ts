@@ -40,6 +40,10 @@ export class UsuarioService {
     //   descripcion: descripcion,
     // }, httpOptions);
   }
+  sumarExperiencia(id:number,puntos:number):Observable<any>{
+    var fd = new FormData();
+    return this.http.put(baseUrl + "/sumarexperiencia?id=" + id + "&puntos="+puntos, fd);
+  }
   ultimareceta(id_ultima_receta: number, id: number) {
     return this.http.put(baseUrl + "/updateuser?id=" + id, {
       id_ultima_receta: id_ultima_receta

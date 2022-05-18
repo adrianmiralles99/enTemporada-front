@@ -4,6 +4,7 @@ import { FavoritosEntradaService } from 'src/app/servicios/favoritos-entrada.ser
 import { LikesEntradaService } from 'src/app/servicios/likes-entrada.service';
 import { TokenStorageService } from 'src/app/servicios/token-storage.service';
 import { MatSnackBar } from "@angular/material/snack-bar";
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-cabeceraentrada',
@@ -12,7 +13,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 })
 export class CabeceraentradaComponent implements OnInit {
 
-  constructor(private snackBar: MatSnackBar,private token: TokenStorageService, public likeService: LikesEntradaService, public favService: FavoritosEntradaService) { }
+  constructor(private router: Router,private snackBar: MatSnackBar,private token: TokenStorageService, public likeService: LikesEntradaService, public favService: FavoritosEntradaService) { }
   @Input() entrada?: Entradas;
   id?: any;
   hover = false;
@@ -20,7 +21,6 @@ export class CabeceraentradaComponent implements OnInit {
   clicked!: boolean;
   fav!: boolean;
   ngOnInit(): void {
-    console.log(this.entrada);
     if ((this.id = this.token.getId()) && this.entrada) {
       this.sesion = true;
         this.boolLike();
@@ -28,6 +28,26 @@ export class CabeceraentradaComponent implements OnInit {
     } else {
       this.sesion = false;
     }
+  }
+  abrirPopover(){
+    //$(".popover").hide();
+    let postop = $(".autor").offset()!.top;
+    let posleft = $(".autor").offset()!.left;
+    if ($(".popoverautor").is(':visible')) {
+      $(".popoverautor").hide();
+      $(".popoverautor").css("display", "none");
+    }else{
+      $(".popoverautor").show("slow");
+      $(".popoverautor").css("display", "block");
+      $(".popoverautor").offset({
+        top: postop-80,
+        left: posleft+150
+      });
+    }
+  }
+  verCategoria(){
+    window.localStorage.setItem('categoria', this.entrada?.categoria?.nombre!);
+    this.router.navigate(['categorias']);
   }
   getFechabonita(fecha: Date): string{
     let fechabien = fecha.toString();

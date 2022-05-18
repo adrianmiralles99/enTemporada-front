@@ -28,13 +28,8 @@ export class IndexmisentradasComponent implements OnInit {
   ngOnInit(): void {
     this.getmisEntradas();
     this.getCategorias();
-    console.log(this.entradas);
   }
-  ngOnChanges():void{
-    console.log("ola");
-    console.log(this.entradas);
 
-  }
   getmisEntradas() {
     this.buscando = false;
 

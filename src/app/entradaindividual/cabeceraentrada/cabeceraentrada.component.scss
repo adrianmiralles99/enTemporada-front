@@ -64,7 +64,38 @@ font-family: neueB;
     font-size: 90%;
     margin-right: 5px;
     margin-left: 3px;
+  }
+}
+.popoverautor{
+  border-radius: 25px 0px 25px 0px;
+  -moz-border-radius: 25px 0px 25px 0px;
+  -webkit-border-radius: 25px 0px 25px 0px;
+  border: 2px solid rgb(219, 219, 219);
+  background-color: rgb(255, 255, 255);
+  color: black;
+  width: 250px;
+  position: relative;
+  display: none;
+  height: 140px;
+  position: absolute;
+  overflow-y: auto;
+  font-family: "neueR";
+  p{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px ;
+  }
+  .headerpopover{
 
+    background-color: rgb(219, 219, 219);
+    border-bottom: 1px groove black;
+
+    h5{
+      font-size: 120%;
+      font-family: "neueB";
+      padding: 10px;
+      padding-bottom: 0;
+    }
   }
 }
 .save,

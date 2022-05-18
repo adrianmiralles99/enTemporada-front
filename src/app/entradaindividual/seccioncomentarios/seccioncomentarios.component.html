@@ -1,7 +1,6 @@
 <div class="container">
   <div class="cantcomentarios">
     <h3 class="numerocomments"> {{cantcommentsprinc}}</h3>
-
   </div>
   <div *ngIf="sesion">
     <div class="comentario comentarioasubir" id = "plantillacomment">
@@ -25,7 +24,13 @@
    <div class="comentario" id="comentario-{{comentario.id}}">
         <div class="headercomentario">
           <a class="icono" style="background-image: url(/assets/IMG/Usuarios/{{comentario?.usuario?.imagen}});" alt=""></a>
-          <sub class="autor">by @{{comentario?.usuario?.nick}}</sub>
+          <sub id="sub-princ-{{comentario.id}}"(click)="abrirPopover('princ',comentario.id)"type="button" class="btn"class="autor">
+            by @{{comentario?.usuario?.nick}}
+          </sub>
+          <div id="popover-princ-{{comentario.id}}"class="popover">
+            <div class="headerpopover"><h5>Información del usuario:</h5></div>
+            <p>{{comentario?.usuario?.descripcion}} </p>
+          </div>
           <sub class="guion">-</sub>
           <sub class="fecha">{{getFechabonita(comentario?.fecha!)}}</sub>
         </div>
@@ -34,7 +39,7 @@
         </div>
         <div class="botones">
           <ng-container *ngIf="comentario?.estado=='V';">
-            <button (click)="visibilizarBloque(comentario!.id)" class="resp"
+            <button (click)="visibilizarBloque(comentario!.id, comentario?.usuario?.id!)" class="resp"
             [style.background-image]="'url(/assets/IMG/iconos/responder4.png)'"></button>
             <span class="textresponder">Responder</span>
             <button (click)="cambiaLike(comentario!.id)" class="mg"
@@ -56,6 +61,7 @@
         <a class="icono" style="background-image: url(/assets/IMG/Usuarios/{{imagen}});" alt=""></a>
         <sub class="autor">Comentar como @{{nickname}}</sub>
       </div>
+
       <div class="textocomentario">
         <textarea placeholder="Introduce su subcomentario..." [(ngModel)]="textosubcomentarioprinc"></textarea>
       </div>
@@ -71,7 +77,11 @@
     <div class="subcomentario">
       <div class="headercomentario">
         <a class="icono" style="background-image: url(/assets/IMG/Usuarios/{{subcomentario?.usuario?.imagen}});" alt=""></a>
-        <sub class="autor">by @{{subcomentario?.usuario?.nick}}</sub>
+        <sub id="sub-sub-{{subcomentario.id}}"(click)="abrirPopover('sub',subcomentario.id)"type="button" class="btn" class="autor">by @{{subcomentario?.usuario?.nick}}</sub>
+        <div id="popover-sub-{{subcomentario.id}}"class="popover">
+          <div class="headerpopover"><h5>Información del usuario:</h5></div>
+          <p>{{subcomentario?.usuario?.descripcion}} </p>
+        </div>
         <sub class="guion">-</sub>
         <sub class="fecha">{{getFechabonita(subcomentario?.fecha!)}}</sub>
         <h5 class="enrespuesta">en respuesta a @{{comentario?.usuario?.nick}}</h5>

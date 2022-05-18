@@ -15,7 +15,14 @@ export class DatosComponent implements OnInit {
 
 
   ngOnInit(): void {
+  }
+  explicacion():void{
+    if ($(".explicacion").is(':visible')) {
+      $(".explicacion").hide();
 
+    }else{
+      $(".explicacion").show();
+    }
   }
 
 

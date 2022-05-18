@@ -20,7 +20,6 @@ export class FavoritosEntradaService {
   }
 
   delete(id_entrada: any): Observable<any> {
-    console.log(baseUrl + "/deletefavorito?id_entrada=" + id_entrada);
 
     return this.http.delete(baseUrl + "/deletefavorito?id_entrada=" + id_entrada);
   }

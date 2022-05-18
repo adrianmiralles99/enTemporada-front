@@ -4,16 +4,16 @@
       <div class="tarjeta">
         <div class="bordeimagen">
           <button class="imagen" [routerLink]="['/entradaindividual', entrada.id]"
-          [ngStyle]="{'background-image':'url(/assets/IMG/entradas/'+entrada.imagen+')'}"></button>
+          [ngStyle]="{'background-image':'url(/assets/IMG/entradas/'+(entrada.imagen ?? 'default.png')+')'}">
+           </button>
         </div>
-
         <div class="row">
 
           <div class="divtitulo col-12">
             <p class="titulo">{{entrada.titulo}}</p>
           </div>
           <div class=" col-12">
-            <p class="categoria">{{entrada.categoria?.nombre}}</p>
+            <p style="cursor:pointer;" (click)="verCategoria(entrada.categoria?.nombre)" class="categoria">{{entrada.categoria?.nombre}}</p>
           </div>
           <div class="col-4 usuario">
             <div class="user">

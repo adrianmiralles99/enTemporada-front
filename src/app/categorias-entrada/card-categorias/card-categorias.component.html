@@ -1,0 +1,29 @@
+<div  id="contenedor"class="container">
+  <div class="row">
+    <div  class="col-lg-4 col-md-4 margen" *ngFor="let categoria of categorias ">
+      <div  [ngStyle]="{ 'background-color' : (categoria.nombre == nombrecategoria)? '#2da76c83' : 'white' }" class="tarjeta" id="{{categoria.nombre}}">
+
+        <div class="bordeimagen">
+          <button class="imagen" [routerLink]="['/entradas', categoria.nombre!.toLowerCase()]"
+          [ngStyle]="{'background-image':'url(/assets/IMG/categorias/'+categoria.imagen+')'}"></button>
+        </div>
+
+        <div class="row">
+
+          <div class="divtitulo col-12">
+
+
+            <p class="titulo">{{categoria.nombre}}</p>
+          </div>
+          <div class=" col-12">
+            <p class="descripcion">{{categoria.descripcion}}</p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+

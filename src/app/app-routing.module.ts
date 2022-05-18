@@ -23,7 +23,7 @@ import { IndexcreacionentradaComponent } from './creacion-entrada/indexcreacione
 import { IndexedicionentradaComponent } from './creacion-entrada/indexedicionentrada/indexedicionentrada.component';
 import { IndexmisentradasComponent } from './entradas/indexmisentradas/indexmisentradas.component';
 import { IndexentradasguardadasComponent } from './entradas/indexentradasguardadas/indexentradasguardadas.component';
-
+import { IndexcategoriasEntradaComponent } from './categorias-entrada/indexcategorias-entrada/indexcategorias-entrada.component';
 const routes: Routes = [
   {
     path: '',
@@ -63,8 +63,17 @@ const routes: Routes = [
     component: IndexrecetaindComponent,
   },
   //Blog
+
+  {
+    path: 'categorias',
+    component: IndexcategoriasEntradaComponent,
+  },
   {
     path: 'entradas',
+    component: IndexentradasComponent,
+  },
+  {
+    path: 'entradas/:categoria',
     component: IndexentradasComponent,
   },
   {

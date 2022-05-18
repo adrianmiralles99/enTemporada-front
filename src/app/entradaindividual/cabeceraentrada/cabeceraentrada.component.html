@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row">
       <div class="col-12 colcat">
-          <h5 class ="categoria">{{entrada?.categoria?.nombre}}</h5>
+          <h5 style="cursor:pointer;" (click)="verCategoria()"class ="categoria">{{entrada?.categoria?.nombre}}</h5>
+
       </div>
       <div class="col-12 coltitulo">
         <h1 class ="titulo">{{entrada?.titulo}}</h1>
@@ -14,7 +15,13 @@
     <div class="col-4 usuario">
       <div class="user">
         <a class="icono" style="background-image: url(/assets/IMG/Usuarios/{{entrada?.usuario?.imagen}});" alt=""></a>
-        <sub class="autor">by @{{entrada?.usuario?.nick}}</sub>
+        <sub (click)="abrirPopover()"type="button" class="btn"class="autor">
+          by @{{entrada?.usuario?.nick}}
+        </sub>
+        <div class="popoverautor">
+          <div class="headerpopover"><h5>Información del usuario:</h5></div>
+          <p>{{entrada?.usuario?.descripcion}} </p>
+        </div>
       </div>
     </div>
     <div class="col-6">

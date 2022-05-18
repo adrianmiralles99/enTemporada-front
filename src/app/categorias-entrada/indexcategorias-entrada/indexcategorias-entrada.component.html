@@ -1,0 +1,38 @@
+<app-barra [color]="'green'"></app-barra>
+<div class="header">
+  <div class="col-sm">
+    <img src="../../../assets/IMG/tituloW.png" alt="" class="icono">
+    <h1 class="titulo">{{titulo}}</h1>
+    <img src="../../../assets/IMG/En Temporada (IES FSL)/Stickers/Orange Wedge.png" alt="" class="sticker gajo">
+    <img src="../../../assets/IMG/En Temporada (IES FSL)/Stickers/Classic White.png" alt="" class="sticker white">
+    <img src="../../../assets/IMG/En Temporada (IES FSL)/Stickers/Black Orange.png" alt="" class="sticker naranja">
+    <img src="../../../assets/IMG/En Temporada (IES FSL)/Stickers/Lemon.png" alt="" class="sticker limon">
+    <img src="../../../assets/IMG/En Temporada (IES FSL)/Stickers/Green Peach.png" alt="" class="sticker malacaton">
+  </div>
+</div>
+
+<div class="container">
+  <div class="elemento">
+
+    <div class="row barra">
+
+      <div class="resultados col-6 col-lg-5">
+        <p class="encontrados"><strong>Categorías disponibles por el momento:  {{cantidadcategorias}}</strong></p>
+      </div>
+
+      <!-- CAMPOS DE BUSQUEDA -->
+      <div class="ml-sm-2 col-lg-6 col-12 busqueda">
+      </div>
+
+
+    </div>
+  </div>
+</div>
+<ng-container *ngIf="categorias && buscando; else elseTemplate">
+  <app-card-categorias [categorias]="categorias"></app-card-categorias>
+</ng-container>
+<ng-template #elseTemplate>
+  <app-carga></app-carga>
+</ng-template>
+<app-footer></app-footer>
+<app-subir></app-subir>

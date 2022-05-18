@@ -9,12 +9,16 @@ import { LikesComentarioService } from 'src/app/servicios/likes-comentario.servi
 import { LikesSubcomentarioService } from 'src/app/servicios/likes-subcomentario.service';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 import { Usuarios } from 'src/app/modelos/usuarios.model';
+import { NotificacionesService } from 'src/app/servicios/notificaciones.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { MatDialog } from '@angular/material/dialog';
 import { MatDialogConfig } from '@angular/material/dialog';
 
 import { ReporteComponent } from 'src/app/utils/reporte/reporte.component';
+
+declare const $: any;
+
 @Component({
   selector: 'app-seccioncomentarios',
   templateUrl: './seccioncomentarios.component.html',
@@ -22,6 +26,8 @@ import { ReporteComponent } from 'src/app/utils/reporte/reporte.component';
   providers: [SubcomentariosService, MatDialogConfig],
 })
 export class SeccioncomentariosComponent implements OnInit {
+
+
   id?: any;
 
   comentarios?: Comentarios[];
@@ -41,8 +47,9 @@ export class SeccioncomentariosComponent implements OnInit {
   textocomentarioprinc?: string = "";
   idcomentarioprincipal?: number;
   textosubcomentarioprinc?: string = "";
+  id_propcomment?: number;
   error = new Map();
-
+  lblPopoverTextValue = "perro";
   constructor(
     public MatDialogConfig: MatDialogConfig,
     public dialogRef: MatDialog,
@@ -53,14 +60,45 @@ export class SeccioncomentariosComponent implements OnInit {
     private comentariosService: ComentariosService,
     private subcomentariosService: SubcomentariosService,
     private likesComentario: LikesComentarioService,
-    private likesSubcomentario: LikesSubcomentarioService
+    private likesSubcomentario: LikesSubcomentarioService,
+    private notificacionesService:NotificacionesService
   ) {}
   @Input() entradaid?: number;
   @Input() idpropentrada?: number;
+  @Input() tituloentrada?: String;
+
   ngOnInit(): void {
     this.getComentarios();
   }
-
+  ngAfterViewInit() {
+    $(function () {
+      $('[data-toggle="popover"]').popover();
+    })
+  }
+  abrirPopover(tipocomm:string,idcomment:number){
+    //$(".popover").hide();
+    let tipo="";
+    if (tipocomm =="princ") {
+      tipo="princ";
+    }else{
+      tipo="sub";
+    }
+    let postop = $("#sub-"+tipo+"-"+idcomment).offset().top;
+    let posleft = $("#sub-"+tipo+"-"+idcomment).offset().left;
+    if ($("#popover-"+tipo+"-"+idcomment).is(':visible')) {
+      $("#popover-"+tipo+"-"+idcomment).hide();
+      $(".popover").hide();
+      $("#popover-"+tipo+"-"+idcomment).css("display", "none");
+    }else{
+      $(".popover").hide();
+      $("#popover-"+tipo+"-"+idcomment).show();
+      $("#popover-"+tipo+"-"+idcomment).css("display", "block");
+      $("#popover-"+tipo+"-"+idcomment).offset({
+        top: postop-80,
+        left: posleft+150
+      });
+    }
+  }
   openDialog(
     userid: number,
     nicknameuser: string,
@@ -119,7 +157,6 @@ export class SeccioncomentariosComponent implements OnInit {
   asignarLikesSubcomentarios() {
     // if (this.sesion){
     this.subcomentarios?.forEach((element) => {
-      console.log(element);
       this.boolLikeSub(element.id);
     });
     //}
@@ -203,7 +240,6 @@ export class SeccioncomentariosComponent implements OnInit {
         this.clickedSub[id] = true;
         this.likesSubcomentario.create(id).subscribe({
           next: (data) => {
-            console.log(data);
           },
         });
       }
@@ -237,7 +273,6 @@ export class SeccioncomentariosComponent implements OnInit {
     } else {
       this.clickedSub[id] = false;
     }
-    console.log(this.clickedSub);
   }
 
   publicarComentarioPrincipal() {
@@ -254,11 +289,28 @@ export class SeccioncomentariosComponent implements OnInit {
                 { panelClass: 'alertcool' }
               );
               miSnackBar.onAction().subscribe(() => {
+                this.userService.sumarExperiencia(this.usuario.id, 5).subscribe({
+                  next: (data) => {
+                    console.log(data);
+                  }
+                })
                 this.reloadCurrentRoute();
               });
             }
           },
         });
+      this.notificacionesService.crearNotificacion(this.usuario.id, "Puntos", "comentario", "").subscribe({
+        next: (data) => {
+        },
+        error: (e) => console.error(e)
+      });
+      let texto = "El usuario " + this.usuario.nick + " ha comentado en tu entrada: " + this.tituloentrada;
+      this.notificacionesService.crearNotificacion(this.idpropentrada!, "Comentario","", texto).subscribe({
+        next: (data) => {
+          console.log(data);
+        },
+        error: (e) => console.error(e)
+      });
     }
   }
   publicarSubComentario() {
@@ -278,11 +330,29 @@ export class SeccioncomentariosComponent implements OnInit {
                 { panelClass: 'alertcool' }
               );
               miSnackBar.onAction().subscribe(() => {
+                this.userService.sumarExperiencia(this.usuario.id, 3).subscribe({
+                  next: (data) => {
+                    console.log(data);
+                  }
+                })
                 this.reloadCurrentRoute();
               });
             }
           },
         });
+      this.notificacionesService.crearNotificacion(this.usuario.id, "Puntos", "subcomentario", "").subscribe({
+        next: (data) => {
+        },
+        error: (e) => console.error(e)
+      });
+      let texto = "El usuario " + this.usuario.nick + " ha respondido  a tu comentario de la entrada: " + this.tituloentrada;
+      console.log(texto);
+      this.notificacionesService.crearNotificacion(this.id_propcomment!, "Subcomentario","", texto).subscribe({
+        next: (data) => {
+          console.log(data);
+        },
+        error: (e) => console.error(e)
+      });
     }
   }
 
@@ -308,11 +378,12 @@ export class SeccioncomentariosComponent implements OnInit {
       );
     }
   }
-  visibilizarBloque(id_comentarioprinc: number) {
+  visibilizarBloque(id_comentarioprinc: number, id_propcomment: number) {
     if (this.sesion) {
       $('.subcomentarioasubir').hide();
       $('#plantillasubcomment-' + id_comentarioprinc).show();
       this.idcomentarioprincipal = id_comentarioprinc;
+      this.id_propcomment = id_propcomment;
     } else {
       let miSnackBar = this.snackBar.open(
         'Para poder responder comentarios debe iniciar sesión',
@@ -337,7 +408,6 @@ export class SeccioncomentariosComponent implements OnInit {
         this.usuario.id == this.idpropentrada ||
         this.usuario.id == id_usuariocomentario
       ) {
-        console.log('borrando comentario');
         this.comentariosService.borrarComentario(comentarioid).subscribe({
           next: (data) => {
             this.reloadCurrentRoute();
@@ -368,7 +438,6 @@ export class SeccioncomentariosComponent implements OnInit {
         this.usuario.id == this.idpropentrada ||
         this.usuario.id == id_usuariocomentario
       ) {
-        console.log('borrando comentario');
         this.subcomentariosService
           .borrarSubComentario(subcomentarioid)
           .subscribe({
