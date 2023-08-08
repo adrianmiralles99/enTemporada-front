@@ -65,9 +65,9 @@ export class BarraComponent implements OnInit {
   getNotificaciones(){
     this.notificacionesService.getNotificaciones().subscribe({
       next: (data) => {
-        console.log(data);
+        //console.log(data);
         this.notificaciones = data;
-        console.log(this.notificaciones);
+        //console.log(this.notificaciones);
       },
       error: (e) => console.error(e)
     });

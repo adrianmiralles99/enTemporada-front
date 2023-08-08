@@ -26,6 +26,7 @@ export class CardEntradasComponent implements OnInit {
   constructor(private router:Router, private snackBar: MatSnackBar,private token: TokenStorageService, public dialogRef: MatDialog, public likeService: LikesEntradaService, public favService: FavoritosEntradaService) { }
 
   ngOnInit(): void {
+    //console.log(this.entradas);
     if ((this.id = this.token.getId()) && this.entradas) {
       this.sesion = true;
       for (let i = 0; i < this.entradas.length; i++) {

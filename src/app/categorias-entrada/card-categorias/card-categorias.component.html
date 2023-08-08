@@ -1,7 +1,7 @@
 <div  id="contenedor"class="container">
   <div class="row">
     <div  class="col-lg-4 col-md-4 margen" *ngFor="let categoria of categorias ">
-      <div  [ngStyle]="{ 'background-color' : (categoria.nombre == nombrecategoria)? '#2da76c83' : 'white' }" class="tarjeta" id="{{categoria.nombre}}">
+      <div  [ngStyle]="{ 'background-color' : (categoria.nombre == nombrecategoria)? '#175537' : 'white', 'color': (categoria.nombre == nombrecategoria)? 'white' : 'black' }" class="tarjeta" id="{{categoria.nombre}}">
 
         <div class="bordeimagen">
           <button class="imagen" [routerLink]="['/entradas', categoria.nombre!.toLowerCase()]"

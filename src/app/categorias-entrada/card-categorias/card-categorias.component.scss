@@ -20,6 +20,12 @@
   user-select: none;
   transition: 0.5s;
 }
+.imagen :hover{
+  -webkit-transform: scale(1.075);
+  -moz-transform: scale(1.075);
+  -o-transform: scale(1.075);
+  transform: scale(1.075);
+}
 .user{
   *{
     vertical-align: middle;
@@ -69,14 +75,18 @@
   max-height:550px;
 }
 
-.tarjeta :hover{
-  -webkit-transform: scale(1.075);
-  -moz-transform: scale(1.075);
-  -o-transform: scale(1.075);
-  transform: scale(1.075);
+.tarjeta:hover{
+
+  .imagen:hover{
+
+    -webkit-transform: scale(1.085);
+    -moz-transform: scale(1.085);
+    -o-transform: scale(1.085);
+    transform: scale(1.085);
+  }
   .descripcion{
-    padding-left:12px ;
-    padding-right:12px ;
+    //padding-left:12px ;
+    //padding-right:12px ;
 
   }
 }

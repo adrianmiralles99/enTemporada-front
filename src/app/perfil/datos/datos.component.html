@@ -25,9 +25,8 @@
             </h4>
             <div class="explicacion">
               <h5>¿Qué es el nivel del chef?
-
               </h5>
-              <p>El nivel del chef es una herramienta que sirve para valorar la participación de los usuarios en esta página.</p>
+              <p>El nivel del chef es una herramienta que sirve para valorar la participación de los usuarios en esta página. Cuanto más participes, mayor será tu nivel.</p>
             </div>
           </div>
           <div class=" col-lg-12">
@@ -35,6 +34,32 @@
               <div class="progress-bar   progress-bar-striped progress-bar-animated active" role="progressbar"
                 aria-valuenow="exp_res" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width.%': exp_res}"></div>
             </div>
+            <table class="explicacion tablaexpl">
+              <tr>
+                <th>Puntos experiencia</th>
+                <th>Nivel</th>
+              </tr>
+              <tr>
+                <td>0 - 150</td>
+                <td>Bronce</td>
+              </tr>
+              <tr>
+                <td>150 - 300</td>
+                <td>Plata</td>
+              </tr>
+              <tr>
+                <td>300 - 400</td>
+                <td>Oro</td>
+              </tr>
+              <tr>
+                <td>400 - 475</td>
+                <td>Platino</td>
+              </tr>
+              <tr>
+                <td>475 - 500</td>
+                <td>Diamante</td>
+              </tr>
+            </table>
           </div>
           <div class="col-12">
             <button [routerLink]="'/modperfil'" class="modificar">Modificar Perfil</button>

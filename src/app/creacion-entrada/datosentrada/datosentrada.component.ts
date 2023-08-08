@@ -87,7 +87,7 @@ export class DatosentradaComponent implements OnInit {
             miSnackBar.onAction().subscribe(() => {
               this.usuarioService.sumarExperiencia(this.idusuario!, 3).subscribe({
                 next: (data) => {
-                  console.log(data);
+                  //console.log(data);
                 }
               })
               this.router.navigate(['entradas']);

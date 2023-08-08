@@ -21,6 +21,24 @@
   }
 
 }
+.tablaexpl{
+  margin-top: 10px;
+  border-spacing: 5px;
+  border-collapse: separate;
+  margin-bottom: -40px;
+  th, td {
+    width: 10%;
+    padding-left: 15px;
+    text-align: left;
+    vertical-align: top;
+    border: 2px ridge rgb(255, 255, 255);
+    font-family: neueR;
+ }
+  th{
+    font-size: 110%;
+    font-family: neueB;
+  }
+}
 .puntos {
   background-color: transparent;
   background-size: contain;

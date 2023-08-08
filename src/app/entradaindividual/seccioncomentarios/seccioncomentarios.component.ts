@@ -291,7 +291,7 @@ export class SeccioncomentariosComponent implements OnInit {
               miSnackBar.onAction().subscribe(() => {
                 this.userService.sumarExperiencia(this.usuario.id, 5).subscribe({
                   next: (data) => {
-                    console.log(data);
+                    //console.log(data);
                   }
                 })
                 this.reloadCurrentRoute();
@@ -307,7 +307,7 @@ export class SeccioncomentariosComponent implements OnInit {
       let texto = "El usuario " + this.usuario.nick + " ha comentado en tu entrada: " + this.tituloentrada;
       this.notificacionesService.crearNotificacion(this.idpropentrada!, "Comentario","", texto).subscribe({
         next: (data) => {
-          console.log(data);
+          //console.log(data);
         },
         error: (e) => console.error(e)
       });
@@ -332,7 +332,7 @@ export class SeccioncomentariosComponent implements OnInit {
               miSnackBar.onAction().subscribe(() => {
                 this.userService.sumarExperiencia(this.usuario.id, 3).subscribe({
                   next: (data) => {
-                    console.log(data);
+                    //console.log(data);
                   }
                 })
                 this.reloadCurrentRoute();
@@ -346,10 +346,10 @@ export class SeccioncomentariosComponent implements OnInit {
         error: (e) => console.error(e)
       });
       let texto = "El usuario " + this.usuario.nick + " ha respondido  a tu comentario de la entrada: " + this.tituloentrada;
-      console.log(texto);
+      //console.log(texto);
       this.notificacionesService.crearNotificacion(this.id_propcomment!, "Subcomentario","", texto).subscribe({
         next: (data) => {
-          console.log(data);
+          //console.log(data);
         },
         error: (e) => console.error(e)
       });

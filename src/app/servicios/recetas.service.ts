@@ -68,18 +68,12 @@ export class RecetasService {
   getMias() {
     return this.http.get<Recetas[]>(baseUrl + "/getmias?expand=usuario,likes,favoritos");
   }
-
-
   getUltimaReceta(): Observable<any> {
     return this.http.get(baseUrl + "/ultimareceta");
   }
-
   getRecetaPopular(): Observable<any> {
     return this.http.get(baseUrl + "/popularreceta");
   }
-
-
-
   getByTipo(tipo: any, fecha: any): Observable<any> {
     if (tipo) {
       return this.http.get(baseUrl + "/bytipo?tipo=" + tipo + "&expand=usuario,likes,totallikes,favoritos");

@@ -184,7 +184,7 @@ export class DatoscreacionComponent implements OnInit {
               miSnackBar.onAction().subscribe(() => {
                 this.usuarioService.sumarExperiencia(this.iduser_crear, 25).subscribe({
                   next: (data) => {
-                    console.log(data);
+                    //console.log(data);
                   }
                 })
                 this.router.navigate(['recetas']);
